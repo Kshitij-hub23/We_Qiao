@@ -9,7 +9,7 @@ import { MedListCard } from "@/components/MedListCard";
 import { GlassCard } from "@/components/GlassCard";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { getSession, type SessionUser } from "@/lib/auth";
-import { useT } from "@/lib/i18n";
+import { useT, useTerm } from "@/lib/i18n";
 import {
   getItems,
   addItem,
@@ -50,6 +50,7 @@ function ArrowRightIcon() {
 export default function DashboardPage() {
   const router = useRouter();
   const t = useT();
+  const term = useTerm();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -216,6 +217,7 @@ export default function DashboardPage() {
             items={diseases}
             placeholder={t("card.conditions.placeholder")}
             emptyLabel={t("card.conditions.empty")}
+            localize={term}
             onAdd={(v) => handleAdd("diseases", v)}
             onRemove={(v) => requestRemove("diseases", v)}
           />
@@ -226,6 +228,7 @@ export default function DashboardPage() {
             items={western}
             placeholder={t("card.western.placeholder")}
             emptyLabel={t("card.western.empty")}
+            localize={term}
             onAdd={(v) => handleAdd("western", v)}
             onRemove={(v) => requestRemove("western", v)}
           />
@@ -236,6 +239,7 @@ export default function DashboardPage() {
             items={eastern}
             placeholder={t("card.tcm.placeholder")}
             emptyLabel={t("card.tcm.empty")}
+            localize={term}
             onAdd={(v) => handleAdd("eastern", v)}
             onRemove={(v) => requestRemove("eastern", v)}
           />
@@ -277,7 +281,7 @@ export default function DashboardPage() {
       <ConfirmDialog
         open={pendingDelete !== null}
         title={pendingDelete ? t(`confirm.deleteNoun.${pendingDelete.kind}`) : ""}
-        itemLabel={pendingDelete?.item ?? ""}
+        itemLabel={pendingDelete ? term(pendingDelete.item) : ""}
         onCancel={() => setPendingDelete(null)}
         onConfirm={confirmRemove}
       />

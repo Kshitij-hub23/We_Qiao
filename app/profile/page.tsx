@@ -7,7 +7,7 @@ import { DashboardNav } from "@/components/DashboardNav";
 import { GlassCard } from "@/components/GlassCard";
 import { CaregiverSection } from "@/components/CaregiverSection";
 import { getSession, type SessionUser } from "@/lib/auth";
-import { useT } from "@/lib/i18n";
+import { useT, useTerm } from "@/lib/i18n";
 import {
   getProfile,
   updateProfile,
@@ -18,6 +18,7 @@ import {
 export default function ProfilePage() {
   const router = useRouter();
   const t = useT();
+  const term = useTerm();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -138,7 +139,7 @@ export default function ProfilePage() {
             <Field label={t("field.dob")} value={profile.dateOfBirth} editing={editing}
               type="date" draftKey="dateOfBirth" draft={draft} setDraft={setDraft} render={formatDate} />
             <Field label={t("field.gender")} value={profile.gender} editing={editing}
-              draftKey="gender" draft={draft} setDraft={setDraft} />
+              draftKey="gender" draft={draft} setDraft={setDraft} render={term} />
             <Field label={t("field.blood")} value={profile.bloodGroup} editing={editing}
               draftKey="bloodGroup" draft={draft} setDraft={setDraft} />
             <Field label={t("field.email")} value={profile.email} editing={editing}
@@ -158,7 +159,7 @@ export default function ProfilePage() {
             <Field label={t("field.phone")} value={profile.emergencyContactPhone} editing={editing}
               draftKey="emergencyContactPhone" draft={draft} setDraft={setDraft} />
             <Field label={t("field.relationship")} value={profile.emergencyContactRelation} editing={editing}
-              draftKey="emergencyContactRelation" draft={draft} setDraft={setDraft} />
+              draftKey="emergencyContactRelation" draft={draft} setDraft={setDraft} render={term} />
           </div>
         </Section>
 

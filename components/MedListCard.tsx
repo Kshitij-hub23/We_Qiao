@@ -13,6 +13,8 @@ interface Props {
   onAdd: (value: string) => void;
   /** Request removal of an item — the parent shows a confirmation before deleting. */
   onRemove: (value: string) => void;
+  /** Optional display transform (e.g. localization). The raw value is kept for remove/add. */
+  localize?: (value: string) => string;
 }
 
 /** Single standardized dark-brown bullet colour used for every indicator. */
@@ -62,6 +64,7 @@ export function MedListCard({
   emptyLabel,
   onAdd,
   onRemove,
+  localize,
 }: Props) {
   const [adding, setAdding] = useState(false);
   const [draft, setDraft] = useState("");
@@ -123,7 +126,7 @@ export function MedListCard({
                   className="inline-flex items-center gap-1.5 bg-white/70 border border-white/80
                              text-ink-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-soft"
                 >
-                  {item}
+                  {localize ? localize(item) : item}
                   <button
                     onClick={() => onRemove(item)}
                     className="text-ink-400 hover:text-ink-700 transition-colors ml-0.5"

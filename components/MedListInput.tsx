@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, type KeyboardEvent } from "react";
-import { useT } from "@/lib/i18n";
+import { useT, useTerm } from "@/lib/i18n";
 
 type Accent = "brand" | "teal";
 
@@ -42,6 +42,7 @@ export function MedListInput({
   const [draft, setDraft] = useState("");
   const a = ACCENT[accent];
   const t = useT();
+  const term = useTerm();
 
   function commit(raw: string) {
     const value = raw.trim().replace(/,$/, "").trim();
@@ -88,7 +89,7 @@ export function MedListInput({
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm font-medium ${a.chip}`}
             >
-              {item}
+              {term(item)}
               <button
                 type="button"
                 aria-label={`Remove ${item}`}

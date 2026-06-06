@@ -431,12 +431,63 @@ const ZH: Strings = {
 
 const DICT: Record<Lang, Strings> = { en: EN, zh: ZH };
 
+/**
+ * Clinical-term glossary for the demo. Stored record values stay canonical
+ * (English) so the engine lookup and delete-by-value keep working; this maps
+ * them to Chinese for *display only*. Keyed by lowercased English term.
+ * Unknown terms fall back to the raw string.
+ */
+const GLOSSARY: Record<string, string> = {
+  // conditions
+  "atrial fibrillation": "心房顫動",
+  "type 2 diabetes": "二型糖尿病",
+  "hypertension": "高血壓",
+  "high cholesterol": "高膽固醇",
+  "osteoarthritis": "骨關節炎",
+  // western medicines
+  "warfarin": "華法林",
+  "metformin": "二甲雙胍",
+  "amlodipine": "氨氯地平",
+  "aspirin": "阿士匹靈",
+  "atorvastatin": "阿托伐他汀",
+  "ibuprofen": "布洛芬",
+  "paracetamol": "撲熱息痛",
+  // TCM
+  "danshen": "丹參",
+  "dong quai": "當歸",
+  "ginkgo": "銀杏",
+  "ginseng": "人參",
+  "gan cao": "甘草",
+  "licorice": "甘草",
+  // allergies
+  "penicillin": "青黴素",
+  "sulfa drugs": "磺胺類藥物",
+  "aspirin allergy": "阿士匹靈過敏",
+  // gender
+  "female": "女",
+  "male": "男",
+  // relationships
+  "son-in-law / caretaker": "女婿／看護",
+  "mother-in-law": "岳母",
+  "daughter": "女兒",
+  "son": "兒子",
+  "spouse": "配偶",
+};
+
+/** Translate a stored clinical/demographic term for display (zh only). */
+export function localizeTerm(term: string, lang: Lang): string {
+  if (lang !== "zh" || !term) return term;
+  return GLOSSARY[term.trim().toLowerCase()] ?? term;
+}
+
 export type TFunc = (key: string, vars?: Record<string, string | number>) => string;
 
 interface Ctx {
   lang: Lang;
   setLang: (l: Lang) => void;
   t: TFunc;
+  /** Localize a stored clinical/demographic term for display. */
+  term: (value: string) => string;
 }
 
 const LangContext = createContext<Ctx | null>(null);
@@ -468,8 +519,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return str;
   };
 
+  const term = (value: string) => localizeTerm(value, lang);
+
   return (
-    <LangContext.Provider value={{ lang, setLang, t }}>
+    <LangContext.Provider value={{ lang, setLang, t, term }}>
       {children}
     </LangContext.Provider>
   );
@@ -484,4 +537,9 @@ export function useLang(): Ctx {
 /** Convenience hook when a component only needs the translate function. */
 export function useT(): TFunc {
   return useLang().t;
+}
+
+/** Convenience hook for localizing stored clinical/demographic terms. */
+export function useTerm(): (value: string) => string {
+  return useLang().term;
 }

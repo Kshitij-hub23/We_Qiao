@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { DashboardNav } from "@/components/DashboardNav";
 import { GlassCard } from "@/components/GlassCard";
 import { getSession, type SessionUser } from "@/lib/auth";
-import { useT } from "@/lib/i18n";
+import { useT, useTerm } from "@/lib/i18n";
 import { getProfile, type PatientProfile } from "@/lib/profile";
 import { getItems } from "@/lib/user-records";
 import {
@@ -17,6 +17,7 @@ import {
 export default function CaregiverPage() {
   const router = useRouter();
   const t = useT();
+  const term = useTerm();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -96,12 +97,12 @@ export default function CaregiverPage() {
         {can("profile") && (
           <ReadSection title={t("cgv.section.profile")}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              <ReadField label={t("field.gender")} value={profile.gender} />
+              <ReadField label={t("field.gender")} value={term(profile.gender)} />
               <ReadField label={t("field.phone")} value={profile.phone} />
               <ReadField label={t("field.email")} value={profile.email} />
               <ReadField label={t("field.address")} value={profile.address} className="sm:col-span-2" />
               <ReadField label={t("cgv.emergency")}
-                value={`${profile.emergencyContactName} (${profile.emergencyContactRelation}) · ${profile.emergencyContactPhone}`} />
+                value={`${profile.emergencyContactName} (${term(profile.emergencyContactRelation)}) · ${profile.emergencyContactPhone}`} />
             </div>
           </ReadSection>
         )}
@@ -175,6 +176,7 @@ function ReadField({ label, value, className = "" }: { label: string; value: str
 
 function ChipList({ label, items }: { label: string; items: string[] }) {
   const t = useT();
+  const term = useTerm();
   return (
     <div>
       <p className="text-[11px] font-medium uppercase tracking-wide text-ink-400 mb-1.5">{label}</p>
@@ -186,7 +188,7 @@ function ChipList({ label, items }: { label: string; items: string[] }) {
             <span key={item}
               className="inline-flex items-center gap-1.5 bg-white/70 border border-white/80 text-ink-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-900" />
-              {item}
+              {term(item)}
             </span>
           ))}
         </div>

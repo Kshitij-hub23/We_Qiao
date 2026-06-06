@@ -17,7 +17,7 @@ import { checkConflicts, getEngineHealth, ApiError } from "@/lib/api-client";
 import type { ConflictDetail } from "@/lib/types";
 import { getSession } from "@/lib/auth";
 import { useRouter } from "next/navigation";
-import { useT } from "@/lib/i18n";
+import { useT, useTerm } from "@/lib/i18n";
 
 type Step = "intake" | "confirm" | "results";
 type Status = "loading" | "success" | "error";
@@ -295,6 +295,7 @@ function SummaryList({
   items: string[];
 }) {
   const t = useT();
+  const term = useTerm();
   const chip =
     accent === "brand"
       ? "bg-brand-50/80 text-brand-800 border-brand-200/70"
@@ -311,7 +312,7 @@ function SummaryList({
               key={`${item}-${i}`}
               className={`rounded-full border px-3 py-1 text-sm font-medium ${chip}`}
             >
-              {item}
+              {term(item)}
             </span>
           ))}
         </div>
