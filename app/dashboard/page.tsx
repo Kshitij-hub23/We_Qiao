@@ -72,6 +72,10 @@ export default function DashboardPage() {
       router.replace("/caregiver");
       return;
     }
+    if (session.role === "practitioner") {
+      router.replace("/doctor");
+      return;
+    }
 
     // Seed demo data for Eleanor on first login.
     if (session.id === "u1") seedIfEmpty(session.id, ELEANOR_SEED);

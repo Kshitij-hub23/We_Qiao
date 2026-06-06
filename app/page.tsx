@@ -93,6 +93,10 @@ export default function Home() {
       router.replace("/caregiver");
       return;
     }
+    if (s.role === "practitioner") {
+      router.replace("/doctor");
+      return;
+    }
     setUser(s);
 
     let w = getItems(s.id, "western");
