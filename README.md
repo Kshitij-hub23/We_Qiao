@@ -96,3 +96,10 @@ directly — our `app/api/conflicts/check` route proxies it server-side.
   (server-side fetch wrapper with timeout + clear errors), `lib/validation.ts` (zod), and routes
   `POST /api/conflicts/check` (proxy to the engine) + `GET /api/engine/health`. A placeholder home page
   confirms the app runs; the real UI lands on `frontend`.
+- **`frontend` branch — Liquid-Glass UI + hero flow:** the `lib/api-client.ts` data seam (the only thing
+  components import for data) plus a presentational design-system kit (`GlassCard`, `Button`,
+  `MedListInput`, `FileAttach`, `ConflictCard`, `SeverityBadge`, `EmptyState`, `LoadingState`,
+  `ErrorState`). `app/page.tsx` is a three-step flow: **intake** (two tag inputs for Western / Chinese
+  medicines + optional file attach, not yet analysed) → **confirm** → **results** (severity-sorted
+  conflict cards, friendly empty/error states, live engine-status pill). Verified end-to-end against the
+  engine: warfarin × danshen → a major bleeding-risk flag.
