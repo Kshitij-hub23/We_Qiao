@@ -48,9 +48,12 @@ end-to-end "hero flow" are next.
 ## Documentation
 - [`docs/PROJECT_BRIEF.md`](docs/PROJECT_BRIEF.md) — the full implementation brief: complete system
   architecture, hard constraints, the dataset contract, and the end-to-end hero flow.
+- [`CLAUDE.md`](CLAUDE.md) — guidance for any AI agent working in this repo (principles, stack,
+  conventions). Read it before making changes.
 
 ## Push log
 - **Initial commit:** README with project vision, the fuzzy-vs-deterministic design principle, and
   the planned stack (Gemini for extraction).
 - **Add project brief:** `docs/PROJECT_BRIEF.md` with the complete system architecture and
   constraints, plus a README link to it.
+- **Add CLAUDE.md:** guidance for AI agents (principles, stack, conventions), linked from the README.
