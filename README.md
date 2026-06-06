@@ -103,3 +103,12 @@ directly — our `app/api/conflicts/check` route proxies it server-side.
   medicines + optional file attach, not yet analysed) → **confirm** → **results** (severity-sorted
   conflict cards, friendly empty/error states, live engine-status pill). Verified end-to-end against the
   engine: warfarin × danshen → a major bleeding-risk flag.
+- **`engine` branch — HDI API:** `hdi-api/` — deterministic FastAPI conflict-detection service (empty
+  SQLite dataset, `POST /api/v1/check-conflicts` lookup, `GET /health`).
+- **Add medicine standardizer:** `standardizer/standardize.py` — the *fuzzy* intake step. Takes
+  unstructured free-text prescriptions (English / Chinese / pinyin / Latin) and returns clean,
+  de-duplicated `western_medicines` / `eastern_medicines` lists, shaped to drop straight into the HDI
+  `/api/v1/check-conflicts` body and into the user's profile. **Provider note:** uses an
+  OpenAI-compatible model (`azure.gpt-4.1-mini`) via the KIT SCC `ki-toolbox` gateway rather than
+  Gemini; key read server-side from `OPENAI_API_KEY` only. The LLM does fuzzy extraction/normalization
+  only — never the safety verdict (CLAUDE.md principle #2).
