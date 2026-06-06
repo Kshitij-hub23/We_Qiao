@@ -7,6 +7,8 @@ import { GlassCard } from "@/components/GlassCard";
 import { Button } from "@/components/Button";
 import { login, getSession, type SessionUser } from "@/lib/auth";
 import { DEMO_USERS } from "@/lib/demo-users";
+import { useT } from "@/lib/i18n";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 /** Where each role lands after sign-in. */
 function landingFor(user: SessionUser): string {
@@ -38,10 +40,11 @@ function EyeOffIcon() {
 
 export default function LoginPage() {
   const router = useRouter();
+  const t = useT();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   // If already logged in, skip straight to the right landing page.
@@ -52,7 +55,7 @@ export default function LoginPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setError("");
+    setError(false);
     setLoading(true);
 
     // Brief artificial delay so the loading state is perceptible.
@@ -62,7 +65,7 @@ export default function LoginPage() {
     setLoading(false);
 
     if (!user) {
-      setError("Incorrect email or password.");
+      setError(true);
       return;
     }
     router.push(landingFor(user));
@@ -76,21 +79,26 @@ export default function LoginPage() {
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="w-full max-w-md"
       >
+        {/* Language toggle */}
+        <div className="mb-4 flex justify-end">
+          <LanguageToggle />
+        </div>
+
         {/* Logo lockup */}
         <div className="text-center mb-8">
           <h1 className="font-display text-4xl font-bold text-ink-900 tracking-tight">
             Qiáo <span className="text-brand-500">·</span> 橋
           </h1>
           <p className="mt-2 text-sm text-ink-500">
-            Medication safety bridge — TCM × Western
+            {t("brand.tagline")}
           </p>
         </div>
 
         {/* Login card */}
         <GlassCard strong className="p-8">
-          <h2 className="text-xl font-semibold text-ink-800">Sign in</h2>
+          <h2 className="text-xl font-semibold text-ink-800">{t("login.signIn")}</h2>
           <p className="text-sm text-ink-500 mt-1 mb-6">
-            Access your health record
+            {t("login.subtitle")}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -100,7 +108,7 @@ export default function LoginPage() {
                 htmlFor="email"
                 className="block text-xs font-medium text-ink-600 mb-1.5"
               >
-                Email
+                {t("login.email")}
               </label>
               <input
                 id="email"
@@ -120,7 +128,7 @@ export default function LoginPage() {
                 htmlFor="password"
                 className="block text-xs font-medium text-ink-600 mb-1.5"
               >
-                Password
+                {t("login.password")}
               </label>
               <div className="relative">
                 <input
@@ -153,7 +161,7 @@ export default function LoginPage() {
                 className="text-sm font-medium"
                 style={{ color: "#c0561f" }}
               >
-                {error}
+                {t("login.error")}
               </motion.p>
             )}
 
@@ -162,7 +170,7 @@ export default function LoginPage() {
               disabled={loading || !email || !password}
               className="w-full mt-1"
             >
-              {loading ? "Signing in…" : "Sign in →"}
+              {loading ? t("login.submitting") : t("login.submit")}
             </Button>
           </form>
         </GlassCard>
@@ -175,7 +183,7 @@ export default function LoginPage() {
           className="mt-4 p-4 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/60"
         >
           <p className="text-xs font-semibold text-ink-500 mb-3 uppercase tracking-wide">
-            Demo accounts
+            {t("login.demoAccounts")}
           </p>
           <div className="space-y-2">
             {DEMO_USERS.map((u) => (
@@ -185,7 +193,7 @@ export default function LoginPage() {
                 onClick={() => {
                   setEmail(u.email);
                   setPassword(u.password);
-                  setError("");
+                  setError(false);
                 }}
                 className="w-full text-left flex items-center gap-2.5 py-1 px-1 rounded-lg
                            hover:bg-white/50 transition-colors"
@@ -198,22 +206,22 @@ export default function LoginPage() {
                   {u.initials}
                 </span>
                 <span className="text-xs text-ink-700 font-medium">{u.name}</span>
-                <span className="text-xs text-ink-400 ml-auto capitalize">{u.role}</span>
+                <span className="text-xs text-ink-400 ml-auto">{t(`role.${u.role}`)}</span>
               </button>
             ))}
           </div>
           <p className="text-[11px] text-ink-400 mt-3 border-t border-white/60 pt-2.5">
-            Password for all accounts:{" "}
+            {t("login.demoPassword")}{" "}
             <code className="font-mono bg-white/60 px-1.5 py-0.5 rounded-md">
               demo123
             </code>
-            {" "}· Click a name to auto-fill.
+            {" "}· {t("login.demoHint")}
           </p>
         </motion.div>
 
         {/* Disclaimer */}
         <p className="text-center text-[11px] text-ink-400 mt-6 leading-relaxed max-w-xs mx-auto">
-          Qiáo uses synthetic demo data only. Not a diagnostic tool.
+          {t("login.disclaimer")}
         </p>
       </motion.div>
     </main>

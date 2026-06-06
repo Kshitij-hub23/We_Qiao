@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import { useT } from "@/lib/i18n";
 
 type Tone = "danger" | "info";
 
@@ -27,11 +28,6 @@ interface Props {
   onCancel: () => void;
   onConfirm: () => void;
 }
-
-const DEFAULT_DANGER_WARNING =
-  "Deleting medical information may affect future records and the interaction " +
-  "checks and recommendations Qiáo can provide. Please confirm you want to " +
-  "remove this permanently.";
 
 function WarningIcon() {
   return (
@@ -72,6 +68,7 @@ export function ConfirmDialog({
   onCancel,
   onConfirm,
 }: Props) {
+  const t = useT();
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -82,8 +79,9 @@ export function ConfirmDialog({
   }, [open, onCancel]);
 
   const isDanger = tone === "danger";
-  const warningText = warning ?? (isDanger ? DEFAULT_DANGER_WARNING : "");
-  const confirmText = confirmLabel ?? (isDanger ? "Delete permanently" : "OK");
+  const warningText = warning ?? (isDanger ? t("confirm.medicalWarning") : "");
+  const confirmText =
+    confirmLabel ?? (isDanger ? t("confirm.deletePermanently") : t("confirm.ok"));
 
   return (
     <AnimatePresence>
@@ -122,7 +120,7 @@ export function ConfirmDialog({
               <div className="min-w-0">
                 <h3 className="text-base font-semibold text-ink-900">{title}</h3>
                 {isDanger && (
-                  <p className="mt-0.5 text-xs text-ink-500">This cannot be undone.</p>
+                  <p className="mt-0.5 text-xs text-ink-500">{t("confirm.cannotUndo")}</p>
                 )}
               </div>
             </div>
@@ -146,7 +144,7 @@ export function ConfirmDialog({
                              font-semibold text-ink-700 backdrop-blur-md transition-colors
                              hover:bg-white/90"
                 >
-                  Cancel
+                  {t("common.cancel")}
                 </button>
               )}
               <button

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { GlassCard } from "@/components/GlassCard";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
+import { useT } from "@/lib/i18n";
 import {
   getCaregivers,
   addCaregiver,
@@ -34,6 +35,7 @@ export function CaregiverSection({
   patientUserId: string;
   patientName: string;
 }) {
+  const t = useT();
   const [caregivers, setCaregivers] = useState<Caregiver[]>([]);
   const [adding, setAdding] = useState(false);
   const [pendingRemove, setPendingRemove] = useState<Caregiver | null>(null);
@@ -95,10 +97,8 @@ export function CaregiverSection({
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-brand-900 shrink-0" />
             <div>
-              <h2 className="text-base font-semibold text-ink-800">Caregivers</h2>
-              <p className="text-xs text-ink-400 mt-0.5">
-                Trusted people who can view your record
-              </p>
+              <h2 className="text-base font-semibold text-ink-800">{t("cg.title")}</h2>
+              <p className="text-xs text-ink-400 mt-0.5">{t("cg.subtitle")}</p>
             </div>
           </div>
           {!adding && (
@@ -107,7 +107,7 @@ export function CaregiverSection({
               className="shrink-0 flex items-center gap-1.5 rounded-2xl bg-brand-500 px-3.5 py-2 text-xs font-semibold text-white shadow-soft transition-colors hover:bg-brand-600"
             >
               <PlusIcon />
-              Add caregiver
+              {t("cg.add")}
             </button>
           )}
         </div>
@@ -125,16 +125,16 @@ export function CaregiverSection({
               <div className="mb-4 rounded-2xl border border-white/70 bg-white/50 p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <input value={name} onChange={(e) => setName(e.target.value)}
-                    placeholder="Full name" className="glass-input px-3 py-2 text-sm" />
+                    placeholder={t("cg.form.name")} className="glass-input px-3 py-2 text-sm" />
                   <input value={email} onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email (login)" className="glass-input px-3 py-2 text-sm" />
+                    placeholder={t("cg.form.email")} className="glass-input px-3 py-2 text-sm" />
                   <input value={relationship} onChange={(e) => setRelationship(e.target.value)}
-                    placeholder="Relationship" className="glass-input px-3 py-2 text-sm" />
+                    placeholder={t("cg.form.relationship")} className="glass-input px-3 py-2 text-sm" />
                 </div>
 
                 {/* Permissions */}
                 <p className="mt-3 mb-2 text-[11px] font-medium uppercase tracking-wide text-ink-400">
-                  Access permissions
+                  {t("cg.permissions")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {PERMISSION_KEYS.map((key) => (
@@ -146,7 +146,7 @@ export function CaregiverSection({
                           ? "bg-brand-500 text-white border-brand-500"
                           : "bg-white/60 text-ink-600 border-white/80 hover:bg-white/80"}`}
                     >
-                      {PERMISSION_LABELS[key]}
+                      {t(`perm.${key}`)}
                     </button>
                   ))}
                 </div>
@@ -156,14 +156,14 @@ export function CaregiverSection({
                     onClick={() => { setAdding(false); resetForm(); }}
                     className="rounded-2xl border border-white/80 bg-white/70 px-4 py-2 text-sm font-semibold text-ink-700 transition-colors hover:bg-white/90"
                   >
-                    Cancel
+                    {t("common.cancel")}
                   </button>
                   <button
                     onClick={submitAdd}
                     disabled={!name.trim() || !email.trim()}
                     className="rounded-2xl bg-brand-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-brand-600 disabled:bg-ink-300 disabled:cursor-not-allowed"
                   >
-                    Invite & link
+                    {t("cg.inviteLink")}
                   </button>
                 </div>
               </div>
@@ -173,7 +173,7 @@ export function CaregiverSection({
 
         {/* Caregiver list */}
         {caregivers.length === 0 && !adding ? (
-          <p className="text-sm text-ink-400 italic">No caregivers linked yet.</p>
+          <p className="text-sm text-ink-400 italic">{t("cg.empty")}</p>
         ) : (
           <div className="space-y-3">
             {caregivers.map((cg) => (
@@ -186,16 +186,16 @@ export function CaregiverSection({
                     <div className="min-w-0">
                       <p className="text-sm font-semibold text-ink-800 truncate">{cg.name}</p>
                       <p className="text-xs text-ink-500 truncate">
-                        {cg.relationship || "Caregiver"} · {cg.email}
+                        {cg.relationship || t("cg.fallbackRole")} · {cg.email}
                       </p>
-                      <p className="text-[11px] text-ink-400 mt-0.5">Linked {cg.addedAt}</p>
+                      <p className="text-[11px] text-ink-400 mt-0.5">{t("cg.linked", { date: cg.addedAt })}</p>
                     </div>
                   </div>
                   <button
                     onClick={() => setPendingRemove(cg)}
                     className="shrink-0 rounded-xl px-2.5 py-1.5 text-xs font-medium text-severity-major transition-colors hover:bg-severity-major/10"
                   >
-                    Remove
+                    {t("cg.remove")}
                   </button>
                 </div>
 
@@ -210,7 +210,7 @@ export function CaregiverSection({
                           ? "bg-brand-100 text-brand-700 border-brand-200"
                           : "bg-white/40 text-ink-400 border-white/70 line-through"}`}
                     >
-                      {PERMISSION_LABELS[key]}
+                      {t(`perm.${key}`)}
                     </button>
                   ))}
                 </div>
@@ -225,14 +225,14 @@ export function CaregiverSection({
         open={newCredential !== null}
         tone="info"
         hideCancel
-        title="Caregiver invited & linked"
+        title={t("cg.invited.title")}
         itemLabel={newCredential ? `${newCredential.name} · ${newCredential.email}` : ""}
         context={
           newCredential
-            ? `Temporary password: ${newCredential.password} — share this securely. They sign in at the login page with their email and this password.`
+            ? t("cg.invited.context", { pw: newCredential.password })
             : ""
         }
-        confirmLabel="Done"
+        confirmLabel={t("common.done")}
         onCancel={() => setNewCredential(null)}
         onConfirm={() => setNewCredential(null)}
       />
@@ -240,11 +240,11 @@ export function CaregiverSection({
       {/* Remove confirmation */}
       <ConfirmDialog
         open={pendingRemove !== null}
-        title="Revoke caregiver access"
+        title={t("cg.revoke.title")}
         itemLabel={pendingRemove ? `${pendingRemove.name} · ${pendingRemove.email}` : ""}
-        context="They will immediately lose access and will no longer be able to sign in to view this record."
+        context={t("cg.revoke.context")}
         warning=""
-        confirmLabel="Revoke access"
+        confirmLabel={t("cg.revoke.confirm")}
         onCancel={() => setPendingRemove(null)}
         onConfirm={confirmRemove}
       />

@@ -9,6 +9,7 @@ import { MedListCard } from "@/components/MedListCard";
 import { GlassCard } from "@/components/GlassCard";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { getSession, type SessionUser } from "@/lib/auth";
+import { useT } from "@/lib/i18n";
 import {
   getItems,
   addItem,
@@ -24,12 +25,6 @@ const ELEANOR_SEED = {
 };
 
 type ListKind = "diseases" | "western" | "eastern";
-
-const KIND_NOUN: Record<ListKind, string> = {
-  diseases: "medical condition",
-  western: "Western medicine",
-  eastern: "Chinese medicine",
-};
 
 /* ── Inline SVG icons ─────────────────────────────────────────────── */
 function ShieldIcon() {
@@ -54,6 +49,7 @@ function ArrowRightIcon() {
 /* ── Page ─────────────────────────────────────────────────────────── */
 export default function DashboardPage() {
   const router = useRouter();
+  const t = useT();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -124,7 +120,7 @@ export default function DashboardPage() {
   if (!mounted || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <span className="text-sm text-ink-400 animate-pulse">Loading…</span>
+        <span className="text-sm text-ink-400 animate-pulse">{t("common.loading")}</span>
       </div>
     );
   }
@@ -162,22 +158,22 @@ export default function DashboardPage() {
                   <h1 className="font-display text-3xl font-bold text-ink-900 tracking-tight">
                     {user.name}
                   </h1>
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-ink-100 text-ink-500 capitalize">
-                    {user.role}
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-ink-100 text-ink-500">
+                    {t(`role.${user.role}`)}
                   </span>
                 </div>
                 <p className="text-sm text-ink-500">
-                  Age <span className="font-semibold text-ink-700">{user.age}</span>
+                  {t("dash.age")} <span className="font-semibold text-ink-700">{user.age}</span>
                   {" · "}
                   <span className="text-ink-500">{user.email}</span>
                 </p>
 
                 {/* Quick stats */}
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <Stat label="Conditions" value={diseases.length} />
-                  <Stat label="Western meds" value={western.length} />
-                  <Stat label="TCM medicines" value={eastern.length} />
-                  <Stat label="Total medicines" value={totalMeds} />
+                  <Stat label={t("stat.conditions")} value={diseases.length} />
+                  <Stat label={t("stat.western")} value={western.length} />
+                  <Stat label={t("stat.tcm")} value={eastern.length} />
+                  <Stat label={t("stat.total")} value={totalMeds} />
                 </div>
               </div>
 
@@ -194,12 +190,12 @@ export default function DashboardPage() {
                              transition-colors disabled:cursor-not-allowed"
                 >
                   <ShieldIcon />
-                  Check interactions
+                  {t("dash.checkInteractions")}
                   <ArrowRightIcon />
                 </motion.button>
                 {(western.length === 0 || eastern.length === 0) && (
                   <p className="text-[11px] text-ink-400 mt-1.5 text-center max-w-[180px]">
-                    Add both WM and TCM medicines to run a check
+                    {t("dash.checkHint")}
                   </p>
                 )}
               </div>
@@ -215,31 +211,31 @@ export default function DashboardPage() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           <MedListCard
-            title="Medical conditions"
-            subtitle="Diagnoses and ongoing conditions"
+            title={t("card.conditions.title")}
+            subtitle={t("card.conditions.subtitle")}
             items={diseases}
-            placeholder="e.g. Hypertension"
-            emptyLabel="No conditions recorded yet."
+            placeholder={t("card.conditions.placeholder")}
+            emptyLabel={t("card.conditions.empty")}
             onAdd={(v) => handleAdd("diseases", v)}
             onRemove={(v) => requestRemove("diseases", v)}
           />
 
           <MedListCard
-            title="Western medicines"
-            subtitle="Conventional pharmaceutical drugs"
+            title={t("card.western.title")}
+            subtitle={t("card.western.subtitle")}
             items={western}
-            placeholder="e.g. Warfarin"
-            emptyLabel="No Western medicines recorded yet."
+            placeholder={t("card.western.placeholder")}
+            emptyLabel={t("card.western.empty")}
             onAdd={(v) => handleAdd("western", v)}
             onRemove={(v) => requestRemove("western", v)}
           />
 
           <MedListCard
-            title="Chinese medicines (TCM)"
-            subtitle="Herbs, formulas and supplements"
+            title={t("card.tcm.title")}
+            subtitle={t("card.tcm.subtitle")}
             items={eastern}
-            placeholder="e.g. Danshen"
-            emptyLabel="No TCM medicines recorded yet."
+            placeholder={t("card.tcm.placeholder")}
+            emptyLabel={t("card.tcm.empty")}
             onAdd={(v) => handleAdd("eastern", v)}
             onRemove={(v) => requestRemove("eastern", v)}
           />
@@ -256,11 +252,10 @@ export default function DashboardPage() {
                             hover:bg-white/65 transition-colors duration-200 cursor-pointer">
               <div>
                 <p className="text-sm font-semibold text-ink-800">
-                  Add a new prescription
+                  {t("dash.addRx.title")}
                 </p>
                 <p className="text-xs text-ink-500 mt-0.5">
-                  Upload or paste a prescription — OCR extraction coming soon. Run a full
-                  conflict check with your updated medicine list.
+                  {t("dash.addRx.subtitle")}
                 </p>
               </div>
               <span className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full
@@ -274,15 +269,14 @@ export default function DashboardPage() {
 
         {/* ── Disclaimer ──────────────────────────────────────────── */}
         <p className="text-center text-[11px] text-ink-400 leading-relaxed max-w-md mx-auto pb-4">
-          Qiáo surfaces known, sourced interactions and hands the decision to a human.
-          It is a reconciliation tool — not a diagnosis, and not medical advice.
+          {t("disclaimer.recon")}
         </p>
       </main>
 
       {/* Two-step delete confirmation */}
       <ConfirmDialog
         open={pendingDelete !== null}
-        title={`Delete ${pendingDelete ? KIND_NOUN[pendingDelete.kind] : "item"}`}
+        title={pendingDelete ? t(`confirm.deleteNoun.${pendingDelete.kind}`) : ""}
         itemLabel={pendingDelete?.item ?? ""}
         onCancel={() => setPendingDelete(null)}
         onConfirm={confirmRemove}

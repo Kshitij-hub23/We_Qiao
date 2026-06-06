@@ -7,6 +7,7 @@ import { DashboardNav } from "@/components/DashboardNav";
 import { GlassCard } from "@/components/GlassCard";
 import { CaregiverSection } from "@/components/CaregiverSection";
 import { getSession, type SessionUser } from "@/lib/auth";
+import { useT } from "@/lib/i18n";
 import {
   getProfile,
   updateProfile,
@@ -16,6 +17,7 @@ import {
 
 export default function ProfilePage() {
   const router = useRouter();
+  const t = useT();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -58,7 +60,7 @@ export default function ProfilePage() {
   if (!mounted || !user || !profile) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <span className="text-sm text-ink-400 animate-pulse">Loading…</span>
+        <span className="text-sm text-ink-400 animate-pulse">{t("common.loading")}</span>
       </div>
     );
   }
@@ -89,14 +91,16 @@ export default function ProfilePage() {
                 {/* Patient ID — prominent, immutable */}
                 <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-900" />
-                  <span className="text-xs font-medium text-ink-500">Patient ID</span>
+                  <span className="text-xs font-medium text-ink-500">{t("profile.patientId")}</span>
                   <span className="font-mono text-sm font-semibold text-brand-800 tracking-wide">
                     {profile.patientId}
                   </span>
                 </div>
                 <p className="mt-2 text-xs text-ink-400">
-                  Registered {formatDate(profile.registrationDate)} · Role:{" "}
-                  <span className="capitalize">{user.role}</span>
+                  {t("profile.registered", {
+                    date: formatDate(profile.registrationDate),
+                    role: t(`role.${user.role}`),
+                  })}
                 </p>
               </div>
               <div className="shrink-0 self-start">
@@ -105,7 +109,7 @@ export default function ProfilePage() {
                     onClick={startEdit}
                     className="rounded-2xl border border-white/80 bg-white/70 px-4 py-2.5 text-sm font-semibold text-ink-700 backdrop-blur-md transition-colors hover:bg-white/90"
                   >
-                    Edit details
+                    {t("profile.edit")}
                   </button>
                 ) : (
                   <div className="flex gap-2">
@@ -113,13 +117,13 @@ export default function ProfilePage() {
                       onClick={() => setEditing(false)}
                       className="rounded-2xl border border-white/80 bg-white/70 px-4 py-2.5 text-sm font-semibold text-ink-700 transition-colors hover:bg-white/90"
                     >
-                      Cancel
+                      {t("common.cancel")}
                     </button>
                     <button
                       onClick={saveEdit}
                       className="rounded-2xl bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-brand-600"
                     >
-                      Save
+                      {t("common.save")}
                     </button>
                   </div>
                 )}
@@ -129,41 +133,41 @@ export default function ProfilePage() {
         </motion.div>
 
         {/* ── Personal details ────────────────────────────────────── */}
-        <Section title="Personal details">
+        <Section title={t("section.personal")}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
-            <Field label="Date of birth" value={profile.dateOfBirth} editing={editing}
+            <Field label={t("field.dob")} value={profile.dateOfBirth} editing={editing}
               type="date" draftKey="dateOfBirth" draft={draft} setDraft={setDraft} render={formatDate} />
-            <Field label="Gender" value={profile.gender} editing={editing}
+            <Field label={t("field.gender")} value={profile.gender} editing={editing}
               draftKey="gender" draft={draft} setDraft={setDraft} />
-            <Field label="Blood group" value={profile.bloodGroup} editing={editing}
+            <Field label={t("field.blood")} value={profile.bloodGroup} editing={editing}
               draftKey="bloodGroup" draft={draft} setDraft={setDraft} />
-            <Field label="Email" value={profile.email} editing={editing}
+            <Field label={t("field.email")} value={profile.email} editing={editing}
               draftKey="email" draft={draft} setDraft={setDraft} />
-            <Field label="Phone" value={profile.phone} editing={editing}
+            <Field label={t("field.phone")} value={profile.phone} editing={editing}
               draftKey="phone" draft={draft} setDraft={setDraft} />
-            <Field label="Address" value={profile.address} editing={editing}
+            <Field label={t("field.address")} value={profile.address} editing={editing}
               draftKey="address" draft={draft} setDraft={setDraft} className="sm:col-span-2 lg:col-span-3" />
           </div>
         </Section>
 
         {/* ── Emergency contact ───────────────────────────────────── */}
-        <Section title="Emergency contact">
+        <Section title={t("section.emergency")}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4">
-            <Field label="Name" value={profile.emergencyContactName} editing={editing}
+            <Field label={t("field.name")} value={profile.emergencyContactName} editing={editing}
               draftKey="emergencyContactName" draft={draft} setDraft={setDraft} />
-            <Field label="Phone" value={profile.emergencyContactPhone} editing={editing}
+            <Field label={t("field.phone")} value={profile.emergencyContactPhone} editing={editing}
               draftKey="emergencyContactPhone" draft={draft} setDraft={setDraft} />
-            <Field label="Relationship" value={profile.emergencyContactRelation} editing={editing}
+            <Field label={t("field.relationship")} value={profile.emergencyContactRelation} editing={editing}
               draftKey="emergencyContactRelation" draft={draft} setDraft={setDraft} />
           </div>
         </Section>
 
         {/* ── Insurance ───────────────────────────────────────────── */}
-        <Section title="Insurance" subtitle="If applicable">
+        <Section title={t("section.insurance")} subtitle={t("section.insurance.sub")}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-            <Field label="Provider" value={profile.insuranceProvider} editing={editing}
+            <Field label={t("field.provider")} value={profile.insuranceProvider} editing={editing}
               draftKey="insuranceProvider" draft={draft} setDraft={setDraft} />
-            <Field label="Policy number" value={profile.insurancePolicyNo} editing={editing}
+            <Field label={t("field.policyNo")} value={profile.insurancePolicyNo} editing={editing}
               draftKey="insurancePolicyNo" draft={draft} setDraft={setDraft} />
           </div>
         </Section>
@@ -172,8 +176,7 @@ export default function ProfilePage() {
         <CaregiverSection patientUserId={user.id} patientName={profile.fullName} />
 
         <p className="text-center text-[11px] text-ink-400 leading-relaxed max-w-md mx-auto pb-4">
-          Synthetic demo data only. Qiáo is a reconciliation tool — not a diagnosis,
-          and not medical advice.
+          {t("profile.disclaimer")}
         </p>
       </main>
     </>

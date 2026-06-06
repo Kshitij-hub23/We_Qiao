@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { DashboardNav } from "@/components/DashboardNav";
 import { GlassCard } from "@/components/GlassCard";
 import { getSession, type SessionUser } from "@/lib/auth";
+import { useT } from "@/lib/i18n";
 import { getProfile, type PatientProfile } from "@/lib/profile";
 import { getItems } from "@/lib/user-records";
 import {
@@ -15,6 +16,7 @@ import {
 
 export default function CaregiverPage() {
   const router = useRouter();
+  const t = useT();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -54,7 +56,7 @@ export default function CaregiverPage() {
   if (!mounted || !user || !profile) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <span className="text-sm text-ink-400 animate-pulse">Loading…</span>
+        <span className="text-sm text-ink-400 animate-pulse">{t("common.loading")}</span>
       </div>
     );
   }
@@ -74,7 +76,7 @@ export default function CaregiverPage() {
         >
           <GlassCard strong className="p-6 sm:p-7">
             <p className="text-xs font-medium uppercase tracking-wide text-ink-400">
-              Viewing patient record as caregiver
+              {t("cgv.viewingAs")}
             </p>
             <h1 className="font-display text-3xl font-bold text-ink-900 tracking-tight mt-1">
               {profile.fullName}
@@ -85,20 +87,20 @@ export default function CaregiverPage() {
               {profile.bloodGroup && <> · {profile.bloodGroup}</>}
             </p>
             <p className="mt-3 text-xs text-ink-400">
-              You have read-only access to the sections permitted by {profile.fullName.split(" ")[0]}.
+              {t("cgv.readonlyNote", { name: profile.fullName.split(" ")[0] })}
             </p>
           </GlassCard>
         </motion.div>
 
         {/* Profile & contact */}
         {can("profile") && (
-          <ReadSection title="Profile & contact">
+          <ReadSection title={t("cgv.section.profile")}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              <ReadField label="Gender" value={profile.gender} />
-              <ReadField label="Phone" value={profile.phone} />
-              <ReadField label="Email" value={profile.email} />
-              <ReadField label="Address" value={profile.address} className="sm:col-span-2" />
-              <ReadField label="Emergency contact"
+              <ReadField label={t("field.gender")} value={profile.gender} />
+              <ReadField label={t("field.phone")} value={profile.phone} />
+              <ReadField label={t("field.email")} value={profile.email} />
+              <ReadField label={t("field.address")} value={profile.address} className="sm:col-span-2" />
+              <ReadField label={t("cgv.emergency")}
                 value={`${profile.emergencyContactName} (${profile.emergencyContactRelation}) · ${profile.emergencyContactPhone}`} />
             </div>
           </ReadSection>
@@ -106,42 +108,35 @@ export default function CaregiverPage() {
 
         {/* Medication schedule */}
         {can("medications") && (
-          <ReadSection title="Current medications">
-            <ChipList label="Western medicines" items={western} />
-            <ChipList label="Chinese medicines (TCM)" items={eastern} />
+          <ReadSection title={t("cgv.section.meds")}>
+            <ChipList label={t("cgv.western")} items={western} />
+            <ChipList label={t("cgv.tcm")} items={eastern} />
           </ReadSection>
         )}
 
         {/* Prescriptions */}
         {can("prescriptions") && (
-          <ReadSection title="Prescriptions">
-            <p className="text-sm text-ink-400 italic">
-              No uploaded prescription files on record. Medication lists are shown under
-              “Current medications”.
-            </p>
+          <ReadSection title={t("cgv.section.rx")}>
+            <p className="text-sm text-ink-400 italic">{t("cgv.rx.empty")}</p>
           </ReadSection>
         )}
 
         {/* Medical history */}
         {can("history") && (
-          <ReadSection title="Medical history">
-            <ChipList label="Allergies" items={allergies} />
-            <ChipList label="Conditions" items={diseases} />
+          <ReadSection title={t("cgv.section.history")}>
+            <ChipList label={t("cgv.allergies")} items={allergies} />
+            <ChipList label={t("cgv.conditions")} items={diseases} />
           </ReadSection>
         )}
 
         {!can("profile") && !can("medications") && !can("prescriptions") && !can("history") && (
           <GlassCard className="p-6">
-            <p className="text-sm text-ink-500">
-              You don’t currently have permission to view any sections of this record.
-              Please ask the patient to grant access.
-            </p>
+            <p className="text-sm text-ink-500">{t("cgv.noPerms")}</p>
           </GlassCard>
         )}
 
         <p className="text-center text-[11px] text-ink-400 leading-relaxed max-w-md mx-auto pb-4">
-          Read-only caregiver access. Qiáo is a reconciliation tool — not a diagnosis,
-          and not medical advice.
+          {t("cgv.disclaimer")}
         </p>
       </main>
     </>
@@ -179,11 +174,12 @@ function ReadField({ label, value, className = "" }: { label: string; value: str
 }
 
 function ChipList({ label, items }: { label: string; items: string[] }) {
+  const t = useT();
   return (
     <div>
       <p className="text-[11px] font-medium uppercase tracking-wide text-ink-400 mb-1.5">{label}</p>
       {items.length === 0 ? (
-        <p className="text-xs text-ink-400 italic">None recorded.</p>
+        <p className="text-xs text-ink-400 italic">{t("common.none")}</p>
       ) : (
         <div className="flex flex-wrap gap-2">
           {items.map((item) => (

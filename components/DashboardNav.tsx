@@ -5,13 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { logout } from "@/lib/auth";
 import type { SessionUser, Role } from "@/lib/auth";
-
-const ROLE_LABEL: Record<Role, string> = {
-  patient: "Patient",
-  caretaker: "Caretaker",
-  practitioner: "Practitioner",
-  caregiver: "Caregiver",
-};
+import { useT } from "@/lib/i18n";
+import { LanguageToggle } from "./LanguageToggle";
 
 const ROLE_COLOURS: Record<Role, string> = {
   patient: "bg-brand-100 text-brand-700",
@@ -38,6 +33,8 @@ export function DashboardNav({
   profileHref?: string | null;
 }) {
   const router = useRouter();
+  const t = useT();
+  const roleLabel = t(`role.${user.role}`);
 
   function handleLogout() {
     logout();
@@ -56,7 +53,7 @@ export function DashboardNav({
         <span className="text-sm font-semibold text-ink-800 max-w-[140px] truncate">
           {user.name}
         </span>
-        <span className="text-[11px] text-ink-400">{ROLE_LABEL[user.role]}</span>
+        <span className="text-[11px] text-ink-400">{roleLabel}</span>
       </span>
       {profileHref && (
         <span className="hidden sm:block text-ink-300 group-hover:text-brand-500 transition-colors">
@@ -81,13 +78,15 @@ export function DashboardNav({
           </span>
         </Link>
 
-        {/* Right side — pretty profile button + sign out */}
+        {/* Right side — language, pretty profile button + sign out */}
         <div className="flex items-center gap-2">
+          <LanguageToggle />
+
           {/* Role badge (mobile-only, since the pill shows the role on desktop) */}
           <span
             className={`sm:hidden inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${ROLE_COLOURS[user.role]}`}
           >
-            {ROLE_LABEL[user.role]}
+            {roleLabel}
           </span>
 
           {/* Profile pill — the clickable profile button */}
@@ -113,7 +112,7 @@ export function DashboardNav({
             onClick={handleLogout}
             className="text-xs text-ink-400 hover:text-ink-700 transition-colors px-2.5 py-2 rounded-xl hover:bg-white/60"
           >
-            Sign out
+            {t("common.signOut")}
           </button>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, type KeyboardEvent } from "react";
+import { useT } from "@/lib/i18n";
 
 interface Props {
   title: string;
@@ -65,6 +66,7 @@ export function MedListCard({
   const [adding, setAdding] = useState(false);
   const [draft, setDraft] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const t = useT();
 
   function openAdd() {
     setAdding(true);
@@ -100,7 +102,7 @@ export function MedListCard({
                      bg-brand-50 hover:bg-brand-100 transition-colors px-2.5 py-1.5 rounded-xl"
         >
           <PlusIcon />
-          Add
+          {t("medlist.add")}
         </button>
       </div>
 
@@ -161,11 +163,11 @@ export function MedListCard({
                 className="px-3 py-2 rounded-xl bg-brand-500 text-white text-xs font-semibold
                            hover:bg-brand-600 transition-colors"
               >
-                Add
+                {t("medlist.add")}
               </button>
             </div>
             <p className="text-[10px] text-ink-400 mt-1.5 pl-0.5">
-              Press Enter to add · Esc to cancel
+              {t("medlist.addHint")}
             </p>
           </motion.div>
         )}

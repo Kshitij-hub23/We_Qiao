@@ -7,6 +7,7 @@ import { Button } from "@/components/Button";
 import { MedListInput } from "@/components/MedListInput";
 import { FileAttach, type AttachedFile } from "@/components/FileAttach";
 import { SegmentedControl } from "@/components/SegmentedControl";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { ConflictCard } from "@/components/ConflictCard";
 import { LoadingState } from "@/components/LoadingState";
 import { EmptyState } from "@/components/EmptyState";
@@ -16,15 +17,11 @@ import { checkConflicts, getEngineHealth, ApiError } from "@/lib/api-client";
 import type { ConflictDetail } from "@/lib/types";
 import { getSession } from "@/lib/auth";
 import { useRouter } from "next/navigation";
+import { useT } from "@/lib/i18n";
 
 type Step = "intake" | "confirm" | "results";
 type Status = "loading" | "success" | "error";
 type PrescriptionType = "western" | "eastern";
-
-const RX_TYPE_OPTIONS = [
-  { value: "western" as const, label: "Western Medicine", hint: "Pharmaceutical drugs" },
-  { value: "eastern" as const, label: "Traditional Chinese Medicine", hint: "Herbs & formulas" },
-];
 
 const fade = {
   initial: { opacity: 0, y: 14 },
@@ -35,6 +32,11 @@ const fade = {
 
 export default function Home() {
   const router = useRouter();
+  const t = useT();
+  const rxTypeOptions = [
+    { value: "western" as const, label: t("rx.western"), hint: t("rx.westernHint") },
+    { value: "eastern" as const, label: t("rx.tcm"), hint: t("rx.tcmHint") },
+  ];
   const [step, setStep] = useState<Step>("intake");
   const [western, setWestern] = useState<string[]>([]);
   const [eastern, setEastern] = useState<string[]>([]);
@@ -113,25 +115,24 @@ export default function Home() {
           <motion.section key="intake" {...fade}>
             <GlassCard strong className="flex flex-col gap-6 p-6 sm:p-8">
               <div>
-                <h2 className="text-lg font-semibold text-ink-900">Enter the medicines</h2>
+                <h2 className="text-lg font-semibold text-ink-900">{t("intake.title")}</h2>
                 <p className="mt-1 text-sm text-ink-500">
-                  Add each Western drug and each Chinese medicine (TCM) separately. Press Enter or comma
-                  after each name.
+                  {t("intake.instructions")}
                 </p>
               </div>
 
               <MedListInput
-                label="Western medicines"
-                hint="e.g. warfarin"
-                placeholder="Type a drug name…"
+                label={t("intake.western")}
+                hint={t("intake.westernHint")}
+                placeholder={t("intake.westernPh")}
                 accent="brand"
                 items={western}
                 onChange={setWestern}
               />
               <MedListInput
-                label="Chinese medicines (TCM)"
-                hint="e.g. danshen"
-                placeholder="Type a herb or formula…"
+                label={t("intake.tcm")}
+                hint={t("intake.tcmHint")}
+                placeholder={t("intake.tcmPh")}
                 accent="teal"
                 items={eastern}
                 onChange={setEastern}
@@ -140,11 +141,11 @@ export default function Home() {
               {/* Prescription type — chosen before upload so files are categorised. */}
               <div className="flex flex-col gap-2">
                 <div className="flex items-baseline justify-between">
-                  <span className="text-sm font-semibold text-ink-800">Prescription type</span>
-                  <span className="text-xs text-ink-400">Required when attaching files</span>
+                  <span className="text-sm font-semibold text-ink-800">{t("intake.rxType")}</span>
+                  <span className="text-xs text-ink-400">{t("intake.rxTypeReq")}</span>
                 </div>
                 <SegmentedControl
-                  options={RX_TYPE_OPTIONS}
+                  options={rxTypeOptions}
                   value={rxType}
                   onChange={setRxType}
                   layoutId="rx-type"
@@ -156,13 +157,13 @@ export default function Home() {
               <div className="flex flex-col gap-3 border-t border-white/60 pt-5 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs text-ink-400">
                   {needsRxType
-                    ? "Select a prescription type for your attached file(s) to continue."
+                    ? t("intake.needType")
                     : canCheck
-                      ? "Ready to check."
-                      : "Add at least one Western and one Chinese medicine to check for interactions."}
+                      ? t("intake.ready")
+                      : t("intake.needMeds")}
                 </p>
                 <Button onClick={() => setStep("confirm")} disabled={!canCheck || needsRxType}>
-                  Review &amp; check →
+                  {t("intake.review")}
                 </Button>
               </div>
             </GlassCard>
@@ -173,35 +174,31 @@ export default function Home() {
           <motion.section key="confirm" {...fade}>
             <GlassCard strong className="flex flex-col gap-6 p-6 sm:p-8">
               <div>
-                <h2 className="text-lg font-semibold text-ink-900">Confirm before checking</h2>
+                <h2 className="text-lg font-semibold text-ink-900">{t("confirm.title")}</h2>
                 <p className="mt-1 text-sm text-ink-500">
-                  These two lists will be sent to the conflict engine.
+                  {t("confirm.subtitle")}
                 </p>
               </div>
 
-              <SummaryList title="Western medicines" accent="brand" items={western} />
-              <SummaryList title="Chinese medicines (TCM)" accent="teal" items={eastern} />
+              <SummaryList title={t("intake.western")} accent="brand" items={western} />
+              <SummaryList title={t("intake.tcm")} accent="teal" items={eastern} />
 
               {attachments.length > 0 && (
                 <p className="text-xs text-ink-400">
-                  {attachments.length} file{attachments.length > 1 ? "s" : ""} attached
-                  {rxType && (
-                    <>
-                      {" "}as{" "}
-                      <span className="font-semibold text-ink-600">
-                        {rxType === "western" ? "Western Medicine" : "Traditional Chinese Medicine"}
-                      </span>
-                    </>
-                  )}{" "}
-                  (kept for your reference; not analysed).
+                  {t("confirm.filesAttached", { n: attachments.length })}
+                  {rxType &&
+                    t("confirm.filesAs", {
+                      type: rxType === "western" ? t("rx.western") : t("rx.tcm"),
+                    })}
+                  {t("confirm.filesKept")}
                 </p>
               )}
 
               <div className="flex flex-col-reverse gap-3 border-t border-white/60 pt-5 sm:flex-row sm:items-center sm:justify-between">
                 <Button variant="ghost" onClick={() => setStep("intake")}>
-                  ← Back to edit
+                  {t("confirm.back")}
                 </Button>
-                <Button onClick={runCheck}>Confirm &amp; check for conflicts</Button>
+                <Button onClick={runCheck}>{t("confirm.run")}</Button>
               </div>
             </GlassCard>
           </motion.section>
@@ -223,10 +220,10 @@ export default function Home() {
                       </span>
                       <div>
                         <p className="font-semibold text-ink-900">
-                          {sorted.length} interaction{sorted.length > 1 ? "s" : ""} found
+                          {t("results.found", { n: sorted.length })}
                         </p>
                         <p className="text-xs text-ink-500">
-                          Sorted by severity. Share these with a pharmacist or clinician.
+                          {t("results.sortedBy")}
                         </p>
                       </div>
                     </GlassCard>
@@ -243,7 +240,7 @@ export default function Home() {
             {status !== "loading" && (
               <div className="flex justify-center pt-2">
                 <Button variant="secondary" onClick={reset}>
-                  Check another patient
+                  {t("results.checkAnother")}
                 </Button>
               </div>
             )}
@@ -257,21 +254,27 @@ export default function Home() {
 }
 
 function Header({ engineUp }: { engineUp: boolean | null }) {
+  const t = useT();
   return (
-    <header className="flex items-center justify-between">
+    <header className="flex items-center justify-between gap-3">
       <div>
         <h1 className="font-display text-3xl font-bold tracking-tight text-ink-900">
           Qiáo <span className="text-brand-500">·</span> 橋
         </h1>
-        <p className="text-sm text-ink-500">Medication safety bridge — TCM × Western</p>
+        <p className="text-sm text-ink-500">{t("brand.tagline")}</p>
       </div>
-      <EngineStatus engineUp={engineUp} />
+      <div className="flex items-center gap-2">
+        <LanguageToggle />
+        <EngineStatus engineUp={engineUp} />
+      </div>
     </header>
   );
 }
 
 function EngineStatus({ engineUp }: { engineUp: boolean | null }) {
-  const label = engineUp === null ? "Checking…" : engineUp ? "Engine online" : "Engine offline";
+  const t = useT();
+  const label =
+    engineUp === null ? t("engine.checking") : engineUp ? t("engine.online") : t("engine.offline");
   const dot =
     engineUp === null ? "bg-ink-300" : engineUp ? "bg-teal-500" : "bg-severity-major";
   return (
@@ -291,6 +294,7 @@ function SummaryList({
   accent: "brand" | "teal";
   items: string[];
 }) {
+  const t = useT();
   const chip =
     accent === "brand"
       ? "bg-brand-50/80 text-brand-800 border-brand-200/70"
@@ -299,7 +303,7 @@ function SummaryList({
     <div className="flex flex-col gap-2">
       <span className="text-sm font-semibold text-ink-700">{title}</span>
       {items.length === 0 ? (
-        <span className="text-sm text-ink-400">None</span>
+        <span className="text-sm text-ink-400">{t("common.none")}</span>
       ) : (
         <div className="flex flex-wrap gap-2">
           {items.map((item, i) => (
@@ -317,10 +321,10 @@ function SummaryList({
 }
 
 function Disclaimer() {
+  const t = useT();
   return (
     <p className="mx-auto max-w-md pt-2 text-center text-xs leading-relaxed text-ink-400">
-      Qiáo surfaces known, sourced interactions and hands the decision to a human. It is a
-      reconciliation and conflict-detection tool — not a diagnosis, and not medical advice.
+      {t("disclaimer.recon")}
     </p>
   );
 }
