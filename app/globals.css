@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply text-ink-800 antialiased;
+  /* Calm, layered healthcare backdrop — soft blue → off-white → teal wash. */
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(110, 196, 255, 0.35), transparent 60%),
+    radial-gradient(1000px 700px at 95% 0%, rgba(111, 222, 201, 0.28), transparent 55%),
+    radial-gradient(900px 900px at 50% 120%, rgba(143, 197, 255, 0.22), transparent 60%),
+    linear-gradient(180deg, #f7f9fc 0%, #eef4fb 100%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  /* Frosted-glass surface — the core Liquid-Glass primitive. */
+  .glass {
+    @apply bg-white/55 backdrop-blur-xl border border-white/60 shadow-glass;
+  }
+
+  .glass-strong {
+    @apply bg-white/70 backdrop-blur-2xl border border-white/70 shadow-glass-lg;
+  }
+
+  /* Subtle frosted input field. */
+  .glass-input {
+    @apply bg-white/60 backdrop-blur-md border border-white/70 rounded-2xl
+           placeholder:text-ink-400 text-ink-800
+           focus:outline-none focus:ring-2 focus:ring-brand-300/70 focus:border-brand-200
+           transition-all duration-200;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

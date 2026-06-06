@@ -42,8 +42,42 @@ neither practitioner saw.
 
 ## Status
 
-This is an early commit — **project context only, no application code yet**. Architecture and the
-end-to-end "hero flow" are next.
+The **application** now exists alongside the docs. The repo is split by branch:
+
+| Branch | Owner | Holds |
+|---|---|---|
+| `engine` | teammate | the deterministic conflict engine — a Python/FastAPI service in `hdi-api/` |
+| `backend` | us | the Next.js app scaffold + our API routes that proxy the engine |
+| `frontend` | us | the UI: the "Liquid Glass" design system + the intake → confirm → results flow |
+| `main` | shared | docs baseline; integrates `frontend` + `backend` when we're ready |
+
+### What this app does (current scope)
+A patient's medicines are entered as text into two lists — **Western** and **Chinese (TCM)** — with
+optional file attachments (image/PDF, *not yet processed*). The user confirms, and we send the two
+lists to the external engine, then show the severity-rated conflicts it returns. No OCR, accounts,
+or database on our side yet — those are deliberately deferred.
+
+### The engine contract (owned by the `engine` branch — we only consume it)
+- Runs locally at `http://127.0.0.1:8000` (FastAPI, `hdi-api/`).
+- `POST /api/v1/check-conflicts` — body `{ "western_medicines": string[], "eastern_medicines": string[] }`
+  → returns `[{ western_drug, tcm_herb, severity, mechanism }]`. Case-insensitive; empty lists → `[]`.
+- `GET /health` → `{ "status": "ok" }`.
+- **Note:** the engine's database starts empty; it must be populated (teammate's ingestion) for the
+  warfarin × danshen demo result to appear.
+
+## Running locally
+```bash
+# 1. Start the engine (separate terminal) — see hdi-api/README.md on the engine branch
+cd hdi-api && pip install -r requirements.txt
+python -m uvicorn main:app --reload --port 8000
+
+# 2. Start this app
+cp .env.example .env.local      # sets ENGINE_URL=http://127.0.0.1:8000
+npm install
+npm run dev                     # http://localhost:3000
+```
+The only configuration is `ENGINE_URL` (where the engine lives); the browser never calls the engine
+directly — our `app/api/conflicts/check` route proxies it server-side.
 
 ## Documentation
 - [`docs/PROJECT_BRIEF.md`](docs/PROJECT_BRIEF.md) — the full implementation brief: complete system
@@ -57,3 +91,8 @@ end-to-end "hero flow" are next.
 - **Add project brief:** `docs/PROJECT_BRIEF.md` with the complete system architecture and
   constraints, plus a README link to it.
 - **Add CLAUDE.md:** guidance for AI agents (principles, stack, conventions), linked from the README.
+- **`backend` branch — app scaffold + engine proxy:** Next.js (TypeScript) + Tailwind scaffold with the
+  Liquid-Glass design tokens, and our backend: `lib/types.ts` (mirrors the engine), `lib/engine.ts`
+  (server-side fetch wrapper with timeout + clear errors), `lib/validation.ts` (zod), and routes
+  `POST /api/conflicts/check` (proxy to the engine) + `GET /api/engine/health`. A placeholder home page
+  confirms the app runs; the real UI lands on `frontend`.
