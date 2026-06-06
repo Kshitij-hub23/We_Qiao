@@ -68,14 +68,28 @@ Server is live at **http://127.0.0.1:8000**
 - Response `western_drug` / `tcm_herb` are the dataset's canonical `preferred_name`s, not the strings you
   sent.
 
-**cURL example:**
+**cURL examples:**
+
+Test with brand names and aliases:
+```bash
+curl -X POST http://127.0.0.1:8000/api/v1/check-conflicts \
+  -H "Content-Type: application/json" \
+  -d '{
+    "western_medicines": ["Coumadin"],
+    "eastern_medicines": ["danshen"]
+  }'
+# Returns same result as "warfarin" — aliases are resolved
+```
+
+Test with no conflicts found:
 ```bash
 curl -X POST http://127.0.0.1:8000/api/v1/check-conflicts \
   -H "Content-Type: application/json" \
   -d '{
     "western_medicines": ["warfarin"],
-    "eastern_medicines": ["danshen"]
+    "eastern_medicines": ["ginkgo"]
   }'
+# May return [] if this pair is not in the dataset
 ```
 
 ---
@@ -200,29 +214,98 @@ the frontend.
 
 ---
 
-## File layout
+## Dataset Statistics
 
-| File               | Responsibility |
-| ------------------ | --------------- |
-| `main.py`          | FastAPI app, health probe, `/api/v1/check-conflicts` endpoint (alias resolution + TCM-WM match). |
-| `models.py`        | Pydantic schemas: `InteractionRequest` (request) and `ConflictDetail` (response). |
-| `database.py`      | SQLAlchemy engine + `Entity`, `EntityAlias`, `Interaction` ORM models, table creation, sessions. |
-| `seed.py`          | Ingestion: loads `Medicine_data/*.json` into the DB and builds the alias index. |
-| `Medicine_data/`   | The curated, sourced dataset (`entities.json`, `interactions.json`, `SOURCES.md`, etc.). |
-| `requirements.txt` | Dependencies: `fastapi`, `uvicorn[standard]`, `sqlalchemy`. |
+After running `python seed.py`, you'll see output like:
+
+```
+Seeded 46 entities, 189 aliases, 51 interactions.
+  by class: {'TCM-WM': 30, 'WM-WM': 12, 'TCM-TCM': 9}
+```
+
+### Breakdown
+
+- **46 entities:** 24 WM drugs + 22 TCM herbs/formulas
+- **189 aliases:** ~4 name variants per entity (preferred name + synonyms + splits)
+- **51 interactions:** 30 TCM-WM, 12 WM-WM, 9 TCM-TCM
+  - **TCM-WM:** The core product focus (what the API endpoint returns)
+  - **WM-WM:** Drug-drug interactions (stored for future endpoints)
+  - **TCM-TCM:** Herb-herb interactions (stored for future endpoints)
 
 ---
 
-## Dataset contract
+## File Layout
 
-The DB now consumes the curated dataset in [`Medicine_data/`](Medicine_data/) directly — the rich
-`entities.json` / `interactions.json` keyed by `entity_id` (with `rxnorm_id`, `evidence_level`,
-`sources[]`, etc.) described in the root [`CLAUDE.md`](../CLAUDE.md). `seed.py` is the mapping layer:
+| File | Responsibility |
+|------|---|
+| `main.py` | FastAPI app, health probe, `/api/v1/check-conflicts` endpoint |
+| `models.py` | Pydantic request/response schemas |
+| `database.py` | SQLAlchemy ORM models (`Entity`, `EntityAlias`, `Interaction`), engine, sessions |
+| `seed.py` | ETL: loads `Medicine_data/*.json`, validates, populates DB, builds alias index |
+| `Medicine_data/entities.json` | 46 entities (WM drugs + TCM herbs) with all name forms |
+| `Medicine_data/interactions.json` | 51 sourced interaction pairs (all three classes) |
+| `Medicine_data/SOURCES.md` | Full citations and evidence links |
+| `Medicine_data/coverage_report.md` | Interaction coverage analysis |
+| `requirements.txt` | Dependencies: `fastapi`, `uvicorn[standard]`, `sqlalchemy` |
 
-1. Loads entities, persisting all name forms into `entity_aliases` for resolution.
-2. Loads interactions by entity ID, preserving `interaction_class` so all three classes are stored.
-3. Validates referential integrity (every `agent_*_id` exists) and fails loudly on drift.
+---
 
-When the dataset changes, drop in the new JSON and re-run `python seed.py`. To extend coverage to WM-WM
-or TCM-TCM, surface those classes in `main.py` (the data is already loaded) — likely via a new endpoint
-or a class filter, keeping the TCM-WM contract intact.
+## Dataset Contract
+
+The database directly consumes the **curated clinical dataset** in [`Medicine_data/`](Medicine_data/).
+
+### Source Data
+
+Two JSON files define the dataset:
+
+**`entities.json`** — 46 medical entities (drugs/herbs/formulas)
+- Each entity has a stable `entity_id` (e.g., `"E-0001"`)
+- All name forms: `preferred_name`, `latin`, `pinyin`, `chinese`, `common_names[]`
+- Type: `"WM-drug"` | `"TCM-herb"` | `"TCM-formula"`
+- WM-specific: `drug_class`, `rxnorm_id`
+- All: `active_constituents[]`
+
+**`interactions.json`** — 51 sourced interaction pairs
+- Each pair has an `id` (e.g., `"INT-0001"`)
+- References two entities by `entity_id`: `agent_a_id`, `agent_b_id`
+- Class: `"TCM-WM"` (30), `"WM-WM"` (12), `"TCM-TCM"` (9)
+- Severity: `"contraindicated"` | `"major"` | `"moderate"` | `"minor"`
+- Clinical explainability: `mechanism`, `clinical_effect`, `management`
+- Evidence: `evidence_level`, `sources[]` (PMID, DOI, case reports, etc.)
+
+### Ingestion Pipeline
+
+`seed.py` performs the ETL:
+
+1. **Load** — Parse `entities.json` and `interactions.json`
+2. **Validate** — Ensure every `agent_*_id` references a known entity (fail loudly if not)
+3. **Rebuild** — Drop and recreate all tables (idempotent; safe to re-run)
+4. **Populate entities** — Insert all 46 entities
+5. **Generate aliases** — For each entity, create lowercased variants:
+   - All name fields + common names
+   - "/" splits (compound names)
+   - Parenthetical-stripped forms
+   - De-duplicate and index
+6. **Populate interactions** — Insert all 51 pairs (all three classes)
+7. **Report** — Print summary counts
+
+### Evolving the Dataset
+
+When the dataset changes:
+
+1. Replace `Medicine_data/entities.json` and/or `interactions.json`
+2. Re-run: `python seed.py`
+3. Test immediately: the new data is live
+
+No code changes needed. The tables are rebuilt from the JSON as the source of truth.
+
+### Extending to WM-WM and TCM-TCM
+
+The database already stores all three interaction classes. To surface WM-WM or TCM-TCM:
+
+1. Edit `main.py` — change `_LIVE_CLASS = "TCM-WM"` to filter by class, or create new endpoints
+2. Test the new endpoint
+3. Update the response contract if needed
+4. Keep the TCM-WM endpoint backward-compatible
+
+Example: new endpoint `POST /api/v1/check-wm-wm-conflicts` for drug-drug interactions.

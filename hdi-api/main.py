@@ -58,10 +58,43 @@ def check_conflicts(
 ) -> List[ConflictDetail]:
     """Return every known TCM-WM interaction between the supplied agents.
 
-    Names are matched case-insensitively against the entity alias index (so any
-    known name form resolves), then a TCM-WM row is returned when one of its
-    agents is in the Western list and the other is in the Eastern list. Returns
-    `[]` when either list is empty or no interaction is found.
+    QUERY PIPELINE
+    ==============
+    1. Trim & lowercase: Both lists are trimmed (strip) and lowercased
+    2. Short-circuit: If either list becomes empty, return [] immediately
+    3. Resolve: All names are resolved to entity_ids via the entity_aliases table
+       - Handles brand names, pinyin, latin, Chinese, common names, variants
+       - Returns immediately if any name doesn't resolve (empty id-set)
+    4. Match: Find TCM-WM interactions where:
+       - interaction_class == "TCM-WM"
+       - One agent is in the western_ids set AND
+       - The other agent is in the eastern_ids set
+       - Matches either agent orientation (WM may be agent_a or agent_b)
+    5. Label: Resolve involved entities once to get preferred_name for display
+    6. Return: List of ConflictDetail objects (matched pairs with severity/mechanism)
+
+    EXAMPLE
+    =======
+    Input: {"western_medicines": ["Coumadin"], "eastern_medicines": ["danshen"]}
+      → Resolve "coumadin" → entity E-0003 (Warfarin), "danshen" → E-0001
+      → Find TCM-WM rows where (agent_a=E-0003, agent_b=E-0001) or vice versa
+      → Returns: [{western_drug="Warfarin", tcm_herb="Danshen", ...}]
+
+    INPUT VALIDATION
+    ================
+    Empty/whitespace items are trimmed; empty lists are accepted but return [].
+    Unknown names simply don't resolve (silently dropped, no error).
+
+    RESPONSE SHAPE
+    ==============
+    Each ConflictDetail includes:
+    - western_drug: preferred_name of the WM-drug entity
+    - tcm_herb: preferred_name of the TCM agent
+    - severity: level of risk from the interaction record
+    - mechanism: clinical explanation
+
+    NOTE: The full interaction records (clinical_effect, management,
+    evidence_level, sources) are stored in the DB but not surfaced here yet.
     """
     western = [name.strip().lower() for name in request.western_medicines if name.strip()]
     eastern = [name.strip().lower() for name in request.eastern_medicines if name.strip()]
