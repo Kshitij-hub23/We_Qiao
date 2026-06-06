@@ -6,6 +6,7 @@ import { GlassCard } from "@/components/GlassCard";
 import { Button } from "@/components/Button";
 import { MedListInput } from "@/components/MedListInput";
 import { FileAttach, type AttachedFile } from "@/components/FileAttach";
+import { SegmentedControl } from "@/components/SegmentedControl";
 import { ConflictCard } from "@/components/ConflictCard";
 import { LoadingState } from "@/components/LoadingState";
 import { EmptyState } from "@/components/EmptyState";
@@ -18,6 +19,12 @@ import { useRouter } from "next/navigation";
 
 type Step = "intake" | "confirm" | "results";
 type Status = "loading" | "success" | "error";
+type PrescriptionType = "western" | "eastern";
+
+const RX_TYPE_OPTIONS = [
+  { value: "western" as const, label: "Western Medicine", hint: "Pharmaceutical drugs" },
+  { value: "eastern" as const, label: "Traditional Chinese Medicine", hint: "Herbs & formulas" },
+];
 
 const fade = {
   initial: { opacity: 0, y: 14 },
@@ -32,6 +39,7 @@ export default function Home() {
   const [western, setWestern] = useState<string[]>([]);
   const [eastern, setEastern] = useState<string[]>([]);
   const [attachments, setAttachments] = useState<AttachedFile[]>([]);
+  const [rxType, setRxType] = useState<PrescriptionType | null>(null);
 
   const [status, setStatus] = useState<Status>("loading");
   const [conflicts, setConflicts] = useState<ConflictDetail[]>([]);
@@ -39,13 +47,31 @@ export default function Home() {
 
   const [engineUp, setEngineUp] = useState<boolean | null>(null);
 
-  // Redirect to login if no active session.
+  // Redirect to login if no active session; caregivers use their own view.
   useEffect(() => {
-    if (!getSession()) { router.replace("/login"); return; }
+    const s = getSession();
+    if (!s) { router.replace("/login"); return; }
+    if (s.role === "caregiver") { router.replace("/caregiver"); return; }
+
+    // Pick up medicine lists handed over from the dashboard, if any.
+    try {
+      const raw = sessionStorage.getItem("qiao:prefill");
+      if (raw) {
+        const p = JSON.parse(raw);
+        if (Array.isArray(p.western)) setWestern(p.western);
+        if (Array.isArray(p.eastern)) setEastern(p.eastern);
+        sessionStorage.removeItem("qiao:prefill");
+      }
+    } catch {
+      /* ignore malformed prefill */
+    }
+
     getEngineHealth().then(setEngineUp);
   }, [router]);
 
   const canCheck = western.length > 0 && eastern.length > 0;
+  // If files are attached, a prescription type must be chosen first.
+  const needsRxType = attachments.length > 0 && rxType === null;
 
   const sorted = useMemo(
     () =>
@@ -75,6 +101,7 @@ export default function Home() {
     setStep("intake");
     setConflicts([]);
     setError("");
+    setRxType(null);
   }
 
   return (
@@ -110,15 +137,31 @@ export default function Home() {
                 onChange={setEastern}
               />
 
+              {/* Prescription type — chosen before upload so files are categorised. */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-baseline justify-between">
+                  <span className="text-sm font-semibold text-ink-800">Prescription type</span>
+                  <span className="text-xs text-ink-400">Required when attaching files</span>
+                </div>
+                <SegmentedControl
+                  options={RX_TYPE_OPTIONS}
+                  value={rxType}
+                  onChange={setRxType}
+                  layoutId="rx-type"
+                />
+              </div>
+
               <FileAttach files={attachments} onChange={setAttachments} />
 
               <div className="flex flex-col gap-3 border-t border-white/60 pt-5 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs text-ink-400">
-                  {canCheck
-                    ? "Ready to check."
-                    : "Add at least one Western and one Chinese medicine to check for interactions."}
+                  {needsRxType
+                    ? "Select a prescription type for your attached file(s) to continue."
+                    : canCheck
+                      ? "Ready to check."
+                      : "Add at least one Western and one Chinese medicine to check for interactions."}
                 </p>
-                <Button onClick={() => setStep("confirm")} disabled={!canCheck}>
+                <Button onClick={() => setStep("confirm")} disabled={!canCheck || needsRxType}>
                   Review &amp; check →
                 </Button>
               </div>
@@ -141,8 +184,16 @@ export default function Home() {
 
               {attachments.length > 0 && (
                 <p className="text-xs text-ink-400">
-                  {attachments.length} file{attachments.length > 1 ? "s" : ""} attached (kept for your
-                  reference; not analysed).
+                  {attachments.length} file{attachments.length > 1 ? "s" : ""} attached
+                  {rxType && (
+                    <>
+                      {" "}as{" "}
+                      <span className="font-semibold text-ink-600">
+                        {rxType === "western" ? "Western Medicine" : "Traditional Chinese Medicine"}
+                      </span>
+                    </>
+                  )}{" "}
+                  (kept for your reference; not analysed).
                 </p>
               )}
 

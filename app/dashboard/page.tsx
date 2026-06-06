@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { DashboardNav } from "@/components/DashboardNav";
 import { MedListCard } from "@/components/MedListCard";
 import { GlassCard } from "@/components/GlassCard";
+import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { getSession, type SessionUser } from "@/lib/auth";
 import {
   getItems,
@@ -20,6 +21,14 @@ const ELEANOR_SEED = {
   diseases: ["Atrial fibrillation", "Type 2 diabetes", "Hypertension"],
   western: ["Warfarin", "Metformin", "Amlodipine"],
   eastern: ["Danshen", "Dong quai"],
+};
+
+type ListKind = "diseases" | "western" | "eastern";
+
+const KIND_NOUN: Record<ListKind, string> = {
+  diseases: "medical condition",
+  western: "Western medicine",
+  eastern: "Chinese medicine",
 };
 
 /* ── Inline SVG icons ─────────────────────────────────────────────── */
@@ -52,11 +61,18 @@ export default function DashboardPage() {
   const [western, setWestern] = useState<string[]>([]);
   const [eastern, setEastern] = useState<string[]>([]);
 
-  // Auth guard — redirect to login if no session.
+  // Pending deletion (drives the two-step confirmation modal).
+  const [pendingDelete, setPendingDelete] = useState<{ kind: ListKind; item: string } | null>(null);
+
+  // Auth guard — redirect to login if no session; caregivers go to their own view.
   useEffect(() => {
     const session = getSession();
     if (!session) {
       router.replace("/login");
+      return;
+    }
+    if (session.role === "caregiver") {
+      router.replace("/caregiver");
       return;
     }
 
@@ -70,21 +86,27 @@ export default function DashboardPage() {
     setMounted(true);
   }, [router]);
 
-  // List mutation helpers
-  function handleAdd(kind: "diseases" | "western" | "eastern", value: string) {
-    if (!user) return;
-    const updated = addItem(user.id, kind, value);
-    if (kind === "diseases") setDiseases(updated);
-    if (kind === "western") setWestern(updated);
-    if (kind === "eastern") setEastern(updated);
+  function setList(kind: ListKind, items: string[]) {
+    if (kind === "diseases") setDiseases(items);
+    if (kind === "western") setWestern(items);
+    if (kind === "eastern") setEastern(items);
   }
 
-  function handleRemove(kind: "diseases" | "western" | "eastern", value: string) {
+  function handleAdd(kind: ListKind, value: string) {
     if (!user) return;
-    const updated = removeItem(user.id, kind, value);
-    if (kind === "diseases") setDiseases(updated);
-    if (kind === "western") setWestern(updated);
-    if (kind === "eastern") setEastern(updated);
+    setList(kind, addItem(user.id, kind, value));
+  }
+
+  // Step 1: request removal → open the confirmation modal.
+  function requestRemove(kind: ListKind, value: string) {
+    setPendingDelete({ kind, item: value });
+  }
+
+  // Step 2: confirmed → actually delete.
+  function confirmRemove() {
+    if (!user || !pendingDelete) return;
+    setList(pendingDelete.kind, removeItem(user.id, pendingDelete.kind, pendingDelete.item));
+    setPendingDelete(null);
   }
 
   // Store prefill in sessionStorage so the conflict checker can pick it up.
@@ -152,10 +174,10 @@ export default function DashboardPage() {
 
                 {/* Quick stats */}
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <Stat label="Conditions" value={diseases.length} colour="#8a5530" />
-                  <Stat label="Western meds" value={western.length} colour="#b04f1d" />
-                  <Stat label="TCM medicines" value={eastern.length} colour="#c98a2b" />
-                  <Stat label="Total medicines" value={totalMeds} colour="#7d6c59" />
+                  <Stat label="Conditions" value={diseases.length} />
+                  <Stat label="Western meds" value={western.length} />
+                  <Stat label="TCM medicines" value={eastern.length} />
+                  <Stat label="Total medicines" value={totalMeds} />
                 </div>
               </div>
 
@@ -195,37 +217,31 @@ export default function DashboardPage() {
           <MedListCard
             title="Medical conditions"
             subtitle="Diagnoses and ongoing conditions"
-            accentClass="bg-brand-100 text-brand-700"
-            dotColour="#8a5530"
             items={diseases}
             placeholder="e.g. Hypertension"
             emptyLabel="No conditions recorded yet."
             onAdd={(v) => handleAdd("diseases", v)}
-            onRemove={(v) => handleRemove("diseases", v)}
+            onRemove={(v) => requestRemove("diseases", v)}
           />
 
           <MedListCard
             title="Western medicines"
             subtitle="Conventional pharmaceutical drugs"
-            accentClass="bg-teal-100 text-teal-700"
-            dotColour="#b04f1d"
             items={western}
             placeholder="e.g. Warfarin"
             emptyLabel="No Western medicines recorded yet."
             onAdd={(v) => handleAdd("western", v)}
-            onRemove={(v) => handleRemove("western", v)}
+            onRemove={(v) => requestRemove("western", v)}
           />
 
           <MedListCard
             title="Chinese medicines (TCM)"
             subtitle="Herbs, formulas and supplements"
-            accentClass="bg-brand-100 text-brand-700"
-            dotColour="#c98a2b"
             items={eastern}
             placeholder="e.g. Danshen"
             emptyLabel="No TCM medicines recorded yet."
             onAdd={(v) => handleAdd("eastern", v)}
-            onRemove={(v) => handleRemove("eastern", v)}
+            onRemove={(v) => requestRemove("eastern", v)}
           />
         </motion.div>
 
@@ -262,27 +278,25 @@ export default function DashboardPage() {
           It is a reconciliation tool — not a diagnosis, and not medical advice.
         </p>
       </main>
+
+      {/* Two-step delete confirmation */}
+      <ConfirmDialog
+        open={pendingDelete !== null}
+        title={`Delete ${pendingDelete ? KIND_NOUN[pendingDelete.kind] : "item"}`}
+        itemLabel={pendingDelete?.item ?? ""}
+        onCancel={() => setPendingDelete(null)}
+        onConfirm={confirmRemove}
+      />
     </>
   );
 }
 
-/* ── Stat chip ────────────────────────────────────────────────────── */
-function Stat({
-  label,
-  value,
-  colour,
-}: {
-  label: string;
-  value: number;
-  colour: string;
-}) {
+/* ── Stat chip — single standardized dark-brown indicator ─────────── */
+function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-1.5 bg-white/60 border border-white/70
                     px-3 py-1.5 rounded-full shadow-soft">
-      <span
-        className="w-2 h-2 rounded-full shrink-0"
-        style={{ backgroundColor: colour }}
-      />
+      <span className="w-2 h-2 rounded-full shrink-0 bg-brand-900" />
       <span className="text-xs font-semibold text-ink-800">{value}</span>
       <span className="text-xs text-ink-500">{label}</span>
     </div>

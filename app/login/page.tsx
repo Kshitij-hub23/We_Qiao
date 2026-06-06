@@ -5,8 +5,13 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GlassCard } from "@/components/GlassCard";
 import { Button } from "@/components/Button";
-import { login, getSession } from "@/lib/auth";
+import { login, getSession, type SessionUser } from "@/lib/auth";
 import { DEMO_USERS } from "@/lib/demo-users";
+
+/** Where each role lands after sign-in. */
+function landingFor(user: SessionUser): string {
+  return user.role === "caregiver" ? "/caregiver" : "/dashboard";
+}
 
 /* ── Inline SVG icons (no external dep) ─────────────────────────── */
 function EyeIcon() {
@@ -39,9 +44,10 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // If already logged in, skip straight to dashboard.
+  // If already logged in, skip straight to the right landing page.
   useEffect(() => {
-    if (getSession()) router.replace("/dashboard");
+    const s = getSession();
+    if (s) router.replace(landingFor(s));
   }, [router]);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -59,7 +65,7 @@ export default function LoginPage() {
       setError("Incorrect email or password.");
       return;
     }
-    router.push("/dashboard");
+    router.push(landingFor(user));
   }
 
   return (

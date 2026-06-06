@@ -6,7 +6,12 @@
  * the function signatures stay the same so no component needs to change.
  */
 
-export type RecordKind = "diseases" | "western" | "eastern";
+export type RecordKind =
+  | "diseases"
+  | "western"
+  | "eastern"
+  | "allergies"
+  | "treatment";
 
 function storageKey(userId: string, kind: RecordKind): string {
   return `qiao:${userId}:${kind}`;

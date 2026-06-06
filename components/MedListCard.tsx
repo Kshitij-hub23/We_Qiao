@@ -6,14 +6,16 @@ import { useState, useRef, type KeyboardEvent } from "react";
 interface Props {
   title: string;
   subtitle: string;
-  accentClass: string; // Tailwind bg+text classes for the header dot
-  dotColour: string; // hex for the small bullet
   items: string[];
   placeholder: string;
   emptyLabel: string;
   onAdd: (value: string) => void;
+  /** Request removal of an item — the parent shows a confirmation before deleting. */
   onRemove: (value: string) => void;
 }
+
+/** Single standardized dark-brown bullet colour used for every indicator. */
+const BULLET = "bg-brand-900";
 
 /** Inline SVG × icon — no external dependency. */
 function XIcon() {
@@ -54,7 +56,6 @@ function PlusIcon() {
 export function MedListCard({
   title,
   subtitle,
-  dotColour,
   items,
   placeholder,
   emptyLabel,
@@ -87,10 +88,7 @@ export function MedListCard({
       {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span
-            className="mt-0.5 w-2.5 h-2.5 rounded-full shrink-0"
-            style={{ backgroundColor: dotColour }}
-          />
+          <span className={`mt-0.5 w-2.5 h-2.5 rounded-full shrink-0 ${BULLET}`} />
           <div>
             <h3 className="text-sm font-semibold text-ink-800 leading-tight">{title}</h3>
             <p className="text-xs text-ink-400 mt-0.5">{subtitle}</p>
