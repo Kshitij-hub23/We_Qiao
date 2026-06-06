@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { DashboardNav } from "@/components/DashboardNav";
-import { MedListCard } from "@/components/MedListCard";
 import { GlassCard } from "@/components/GlassCard";
-import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { CaregiverSection } from "@/components/CaregiverSection";
 import { getSession, type SessionUser } from "@/lib/auth";
 import {
@@ -15,28 +13,6 @@ import {
   type PatientProfile,
   type EditableProfile,
 } from "@/lib/profile";
-import {
-  getItems,
-  addItem,
-  removeItem,
-  seedIfEmpty,
-  type RecordKind,
-} from "@/lib/user-records";
-
-const ELEANOR_SEED = {
-  diseases: ["Atrial fibrillation", "Type 2 diabetes", "Hypertension"],
-  western: ["Warfarin", "Metformin", "Amlodipine"],
-  eastern: ["Danshen", "Dong quai"],
-};
-const ELEANOR_ALLERGIES = ["Penicillin", "Sulfa drugs"];
-
-const KIND_NOUN: Record<RecordKind, string> = {
-  diseases: "medical condition",
-  western: "Western medicine",
-  eastern: "Chinese medicine",
-  allergies: "allergy",
-  treatment: "treatment record",
-};
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -46,14 +22,6 @@ export default function ProfilePage() {
   const [profile, setProfile] = useState<PatientProfile | null>(null);
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<EditableProfile | null>(null);
-
-  const [allergies, setAllergies] = useState<string[]>([]);
-  const [diseases, setDiseases] = useState<string[]>([]);
-  const [western, setWestern] = useState<string[]>([]);
-  const [eastern, setEastern] = useState<string[]>([]);
-
-  const [pendingDelete, setPendingDelete] =
-    useState<{ kind: RecordKind; item: string } | null>(null);
 
   useEffect(() => {
     const session = getSession();
@@ -66,20 +34,9 @@ export default function ProfilePage() {
       return;
     }
 
-    if (session.id === "u1") {
-      seedIfEmpty(session.id, ELEANOR_SEED);
-      if (getItems(session.id, "allergies").length === 0) {
-        ELEANOR_ALLERGIES.forEach((a) => addItem(session.id, "allergies", a));
-      }
-    }
-
     const p = getProfile(session.id, { email: session.email, name: session.name });
     setUser(session);
     setProfile(p);
-    setAllergies(getItems(session.id, "allergies"));
-    setDiseases(getItems(session.id, "diseases"));
-    setWestern(getItems(session.id, "western"));
-    setEastern(getItems(session.id, "eastern"));
     setMounted(true);
   }, [router]);
 
@@ -96,24 +53,6 @@ export default function ProfilePage() {
     if (!user || !draft) return;
     setProfile(updateProfile(user.id, draft));
     setEditing(false);
-  }
-
-  function setList(kind: RecordKind, items: string[]) {
-    if (kind === "allergies") setAllergies(items);
-    if (kind === "diseases") setDiseases(items);
-    if (kind === "western") setWestern(items);
-    if (kind === "eastern") setEastern(items);
-  }
-
-  function handleAdd(kind: RecordKind, value: string) {
-    if (!user) return;
-    setList(kind, addItem(user.id, kind, value));
-  }
-
-  function confirmRemove() {
-    if (!user || !pendingDelete) return;
-    setList(pendingDelete.kind, removeItem(user.id, pendingDelete.kind, pendingDelete.item));
-    setPendingDelete(null);
   }
 
   if (!mounted || !user || !profile) {
@@ -229,48 +168,6 @@ export default function ProfilePage() {
           </div>
         </Section>
 
-        {/* ── Medical information (with safe delete) ──────────────── */}
-        <Section title="Medical information" subtitle="Deletions require confirmation">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <MedListCard
-              title="Allergies"
-              subtitle="Known drug & substance allergies"
-              items={allergies}
-              placeholder="e.g. Penicillin"
-              emptyLabel="No allergies recorded yet."
-              onAdd={(v) => handleAdd("allergies", v)}
-              onRemove={(v) => setPendingDelete({ kind: "allergies", item: v })}
-            />
-            <MedListCard
-              title="Medical conditions"
-              subtitle="Diagnoses and ongoing conditions"
-              items={diseases}
-              placeholder="e.g. Hypertension"
-              emptyLabel="No conditions recorded yet."
-              onAdd={(v) => handleAdd("diseases", v)}
-              onRemove={(v) => setPendingDelete({ kind: "diseases", item: v })}
-            />
-            <MedListCard
-              title="Western medicines"
-              subtitle="Conventional pharmaceutical drugs"
-              items={western}
-              placeholder="e.g. Warfarin"
-              emptyLabel="No Western medicines recorded yet."
-              onAdd={(v) => handleAdd("western", v)}
-              onRemove={(v) => setPendingDelete({ kind: "western", item: v })}
-            />
-            <MedListCard
-              title="Chinese medicines (TCM)"
-              subtitle="Herbs, formulas and supplements"
-              items={eastern}
-              placeholder="e.g. Danshen"
-              emptyLabel="No TCM medicines recorded yet."
-              onAdd={(v) => handleAdd("eastern", v)}
-              onRemove={(v) => setPendingDelete({ kind: "eastern", item: v })}
-            />
-          </div>
-        </Section>
-
         {/* ── Caregivers ──────────────────────────────────────────── */}
         <CaregiverSection patientUserId={user.id} patientName={profile.fullName} />
 
@@ -279,15 +176,6 @@ export default function ProfilePage() {
           and not medical advice.
         </p>
       </main>
-
-      {/* Two-step delete confirmation for medical info */}
-      <ConfirmDialog
-        open={pendingDelete !== null}
-        title={`Delete ${pendingDelete ? KIND_NOUN[pendingDelete.kind] : "item"}`}
-        itemLabel={pendingDelete?.item ?? ""}
-        onCancel={() => setPendingDelete(null)}
-        onConfirm={confirmRemove}
-      />
     </>
   );
 }
