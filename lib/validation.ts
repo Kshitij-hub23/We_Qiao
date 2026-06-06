@@ -17,7 +17,7 @@ export const checkRequestSchema = z.object({
 
 export type ParsedCheckRequest = z.infer<typeof checkRequestSchema>;
 
-/** Body for /api/standardize: the confirmed free-text the user reviewed. */
-export const standardizeBodySchema = z.object({
+/** Body for /api/resolve: the confirmed free-text the user reviewed. */
+export const resolveBodySchema = z.object({
   text: z.string().max(20_000),
 });

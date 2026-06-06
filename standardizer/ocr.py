@@ -5,12 +5,14 @@ English or Chinese or mixed) and returns the raw text it contains, transcribed
 verbatim. This is the first step of the hero flow:
 
     image  ->  ocr.extract_text_from_image()  ->  raw text
-           ->  standardizer.standardize_medicines()  ->  DB-canonical lists
+           ->  standardize.extract_medicines()  ->  candidate names
+           ->  hdi-api /api/v1/resolve          ->  entity_ids
            ->  hdi-api /api/v1/check-conflicts
 
 It only *reads pixels into text* — it does not classify, normalize, or judge
-anything. Name normalization is the standardizer's job; the safety verdict is
-the deterministic engine's (CLAUDE.md, principle #2).
+anything. Name extraction is the standardizer's job, entity matching is the
+engine's resolver, and the safety verdict is the deterministic check (CLAUDE.md,
+principle #2).
 
 The model is reached through Google's Gemini API. The API key is read from the
 environment server-side only and must never reach the browser.

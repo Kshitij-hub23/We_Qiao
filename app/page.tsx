@@ -16,10 +16,10 @@ import {
   checkConflicts,
   getEngineHealth,
   ocrImage,
-  standardizeText,
+  resolveText,
   ApiError,
 } from "@/lib/api-client";
-import type { ConflictDetail } from "@/lib/types";
+import type { ConflictDetail, ResolvedMatch } from "@/lib/types";
 import { getSession, type SessionUser } from "@/lib/auth";
 import { addItem, getItems, removeItem } from "@/lib/user-records";
 import { useT, useTerm } from "@/lib/i18n";
@@ -51,6 +51,7 @@ function mergeUnique(existing: string[], incoming: string[]): string[] {
 export default function Home() {
   const router = useRouter();
   const t = useT();
+  const term = useTerm();
 
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -68,6 +69,11 @@ export default function Home() {
   const [addBusy, setAddBusy] = useState(false);
   const [intakeError, setIntakeError] = useState("");
   const [intakeNotice, setIntakeNotice] = useState("");
+
+  // Low-confidence (fuzzy) matches awaiting human confirmation, and names that
+  // resolved to nothing. Neither enters the conflict check until acted on.
+  const [pending, setPending] = useState<ResolvedMatch[]>([]);
+  const [unmatched, setUnmatched] = useState<string[]>([]);
 
   const [status, setStatus] = useState<Status>("loading");
   const [conflicts, setConflicts] = useState<ConflictDetail[]>([]);
@@ -139,28 +145,67 @@ export default function Home() {
     }
   }
 
-  // Confirmed text → standardize → persist into the profile (deduped, additive).
+  /** Persist one resolved match into the correct profile list (by entity type). */
+  function addMatchToProfile(match: ResolvedMatch): number {
+    if (!user) return 0;
+    if (match.type === "WM-drug") {
+      const w = addItem(user.id, "western", match.preferred_name);
+      const added = w.length - western.length;
+      setWestern(w);
+      return added;
+    }
+    const e = addItem(user.id, "eastern", match.preferred_name);
+    const added = e.length - eastern.length;
+    setEastern(e);
+    return added;
+  }
+
+  // Confirmed text → extract (LLM) → resolve (deterministic) → persist matches.
+  // High-confidence matches are added automatically; low-confidence (fuzzy)
+  // matches wait for the user to confirm; unmatched names are surfaced, never
+  // dropped, and are not sent to the conflict check.
   async function handleAddToProfile() {
     if (!draft.trim() || !user) return;
     setIntakeError("");
     setIntakeNotice("");
     setAddBusy(true);
     try {
-      const meds = await standardizeText(draft);
-      let w = western;
-      let e = eastern;
-      for (const name of meds.western_medicines) w = addItem(user.id, "western", name);
-      for (const name of meds.eastern_medicines) e = addItem(user.id, "eastern", name);
-      const added = w.length - western.length + (e.length - eastern.length);
-      setWestern(w);
-      setEastern(e);
+      const { matched, unmatched: unresolved } = await resolveText(draft);
+
+      let added = 0;
+      const needsConfirm: ResolvedMatch[] = [];
+      for (const match of matched) {
+        if (match.requires_confirmation) {
+          needsConfirm.push(match);
+        } else {
+          added += addMatchToProfile(match);
+        }
+      }
+
+      setPending(needsConfirm);
+      setUnmatched(unresolved);
       setDraft("");
-      setIntakeNotice(added > 0 ? t("intake.added", { n: added }) : t("intake.noNew"));
+
+      const notes: string[] = [];
+      notes.push(added > 0 ? t("intake.added", { n: added }) : t("intake.noNew"));
+      if (needsConfirm.length > 0) notes.push(t("intake.needsConfirm", { n: needsConfirm.length }));
+      if (unresolved.length > 0) notes.push(t("intake.someUnmatched", { n: unresolved.length }));
+      setIntakeNotice(notes.join(" "));
     } catch (err) {
       setIntakeError(err instanceof ApiError ? err.message : t("intake.stdError"));
     } finally {
       setAddBusy(false);
     }
+  }
+
+  /** User confirms a low-confidence suggestion — add it and clear it from the list. */
+  function confirmPending(match: ResolvedMatch) {
+    addMatchToProfile(match);
+    setPending((prev) => prev.filter((m) => m.candidate !== match.candidate));
+  }
+
+  function dismissPending(match: ResolvedMatch) {
+    setPending((prev) => prev.filter((m) => m.candidate !== match.candidate));
   }
 
   function removeWestern(item: string) {
@@ -237,6 +282,65 @@ export default function Home() {
                 <p className={`text-xs ${intakeError ? "text-severity-major" : "text-ink-500"}`}>
                   {intakeError || intakeNotice}
                 </p>
+              )}
+
+              {pending.length > 0 && (
+                <div className="flex flex-col gap-3 rounded-xl border border-severity-moderate/30 bg-severity-moderate/5 p-4">
+                  <div>
+                    <p className="text-sm font-semibold text-ink-800">{t("intake.confirmTitle")}</p>
+                    <p className="text-xs text-ink-500">{t("intake.confirmHint")}</p>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    {pending.map((m) => (
+                      <div
+                        key={m.candidate}
+                        className="flex items-center justify-between gap-3 rounded-lg bg-white/60 px-3 py-2 text-sm"
+                      >
+                        <span className="text-ink-700">
+                          “{m.candidate}” →{" "}
+                          <span className="font-semibold text-ink-900">{term(m.preferred_name)}</span>
+                          <span className="ml-1 text-ink-400">({Math.round(m.score * 100)}%)</span>
+                        </span>
+                        <span className="flex shrink-0 items-center gap-1.5">
+                          <button
+                            type="button"
+                            onClick={() => confirmPending(m)}
+                            className="rounded-full bg-brand-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-brand-600"
+                          >
+                            {t("common.add")}
+                          </button>
+                          <button
+                            type="button"
+                            aria-label={t("common.cancel")}
+                            onClick={() => dismissPending(m)}
+                            className="rounded-full px-2 py-1 text-xs text-ink-400 transition hover:text-ink-700"
+                          >
+                            ×
+                          </button>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {unmatched.length > 0 && (
+                <div className="flex flex-col gap-2 rounded-xl border border-ink-200/70 bg-ink-50/50 p-4">
+                  <div>
+                    <p className="text-sm font-semibold text-ink-800">{t("intake.unmatchedTitle")}</p>
+                    <p className="text-xs text-ink-500">{t("intake.unmatchedHint")}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {unmatched.map((name, i) => (
+                      <span
+                        key={`${name}-${i}`}
+                        className="inline-flex items-center rounded-full border border-ink-200 bg-white/70 px-3 py-1 text-sm text-ink-600"
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               )}
 
               <div className="flex justify-end border-t border-white/60 pt-5">

@@ -19,7 +19,14 @@ from sqlalchemy import and_, or_
 from sqlalchemy.orm import Session
 
 from database import Entity, EntityAlias, Interaction, get_db, init_db
-from models import ConflictDetail, InteractionRequest
+from models import (
+    ConflictDetail,
+    InteractionRequest,
+    ResolvedMatch,
+    ResolveRequest,
+    ResolveResponse,
+)
+from resolver import resolve_candidates
 
 # Only TCM-WM is consumed by the live endpoint today.
 _LIVE_CLASS = "TCM-WM"
@@ -45,6 +52,28 @@ app = FastAPI(
 def health() -> dict:
     """Liveness probe."""
     return {"status": "ok"}
+
+
+@app.post("/api/v1/resolve", response_model=ResolveResponse, tags=["resolve"])
+def resolve(request: ResolveRequest, db: Session = Depends(get_db)) -> ResolveResponse:
+    """Resolve candidate medicine names to dataset entities (deterministic).
+
+    The LLM extraction step (`standardizer/`) produces surface name strings; this
+    endpoint is where they become known entities. Each candidate is normalized
+    (lowercase, tone-stripped pinyin, OpenCC simplified⇄traditional) and matched
+    against the alias index — exact first, then a rapidfuzz fallback.
+
+    This is the safety boundary (CLAUDE.md, principle #2): only the entity_ids
+    returned here may enter `/api/v1/check-conflicts`. Fuzzy matches below the
+    high-confidence threshold carry `requires_confirmation: true` so the caller
+    asks a human before trusting them. Names that resolve to nothing come back in
+    `unmatched` — the caller surfaces them, never silently drops them.
+    """
+    matched, unmatched = resolve_candidates(db, request.candidates)
+    return ResolveResponse(
+        matched=[ResolvedMatch(**vars(m)) for m in matched],
+        unmatched=unmatched,
+    )
 
 
 @app.post(

@@ -1,4 +1,4 @@
-import type { CheckRequest, ConflictDetail } from "./types";
+import type { CheckRequest, ConflictDetail, ResolveResponse, ResolvedMatch } from "./types";
 
 /**
  * Server-side wrapper around the external HDI engine (Python/FastAPI).
@@ -48,6 +48,36 @@ export async function checkConflicts(req: CheckRequest): Promise<ConflictDetail[
 
   const data = (await res.json()) as ConflictDetail[];
   return Array.isArray(data) ? data : [];
+}
+
+/**
+ * Resolve extracted candidate names to dataset entities (the deterministic
+ * matching step). This is the safety boundary: only entities returned here may
+ * enter a conflict check, and fuzzy matches carry `requires_confirmation`.
+ */
+export async function resolveCandidates(candidates: string[]): Promise<ResolveResponse> {
+  let res: Response;
+  try {
+    res = await fetchWithTimeout(`${ENGINE_URL}/api/v1/resolve`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ candidates }),
+      cache: "no-store",
+    });
+  } catch (err) {
+    const reason = err instanceof Error && err.name === "AbortError" ? "timed out" : "could not be reached";
+    throw new EngineUnavailableError(`The conflict engine ${reason} at ${ENGINE_URL}.`);
+  }
+
+  if (!res.ok) {
+    throw new EngineUnavailableError(`The conflict engine responded with HTTP ${res.status}.`);
+  }
+
+  const data = (await res.json()) as Partial<ResolveResponse>;
+  return {
+    matched: Array.isArray(data.matched) ? (data.matched as ResolvedMatch[]) : [],
+    unmatched: Array.isArray(data.unmatched) ? (data.unmatched as string[]) : [],
+  };
 }
 
 /** Liveness check used by /api/engine/health for the connection indicator. */

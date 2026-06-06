@@ -61,9 +61,11 @@ trusted person credentialed, permission-scoped read access to their record.
 
 To add medicines, a user uploads a prescription photo (or types into a text box). The image is OCR'd
 by the **intake service** (Gemini), the text is shown for the user to confirm/edit, then it is
-**standardized** (mapped to the engine's known medicine names) and merged into their lists — additive,
-de-duplicated. The Western + Chinese lists are sent to the external engine, which returns the
-severity-rated conflicts. The whole UI is **bilingual (English / 繁體中文)** via a header toggle, and
+**extracted** into candidate names (Gemini) and **resolved** to known entities by the engine's
+deterministic matcher (exact alias + fuzzy fallback). Confident matches merge into the lists
+(additive, de-duplicated); low-confidence (fuzzy) matches wait for the user to confirm, and names that
+match nothing are surfaced as "recognized but not in the interaction database" — never silently dropped.
+The Western + Chinese lists are sent to the engine, which returns the severity-rated conflicts. The whole UI is **bilingual (English / 繁體中文)** via a header toggle, and
 clinical term names are localized for display.
 
 **Auth and storage are demo-grade and client-side:** sessions and records live in the browser
@@ -71,6 +73,10 @@ clinical term names are localized for display.
 
 ### The engine contract (`hdi-api/` — we only consume it)
 - Runs locally at `http://127.0.0.1:8000` (FastAPI, `hdi-api/`).
+- `POST /api/v1/resolve` — body `{ "candidates": string[] }` → `{ matched: [{ candidate, entity_id,
+  preferred_name, type, score, method, requires_confirmation }], unmatched: string[] }`. The
+  deterministic name→entity matcher (exact alias + `rapidfuzz` fuzzy fallback; normalizes pinyin tones
+  and simplified⇄traditional Chinese). This is the safety boundary — only resolved entities reach the check.
 - `POST /api/v1/check-conflicts` — body `{ "western_medicines": string[], "eastern_medicines": string[] }`
   → returns `[{ western_drug, tcm_herb, severity, mechanism }]`. Case-insensitive + alias-aware; empty lists → `[]`.
 - `GET /health` → `{ "status": "ok" }`.
@@ -194,3 +200,29 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   blue/teal palette to a warm espresso/terracotta scheme, with a single dark-brown bullet/indicator colour.
 - **Merge `users` → `main`:** the portal, i18n, and the engine/intake/docs work now live together on
   `main` — the complete runnable app. Conflict-free (disjoint file sets).
+- **Entity-linking re-architecture (extract → resolve → check):** the medicine vocabulary no longer
+  lives in the LLM prompt — it doesn't scale to ~500–600 herbs and it put matching inside the model.
+  Now the LLM only **extracts** candidate name strings (`standardizer/standardize.py` →
+  `extract_medicines`, `POST /api/v1/extract`; vocabulary removed), and a new deterministic **resolver**
+  on the engine does the matching (`hdi-api/resolver.py`, `POST /api/v1/resolve`): normalize (lowercase,
+  tone-stripped pinyin, OpenCC simplified⇄traditional) → exact alias → `rapidfuzz` fuzzy fallback over
+  the in-memory alias set. The resolver is the **safety boundary** — only resolved `entity_id`s enter
+  the unchanged `check-conflicts`; low-confidence fuzzy matches carry `requires_confirmation` (a human
+  confirms them in the UI), and `unmatched` names are surfaced, never dropped. Added `ingest_herbs.py`
+  (folds a herb-vocabulary CSV per `HERB_DATASET_SPEC.md` into `entities.json`, **preserving entity_ids
+  by name** so interaction links survive, carrying over referenced herbs the CSV omits) + a tiny
+  `mock_herbs.csv` so the real CSV is a drop-in. `seed.py` alias build extended with the same
+  normalization; new deps `rapidfuzz` + `opencc-python-reimplemented`. Frontend rewired: `/api/resolve`
+  runs extract→resolve, the intake page auto-adds confident matches and shows confirm/unmatched bands
+  (EN/繁體中文). Verified end-to-end: warfarin × danshen → major flag; 丹参/丹參/dānshēn → exact `E-0001`;
+  `danshne` → fuzzy (confirm); unknown → unmatched; ingest preserves `E-0001` and assigns new ids above
+  the WM block; typecheck + `npm run build` clean. **Note:** the live Gemini call needs a valid
+  `GEMINI_API_KEY` — the key in `.env` was reported leaked/revoked by Google and must be rotated.
+- **Ingest the real herb vocabulary:** ran `ingest_herbs.py` on the provided `TCM_HERBS_DATASET.csv`
+  (332 herbs) → **354 entities, 2150 aliases, 51 interactions** in the engine. 19 of the 22
+  interaction-referenced herbs matched the CSV by name and kept their ids (CSV spellings merged in as
+  aliases — e.g. the CSV's "Salvia Root" / "丹參" now resolves to the curated **Danshen** `E-0001`); the 3
+  not in this Chinese-herb CSV (Garlic, St John's Wort, Veratrum) were carried over with their links
+  intact; 308 new herbs got fresh ids above the WM block. Switched the fuzzy scorer to
+  `token_sort_ratio` (WRatio over-matched junk at scale — `"totally unknown zzz"`→0.90; now unmatched),
+  keeping real typos (`danshne`→Danshen, confirm) working.

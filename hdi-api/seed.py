@@ -59,6 +59,7 @@ from pathlib import Path
 from typing import Iterable
 
 from database import Base, Entity, EntityAlias, Interaction, SessionLocal, engine
+from resolver import normalize_variants
 
 DATA_DIR = Path(__file__).parent / "Medicine_data"
 
@@ -69,7 +70,7 @@ _NAME_FIELDS = ("preferred_name", "latin", "pinyin", "chinese")
 
 
 def _variants(value: str) -> Iterable[str]:
-    """Yield lowercased alias variants from one raw name string.
+    """Yield normalized alias variants from one raw name string.
 
     HANDLES TWO COMMON PATTERNS
     ===========================
@@ -82,14 +83,17 @@ def _variants(value: str) -> Iterable[str]:
        Output: "bai guo (seed)", "bai guo"
        (Both forms are offered; "bai guo" alone catches parent-less variants)
 
-    ALL VARIANTS ARE LOWERCASED
-    ===========================
-    So "Aspirin", "ASPIRIN", "aspirin" all map to the same lowercased alias.
+    NORMALIZATION (matches resolver.normalize_variants exactly)
+    ===========================================================
+    Each form is expanded into: lowercased, tone-stripped pinyin (dānshēn ->
+    danshen), and OpenCC simplified⇄traditional Chinese (丹参 ⇄ 丹參). Indexing
+    the same variants the resolver computes at query time means a user typing
+    either Chinese script or tone-free pinyin lands on an EXACT alias hit.
 
     USAGE
     =====
-    Called once per entity field per name field during ingestion. Every variant
-    is added to the EntityAlias table, so users can search using any known form.
+    Called once per name field during ingestion. Every variant is added to the
+    EntityAlias table, so users can search using any known form.
     """
     if not value:
         return
@@ -97,10 +101,12 @@ def _variants(value: str) -> Iterable[str]:
         part = part.strip()
         if not part:
             continue
-        yield part.lower()
+        forms = [part]
         stripped = re.sub(r"\(.*?\)", "", part).strip()
         if stripped and stripped.lower() != part.lower():
-            yield stripped.lower()
+            forms.append(stripped)
+        for form in forms:
+            yield from normalize_variants(form)
 
 
 def _aliases_for(entity: dict) -> set[str]:

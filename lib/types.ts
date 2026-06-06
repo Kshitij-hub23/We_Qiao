@@ -25,18 +25,37 @@ export type CheckResult =
   | { ok: true; conflicts: ConflictDetail[] }
   | { ok: false; error: string };
 
-/* ---- Intake (OCR + standardize) — proxied to the Python intake service ---- */
-
-/** Split, DB-canonical medicine lists returned by the standardize step. */
-export interface StandardizedMedicines {
-  western_medicines: string[];
-  eastern_medicines: string[];
-}
+/* ---- Intake: OCR (intake service) → extract (intake) → resolve (engine) ---- */
 
 /** Shape our /api/ocr route returns to the browser. */
 export type OcrResult = { ok: true; text: string } | { ok: false; error: string };
 
-/** Shape our /api/standardize route returns to the browser. */
-export type StandardizeResult =
-  | { ok: true; medicines: StandardizedMedicines }
+/** Entity type as stored in the dataset. */
+export type EntityType = "WM-drug" | "TCM-herb" | "TCM-formula";
+
+/**
+ * One extracted candidate name resolved to a dataset entity by the engine's
+ * deterministic resolver. `requires_confirmation` is true for fuzzy matches
+ * below the high-confidence threshold — these must be confirmed by a human
+ * before they enter the conflict check (the resolver is the safety boundary).
+ */
+export interface ResolvedMatch {
+  candidate: string;
+  entity_id: string;
+  preferred_name: string;
+  type: EntityType;
+  score: number;
+  method: "exact" | "fuzzy";
+  requires_confirmation: boolean;
+}
+
+/** Result of resolving a free-text intake: matches + names nothing matched. */
+export interface ResolveResponse {
+  matched: ResolvedMatch[];
+  unmatched: string[];
+}
+
+/** Shape our /api/resolve route returns to the browser. */
+export type ResolveResult =
+  | { ok: true; matched: ResolvedMatch[]; unmatched: string[] }
   | { ok: false; error: string };

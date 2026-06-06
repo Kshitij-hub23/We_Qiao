@@ -218,7 +218,15 @@ const EN: Strings = {
   "intake.added": "Added {n} medicine(s) to your profile.",
   "intake.noNew": "No new recognized medicines to add.",
   "intake.ocrError": "Could not read that image.",
-  "intake.stdError": "Could not standardize that text.",
+  "intake.stdError": "Could not process that text.",
+  "intake.needsConfirm": "{n} need your confirmation.",
+  "intake.someUnmatched": "{n} not in the interaction database.",
+  "intake.confirmTitle": "Confirm these matches",
+  "intake.confirmHint":
+    "We weren't certain about these. Confirm the ones that are right — only confirmed medicines are checked for interactions.",
+  "intake.unmatchedTitle": "Recognized, but not in our interaction database",
+  "intake.unmatchedHint":
+    "These were read from your text but don't match a known medicine, so they were not checked. Nothing was dropped — review them with a clinician.",
 
   // attach
   "attach.title": "Attach prescriptions",
@@ -440,7 +448,15 @@ const ZH: Strings = {
   "intake.added": "已將 {n} 種藥物加入您的紀錄。",
   "intake.noNew": "沒有可新增的已識別藥物。",
   "intake.ocrError": "無法讀取該相片。",
-  "intake.stdError": "無法標準化該文字。",
+  "intake.stdError": "無法處理該文字。",
+  "intake.needsConfirm": "{n} 項需要您確認。",
+  "intake.someUnmatched": "{n} 項不在相互作用資料庫中。",
+  "intake.confirmTitle": "請確認以下配對",
+  "intake.confirmHint":
+    "我們未能確定以下配對。請確認正確的項目 — 只有經確認的藥物才會進行相互作用檢查。",
+  "intake.unmatchedTitle": "已辨識，但不在我們的相互作用資料庫中",
+  "intake.unmatchedHint":
+    "以下項目已從文字中辨識，但未能對應已知藥物，因此未作檢查。沒有任何項目被略去 — 請與醫護人員一同檢視。",
 
   // attach
   "attach.title": "附加處方",

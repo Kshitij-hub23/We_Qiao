@@ -3,9 +3,12 @@
 Wraps the two fuzzy-step functions so the Next.js app can reach them with the
 same proxy pattern it uses for the engine:
 
-    POST /api/v1/ocr          multipart image  -> { "text": "<transcribed>" }
-    POST /api/v1/standardize  { "text": ... }  -> { western_medicines, eastern_medicines }
-    GET  /health              liveness probe
+    POST /api/v1/ocr        multipart image  -> { "text": "<transcribed>" }
+    POST /api/v1/extract    { "text": ... }  -> { "candidates": [...] }
+    GET  /health            liveness probe
+
+The extract step only surfaces candidate medicine names; mapping them to dataset
+entities is the engine's deterministic `/api/v1/resolve` (the safety boundary).
 
 Kept as its own service, separate from the deterministic `hdi-api` engine, so
 the fuzzy (LLM) half and the deterministic (lookup) half stay cleanly split
@@ -22,7 +25,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel
 
 from ocr import extract_text_from_image
-from standardize import StandardizedMedicines, standardize_medicines
+from standardize import ExtractedMedicines, extract_medicines
 
 app = FastAPI(
     title="Qiáo Intake API",
@@ -60,14 +63,14 @@ async def ocr(image: UploadFile = File(...)) -> dict:
     return {"text": text}
 
 
-class StandardizeBody(BaseModel):
+class ExtractBody(BaseModel):
     text: str
 
 
-@app.post("/api/v1/standardize", response_model=StandardizedMedicines, tags=["intake"])
-def standardize(body: StandardizeBody) -> StandardizedMedicines:
-    """Map free-text medicines onto the database vocabulary (split WM / TCM)."""
+@app.post("/api/v1/extract", response_model=ExtractedMedicines, tags=["intake"])
+def extract(body: ExtractBody) -> ExtractedMedicines:
+    """Extract candidate medicine-name strings from free text (no matching)."""
     try:
-        return standardize_medicines(body.text)
+        return extract_medicines(body.text)
     except Exception as exc:  # Gemini errors, key issues, etc.
-        raise HTTPException(status_code=502, detail=f"Standardization failed: {exc}") from exc
+        raise HTTPException(status_code=502, detail=f"Extraction failed: {exc}") from exc

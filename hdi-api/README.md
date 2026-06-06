@@ -26,6 +26,48 @@ Server is live at **http://127.0.0.1:8000**
 
 ## Using the API
 
+### Resolve names to entities
+
+**POST** `/api/v1/resolve` — the deterministic matching step (and the safety
+boundary). The LLM extraction step (`../standardizer/`) returns surface candidate
+names with no vocabulary; this endpoint maps them to dataset entities so only
+known entities reach a conflict check.
+
+**Request:**
+```json
+{ "candidates": ["Coumadin", "丹參", "danshne", "totally unknown herb"] }
+```
+
+**Response:**
+```json
+{
+  "matched": [
+    {"candidate": "Coumadin", "entity_id": "E-0101", "preferred_name": "Warfarin",
+     "type": "WM-drug", "score": 1.0, "method": "exact", "requires_confirmation": false},
+    {"candidate": "丹參", "entity_id": "E-0001", "preferred_name": "Danshen",
+     "type": "TCM-herb", "score": 1.0, "method": "exact", "requires_confirmation": false},
+    {"candidate": "danshne", "entity_id": "E-0001", "preferred_name": "Danshen",
+     "type": "TCM-herb", "score": 0.857, "method": "fuzzy", "requires_confirmation": true}
+  ],
+  "unmatched": ["totally unknown herb"]
+}
+```
+
+**How it resolves each candidate** (`resolver.py`):
+1. **Normalize** into variant forms — lowercase, trim, tone-stripped pinyin
+   (`dānshēn`→`danshen`), and OpenCC simplified⇄traditional (`丹参`⇄`丹參`).
+2. **Exact** — any variant that is a key in the alias index resolves immediately
+   (`method: "exact"`, score `1.0`).
+3. **Fuzzy fallback** — otherwise `rapidfuzz` scores the candidate against the
+   in-memory alias set (it's SQLite, not a vector DB — fuzzy runs in Python). A
+   match below the high-confidence threshold (0.90) is returned with
+   `requires_confirmation: true` so the caller asks a human before trusting it.
+4. **Unmatched** — anything no variant resolves is returned in `unmatched`,
+   never silently dropped.
+
+Matches de-duplicate by resolved `entity_id` (the first candidate that lands on
+an entity wins).
+
 ### Check for conflicts
 
 **POST** `/api/v1/check-conflicts`
@@ -113,9 +155,11 @@ form for matching. Three tables (auto-created empty on startup):
 | `latin`, `pinyin`, `chinese` | String | TCM only. |
 | `common_names`, `active_constituents` | Text | JSON arrays. |
 
-**`entity_aliases`** — every lowercased name form → `entity_id` (preferred name, latin, pinyin, chinese,
-each common name, plus `/`-split and parenthetical-stripped variants). Indexed on `alias`; unique on
-`(alias, entity_id)`. This is what makes lookups alias-aware.
+**`entity_aliases`** — every normalized name form → `entity_id` (preferred name, latin, pinyin, chinese,
+each common name, plus `/`-split and parenthetical-stripped variants). Each form is expanded with the same
+normalization the resolver applies at query time — lowercasing, tone-stripped pinyin, and OpenCC
+simplified⇄traditional Chinese — so either Chinese script or tone-free pinyin lands on an **exact** hit.
+Indexed on `alias`; unique on `(alias, entity_id)`. This is what makes lookups alias-aware.
 
 **`interactions`** — one row per curated pair (from `interactions.json`), **all three classes**:
 
@@ -146,6 +190,23 @@ python seed.py
 scratch (so re-runs are idempotent), validates referential integrity, builds the alias index, and prints
 counts per class. Current dataset: **46 entities, 51 interactions** (30 TCM-WM, 12 WM-WM, 9 TCM-TCM).
 Re-run it whenever the dataset changes.
+
+### Ingesting the herb vocabulary (CSV)
+
+The interaction links are authored by hand; the TCM **herb vocabulary** (the names the resolver matches
+against, expanding to ~500–600 herbs) arrives separately as a CSV (see [`../HERB_DATASET_SPEC.md`](../HERB_DATASET_SPEC.md)).
+Fold a CSV into `entities.json` and re-seed in one step:
+
+```bash
+python ingest_herbs.py path/to/herbs.csv          # writes entities.json + re-seeds
+python ingest_herbs.py path/to/herbs.csv --dry-run  # preview only
+```
+
+`ingest_herbs.py` **preserves entity_ids by name** (a CSV herb matching an entity already referenced by an
+interaction reuses that id, so the curated links keep pointing at the right herb), assigns fresh ids above
+the Western-drug block for new herbs, **carries over** any referenced herb the CSV omits (so re-seeding
+never dangles), and leaves Western drugs untouched. A tiny `mock_herbs.csv` (the hero-pair herb + a novel
+one) is included so the pipeline can be validated before the real CSV lands — it's a drop-in replacement.
 
 ### Inspecting the database
 
@@ -219,14 +280,21 @@ the frontend.
 After running `python seed.py`, you'll see output like:
 
 ```
-Seeded 46 entities, 189 aliases, 51 interactions.
+# curated baseline (entities.json as authored):
+Seeded 46 entities, 231 aliases, 51 interactions.
+# after ingesting the provided 332-herb CSV (python ingest_herbs.py ../TCM_HERBS_DATASET.csv):
+Seeded 354 entities, 2150 aliases, 51 interactions.
   by class: {'TCM-WM': 30, 'WM-WM': 12, 'TCM-TCM': 9}
 ```
 
 ### Breakdown
 
-- **46 entities:** 24 WM drugs + 22 TCM herbs/formulas
-- **189 aliases:** ~4 name variants per entity (preferred name + synonyms + splits)
+- **Curated baseline — 46 entities:** 24 WM drugs + 22 TCM herbs/formulas (the entities the 51 interactions
+  reference). The TCM **herb vocabulary** then expands via `ingest_herbs.py` (the provided CSV adds 308 new
+  herbs → 354 entities; 19 of the 22 referenced herbs are matched by name and keep their ids, 3 not in the
+  CSV are carried over).
+- **~5 aliases per entity:** preferred name + synonyms + `/`-splits + tone-stripped pinyin + OpenCC
+  simplified/traditional.
 - **51 interactions:** 30 TCM-WM, 12 WM-WM, 9 TCM-TCM
   - **TCM-WM:** The core product focus (what the API endpoint returns)
   - **WM-WM:** Drug-drug interactions (stored for future endpoints)
@@ -238,15 +306,18 @@ Seeded 46 entities, 189 aliases, 51 interactions.
 
 | File | Responsibility |
 |------|---|
-| `main.py` | FastAPI app, health probe, `/api/v1/check-conflicts` endpoint |
-| `models.py` | Pydantic request/response schemas |
+| `main.py` | FastAPI app, health probe, `/api/v1/resolve` + `/api/v1/check-conflicts` endpoints |
+| `models.py` | Pydantic request/response schemas (incl. `ResolveRequest`/`ResolveResponse`) |
+| `resolver.py` | Deterministic name→entity resolution: normalize + exact alias + `rapidfuzz` fallback |
 | `database.py` | SQLAlchemy ORM models (`Entity`, `EntityAlias`, `Interaction`), engine, sessions |
 | `seed.py` | ETL: loads `Medicine_data/*.json`, validates, populates DB, builds alias index |
+| `ingest_herbs.py` | Fold a herb-vocabulary CSV into `entities.json` (preserve ids by name) + re-seed |
+| `mock_herbs.csv` | Tiny sample CSV (hero-pair herb + a novel one) to validate ingest before the real CSV |
 | `Medicine_data/entities.json` | 46 entities (WM drugs + TCM herbs) with all name forms |
 | `Medicine_data/interactions.json` | 51 sourced interaction pairs (all three classes) |
 | `Medicine_data/SOURCES.md` | Full citations and evidence links |
 | `Medicine_data/coverage_report.md` | Interaction coverage analysis |
-| `requirements.txt` | Dependencies: `fastapi`, `uvicorn[standard]`, `sqlalchemy` |
+| `requirements.txt` | Deps: `fastapi`, `uvicorn[standard]`, `sqlalchemy`, `rapidfuzz`, `opencc-python-reimplemented` |
 
 ---
 

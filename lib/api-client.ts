@@ -3,8 +3,8 @@ import type {
   CheckResult,
   ConflictDetail,
   OcrResult,
-  StandardizeResult,
-  StandardizedMedicines,
+  ResolveResponse,
+  ResolveResult,
 } from "./types";
 
 /**
@@ -65,11 +65,14 @@ export async function ocrImage(file: File): Promise<string> {
   return data.text;
 }
 
-/** Send confirmed text to our proxy; get back split DB-canonical medicine lists. */
-export async function standardizeText(text: string): Promise<StandardizedMedicines> {
+/**
+ * Send confirmed text to our proxy; get back entity-resolved matches plus the
+ * names nothing matched. The proxy runs extract (LLM) → resolve (deterministic).
+ */
+export async function resolveText(text: string): Promise<ResolveResponse> {
   let res: Response;
   try {
-    res = await fetch("/api/standardize", {
+    res = await fetch("/api/resolve", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -78,15 +81,15 @@ export async function standardizeText(text: string): Promise<StandardizedMedicin
     throw new ApiError("Could not reach the app server. Check your connection and try again.");
   }
 
-  let data: StandardizeResult;
+  let data: ResolveResult;
   try {
-    data = (await res.json()) as StandardizeResult;
+    data = (await res.json()) as ResolveResult;
   } catch {
     throw new ApiError("The server returned an unexpected response.");
   }
 
   if (!data.ok) throw new ApiError(data.error);
-  return data.medicines;
+  return { matched: data.matched, unmatched: data.unmatched };
 }
 
 /** Lightweight liveness check for the connection indicator. */

@@ -10,7 +10,12 @@
       "red sage",
       "Chinese sage root",
       "tan shen",
-      "Salviae miltiorrhizae radix"
+      "Salviae miltiorrhizae radix",
+      "Salvia Root",
+      "Radix Salviae Miltiorrhizae",
+      "dan shen",
+      "丹參",
+      "Danshen"
     ],
     "active_constituents": [
       "tanshinones",
@@ -30,7 +35,11 @@
       "dong quai",
       "Chinese angelica",
       "tang kuei",
-      "Angelicae sinensis radix"
+      "Angelicae sinensis radix",
+      "Angelica Root",
+      "Radix Angelicae Sinensis",
+      "dang gui",
+      "當歸"
     ],
     "active_constituents": [
       "coumarin derivatives (ferulic acid, osthole)",
@@ -50,7 +59,12 @@
       "ginkgo leaf extract",
       "EGb 761",
       "maidenhair tree",
-      "bai guo (seed)"
+      "bai guo (seed)",
+      "Ginkgo Seed",
+      "Semen Ginkgo",
+      "bai guo",
+      "白果",
+      "Maidenhair nut"
     ],
     "active_constituents": [
       "ginkgo flavone glycosides",
@@ -68,7 +82,12 @@
     "common_names": [
       "American ginseng",
       "xiyangshen",
-      "Panax quinquefolium"
+      "Panax quinquefolium",
+      "Radix Panacis Quinquefolii",
+      "xi yang shen",
+      "西洋參",
+      "Panax",
+      "American"
     ],
     "active_constituents": [
       "ginsenosides"
@@ -86,7 +105,13 @@
       "Korean red ginseng",
       "Chinese ginseng",
       "Panax ginseng",
-      "Ginseng radix"
+      "Ginseng radix",
+      "Ginseng Root",
+      "Radix Ginseng",
+      "ren shen",
+      "人參",
+      "Ginseng",
+      "Panax"
     ],
     "active_constituents": [
       "ginsenosides",
@@ -123,7 +148,11 @@
       "licorice",
       "liquorice",
       "gan cao",
-      "Glycyrrhizae radix"
+      "Glycyrrhizae radix",
+      "Licorice Root",
+      "Radix Glycyrrhizae",
+      "甘草",
+      "Sweet root"
     ],
     "active_constituents": [
       "glycyrrhizin",
@@ -150,6 +179,318 @@
       "hyperforin",
       "hypericin",
       "flavonoids"
+    ]
+  },
+  {
+    "entity_id": "E-0009",
+    "preferred_name": "Schisandra (Wuzhi)",
+    "type": "TCM-herb",
+    "latin": "Schisandra sphenanthera",
+    "pinyin": "nan wuweizi",
+    "chinese": "南五味子",
+    "common_names": [
+      "schisandra",
+      "Wuzhi tablet",
+      "nan-wuweizi",
+      "Schisandra chinensis (related, 五味子)",
+      "Schisandra Fruit",
+      "Fructus Schisandrae",
+      "wu wei zi",
+      "五味子",
+      "Magnolia"
+    ],
+    "active_constituents": [
+      "schisandrin",
+      "schisantherin A",
+      "deoxyschizandrin",
+      "gomisin"
+    ]
+  },
+  {
+    "entity_id": "E-0010",
+    "preferred_name": "Coptis",
+    "type": "TCM-herb",
+    "latin": "Coptis chinensis",
+    "pinyin": "huanglian",
+    "chinese": "黄连",
+    "common_names": [
+      "coptis",
+      "huang lian",
+      "Chinese goldthread",
+      "berberine (principal constituent)",
+      "Rhizoma Coptidis",
+      "黃連"
+    ],
+    "active_constituents": [
+      "berberine",
+      "coptisine",
+      "palmatine"
+    ]
+  },
+  {
+    "entity_id": "E-0011",
+    "preferred_name": "Green tea",
+    "type": "TCM-herb",
+    "latin": "Camellia sinensis",
+    "pinyin": "lücha",
+    "chinese": "绿茶",
+    "common_names": [
+      "green tea",
+      "Camellia sinensis",
+      "Tea Leaf",
+      "Folium Camelliae Sinensis",
+      "cha ye",
+      "茶葉",
+      "Camellia"
+    ],
+    "active_constituents": [
+      "vitamin K",
+      "catechins (EGCG)",
+      "caffeine"
+    ]
+  },
+  {
+    "entity_id": "E-0012",
+    "preferred_name": "Ginger",
+    "type": "TCM-herb",
+    "latin": "Zingiber officinale",
+    "pinyin": "shengjiang",
+    "chinese": "生姜",
+    "common_names": [
+      "ginger",
+      "sheng jiang",
+      "gan jiang (dried, 干姜)",
+      "Dried Ginger",
+      "Rhizoma Zingiberis",
+      "gan jiang",
+      "乾薑",
+      "Zingiber",
+      "Fresh Ginger",
+      "Rhizoma Zingiberis Recens",
+      "生薑"
+    ],
+    "active_constituents": [
+      "gingerols",
+      "shogaols"
+    ]
+  },
+  {
+    "entity_id": "E-0013",
+    "preferred_name": "Turmeric",
+    "type": "TCM-herb",
+    "latin": "Curcuma longa",
+    "pinyin": "jianghuang",
+    "chinese": "姜黄",
+    "common_names": [
+      "turmeric",
+      "curcumin",
+      "jiang huang",
+      "Rhizoma Curcumae Longae",
+      "薑黃",
+      "Curcuma",
+      "Golden root",
+      "Radix Curcumae",
+      "yu jin",
+      "郁金"
+    ],
+    "active_constituents": [
+      "curcumin",
+      "curcuminoids"
+    ]
+  },
+  {
+    "entity_id": "E-0014",
+    "preferred_name": "Sargassum",
+    "type": "TCM-herb",
+    "latin": "Sargassum spp.",
+    "pinyin": "haizao",
+    "chinese": "海藻",
+    "common_names": [
+      "sargassum",
+      "seaweed (haizao)",
+      "hai zao",
+      "海藻",
+      "Kelp",
+      "Seaweed"
+    ],
+    "active_constituents": [
+      "algal polysaccharides",
+      "iodine"
+    ]
+  },
+  {
+    "entity_id": "E-0015",
+    "preferred_name": "Kansui",
+    "type": "TCM-herb",
+    "latin": "Euphorbia kansui",
+    "pinyin": "gansui",
+    "chinese": "甘遂",
+    "common_names": [
+      "kansui",
+      "gan sui",
+      "Euphorbia Kansui",
+      "Radix Euphorbiae Kansui",
+      "甘遂",
+      "Euphorbia"
+    ],
+    "active_constituents": [
+      "kansuinine",
+      "ingenol-type diterpenoids"
+    ]
+  },
+  {
+    "entity_id": "E-0016",
+    "preferred_name": "Genkwa",
+    "type": "TCM-herb",
+    "latin": "Daphne genkwa",
+    "pinyin": "yuanhua",
+    "chinese": "芫花",
+    "common_names": [
+      "genkwa flos",
+      "yuan hua",
+      "Genkwa Flower",
+      "Flos Genkwa",
+      "芫花",
+      "Daphne",
+      "Genkwa"
+    ],
+    "active_constituents": [
+      "yuanhuacine",
+      "genkwanin"
+    ]
+  },
+  {
+    "entity_id": "E-0017",
+    "preferred_name": "Aconite",
+    "type": "TCM-herb",
+    "latin": "Aconitum carmichaelii",
+    "pinyin": "fuzi / wutou",
+    "chinese": "附子/乌头",
+    "common_names": [
+      "aconite",
+      "fuzi",
+      "chuanwu",
+      "wutou",
+      "monkshood",
+      "Prepared Aconite",
+      "Radix Aconiti Praeparata",
+      "fu zi",
+      "附子"
+    ],
+    "active_constituents": [
+      "aconitine (diester diterpenoid alkaloids)",
+      "mesaconitine",
+      "hypaconitine"
+    ]
+  },
+  {
+    "entity_id": "E-0018",
+    "preferred_name": "Pinellia",
+    "type": "TCM-herb",
+    "latin": "Pinellia ternata",
+    "pinyin": "banxia",
+    "chinese": "半夏",
+    "common_names": [
+      "pinellia",
+      "ban xia",
+      "Pinellia Rhizome",
+      "Rhizoma Pinelliae",
+      "半夏",
+      "Ternate",
+      "Arisaema",
+      "Rhizoma Arisaematis",
+      "tian nan xing",
+      "天南星"
+    ],
+    "active_constituents": [
+      "alkaloids",
+      "lectins",
+      "ephedrine-type bases"
+    ]
+  },
+  {
+    "entity_id": "E-0019",
+    "preferred_name": "Fritillaria",
+    "type": "TCM-herb",
+    "latin": "Fritillaria thunbergii / cirrhosa",
+    "pinyin": "beimu",
+    "chinese": "贝母",
+    "common_names": [
+      "fritillaria",
+      "bei mu",
+      "chuan bei mu",
+      "zhe bei mu",
+      "Bulbus Fritillariae Cirrhosae",
+      "川貝母",
+      "Tendrilleaf fritillary",
+      "Bulbus Fritillariae Thunbergii",
+      "浙貝母",
+      "Thunbergii"
+    ],
+    "active_constituents": [
+      "steroidal alkaloids (peimine/peiminine)"
+    ]
+  },
+  {
+    "entity_id": "E-0020",
+    "preferred_name": "Trichosanthes",
+    "type": "TCM-herb",
+    "latin": "Trichosanthes kirilowii",
+    "pinyin": "gualou",
+    "chinese": "瓜蒌",
+    "common_names": [
+      "trichosanthes",
+      "gua lou",
+      "snake gourd fruit",
+      "Fructus Trichosanthis",
+      "瓜蔞",
+      "Chinese cucumber",
+      "Snake gourd",
+      "Radix Trichosanthis",
+      "tian hua fen",
+      "天花粉",
+      "Kirilowii"
+    ],
+    "active_constituents": [
+      "triterpenoids",
+      "trichosanthin"
+    ]
+  },
+  {
+    "entity_id": "E-0021",
+    "preferred_name": "Veratrum",
+    "type": "TCM-herb",
+    "latin": "Veratrum nigrum",
+    "pinyin": "lilu",
+    "chinese": "藜芦",
+    "common_names": [
+      "veratrum",
+      "li lu",
+      "black false hellebore"
+    ],
+    "active_constituents": [
+      "veratrum steroidal alkaloids (jervine, veratridine)"
+    ]
+  },
+  {
+    "entity_id": "E-0022",
+    "preferred_name": "Wulingzhi",
+    "type": "TCM-herb",
+    "latin": "Trogopterus xanthipes (faeces)",
+    "pinyin": "wulingzhi",
+    "chinese": "五灵脂",
+    "common_names": [
+      "wu ling zhi",
+      "flying squirrel faeces",
+      "Trogopterus dung",
+      "Flying Squirrel Feces",
+      "Faeces Trogopterori",
+      "五靈脂",
+      "Trogopterus"
+    ],
+    "active_constituents": [
+      "resins",
+      "urea derivatives"
     ]
   },
   {
@@ -284,248 +625,6 @@
     ]
   },
   {
-    "entity_id": "E-0009",
-    "preferred_name": "Schisandra (Wuzhi)",
-    "type": "TCM-herb",
-    "latin": "Schisandra sphenanthera",
-    "pinyin": "nan wuweizi",
-    "chinese": "南五味子",
-    "common_names": [
-      "schisandra",
-      "Wuzhi tablet",
-      "nan-wuweizi",
-      "Schisandra chinensis (related, 五味子)"
-    ],
-    "active_constituents": [
-      "schisandrin",
-      "schisantherin A",
-      "deoxyschizandrin",
-      "gomisin"
-    ]
-  },
-  {
-    "entity_id": "E-0010",
-    "preferred_name": "Coptis",
-    "type": "TCM-herb",
-    "latin": "Coptis chinensis",
-    "pinyin": "huanglian",
-    "chinese": "黄连",
-    "common_names": [
-      "coptis",
-      "huang lian",
-      "Chinese goldthread",
-      "berberine (principal constituent)"
-    ],
-    "active_constituents": [
-      "berberine",
-      "coptisine",
-      "palmatine"
-    ]
-  },
-  {
-    "entity_id": "E-0011",
-    "preferred_name": "Green tea",
-    "type": "TCM-herb",
-    "latin": "Camellia sinensis",
-    "pinyin": "lücha",
-    "chinese": "绿茶",
-    "common_names": [
-      "green tea",
-      "Camellia sinensis"
-    ],
-    "active_constituents": [
-      "vitamin K",
-      "catechins (EGCG)",
-      "caffeine"
-    ]
-  },
-  {
-    "entity_id": "E-0012",
-    "preferred_name": "Ginger",
-    "type": "TCM-herb",
-    "latin": "Zingiber officinale",
-    "pinyin": "shengjiang",
-    "chinese": "生姜",
-    "common_names": [
-      "ginger",
-      "sheng jiang",
-      "gan jiang (dried, 干姜)"
-    ],
-    "active_constituents": [
-      "gingerols",
-      "shogaols"
-    ]
-  },
-  {
-    "entity_id": "E-0013",
-    "preferred_name": "Turmeric",
-    "type": "TCM-herb",
-    "latin": "Curcuma longa",
-    "pinyin": "jianghuang",
-    "chinese": "姜黄",
-    "common_names": [
-      "turmeric",
-      "curcumin",
-      "jiang huang"
-    ],
-    "active_constituents": [
-      "curcumin",
-      "curcuminoids"
-    ]
-  },
-  {
-    "entity_id": "E-0014",
-    "preferred_name": "Sargassum",
-    "type": "TCM-herb",
-    "latin": "Sargassum spp.",
-    "pinyin": "haizao",
-    "chinese": "海藻",
-    "common_names": [
-      "sargassum",
-      "seaweed (haizao)"
-    ],
-    "active_constituents": [
-      "algal polysaccharides",
-      "iodine"
-    ]
-  },
-  {
-    "entity_id": "E-0015",
-    "preferred_name": "Kansui",
-    "type": "TCM-herb",
-    "latin": "Euphorbia kansui",
-    "pinyin": "gansui",
-    "chinese": "甘遂",
-    "common_names": [
-      "kansui",
-      "gan sui"
-    ],
-    "active_constituents": [
-      "kansuinine",
-      "ingenol-type diterpenoids"
-    ]
-  },
-  {
-    "entity_id": "E-0016",
-    "preferred_name": "Genkwa",
-    "type": "TCM-herb",
-    "latin": "Daphne genkwa",
-    "pinyin": "yuanhua",
-    "chinese": "芫花",
-    "common_names": [
-      "genkwa flos",
-      "yuan hua"
-    ],
-    "active_constituents": [
-      "yuanhuacine",
-      "genkwanin"
-    ]
-  },
-  {
-    "entity_id": "E-0017",
-    "preferred_name": "Aconite",
-    "type": "TCM-herb",
-    "latin": "Aconitum carmichaelii",
-    "pinyin": "fuzi / wutou",
-    "chinese": "附子/乌头",
-    "common_names": [
-      "aconite",
-      "fuzi",
-      "chuanwu",
-      "wutou",
-      "monkshood"
-    ],
-    "active_constituents": [
-      "aconitine (diester diterpenoid alkaloids)",
-      "mesaconitine",
-      "hypaconitine"
-    ]
-  },
-  {
-    "entity_id": "E-0018",
-    "preferred_name": "Pinellia",
-    "type": "TCM-herb",
-    "latin": "Pinellia ternata",
-    "pinyin": "banxia",
-    "chinese": "半夏",
-    "common_names": [
-      "pinellia",
-      "ban xia"
-    ],
-    "active_constituents": [
-      "alkaloids",
-      "lectins",
-      "ephedrine-type bases"
-    ]
-  },
-  {
-    "entity_id": "E-0019",
-    "preferred_name": "Fritillaria",
-    "type": "TCM-herb",
-    "latin": "Fritillaria thunbergii / cirrhosa",
-    "pinyin": "beimu",
-    "chinese": "贝母",
-    "common_names": [
-      "fritillaria",
-      "bei mu",
-      "chuan bei mu",
-      "zhe bei mu"
-    ],
-    "active_constituents": [
-      "steroidal alkaloids (peimine/peiminine)"
-    ]
-  },
-  {
-    "entity_id": "E-0020",
-    "preferred_name": "Trichosanthes",
-    "type": "TCM-herb",
-    "latin": "Trichosanthes kirilowii",
-    "pinyin": "gualou",
-    "chinese": "瓜蒌",
-    "common_names": [
-      "trichosanthes",
-      "gua lou",
-      "snake gourd fruit"
-    ],
-    "active_constituents": [
-      "triterpenoids",
-      "trichosanthin"
-    ]
-  },
-  {
-    "entity_id": "E-0021",
-    "preferred_name": "Veratrum",
-    "type": "TCM-herb",
-    "latin": "Veratrum nigrum",
-    "pinyin": "lilu",
-    "chinese": "藜芦",
-    "common_names": [
-      "veratrum",
-      "li lu",
-      "black false hellebore"
-    ],
-    "active_constituents": [
-      "veratrum steroidal alkaloids (jervine, veratridine)"
-    ]
-  },
-  {
-    "entity_id": "E-0022",
-    "preferred_name": "Wulingzhi",
-    "type": "TCM-herb",
-    "latin": "Trogopterus xanthipes (faeces)",
-    "pinyin": "wulingzhi",
-    "chinese": "五灵脂",
-    "common_names": [
-      "wu ling zhi",
-      "flying squirrel faeces",
-      "Trogopterus dung"
-    ],
-    "active_constituents": [
-      "resins",
-      "urea derivatives"
-    ]
-  },
-  {
     "entity_id": "E-0113",
     "preferred_name": "Omeprazole",
     "type": "WM-drug",
@@ -650,5 +749,3923 @@
     "common_names": [
       "Glucophage"
     ]
+  },
+  {
+    "entity_id": "E-0125",
+    "preferred_name": "Mugwort Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Artemisiae Argyi",
+    "pinyin": "ai ye",
+    "chinese": "艾叶",
+    "common_names": [
+      "Moxa",
+      "Artemisia",
+      "Mugwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0126",
+    "preferred_name": "Benzoin",
+    "type": "TCM-herb",
+    "latin": "Benzoinum",
+    "pinyin": "an xi xiang",
+    "chinese": "安息香",
+    "common_names": [
+      "Resin",
+      "Gum benzoin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0127",
+    "preferred_name": "Croton Seeds",
+    "type": "TCM-herb",
+    "latin": "Croton tiglium",
+    "pinyin": "ba dou",
+    "chinese": "巴豆",
+    "common_names": [
+      "Croton",
+      "Purging seeds"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0128",
+    "preferred_name": "Morinda Root",
+    "type": "TCM-herb",
+    "latin": "Radix Morindae Officinalis",
+    "pinyin": "ba ji tian",
+    "chinese": "巴戟天",
+    "common_names": [
+      "Morinda"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0129",
+    "preferred_name": "Greenbrier",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Smilacis Chinensis",
+    "pinyin": "ba qia",
+    "chinese": "菝契",
+    "common_names": [
+      "Chinaroot",
+      "Smilax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0130",
+    "preferred_name": "Akebia Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Akebiae",
+    "pinyin": "ba yue zha",
+    "chinese": "八月札",
+    "common_names": [
+      "Chocolate vine",
+      "Akebia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0131",
+    "preferred_name": "Hyacinth Bean",
+    "type": "TCM-herb",
+    "latin": "Semen Lablab Album",
+    "pinyin": "bai bian dou",
+    "chinese": "白扁豆",
+    "common_names": [
+      "White bean",
+      "Dolichos"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0132",
+    "preferred_name": "Stemona Root",
+    "type": "TCM-herb",
+    "latin": "Radix Stemonae",
+    "pinyin": "bai bu",
+    "chinese": "百部",
+    "common_names": [
+      "Stemona",
+      "Stemona japonica"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0133",
+    "preferred_name": "White Cardamom",
+    "type": "TCM-herb",
+    "latin": "Fructus Amomi Rotundus",
+    "pinyin": "bai dou kou",
+    "chinese": "白豆蔻",
+    "common_names": [
+      "Cardamom",
+      "Round cardamom"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0134",
+    "preferred_name": "Typhonium Rhizome",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Typhonii",
+    "pinyin": "bai fu zi",
+    "chinese": "白附子",
+    "common_names": [
+      "Giant typhonium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0135",
+    "preferred_name": "Lily Bulb",
+    "type": "TCM-herb",
+    "latin": "Bulbus Lilii",
+    "pinyin": "bai he",
+    "chinese": "百合",
+    "common_names": [
+      "Lily",
+      "Lilium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0136",
+    "preferred_name": "Bungarus Snake",
+    "type": "TCM-herb",
+    "latin": "Bungarus parvus",
+    "pinyin": "bai hua she",
+    "chinese": "白花蛇",
+    "common_names": [
+      "White-lipped viper"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0137",
+    "preferred_name": "Hedyotis",
+    "type": "TCM-herb",
+    "latin": "Herba Hedyotis Diffusae",
+    "pinyin": "bai hua she she cao",
+    "chinese": "白花蛇舌草",
+    "common_names": [
+      "Oldenlandia",
+      "Fairy needles"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0138",
+    "preferred_name": "Bletilla Rhizome",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Bletillae",
+    "pinyin": "bai ji",
+    "chinese": "白芨",
+    "common_names": [
+      "Bletilla",
+      "Tuber"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0139",
+    "preferred_name": "Tribulus Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Tribuli",
+    "pinyin": "bai ji li",
+    "chinese": "白蒺藜",
+    "common_names": [
+      "Caltrop",
+      "Puncture vine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0140",
+    "preferred_name": "Patrinia",
+    "type": "TCM-herb",
+    "latin": "Herba Patriniae",
+    "pinyin": "bai jiang cao",
+    "chinese": "敗醬草",
+    "common_names": [
+      "Dahurian patrinia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0141",
+    "preferred_name": "White Mustard Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Sinapis Albae",
+    "pinyin": "bai jie zi",
+    "chinese": "白芥子",
+    "common_names": [
+      "Mustard",
+      "Sinapis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0142",
+    "preferred_name": "Imperata Rhizome",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Imperatae",
+    "pinyin": "bai mao gen",
+    "chinese": "白茅根",
+    "common_names": [
+      "Lalang grass",
+      "Cogon root"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0143",
+    "preferred_name": "Cynanchum Rhizome",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Cynanchi Stauntonii",
+    "pinyin": "bai qian",
+    "chinese": "白前",
+    "common_names": [
+      "Cynanchum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0144",
+    "preferred_name": "White Peony Root",
+    "type": "TCM-herb",
+    "latin": "Radix Paeoniae Alba",
+    "pinyin": "bai shao",
+    "chinese": "白芍",
+    "common_names": [
+      "White peony",
+      "Paeonia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0145",
+    "preferred_name": "Pulsatilla Root",
+    "type": "TCM-herb",
+    "latin": "Radix Pulsatillae",
+    "pinyin": "bai tou weng",
+    "chinese": "白头翁",
+    "common_names": [
+      "Chinese anemone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0146",
+    "preferred_name": "Swallowwort Root",
+    "type": "TCM-herb",
+    "latin": "Radix Cynanchi Atrati",
+    "pinyin": "bai wei",
+    "chinese": "白薇",
+    "common_names": [
+      "Swallowwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0147",
+    "preferred_name": "Dictamnus Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Dictamni Radicis",
+    "pinyin": "bai xian pi",
+    "chinese": "白蘚皮",
+    "common_names": [
+      "Dittany bark"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0148",
+    "preferred_name": "Angelica Root",
+    "type": "TCM-herb",
+    "latin": "Radix Angelicae Dahuricae",
+    "pinyin": "bai zhi",
+    "chinese": "白芷",
+    "common_names": [
+      "Dahurian angelica"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0149",
+    "preferred_name": "Atractylodes",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Atractylodis Macrocephalae",
+    "pinyin": "bai zhu",
+    "chinese": "白术",
+    "common_names": [
+      "Largehead atractylodes"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0150",
+    "preferred_name": "Biota Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Biotae",
+    "pinyin": "bai zi ren",
+    "chinese": "柏子仁",
+    "common_names": [
+      "Arborvitae",
+      "Thuja"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0151",
+    "preferred_name": "Lobelia",
+    "type": "TCM-herb",
+    "latin": "Herba Lobeliae Chinensis",
+    "pinyin": "ban bian lian",
+    "chinese": "半边莲",
+    "common_names": [
+      "Chinese lobelia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0152",
+    "preferred_name": "Isatis Root",
+    "type": "TCM-herb",
+    "latin": "Radix Isatidis",
+    "pinyin": "ban lan gen",
+    "chinese": "板蓝根",
+    "common_names": [
+      "Woad",
+      "Dyer's woad"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0153",
+    "preferred_name": "Mylabris",
+    "type": "TCM-herb",
+    "latin": "Mylabris",
+    "pinyin": "ban mao",
+    "chinese": "班蟊",
+    "common_names": [
+      "Cantharides",
+      "Blister beetle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0154",
+    "preferred_name": "Scutellaria",
+    "type": "TCM-herb",
+    "latin": "Herba Scutellariae Barbatae",
+    "pinyin": "ban zhi lian",
+    "chinese": "半支莲",
+    "common_names": [
+      "Barbed skullcap"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0155",
+    "preferred_name": "Dioscorea",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Dioscoreae Hypoglaucae",
+    "pinyin": "bei xie",
+    "chinese": "萆薢",
+    "common_names": [
+      "Hypoglaucous dioscorea"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0156",
+    "preferred_name": "Polygonum",
+    "type": "TCM-herb",
+    "latin": "Herba Polygoni Avicularis",
+    "pinyin": "bian xu",
+    "chinese": "萹蓄",
+    "common_names": [
+      "Knotweed",
+      "Common knotgrass"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0157",
+    "preferred_name": "Turtle Shell",
+    "type": "TCM-herb",
+    "latin": "Carapax Trionycis",
+    "pinyin": "bie jia",
+    "chinese": "鱉甲",
+    "common_names": [
+      "Soft-shelled turtle",
+      "Plastron"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0158",
+    "preferred_name": "Areca Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Arecae",
+    "pinyin": "bing lang",
+    "chinese": "檳榔",
+    "common_names": [
+      "Betel nut",
+      "Areca"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0159",
+    "preferred_name": "Borneol",
+    "type": "TCM-herb",
+    "latin": "Borneolum Syntheticum",
+    "pinyin": "bing pian",
+    "chinese": "冰片",
+    "common_names": [
+      "Synthetic borneol",
+      "Camphor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0160",
+    "preferred_name": "Rock Sugar",
+    "type": "TCM-herb",
+    "latin": "Crystallized Sugar",
+    "pinyin": "bing tang",
+    "chinese": "冰糖",
+    "common_names": [
+      "Rock candy",
+      "Crystal sugar"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0161",
+    "preferred_name": "Mentha",
+    "type": "TCM-herb",
+    "latin": "Herba Menthae",
+    "pinyin": "bo he",
+    "chinese": "薄荷",
+    "common_names": [
+      "Mint",
+      "Field mint"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0162",
+    "preferred_name": "Psoralea Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Psoraleae",
+    "pinyin": "bu gu zhi",
+    "chinese": "補骨脂",
+    "common_names": [
+      "Malaytea scurfpea"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0163",
+    "preferred_name": "Silkworm Feces",
+    "type": "TCM-herb",
+    "latin": "Excrementum Bombycis",
+    "pinyin": "can sha",
+    "chinese": "蠶砂",
+    "common_names": [
+      "Bombyx",
+      "Silkworm"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0164",
+    "preferred_name": "Xanthium",
+    "type": "TCM-herb",
+    "latin": "Fructus Xanthii",
+    "pinyin": "cang er zi",
+    "chinese": "蒼耳子",
+    "common_names": [
+      "Cocklebur",
+      "Siberian cocklebur"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0165",
+    "preferred_name": "Atractylodes",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Atractylodis",
+    "pinyin": "cang zhu",
+    "chinese": "蒼朮",
+    "common_names": [
+      "Swordlike atractylodes"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0166",
+    "preferred_name": "Iphigenia Bulb",
+    "type": "TCM-herb",
+    "latin": "Bulbus Iphigeniae Indicae",
+    "pinyin": "cao bei mu",
+    "chinese": "草貝母",
+    "common_names": [
+      "Indian iphigenia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0167",
+    "preferred_name": "Alpinia Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Alpiniae Katsumadai",
+    "pinyin": "cao dou kou",
+    "chinese": "草豆蔻",
+    "common_names": [
+      "Katsumada galangal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0168",
+    "preferred_name": "Tsaoko",
+    "type": "TCM-herb",
+    "latin": "Fructus Tsaoko",
+    "pinyin": "cao guo",
+    "chinese": "草果",
+    "common_names": [
+      "Amomum tsao-ko"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0169",
+    "preferred_name": "Cassia Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Cassiae",
+    "pinyin": "cao jue ming",
+    "chinese": "草決明",
+    "common_names": [
+      "Foetid cassia",
+      "Senna"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0170",
+    "preferred_name": "Aconite Root",
+    "type": "TCM-herb",
+    "latin": "Radix Aconiti Kusnezoffii",
+    "pinyin": "cao wu",
+    "chinese": "草烏",
+    "common_names": [
+      "Kusnezoff monkshood"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0171",
+    "preferred_name": "Biota Leaf",
+    "type": "TCM-herb",
+    "latin": "Cacumen Biotae",
+    "pinyin": "ce bai ye",
+    "chinese": "側柏葉",
+    "common_names": [
+      "Oriental arborvitae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0172",
+    "preferred_name": "Bupleurum Root",
+    "type": "TCM-herb",
+    "latin": "Radix Bupleuri",
+    "pinyin": "chai hu",
+    "chinese": "柴胡",
+    "common_names": [
+      "Thorowax",
+      "Chinese thorowax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0173",
+    "preferred_name": "Toad Venom",
+    "type": "TCM-herb",
+    "latin": "Venenum Bufonis",
+    "pinyin": "chan su",
+    "chinese": "蟾酥",
+    "common_names": [
+      "Bufotoxin",
+      "Toad secretion"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0174",
+    "preferred_name": "Cicada Slough",
+    "type": "TCM-herb",
+    "latin": "Periostracum Cicadae",
+    "pinyin": "chan tui",
+    "chinese": "蟬蛻",
+    "common_names": [
+      "Cicada molting",
+      "Cicada skin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0175",
+    "preferred_name": "Periwinkle",
+    "type": "TCM-herb",
+    "latin": "Herba Catharanthi Rosei",
+    "pinyin": "chang chun hua",
+    "chinese": "長春花",
+    "common_names": [
+      "Madagascar periwinkle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0176",
+    "preferred_name": "Sweetflag",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Acori Graminei",
+    "pinyin": "chang pu",
+    "chinese": "昌蒲",
+    "common_names": [
+      "Grassleaf sweetflag",
+      "Acorus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0177",
+    "preferred_name": "Dichroa Root",
+    "type": "TCM-herb",
+    "latin": "Radix Dichroae",
+    "pinyin": "chang shan",
+    "chinese": "常山",
+    "common_names": [
+      "Antifebrile dichroa"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0178",
+    "preferred_name": "Fried Cork Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Phellodendri Praeparata",
+    "pinyin": "chao huang bai",
+    "chinese": "炒黃柏",
+    "common_names": [
+      "Amur cork tree"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0179",
+    "preferred_name": "Plantago",
+    "type": "TCM-herb",
+    "latin": "Herba Plantaginis",
+    "pinyin": "che qian cao",
+    "chinese": "車前草",
+    "common_names": [
+      "Rippleseed plantain"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0180",
+    "preferred_name": "Plantago Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Plantaginis",
+    "pinyin": "che qian zi",
+    "chinese": "車前子",
+    "common_names": [
+      "Plantain seed",
+      "Plantago"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0181",
+    "preferred_name": "Artemisia",
+    "type": "TCM-herb",
+    "latin": "Herba Artemisiae Scopariae",
+    "pinyin": "chen hao",
+    "chinese": "陳蒿",
+    "common_names": [
+      "Oriental wormwood",
+      "Capillaris"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0182",
+    "preferred_name": "Tangerine Peel",
+    "type": "TCM-herb",
+    "latin": "Pericarpium Citri Reticulatae",
+    "pinyin": "chen pi",
+    "chinese": "陳皮",
+    "common_names": [
+      "Aged orange",
+      "Citrus peel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0183",
+    "preferred_name": "Cinnabar",
+    "type": "TCM-herb",
+    "latin": "Cinnabaris",
+    "pinyin": "chen sha",
+    "chinese": "陳砂",
+    "common_names": [
+      "Cinnabar mineral",
+      "Vermilion"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0184",
+    "preferred_name": "Agarwood",
+    "type": "TCM-herb",
+    "latin": "Lignum Aquilariae Resinatum",
+    "pinyin": "chen xiang",
+    "chinese": "沈香",
+    "common_names": [
+      "Aloeswood",
+      "Agalloch"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0185",
+    "preferred_name": "Red Peony",
+    "type": "TCM-herb",
+    "latin": "Radix Paeoniae Rubra",
+    "pinyin": "chi shao",
+    "chinese": "赤芍",
+    "common_names": [
+      "Red peony",
+      "Peony root"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0186",
+    "preferred_name": "Red Halloysite",
+    "type": "TCM-herb",
+    "latin": "Halloysitum Rubrum",
+    "pinyin": "chi shi zhi",
+    "chinese": "赤石脂",
+    "common_names": [
+      "Red ochre",
+      "Red earth"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0187",
+    "preferred_name": "Rice Bean",
+    "type": "TCM-herb",
+    "latin": "Semen Phaseoli",
+    "pinyin": "chi xiao dou",
+    "chinese": "赤小豆",
+    "common_names": [
+      "Adzuki",
+      "Red bean"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0188",
+    "preferred_name": "Paris Root",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Paridis",
+    "pinyin": "chong lou",
+    "chinese": "重樓",
+    "common_names": [
+      "Paris polyphylla"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0189",
+    "preferred_name": "Szechuan Pepper",
+    "type": "TCM-herb",
+    "latin": "Pericarpium Zanthoxyli",
+    "pinyin": "chuan jiao",
+    "chinese": "川椒",
+    "common_names": [
+      "Sichuan",
+      "Chinese pepper"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0190",
+    "preferred_name": "Melia Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Meliae Toosendan",
+    "pinyin": "chuan lian zi",
+    "chinese": "川楝子",
+    "common_names": [
+      "Szechwan chinaberry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0191",
+    "preferred_name": "Pangolin Scale",
+    "type": "TCM-herb",
+    "latin": "Squama Manitis",
+    "pinyin": "chuan shan jia",
+    "chinese": "穿山甲",
+    "common_names": [
+      "Manis pentadactyla"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0192",
+    "preferred_name": "Ligusticum",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Ligustici Chuanxiong",
+    "pinyin": "chuan xiong",
+    "chinese": "川芎",
+    "common_names": [
+      "Szechuan lovage"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0193",
+    "preferred_name": "Ailanthus Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Ailanthi",
+    "pinyin": "chun pi",
+    "chinese": "椿皮",
+    "common_names": [
+      "Tree of heaven"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0194",
+    "preferred_name": "Magnetite",
+    "type": "TCM-herb",
+    "latin": "Magnetitum",
+    "pinyin": "ci shi",
+    "chinese": "磁石",
+    "common_names": [
+      "Magnetite mineral",
+      "Lodestone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0195",
+    "preferred_name": "Scallion",
+    "type": "TCM-herb",
+    "latin": "Bulbus Allii",
+    "pinyin": "cong bai",
+    "chinese": "蔥白",
+    "common_names": [
+      "Spring onion",
+      "Green onion"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0196",
+    "preferred_name": "Areca Husk",
+    "type": "TCM-herb",
+    "latin": "Pericarpium Arecae",
+    "pinyin": "da fu pi",
+    "chinese": "大腹皮",
+    "common_names": [
+      "Areca peel",
+      "Betel husk"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0197",
+    "preferred_name": "Rhubarb",
+    "type": "TCM-herb",
+    "latin": "Radix et Rhizoma Rhei",
+    "pinyin": "da huang",
+    "chinese": "大黃",
+    "common_names": [
+      "Rheum",
+      "Rhubarb"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0198",
+    "preferred_name": "Euphorbia",
+    "type": "TCM-herb",
+    "latin": "Radix Euphorbiae Pekinensis",
+    "pinyin": "da ji",
+    "chinese": "大戟",
+    "common_names": [
+      "Euphorbia pekinensis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0199",
+    "preferred_name": "Isatis Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Isatidis",
+    "pinyin": "da qing ye",
+    "chinese": "大青葉",
+    "common_names": [
+      "Woad leaf",
+      "Indigo leaf"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0200",
+    "preferred_name": "Chinese Date",
+    "type": "TCM-herb",
+    "latin": "Fructus Ziziphi Jujibae",
+    "pinyin": "da zao",
+    "chinese": "大棗",
+    "common_names": [
+      "Jujube",
+      "Date"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0201",
+    "preferred_name": "Hematite",
+    "type": "TCM-herb",
+    "latin": "Haematitum",
+    "pinyin": "dai zhe shi",
+    "chinese": "代赭石",
+    "common_names": [
+      "Iron oxide",
+      "Red hematite"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0202",
+    "preferred_name": "Fermented Soybean",
+    "type": "TCM-herb",
+    "latin": "Semen Sojae Praeparatum",
+    "pinyin": "dan dou chi",
+    "chinese": "淡豆豉",
+    "common_names": [
+      "Prepared soybean"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0203",
+    "preferred_name": "Lophatherum",
+    "type": "TCM-herb",
+    "latin": "Herba Lophatheri",
+    "pinyin": "dan zhu ye",
+    "chinese": "淡竹葉",
+    "common_names": [
+      "Grassleaf lophatherum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0204",
+    "preferred_name": "Codonopsis Root",
+    "type": "TCM-herb",
+    "latin": "Radix Codonopsis Pilosulae",
+    "pinyin": "dang shen",
+    "chinese": "黨參",
+    "common_names": [
+      "Poor man's ginseng"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0205",
+    "preferred_name": "Kochia Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Kochiae",
+    "pinyin": "di fu zi",
+    "chinese": "地膚子",
+    "common_names": [
+      "Bassia",
+      "Burning bush"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0206",
+    "preferred_name": "Wolfberry Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Lycii Radicis",
+    "pinyin": "di gu pi",
+    "chinese": "地骨皮",
+    "common_names": [
+      "Goji root bark"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0207",
+    "preferred_name": "Earthworm",
+    "type": "TCM-herb",
+    "latin": "Lumbricus",
+    "pinyin": "di long",
+    "chinese": "地龍",
+    "common_names": [
+      "Pheretima",
+      "Earthworm"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0208",
+    "preferred_name": "Bloodwort",
+    "type": "TCM-herb",
+    "latin": "Radix Sanguisorbae",
+    "pinyin": "di yu",
+    "chinese": "地榆",
+    "common_names": [
+      "Sanguisorba"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0209",
+    "preferred_name": "Clove",
+    "type": "TCM-herb",
+    "latin": "Flos Caryophylli",
+    "pinyin": "ding xiang",
+    "chinese": "丁香",
+    "common_names": [
+      "Clove flower",
+      "Caryophyllus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0210",
+    "preferred_name": "Cordyceps",
+    "type": "TCM-herb",
+    "latin": "Cordyceps militaris",
+    "pinyin": "dong chong xia cao",
+    "chinese": "冬蟲夏草",
+    "common_names": [
+      "Caterpillar fungus",
+      "Yartsa gunbu"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0211",
+    "preferred_name": "Winter Melon Rind",
+    "type": "TCM-herb",
+    "latin": "Exocarpium Benincasae",
+    "pinyin": "dong gua pi",
+    "chinese": "冬瓜皮",
+    "common_names": [
+      "Winter melon peel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0212",
+    "preferred_name": "Winter Melon Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Benincasae",
+    "pinyin": "dong gua ren",
+    "chinese": "冬瓜仁",
+    "common_names": [
+      "Winter melon seed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0213",
+    "preferred_name": "Angelica Pubescens",
+    "type": "TCM-herb",
+    "latin": "Radix Angelicae Pubescentis",
+    "pinyin": "du huo",
+    "chinese": "獨活",
+    "common_names": [
+      "Angelica pubescens"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0214",
+    "preferred_name": "Eucommia Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Eucommiae",
+    "pinyin": "du zhong",
+    "chinese": "杜仲",
+    "common_names": [
+      "Eucommia",
+      "Gutta-percha"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0215",
+    "preferred_name": "Donkey-Hide Glue",
+    "type": "TCM-herb",
+    "latin": "Colla Corii Asini",
+    "pinyin": "e jiao",
+    "chinese": "阿膠",
+    "common_names": [
+      "E-jiao",
+      "Gelatin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0216",
+    "preferred_name": "Zedoaria",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Zedoariae",
+    "pinyin": "e zhu",
+    "chinese": "莪朮",
+    "common_names": [
+      "Zedoaria",
+      "White turmeric"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0217",
+    "preferred_name": "Senna Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Sennae",
+    "pinyin": "fan xie ye",
+    "chinese": "番瀉葉",
+    "common_names": [
+      "Cassia",
+      "Senna"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0218",
+    "preferred_name": "Ledebouriella",
+    "type": "TCM-herb",
+    "latin": "Radix Ledebouriellae",
+    "pinyin": "fang feng",
+    "chinese": "防風",
+    "common_names": [
+      "Siler root",
+      "Saposhnikovia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0219",
+    "preferred_name": "Stephania",
+    "type": "TCM-herb",
+    "latin": "Radix Stephania Tetrandrae",
+    "pinyin": "fen fang ji",
+    "chinese": "粉防己",
+    "common_names": [
+      "Stephania tetandra"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0220",
+    "preferred_name": "Honey",
+    "type": "TCM-herb",
+    "latin": "Mel",
+    "pinyin": "feng mi",
+    "chinese": "蜂蜜",
+    "common_names": [
+      "Bee honey",
+      "Pure honey"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0221",
+    "preferred_name": "Finger Citron",
+    "type": "TCM-herb",
+    "latin": "Fructus Citri Sarcodactylis",
+    "pinyin": "fo shou",
+    "chinese": "佛手",
+    "common_names": [
+      "Buddha's hand",
+      "Citrus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0222",
+    "preferred_name": "Poria",
+    "type": "TCM-herb",
+    "latin": "Poria cocos",
+    "pinyin": "fu ling",
+    "chinese": "茯苓",
+    "common_names": [
+      "Poria",
+      "China root"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0223",
+    "preferred_name": "Raspberry",
+    "type": "TCM-herb",
+    "latin": "Fructus Rubi",
+    "pinyin": "fu pen zi",
+    "chinese": "覆盆子",
+    "common_names": [
+      "Rubus",
+      "Red raspberry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0224",
+    "preferred_name": "Light Wheat",
+    "type": "TCM-herb",
+    "latin": "Fructus Tritici Levis",
+    "pinyin": "fu xiao mai",
+    "chinese": "浮小麥",
+    "common_names": [
+      "Immature wheat"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0225",
+    "preferred_name": "Ligusticum",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Ligustici",
+    "pinyin": "gao ben",
+    "chinese": "藳本",
+    "common_names": [
+      "Chinese lovage"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0226",
+    "preferred_name": "Galangal",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Alpiniae Officinarum",
+    "pinyin": "gao liang jiang",
+    "chinese": "高良薑",
+    "common_names": [
+      "Alpinia",
+      "Chinese ginger"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0227",
+    "preferred_name": "Kudzu Root",
+    "type": "TCM-herb",
+    "latin": "Radix Puerariae",
+    "pinyin": "ge gen",
+    "chinese": "葛根",
+    "common_names": [
+      "Pueraria",
+      "Arrowroot"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0228",
+    "preferred_name": "Gecko",
+    "type": "TCM-herb",
+    "latin": "Gecko",
+    "pinyin": "ge jie",
+    "chinese": "蛤蚧",
+    "common_names": [
+      "Tokay gecko",
+      "Climbing gecko"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0229",
+    "preferred_name": "Chain Fern",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Cibotii",
+    "pinyin": "gou ji",
+    "chinese": "狗脊",
+    "common_names": [
+      "Cibotium",
+      "Male fern"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0230",
+    "preferred_name": "Goji Berry",
+    "type": "TCM-herb",
+    "latin": "Fructus Lycii",
+    "pinyin": "gou qi zi",
+    "chinese": "枸杞子",
+    "common_names": [
+      "Lycium",
+      "Wolfberry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0231",
+    "preferred_name": "Uncaria Stem",
+    "type": "TCM-herb",
+    "latin": "Ramulus Uncariae cum Uncis",
+    "pinyin": "gou teng",
+    "chinese": "鉤藤",
+    "common_names": [
+      "Cat's claw",
+      "Gambir"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0232",
+    "preferred_name": "Drynaria",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Drynariae",
+    "pinyin": "gu sui bu",
+    "chinese": "骨碎補",
+    "common_names": [
+      "Bone fern",
+      "Gu sui bu"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0233",
+    "preferred_name": "Rice Sprout",
+    "type": "TCM-herb",
+    "latin": "Fructus Oryzae Germinatus",
+    "pinyin": "gu ya",
+    "chinese": "谷芽",
+    "common_names": [
+      "Germinated rice"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0234",
+    "preferred_name": "Trichosanthes Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Trichosanthis",
+    "pinyin": "gua lou ren",
+    "chinese": "瓜蔞仁",
+    "common_names": [
+      "Snake gourd seed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0235",
+    "preferred_name": "Aristolochia",
+    "type": "TCM-herb",
+    "latin": "Radix Aristolochiae Fangchi",
+    "pinyin": "guang fang ji",
+    "chinese": "廣防己",
+    "common_names": [
+      "Aristolochia",
+      "Stephania"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0236",
+    "preferred_name": "Tortoise Plastron",
+    "type": "TCM-herb",
+    "latin": "Plastrum Testudinis",
+    "pinyin": "gui ban",
+    "chinese": "龜板",
+    "common_names": [
+      "Turtle shell"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0237",
+    "preferred_name": "Cinnamon Twig",
+    "type": "TCM-herb",
+    "latin": "Ramulus Cinnamomi",
+    "pinyin": "gui zhi",
+    "chinese": "桂枝",
+    "common_names": [
+      "Cinnamon",
+      "Ceylon"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0238",
+    "preferred_name": "Catechu",
+    "type": "TCM-herb",
+    "latin": "Catechu",
+    "pinyin": "hai er cha",
+    "chinese": "孩兒茶",
+    "common_names": [
+      "Acacia",
+      "Cutch"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0239",
+    "preferred_name": "Pumice",
+    "type": "TCM-herb",
+    "latin": "Pumex",
+    "pinyin": "hai fu shi",
+    "chinese": "海浮石",
+    "common_names": [
+      "Volcanic pumice"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0240",
+    "preferred_name": "Clam Shell",
+    "type": "TCM-herb",
+    "latin": "Concha Cyclinae",
+    "pinyin": "hai ge ke",
+    "chinese": "海蛤殼",
+    "common_names": [
+      "Cyclina",
+      "Seashell"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0241",
+    "preferred_name": "Lygodium Spore",
+    "type": "TCM-herb",
+    "latin": "Spora Lygodii",
+    "pinyin": "hai jin sha",
+    "chinese": "海金沙",
+    "common_names": [
+      "Fern spore",
+      "Spore"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0242",
+    "preferred_name": "Ecliptae",
+    "type": "TCM-herb",
+    "latin": "Herba Ecliptae",
+    "pinyin": "han lian cao",
+    "chinese": "旱蓮草",
+    "common_names": [
+      "Eclipta",
+      "False daisy"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0243",
+    "preferred_name": "Albizia Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Albizziae",
+    "pinyin": "he huan pi",
+    "chinese": "合歡皮",
+    "common_names": [
+      "Silk tree",
+      "Mimosa"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0244",
+    "preferred_name": "Fleece Flower",
+    "type": "TCM-herb",
+    "latin": "Radix Polygoni Multiflori",
+    "pinyin": "he shou wu",
+    "chinese": "何首烏",
+    "common_names": [
+      "Fo-ti",
+      "Polygonum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0245",
+    "preferred_name": "Terminalia Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Chebulae",
+    "pinyin": "he zi",
+    "chinese": "訶子",
+    "common_names": [
+      "Myrobalan",
+      "Terminalia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0246",
+    "preferred_name": "Black Sesame",
+    "type": "TCM-herb",
+    "latin": "Semen Sesami Nigrum",
+    "pinyin": "hei zhi ma",
+    "chinese": "黑芝麻",
+    "common_names": [
+      "Black sesame"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0247",
+    "preferred_name": "Safflower",
+    "type": "TCM-herb",
+    "latin": "Flos Carthami",
+    "pinyin": "hong hua",
+    "chinese": "紅花",
+    "common_names": [
+      "Safflower",
+      "Carthamus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0248",
+    "preferred_name": "Red Yeast Rice",
+    "type": "TCM-herb",
+    "latin": "Monascus purpureus",
+    "pinyin": "hong qu",
+    "chinese": "紅曲",
+    "common_names": [
+      "Fermented rice",
+      "Koji"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0249",
+    "preferred_name": "Sargentodoxae",
+    "type": "TCM-herb",
+    "latin": "Caulis Sargentodoxae",
+    "pinyin": "hong teng",
+    "chinese": "紅藤",
+    "common_names": [
+      "Red vine",
+      "Sargentodoxae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0250",
+    "preferred_name": "Magnolia Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Magnoliae Officinalis",
+    "pinyin": "hou po",
+    "chinese": "厚朴",
+    "common_names": [
+      "Magnolia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0251",
+    "preferred_name": "Picrorhiza",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Picrorhizae",
+    "pinyin": "hu huang lian",
+    "chinese": "胡黃連",
+    "common_names": [
+      "Picrorhiza",
+      "Kutki"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0252",
+    "preferred_name": "Black Pepper",
+    "type": "TCM-herb",
+    "latin": "Fructus Piperis Nigri",
+    "pinyin": "hu jiao",
+    "chinese": "胡椒",
+    "common_names": [
+      "Pepper",
+      "Piper"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0253",
+    "preferred_name": "Amber",
+    "type": "TCM-herb",
+    "latin": "Succinum",
+    "pinyin": "hu po",
+    "chinese": "琥珀",
+    "common_names": [
+      "Amber",
+      "Fossilized resin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0254",
+    "preferred_name": "Walnut",
+    "type": "TCM-herb",
+    "latin": "Semen Juglandis",
+    "pinyin": "hu tao ren",
+    "chinese": "胡桃肉",
+    "common_names": [
+      "Walnut",
+      "Juglans"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0255",
+    "preferred_name": "Japanese Knotweed",
+    "type": "TCM-herb",
+    "latin": "Radix Polygoni Cuspidati",
+    "pinyin": "hu zhang",
+    "chinese": "虎杖",
+    "common_names": [
+      "Knotweed",
+      "Polygoni"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0256",
+    "preferred_name": "Szechuan Pepper",
+    "type": "TCM-herb",
+    "latin": "Pericarpium Zanthoxyli",
+    "pinyin": "hua jiao",
+    "chinese": "花椒",
+    "common_names": [
+      "Chinese pepper",
+      "Zanthoxylum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0257",
+    "preferred_name": "Talc",
+    "type": "TCM-herb",
+    "latin": "Talcum",
+    "pinyin": "hua shi",
+    "chinese": "滑石",
+    "common_names": [
+      "Talc",
+      "Soapstone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0258",
+    "preferred_name": "Sophora Flower",
+    "type": "TCM-herb",
+    "latin": "Flos Sophorae",
+    "pinyin": "huai hua",
+    "chinese": "槐花",
+    "common_names": [
+      "Pagoda tree",
+      "Sophora"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0259",
+    "preferred_name": "Phellodendron",
+    "type": "TCM-herb",
+    "latin": "Cortex Phellodendri",
+    "pinyin": "huang bai",
+    "chinese": "黃柏",
+    "common_names": [
+      "Amur cork tree"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0260",
+    "preferred_name": "Siberian Solomon Seal",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Polygonati",
+    "pinyin": "huang jing",
+    "chinese": "黃精",
+    "common_names": [
+      "Polygonatum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0261",
+    "preferred_name": "Astragalus Root",
+    "type": "TCM-herb",
+    "latin": "Radix Astragali",
+    "pinyin": "huang qi",
+    "chinese": "黃耆",
+    "common_names": [
+      "Milkvetch",
+      "Astragalus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0262",
+    "preferred_name": "Scutellaria",
+    "type": "TCM-herb",
+    "latin": "Radix Scutellariae",
+    "pinyin": "huang qin",
+    "chinese": "黃芩",
+    "common_names": [
+      "Baical skullcap"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0263",
+    "preferred_name": "Cannabis Seed",
+    "type": "TCM-herb",
+    "latin": "Fructus Cannabis",
+    "pinyin": "huo ma ren",
+    "chinese": "火麻仁",
+    "common_names": [
+      "Hemp seed",
+      "Cannabis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0264",
+    "preferred_name": "Patchouli",
+    "type": "TCM-herb",
+    "latin": "Herba Pogostemonis",
+    "pinyin": "huo xiang",
+    "chinese": "藿香",
+    "common_names": [
+      "Pogostemon",
+      "Agastache"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0265",
+    "preferred_name": "Gizzard Lining",
+    "type": "TCM-herb",
+    "latin": "Endothelium Corneum Gigeriae Galli",
+    "pinyin": "ji nei jin",
+    "chinese": "雞內金",
+    "common_names": [
+      "Chicken gizzard"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0266",
+    "preferred_name": "Millettia Vine",
+    "type": "TCM-herb",
+    "latin": "Caulis Spatholobi",
+    "pinyin": "ji xue teng",
+    "chinese": "雞血藤",
+    "common_names": [
+      "Siento vine",
+      "Red vine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0267",
+    "preferred_name": "Health Herb",
+    "type": "TCM-herb",
+    "latin": "Tonic preparation",
+    "pinyin": "jian shen",
+    "chinese": "健身",
+    "common_names": [
+      "Strengthening"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0268",
+    "preferred_name": "Silkworm",
+    "type": "TCM-herb",
+    "latin": "Bombyx Batryticatus",
+    "pinyin": "jiang can",
+    "chinese": "僵蠶",
+    "common_names": [
+      "Blighted silkworm"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0269",
+    "preferred_name": "Dalbergia",
+    "type": "TCM-herb",
+    "latin": "Lignum Dalbergiae Odoriferae",
+    "pinyin": "jiang xiang",
+    "chinese": "降香",
+    "common_names": [
+      "Fragrant wood",
+      "Rosewood"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0270",
+    "preferred_name": "Platycodon",
+    "type": "TCM-herb",
+    "latin": "Radix Platycodi",
+    "pinyin": "jie geng",
+    "chinese": "桔梗",
+    "common_names": [
+      "Balloon flower"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0271",
+    "preferred_name": "Spirulina",
+    "type": "TCM-herb",
+    "latin": "Spirulina",
+    "pinyin": "jiao lan",
+    "chinese": "焦蘭",
+    "common_names": [
+      "Blue-green algae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0272",
+    "preferred_name": "Buckwheat",
+    "type": "TCM-herb",
+    "latin": "Fagopyrum esculentum",
+    "pinyin": "jiao mai",
+    "chinese": "蕎麥",
+    "common_names": [
+      "Buckwheat",
+      "Groats"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0273",
+    "preferred_name": "Golden Fruit",
+    "type": "TCM-herb",
+    "latin": "Unknown",
+    "pinyin": "jin guo lan",
+    "chinese": "金果蘭",
+    "common_names": [
+      "Rare fruit"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0274",
+    "preferred_name": "Lysimachia",
+    "type": "TCM-herb",
+    "latin": "Herba Lysimachiae",
+    "pinyin": "jin qian cao",
+    "chinese": "金錢草",
+    "common_names": [
+      "Moneywort",
+      "Creeping jenny"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0275",
+    "preferred_name": "Honeysuckle",
+    "type": "TCM-herb",
+    "latin": "Flos Lonicerae",
+    "pinyin": "jin yin hua",
+    "chinese": "金銀花",
+    "common_names": [
+      "Lonicera",
+      "Honeysuckle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0276",
+    "preferred_name": "Rosehip",
+    "type": "TCM-herb",
+    "latin": "Fructus Rosae Laevigatae",
+    "pinyin": "jin ying zi",
+    "chinese": "金櫻子",
+    "common_names": [
+      "Rose hip",
+      "Japanese rose"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0277",
+    "preferred_name": "Schizonepeta",
+    "type": "TCM-herb",
+    "latin": "Herba Schizonepetae",
+    "pinyin": "jing jie",
+    "chinese": "荊芥",
+    "common_names": [
+      "Schizonepeta",
+      "Jing jie"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0278",
+    "preferred_name": "Schizonepeta Spike",
+    "type": "TCM-herb",
+    "latin": "Spica Schizonepetae",
+    "pinyin": "jing jie sui",
+    "chinese": "荊芥穗",
+    "common_names": [
+      "Herb spike"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0279",
+    "preferred_name": "Chrysanthemum",
+    "type": "TCM-herb",
+    "latin": "Flos Chrysanthemi",
+    "pinyin": "ju hua",
+    "chinese": "菊花",
+    "common_names": [
+      "Chrysanthemum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0280",
+    "preferred_name": "Orange Peel Red",
+    "type": "TCM-herb",
+    "latin": "Pericarpium Citri Reticulatae Rubra",
+    "pinyin": "ju hong",
+    "chinese": "橘紅",
+    "common_names": [
+      "Red orange"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0281",
+    "preferred_name": "Cassiae Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Cassiae",
+    "pinyin": "jue ming zi",
+    "chinese": "決明子",
+    "common_names": [
+      "Foetid cassia",
+      "Cassia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0282",
+    "preferred_name": "Chinaberry Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Meliae",
+    "pinyin": "ku lian pi",
+    "chinese": "苦楝皮",
+    "common_names": [
+      "Melia azedarach"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0283",
+    "preferred_name": "Sophora Root",
+    "type": "TCM-herb",
+    "latin": "Radix Sophorae Flavescentis",
+    "pinyin": "ku shen",
+    "chinese": "苦參",
+    "common_names": [
+      "Sophora",
+      "Alkaloid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0284",
+    "preferred_name": "Coltsfoot",
+    "type": "TCM-herb",
+    "latin": "Flos Farfarae",
+    "pinyin": "kuan dong hua",
+    "chinese": "款冬花",
+    "common_names": [
+      "Tussilago",
+      "Coltsfoot"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0285",
+    "preferred_name": "Kelp",
+    "type": "TCM-herb",
+    "latin": "Thallus Laminariae",
+    "pinyin": "kun bu",
+    "chinese": "昆布",
+    "common_names": [
+      "Laminaria",
+      "Seaweed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0286",
+    "preferred_name": "Radish Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Raphani",
+    "pinyin": "lai fu zi",
+    "chinese": "萊菔子",
+    "common_names": [
+      "Daikon",
+      "Radish"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0287",
+    "preferred_name": "Forsythia",
+    "type": "TCM-herb",
+    "latin": "Fructus Forsythiae",
+    "pinyin": "lian qiao",
+    "chinese": "連翹",
+    "common_names": [
+      "Forsythia suspensa"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0288",
+    "preferred_name": "Lotus Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Nelumbinis",
+    "pinyin": "lian zi",
+    "chinese": "蓮子",
+    "common_names": [
+      "Lotus",
+      "Nelumbo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0289",
+    "preferred_name": "Litchi Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Litchi",
+    "pinyin": "li zhi he",
+    "chinese": "荔枝核",
+    "common_names": [
+      "Litchi",
+      "Lychee"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0290",
+    "preferred_name": "Sulfur",
+    "type": "TCM-herb",
+    "latin": "Sulfur",
+    "pinyin": "liu huang",
+    "chinese": "硫黃",
+    "common_names": [
+      "Sulfur",
+      "Mineral"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0291",
+    "preferred_name": "Gentian Root",
+    "type": "TCM-herb",
+    "latin": "Radix Gentianae",
+    "pinyin": "long dan cao",
+    "chinese": "龍膽草",
+    "common_names": [
+      "Chinese gentian"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0292",
+    "preferred_name": "Fossilized Bone",
+    "type": "TCM-herb",
+    "latin": "Os Draconis",
+    "pinyin": "long gu",
+    "chinese": "龍骨",
+    "common_names": [
+      "Dragon bone",
+      "Fossil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0293",
+    "preferred_name": "Longan Fruit",
+    "type": "TCM-herb",
+    "latin": "Arillus Longan",
+    "pinyin": "long yan rou",
+    "chinese": "龍眼肉",
+    "common_names": [
+      "Longan",
+      "Dimocarpus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0294",
+    "preferred_name": "Mung Bean",
+    "type": "TCM-herb",
+    "latin": "Semen Phaseoli",
+    "pinyin": "lu dou",
+    "chinese": "綠豆",
+    "common_names": [
+      "Mung",
+      "Green bean"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0295",
+    "preferred_name": "Hornet Nest",
+    "type": "TCM-herb",
+    "latin": "Nidus Vespae",
+    "pinyin": "lu feng fang",
+    "chinese": "露蜂房",
+    "common_names": [
+      "Wasp nest"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0296",
+    "preferred_name": "Reed Rhizome",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Phragmitis",
+    "pinyin": "lu gen",
+    "chinese": "蘆根",
+    "common_names": [
+      "Phragmites",
+      "Reed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0297",
+    "preferred_name": "Aloe",
+    "type": "TCM-herb",
+    "latin": "Aloe",
+    "pinyin": "lu hui",
+    "chinese": "蘆薈",
+    "common_names": [
+      "Aloe",
+      "Aloe barbadensis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0298",
+    "preferred_name": "Deer Antler Velvet",
+    "type": "TCM-herb",
+    "latin": "Cornu Cervi Pantotrichum",
+    "pinyin": "lu rong",
+    "chinese": "鹿茸",
+    "common_names": [
+      "Cervus",
+      "Deer antler"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0299",
+    "preferred_name": "Birthwort",
+    "type": "TCM-herb",
+    "latin": "Fructus Aristolochiae",
+    "pinyin": "ma dou ling",
+    "chinese": "馬兜鈴",
+    "common_names": [
+      "Aristolochia",
+      "Birthwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0300",
+    "preferred_name": "Ephedra",
+    "type": "TCM-herb",
+    "latin": "Herba Ephedrae",
+    "pinyin": "ma huang",
+    "chinese": "麻黃",
+    "common_names": [
+      "Ephedra",
+      "Ma huang"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0301",
+    "preferred_name": "Ephedra Root",
+    "type": "TCM-herb",
+    "latin": "Radix Ephedrae",
+    "pinyin": "ma huang gen",
+    "chinese": "麻黃根",
+    "common_names": [
+      "Ephedra root"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0302",
+    "preferred_name": "Nux Vomica",
+    "type": "TCM-herb",
+    "latin": "Semen Nux-Vomica",
+    "pinyin": "ma qian zi",
+    "chinese": "馬錢子",
+    "common_names": [
+      "Strychnos",
+      "Nux vomica"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0303",
+    "preferred_name": "Ophiopogon",
+    "type": "TCM-herb",
+    "latin": "Radix Ophiopogonis",
+    "pinyin": "mai dong",
+    "chinese": "麥冬",
+    "common_names": [
+      "Liriope",
+      "Ophiopogon"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0304",
+    "preferred_name": "Barley Sprout",
+    "type": "TCM-herb",
+    "latin": "Fructus Hordei Germinatus",
+    "pinyin": "mai ya",
+    "chinese": "麥芽",
+    "common_names": [
+      "Hordeum",
+      "Barley"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0305",
+    "preferred_name": "Vitex Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Viticis",
+    "pinyin": "man jing zi",
+    "chinese": "蔓荊子",
+    "common_names": [
+      "Vitex",
+      "Chaste tree"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0306",
+    "preferred_name": "Glauber's Salt",
+    "type": "TCM-herb",
+    "latin": "Natrii Sulfas",
+    "pinyin": "mang xiao",
+    "chinese": "芒硝",
+    "common_names": [
+      "Sodium sulfate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0307",
+    "preferred_name": "Rose Flower",
+    "type": "TCM-herb",
+    "latin": "Flos Rosae",
+    "pinyin": "mei gui hua",
+    "chinese": "玫瑰花",
+    "common_names": [
+      "Rosa",
+      "Rose"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0308",
+    "preferred_name": "Buddleia",
+    "type": "TCM-herb",
+    "latin": "Flos Buddlejae",
+    "pinyin": "mi meng hua",
+    "chinese": "密蒙花",
+    "common_names": [
+      "Buddleja",
+      "Butterfly bush"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0309",
+    "preferred_name": "Myrrh",
+    "type": "TCM-herb",
+    "latin": "Myrrha",
+    "pinyin": "mo yao",
+    "chinese": "沒藥",
+    "common_names": [
+      "Commiphora",
+      "Myrrh"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0310",
+    "preferred_name": "Tree Peony Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Moutan Radicis",
+    "pinyin": "mu dan pi",
+    "chinese": "牡丹皮",
+    "common_names": [
+      "Paeonia",
+      "Peony bark"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0311",
+    "preferred_name": "Quince Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Chaenomelis",
+    "pinyin": "mu gua",
+    "chinese": "木瓜",
+    "common_names": [
+      "Chaenomeles",
+      "Quince"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0312",
+    "preferred_name": "Oyster Shell",
+    "type": "TCM-herb",
+    "latin": "Concha Ostreae",
+    "pinyin": "mu li",
+    "chinese": "牡蠣",
+    "common_names": [
+      "Ostrea",
+      "Oyster"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0313",
+    "preferred_name": "Akebia Stem",
+    "type": "TCM-herb",
+    "latin": "Caulis Akebiae",
+    "pinyin": "mu tong",
+    "chinese": "木通",
+    "common_names": [
+      "Akebia",
+      "Clematis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0314",
+    "preferred_name": "Aucklandia",
+    "type": "TCM-herb",
+    "latin": "Radix Aucklandiae",
+    "pinyin": "mu xiang",
+    "chinese": "木香",
+    "common_names": [
+      "Saussaurea",
+      "Aucklandia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0315",
+    "preferred_name": "Burdock Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Arctii",
+    "pinyin": "niu bang zi",
+    "chinese": "牛蒡子",
+    "common_names": [
+      "Arctium",
+      "Burdock"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0316",
+    "preferred_name": "Achyranthes",
+    "type": "TCM-herb",
+    "latin": "Radix Achyranthis Bidentatae",
+    "pinyin": "niu xi",
+    "chinese": "牛膝",
+    "common_names": [
+      "Achyranthes"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0317",
+    "preferred_name": "Privet Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Ligustri Lucidi",
+    "pinyin": "nu zhen zi",
+    "chinese": "女貞子",
+    "common_names": [
+      "Ligustrum",
+      "Privet"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0318",
+    "preferred_name": "Lotus Rhizome Node",
+    "type": "TCM-herb",
+    "latin": "Nodus Nelumbinis Rhizomatis",
+    "pinyin": "ou jie",
+    "chinese": "藕節",
+    "common_names": [
+      "Lotus node"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0319",
+    "preferred_name": "Eupatorium",
+    "type": "TCM-herb",
+    "latin": "Herba Eupatorii",
+    "pinyin": "pei lan",
+    "chinese": "佩蘭",
+    "common_names": [
+      "Eupatorium",
+      "Eupatorio"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0320",
+    "preferred_name": "Loquat Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Eriobotryas",
+    "pinyin": "pi pa ye",
+    "chinese": "枇杷葉",
+    "common_names": [
+      "Eriobotrya",
+      "Loquat"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0321",
+    "preferred_name": "Dandelion",
+    "type": "TCM-herb",
+    "latin": "Herba Taraxaci",
+    "pinyin": "pu gong ying",
+    "chinese": "蒲公英",
+    "common_names": [
+      "Taraxacum",
+      "Dandelion"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0322",
+    "preferred_name": "Cattail Pollen",
+    "type": "TCM-herb",
+    "latin": "Pollen Typhae",
+    "pinyin": "pu huang",
+    "chinese": "蒲黃",
+    "common_names": [
+      "Typha",
+      "Cattail"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0323",
+    "preferred_name": "Rubia Root",
+    "type": "TCM-herb",
+    "latin": "Radix Rubiae",
+    "pinyin": "qian cao",
+    "chinese": "茜草",
+    "common_names": [
+      "Rubia",
+      "Madder"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0324",
+    "preferred_name": "Hogfennel",
+    "type": "TCM-herb",
+    "latin": "Radix Peucedani",
+    "pinyin": "qian hu",
+    "chinese": "前胡",
+    "common_names": [
+      "Peucedanum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0325",
+    "preferred_name": "Euryale Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Euryales",
+    "pinyin": "qian shi",
+    "chinese": "芡實",
+    "common_names": [
+      "Euryale",
+      "Fox nut"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0326",
+    "preferred_name": "Notopterygium",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Notopterygii",
+    "pinyin": "qiang huo",
+    "chinese": "羌活",
+    "common_names": [
+      "Notopterygium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0327",
+    "preferred_name": "Gentiana Root",
+    "type": "TCM-herb",
+    "latin": "Radix Gentianae Macrophyllae",
+    "pinyin": "qin jiao",
+    "chinese": "秦艽",
+    "common_names": [
+      "Gentiana"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0328",
+    "preferred_name": "Ash Tree Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Fraxini",
+    "pinyin": "qin pi",
+    "chinese": "秦皮",
+    "common_names": [
+      "Fraxinus",
+      "Ash"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0329",
+    "preferred_name": "Indigo",
+    "type": "TCM-herb",
+    "latin": "Indigo Naturalis",
+    "pinyin": "qing dai",
+    "chinese": "青黛",
+    "common_names": [
+      "Indigo",
+      "Plant indigo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0330",
+    "preferred_name": "Wormwood",
+    "type": "TCM-herb",
+    "latin": "Herba Artemisiae Annuae",
+    "pinyin": "qing hao",
+    "chinese": "青蒿",
+    "common_names": [
+      "Artemisia",
+      "Qinghao"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0331",
+    "preferred_name": "Green Tangerine Peel",
+    "type": "TCM-herb",
+    "latin": "Pericarpium Citri Reticulatae Viride",
+    "pinyin": "qing pi",
+    "chinese": "青皮",
+    "common_names": [
+      "Green citrus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0332",
+    "preferred_name": "Dianthus",
+    "type": "TCM-herb",
+    "latin": "Herba Dianthi",
+    "pinyin": "qu mai",
+    "chinese": "瞿麥",
+    "common_names": [
+      "Dianthus",
+      "Pink"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0333",
+    "preferred_name": "Scorpion",
+    "type": "TCM-herb",
+    "latin": "Scorpio",
+    "pinyin": "quan xie",
+    "chinese": "全蠍",
+    "common_names": [
+      "Scorpion"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0334",
+    "preferred_name": "Cistanche",
+    "type": "TCM-herb",
+    "latin": "Herba Cistanches",
+    "pinyin": "rou cong rong",
+    "chinese": "肉蓯蓉",
+    "common_names": [
+      "Cistanche",
+      "Desert"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0335",
+    "preferred_name": "Nutmeg",
+    "type": "TCM-herb",
+    "latin": "Semen Myristicae",
+    "pinyin": "rou dou kou",
+    "chinese": "肉豆蔻",
+    "common_names": [
+      "Myristica",
+      "Nutmeg"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0336",
+    "preferred_name": "Cinnamon Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Cinnamomi",
+    "pinyin": "rou gui",
+    "chinese": "肉桂",
+    "common_names": [
+      "Ceylon",
+      "Cinnamon"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0337",
+    "preferred_name": "Frankincense",
+    "type": "TCM-herb",
+    "latin": "Olibanum",
+    "pinyin": "ru xiang",
+    "chinese": "乳香",
+    "common_names": [
+      "Boswellia",
+      "Frankincense"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0338",
+    "preferred_name": "Scirpus",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Sparganii",
+    "pinyin": "san leng",
+    "chinese": "三棱",
+    "common_names": [
+      "Sparganium",
+      "Bur"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0339",
+    "preferred_name": "Notoginseng",
+    "type": "TCM-herb",
+    "latin": "Radix Notoginseng",
+    "pinyin": "san qi",
+    "chinese": "三七",
+    "common_names": [
+      "Panax",
+      "Pseudoginseng"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0340",
+    "preferred_name": "Mulberry Bark",
+    "type": "TCM-herb",
+    "latin": "Cortex Mori Radicis",
+    "pinyin": "sang bai pi",
+    "chinese": "桑白皮",
+    "common_names": [
+      "Morus",
+      "Mulberry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0341",
+    "preferred_name": "Mulberry Mistletoe",
+    "type": "TCM-herb",
+    "latin": "Ramulus Taxilli",
+    "pinyin": "sang ji sheng",
+    "chinese": "桑寄生",
+    "common_names": [
+      "Taxillus",
+      "Mistletoe"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0342",
+    "preferred_name": "Mantis Egg",
+    "type": "TCM-herb",
+    "latin": "Ootheca Mantidis",
+    "pinyin": "sang piao xiao",
+    "chinese": "桑螵蛸",
+    "common_names": [
+      "Mantis",
+      "Ootheca"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0343",
+    "preferred_name": "Mulberry Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Mori",
+    "pinyin": "sang shen",
+    "chinese": "桑椹",
+    "common_names": [
+      "Morus",
+      "Mulberry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0344",
+    "preferred_name": "Mulberry Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Mori",
+    "pinyin": "sang ye",
+    "chinese": "桑葉",
+    "common_names": [
+      "Mulberry leaf"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0345",
+    "preferred_name": "Cardamom",
+    "type": "TCM-herb",
+    "latin": "Fructus Amomi",
+    "pinyin": "sha ren",
+    "chinese": "砂仁",
+    "common_names": [
+      "Amomum",
+      "Cardamom"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0346",
+    "preferred_name": "Glehnia Root",
+    "type": "TCM-herb",
+    "latin": "Radix Glehniae",
+    "pinyin": "sha shen",
+    "chinese": "沙參",
+    "common_names": [
+      "Glehnia",
+      "Beach lily"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0347",
+    "preferred_name": "Chinese Yam",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Dioscoreae",
+    "pinyin": "shan yao",
+    "chinese": "山藥",
+    "common_names": [
+      "Dioscorea",
+      "Yam"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0348",
+    "preferred_name": "Hawthorn Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Crataegi",
+    "pinyin": "shan zha",
+    "chinese": "山楂",
+    "common_names": [
+      "Crataegus",
+      "Hawthorn"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0349",
+    "preferred_name": "Cornus Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Corni",
+    "pinyin": "shan zhu yu",
+    "chinese": "山茱萸",
+    "common_names": [
+      "Cornus",
+      "Cornelian"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0350",
+    "preferred_name": "Cnidium Seed",
+    "type": "TCM-herb",
+    "latin": "Fructus Cnidii",
+    "pinyin": "she chuang zi",
+    "chinese": "蛇床子",
+    "common_names": [
+      "Cnidium",
+      "Echinidium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0351",
+    "preferred_name": "Belamcanda",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Belamcandae",
+    "pinyin": "she gan",
+    "chinese": "射干",
+    "common_names": [
+      "Belamcanda",
+      "Blackberry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0352",
+    "preferred_name": "Medicated Leaven",
+    "type": "TCM-herb",
+    "latin": "Massa Medicata Fermentata",
+    "pinyin": "shen qu",
+    "chinese": "神麴",
+    "common_names": [
+      "Fermented",
+      "Leaven"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0353",
+    "preferred_name": "Fresh Rehmannia",
+    "type": "TCM-herb",
+    "latin": "Radix Rehmanniae",
+    "pinyin": "sheng di huang",
+    "chinese": "生地黃",
+    "common_names": [
+      "Rehmannia",
+      "Foxglove"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0354",
+    "preferred_name": "Cohosh",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Cimicifugae",
+    "pinyin": "sheng ma",
+    "chinese": "升麻",
+    "common_names": [
+      "Cimicifuga",
+      "Black cohosh"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0355",
+    "preferred_name": "Sweetflag",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Acori Graminei",
+    "pinyin": "shi chang pu",
+    "chinese": "石菖蒲",
+    "common_names": [
+      "Acorus",
+      "Grass-leaf"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0356",
+    "preferred_name": "Gypsum",
+    "type": "TCM-herb",
+    "latin": "Gypsum Fibrosum",
+    "pinyin": "shi gao",
+    "chinese": "石膏",
+    "common_names": [
+      "Gypsum",
+      "Mineral"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0357",
+    "preferred_name": "Dendrobium",
+    "type": "TCM-herb",
+    "latin": "Herba Dendrobii",
+    "pinyin": "shi hu",
+    "chinese": "石斛",
+    "common_names": [
+      "Dendrobium",
+      "Orchid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0358",
+    "preferred_name": "Abalone Shell",
+    "type": "TCM-herb",
+    "latin": "Concha Haliotidis",
+    "pinyin": "shi jue ming",
+    "chinese": "石決明",
+    "common_names": [
+      "Haliotis",
+      "Abalone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0359",
+    "preferred_name": "Quisqualis",
+    "type": "TCM-herb",
+    "latin": "Fructus Quisqualis",
+    "pinyin": "shi li zi",
+    "chinese": "使君子",
+    "common_names": [
+      "Quisqualis",
+      "Rangoon"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0360",
+    "preferred_name": "Pyrrosia Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Pyrrosiae",
+    "pinyin": "shi wei",
+    "chinese": "石韋",
+    "common_names": [
+      "Pyrrosia",
+      "Tongue fern"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0361",
+    "preferred_name": "Cooked Rehmannia",
+    "type": "TCM-herb",
+    "latin": "Radix Rehmanniae Praeparata",
+    "pinyin": "shu di huang",
+    "chinese": "熟地黃",
+    "common_names": [
+      "Prepared",
+      "Rehmannia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0362",
+    "preferred_name": "Leech",
+    "type": "TCM-herb",
+    "latin": "Hirudo",
+    "pinyin": "shui zhi",
+    "chinese": "水蛭",
+    "common_names": [
+      "Leech",
+      "Hirudo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0363",
+    "preferred_name": "Sponge Gourd",
+    "type": "TCM-herb",
+    "latin": "Vascularis Luffae",
+    "pinyin": "si gua luo",
+    "chinese": "絲瓜絡",
+    "common_names": [
+      "Luffa",
+      "Sponge"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0364",
+    "preferred_name": "Styrax",
+    "type": "TCM-herb",
+    "latin": "Resin Liquidambaris",
+    "pinyin": "su he xiang",
+    "chinese": "蘇合香",
+    "common_names": [
+      "Styrax",
+      "Resin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0365",
+    "preferred_name": "Sappan Wood",
+    "type": "TCM-herb",
+    "latin": "Lignum Sappan",
+    "pinyin": "su mu",
+    "chinese": "蘇木",
+    "common_names": [
+      "Sappan",
+      "Dye wood"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0366",
+    "preferred_name": "Perilla Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Perillae",
+    "pinyin": "su zi",
+    "chinese": "蘇子",
+    "common_names": [
+      "Perilla",
+      "Shiso"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0367",
+    "preferred_name": "Jujube Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Ziziphi Spinosae",
+    "pinyin": "suan zao ren",
+    "chinese": "酸棗仁",
+    "common_names": [
+      "Ziziphus",
+      "Jujube"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0368",
+    "preferred_name": "Cynomorium",
+    "type": "TCM-herb",
+    "latin": "Herba Cynomorii",
+    "pinyin": "suo yang",
+    "chinese": "鎖陽",
+    "common_names": [
+      "Cynomorium",
+      "Desert"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0369",
+    "preferred_name": "Pseudostellaria",
+    "type": "TCM-herb",
+    "latin": "Radix Pseudostellariae",
+    "pinyin": "tai zi shen",
+    "chinese": "太子參",
+    "common_names": [
+      "Star root"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0370",
+    "preferred_name": "Sandalwood",
+    "type": "TCM-herb",
+    "latin": "Lignum Santali Albi",
+    "pinyin": "tan xiang",
+    "chinese": "檀香",
+    "common_names": [
+      "Santalum",
+      "Sandalwood"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0371",
+    "preferred_name": "Peach Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Persicae",
+    "pinyin": "tao ren",
+    "chinese": "桃仁",
+    "common_names": [
+      "Prunus",
+      "Peach"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0372",
+    "preferred_name": "Gastrodia",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Gastrodiae",
+    "pinyin": "tian ma",
+    "chinese": "天麻",
+    "common_names": [
+      "Gastrodia",
+      "Orchid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0373",
+    "preferred_name": "Asparagus Root",
+    "type": "TCM-herb",
+    "latin": "Radix Asparagi",
+    "pinyin": "tian men dong",
+    "chinese": "天門冬",
+    "common_names": [
+      "Asparagus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0374",
+    "preferred_name": "Descurainia",
+    "type": "TCM-herb",
+    "latin": "Semen Descurainiae",
+    "pinyin": "ting li zi",
+    "chinese": "葶藶子",
+    "common_names": [
+      "Descurainia",
+      "Pepper weed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0375",
+    "preferred_name": "Rice Pith",
+    "type": "TCM-herb",
+    "latin": "Medulla Tetrapanacis",
+    "pinyin": "tong cao",
+    "chinese": "通草",
+    "common_names": [
+      "Tetrapanax",
+      "Pith"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0376",
+    "preferred_name": "Smilax",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Smilacis Glabrae",
+    "pinyin": "tu fu ling",
+    "chinese": "土茯苓",
+    "common_names": [
+      "Smilax",
+      "Sarsaparilla"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0377",
+    "preferred_name": "Cuscuta Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Cuscutae",
+    "pinyin": "tu si zi",
+    "chinese": "菟絲子",
+    "common_names": [
+      "Cuscuta",
+      "Dodder"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0378",
+    "preferred_name": "Ark Shell",
+    "type": "TCM-herb",
+    "latin": "Concha Arcae",
+    "pinyin": "wa leng zi",
+    "chinese": "瓦楞子",
+    "common_names": [
+      "Anadara",
+      "Clam shell"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0379",
+    "preferred_name": "Vaccaria Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Vaccariae",
+    "pinyin": "wang bu liu xing",
+    "chinese": "王不留行",
+    "common_names": [
+      "Vaccaria",
+      "Cow cockle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0380",
+    "preferred_name": "Clematis Root",
+    "type": "TCM-herb",
+    "latin": "Radix Clematidis",
+    "pinyin": "wei ling xian",
+    "chinese": "威靈仙",
+    "common_names": [
+      "Clematis",
+      "Leather flower"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0381",
+    "preferred_name": "Gallnut",
+    "type": "TCM-herb",
+    "latin": "Galla Chinensis",
+    "pinyin": "wu bei zi",
+    "chinese": "五倍子",
+    "common_names": [
+      "Chinese sumac",
+      "Gall"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0382",
+    "preferred_name": "Centipede",
+    "type": "TCM-herb",
+    "latin": "Scolopendra",
+    "pinyin": "wu gong",
+    "chinese": "蜈蚣",
+    "common_names": [
+      "Centipede",
+      "Scolopendra"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0383",
+    "preferred_name": "Acanthopanax",
+    "type": "TCM-herb",
+    "latin": "Cortex Acanthopanacis Radicis",
+    "pinyin": "wu jia pi",
+    "chinese": "五加皮",
+    "common_names": [
+      "Acanthopanax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0384",
+    "preferred_name": "Mume Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Mume",
+    "pinyin": "wu mei",
+    "chinese": "烏梅",
+    "common_names": [
+      "Prunus",
+      "Mume"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0385",
+    "preferred_name": "Lindera Root",
+    "type": "TCM-herb",
+    "latin": "Radix Linderae",
+    "pinyin": "wu yao",
+    "chinese": "烏藥",
+    "common_names": [
+      "Lindera",
+      "Linderae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0386",
+    "preferred_name": "Evodia Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Evodiae",
+    "pinyin": "wu zhu yu",
+    "chinese": "吳茱萸",
+    "common_names": [
+      "Evodia",
+      "Rutaceae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0387",
+    "preferred_name": "Asarum",
+    "type": "TCM-herb",
+    "latin": "Herba Asari",
+    "pinyin": "xi xin",
+    "chinese": "細辛",
+    "common_names": [
+      "Chinese wild ginger"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0388",
+    "preferred_name": "Prunella Spike",
+    "type": "TCM-herb",
+    "latin": "Spica Prunellae",
+    "pinyin": "xia ku cao",
+    "chinese": "夏枯草",
+    "common_names": [
+      "Prunella",
+      "Self-heal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0389",
+    "preferred_name": "Agrimony",
+    "type": "TCM-herb",
+    "latin": "Herba Agrimoniae",
+    "pinyin": "xian he cao",
+    "chinese": "仙鶴草",
+    "common_names": [
+      "Agrimonia",
+      "Agrimony"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0390",
+    "preferred_name": "Curculigo Root",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Curculiginis",
+    "pinyin": "xian mao",
+    "chinese": "仙茅",
+    "common_names": [
+      "Curculigo",
+      "Golden eye"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0391",
+    "preferred_name": "Nutgrass",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Cyperi",
+    "pinyin": "xiang fu",
+    "chinese": "香附",
+    "common_names": [
+      "Cyperus",
+      "Sedge"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0392",
+    "preferred_name": "Elsholzia",
+    "type": "TCM-herb",
+    "latin": "Herba Elsholtziae",
+    "pinyin": "xiang ru",
+    "chinese": "香薷",
+    "common_names": [
+      "Elsholzia",
+      "Aromatic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0393",
+    "preferred_name": "Fennel Seed",
+    "type": "TCM-herb",
+    "latin": "Fructus Foeniculi",
+    "pinyin": "xiao hui xiang",
+    "chinese": "小茴香",
+    "common_names": [
+      "Foeniculum",
+      "Fennel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0394",
+    "preferred_name": "Cirsium Herb",
+    "type": "TCM-herb",
+    "latin": "Herba Cephalanoploris",
+    "pinyin": "xiao ji",
+    "chinese": "小薊",
+    "common_names": [
+      "Cirsium",
+      "Thistle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0395",
+    "preferred_name": "Allium",
+    "type": "TCM-herb",
+    "latin": "Bulbus Allii Macrostemi",
+    "pinyin": "xie bai",
+    "chinese": "薤白",
+    "common_names": [
+      "Chinese chive"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0396",
+    "preferred_name": "Magnolia Flower",
+    "type": "TCM-herb",
+    "latin": "Flos Magnoliae",
+    "pinyin": "xin yi",
+    "chinese": "辛夷",
+    "common_names": [
+      "Magnolia",
+      "Magnolia biondii"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0397",
+    "preferred_name": "Apricot Seed",
+    "type": "TCM-herb",
+    "latin": "Semen Armeniacae Amarum",
+    "pinyin": "xing ren",
+    "chinese": "杏仁",
+    "common_names": [
+      "Prunus",
+      "Apricot"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0398",
+    "preferred_name": "Bear Bile",
+    "type": "TCM-herb",
+    "latin": "Vesica Fellis Ursi",
+    "pinyin": "xiong dan",
+    "chinese": "熊膽",
+    "common_names": [
+      "Bear gallbladder"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0399",
+    "preferred_name": "Realgar",
+    "type": "TCM-herb",
+    "latin": "Realgar",
+    "pinyin": "xiong huang",
+    "chinese": "雄黃",
+    "common_names": [
+      "Arsenic disulfide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0400",
+    "preferred_name": "Dipsacus",
+    "type": "TCM-herb",
+    "latin": "Radix Dipsaci",
+    "pinyin": "xu duan",
+    "chinese": "續斷",
+    "common_names": [
+      "Dipsacus",
+      "Teasel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0401",
+    "preferred_name": "Inula Flower",
+    "type": "TCM-herb",
+    "latin": "Flos Inulae",
+    "pinyin": "xuan fu hua",
+    "chinese": "旋覆花",
+    "common_names": [
+      "Inula",
+      "Japanese inula"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0402",
+    "preferred_name": "Scrophularia",
+    "type": "TCM-herb",
+    "latin": "Radix Scrophularia",
+    "pinyin": "xuan shen",
+    "chinese": "玄參",
+    "common_names": [
+      "Ningpoensis",
+      "Figwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0403",
+    "preferred_name": "Corydalis",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Corydalis",
+    "pinyin": "yan hu suo",
+    "chinese": "延胡索",
+    "common_names": [
+      "Corydalis",
+      "Yanhusuo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0404",
+    "preferred_name": "Polygonum Vine",
+    "type": "TCM-herb",
+    "latin": "Caulis Polygoni Multiflori",
+    "pinyin": "ye jiao teng",
+    "chinese": "夜交藤",
+    "common_names": [
+      "Fleece flower vine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0405",
+    "preferred_name": "Motherwort",
+    "type": "TCM-herb",
+    "latin": "Herba Leonuri",
+    "pinyin": "yi mu cao",
+    "chinese": "益母草",
+    "common_names": [
+      "Leonurus",
+      "Motherwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0406",
+    "preferred_name": "Job's Tears",
+    "type": "TCM-herb",
+    "latin": "Semen Coicis",
+    "pinyin": "yi yi ren",
+    "chinese": "薏苡仁",
+    "common_names": [
+      "Coix",
+      "Job's tears"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0407",
+    "preferred_name": "Alpinia Seed",
+    "type": "TCM-herb",
+    "latin": "Fructus Alpiniae Oxyphyllae",
+    "pinyin": "yi zhi ren",
+    "chinese": "益智仁",
+    "common_names": [
+      "Alpinia",
+      "Black cardamom"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0408",
+    "preferred_name": "Stellaria Root",
+    "type": "TCM-herb",
+    "latin": "Radix Stellariae",
+    "pinyin": "yin chai hu",
+    "chinese": "銀柴胡",
+    "common_names": [
+      "Stellaria",
+      "Stitchwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0409",
+    "preferred_name": "Yin Chen Shoots",
+    "type": "TCM-herb",
+    "latin": "Herba Artemisiae Scopariae",
+    "pinyin": "yin chen hao",
+    "chinese": "茵陳蒿",
+    "common_names": [
+      "Artemisia",
+      "Yin chen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0410",
+    "preferred_name": "Epimedium",
+    "type": "TCM-herb",
+    "latin": "Herba Epimedii",
+    "pinyin": "yin yang huo",
+    "chinese": "淫羊藿",
+    "common_names": [
+      "Horny goat weed",
+      "Epimedium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0411",
+    "preferred_name": "Bush Cherry",
+    "type": "TCM-herb",
+    "latin": "Semen Pruni",
+    "pinyin": "yu li ren",
+    "chinese": "郁李仁",
+    "common_names": [
+      "Prunus",
+      "Cherry"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0412",
+    "preferred_name": "Corn Silk",
+    "type": "TCM-herb",
+    "latin": "Stigma Maydis",
+    "pinyin": "yu mi xu",
+    "chinese": "玉米鬚",
+    "common_names": [
+      "Zea",
+      "Cornsilk"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0413",
+    "preferred_name": "Houttuynia",
+    "type": "TCM-herb",
+    "latin": "Herba Houttuyniae",
+    "pinyin": "yu xing cao",
+    "chinese": "魚腥草",
+    "common_names": [
+      "Houttuynia",
+      "Saururaceae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0414",
+    "preferred_name": "Solomon's Seal",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Polygonati Odorati",
+    "pinyin": "yu zhu",
+    "chinese": "玉竹",
+    "common_names": [
+      "Polygonatum",
+      "Seal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0415",
+    "preferred_name": "Senega Root",
+    "type": "TCM-herb",
+    "latin": "Radix Polygalae",
+    "pinyin": "yuan zhi",
+    "chinese": "遠志",
+    "common_names": [
+      "Polygala",
+      "Milkwort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0416",
+    "preferred_name": "Honeylocust Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Gleditsiae",
+    "pinyin": "zao jiao",
+    "chinese": "皂角",
+    "common_names": [
+      "Gleditsia",
+      "Honeylocust"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0417",
+    "preferred_name": "Honeylocust Spine",
+    "type": "TCM-herb",
+    "latin": "Spina Gleditsiae",
+    "pinyin": "zao jiao ci",
+    "chinese": "皂角刺",
+    "common_names": [
+      "Gleditsia spine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0418",
+    "preferred_name": "Bugleweed",
+    "type": "TCM-herb",
+    "latin": "Herba Lycopi",
+    "pinyin": "ze lan",
+    "chinese": "澤蘭",
+    "common_names": [
+      "Lycopus",
+      "Bugleweed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0419",
+    "preferred_name": "Alisma Root",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Alismatis",
+    "pinyin": "ze xie",
+    "chinese": "澤瀉",
+    "common_names": [
+      "Alisma",
+      "Plantain"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0420",
+    "preferred_name": "Pearl Shell",
+    "type": "TCM-herb",
+    "latin": "Concha Margartifera Usta",
+    "pinyin": "zhen zhu mu",
+    "chinese": "珍珠母",
+    "common_names": [
+      "Mother of pearl"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0421",
+    "preferred_name": "Aurantii Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Aurantii",
+    "pinyin": "zhi ke",
+    "chinese": "枳殼",
+    "common_names": [
+      "Citrus",
+      "Aurantium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0422",
+    "preferred_name": "Anemarrhena",
+    "type": "TCM-herb",
+    "latin": "Rhizoma Anemarrhenae",
+    "pinyin": "zhi mu",
+    "chinese": "知母",
+    "common_names": [
+      "Anemarrhena",
+      "Asphodelaceae"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0423",
+    "preferred_name": "Aurantii Immaturus",
+    "type": "TCM-herb",
+    "latin": "Fructus Aurantii Immaturus",
+    "pinyin": "zhi shi",
+    "chinese": "枳實",
+    "common_names": [
+      "Immature orange"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0424",
+    "preferred_name": "Gardenia Fruit",
+    "type": "TCM-herb",
+    "latin": "Fructus Gardeniae",
+    "pinyin": "zhi zi",
+    "chinese": "梔子",
+    "common_names": [
+      "Gardenia",
+      "Cape jasmine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0425",
+    "preferred_name": "Polyporus",
+    "type": "TCM-herb",
+    "latin": "Polyporus Umbellatus",
+    "pinyin": "zhu ling",
+    "chinese": "豬苓",
+    "common_names": [
+      "Umbellate polypore"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0426",
+    "preferred_name": "Bamboo Shavings",
+    "type": "TCM-herb",
+    "latin": "Caulis Bambusae in Taeniam",
+    "pinyin": "zhu ru",
+    "chinese": "竹茹",
+    "common_names": [
+      "Bamboo",
+      "Bambusa"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0427",
+    "preferred_name": "Cinnabar",
+    "type": "TCM-herb",
+    "latin": "Cinnabaris",
+    "pinyin": "zhu sha",
+    "chinese": "朱砂",
+    "common_names": [
+      "Mercury sulfide",
+      "Cinnabar"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0428",
+    "preferred_name": "Lithospermum",
+    "type": "TCM-herb",
+    "latin": "Radix Lithospermi",
+    "pinyin": "zi cao",
+    "chinese": "紫草",
+    "common_names": [
+      "Groomwell",
+      "Lithospermum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0429",
+    "preferred_name": "Yedeon's Violet",
+    "type": "TCM-herb",
+    "latin": "Herba Violae",
+    "pinyin": "zi hua di ding",
+    "chinese": "紫花地丁",
+    "common_names": [
+      "Viola",
+      "Violet"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0430",
+    "preferred_name": "Perilla Leaf",
+    "type": "TCM-herb",
+    "latin": "Folium Perillae",
+    "pinyin": "zi su ye",
+    "chinese": "紫蘇葉",
+    "common_names": [
+      "Perilla",
+      "Shiso"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0431",
+    "preferred_name": "Aster Root",
+    "type": "TCM-herb",
+    "latin": "Radix Asteris",
+    "pinyin": "zi wan",
+    "chinese": "紫菀",
+    "common_names": [
+      "Purple aster"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0432",
+    "preferred_name": "Trachycarpus Fiber",
+    "type": "TCM-herb",
+    "latin": "Traachycarpi Carbonisatus",
+    "pinyin": "zong lu tan",
+    "chinese": "棕櫚炭",
+    "common_names": [
+      "Palm fiber"
+    ],
+    "active_constituents": []
   }
 ]

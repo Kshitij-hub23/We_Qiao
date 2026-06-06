@@ -33,12 +33,16 @@ Kong Talent Engage hackathon (HealthTech track), elderly-care focus.
 
 ## Current implementation (as built — read this before assuming)
 The app is now **three local processes**, not the single cloud app the Stack section envisaged:
-- **Conflict engine** — `hdi-api/` (FastAPI + SQLite), port **8000**. `POST /api/v1/check-conflicts`,
-  `GET /health`. Seed it with `python seed.py` (loads `hdi-api/Medicine_data/`).
+- **Conflict engine** — `hdi-api/` (FastAPI + SQLite), port **8000**. `POST /api/v1/resolve`
+  (deterministic name→entity matching — exact alias + `rapidfuzz` fuzzy fallback, the safety boundary),
+  `POST /api/v1/check-conflicts`, `GET /health`. Seed it with `python seed.py` (loads
+  `hdi-api/Medicine_data/`); fold a herb CSV in with `python ingest_herbs.py <csv>`.
 - **Intake service** — `standardizer/` (FastAPI), port **8001**. `POST /api/v1/ocr` (Gemini image OCR)
-  + `POST /api/v1/standardize` (Gemini name standardization). Needs `GEMINI_API_KEY`.
+  + `POST /api/v1/extract` (Gemini name **extraction** — candidate name strings only, **no vocabulary in
+  the prompt**; the engine does the matching). Needs `GEMINI_API_KEY`.
 - **Next.js frontend** — port **3000**. API routes under `app/api/*` proxy the two services
-  server-side (`ENGINE_URL`, `INTAKE_URL`); the browser never holds a key.
+  server-side (`ENGINE_URL`, `INTAKE_URL`); the browser never holds a key. `/api/resolve` runs
+  extract (intake) → resolve (engine) in one call.
 
 What's actually built: a sign-in flow + **patient portal** (dashboard, profile with a system Patient
 ID, caregivers with permission-scoped access, read-only caregiver view) and a **bilingual EN / 繁體中文**

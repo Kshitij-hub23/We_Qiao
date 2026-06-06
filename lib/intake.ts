@@ -1,10 +1,9 @@
-import type { StandardizedMedicines } from "./types";
-
 /**
  * Server-side wrapper around the external Python *intake* service (OCR +
- * standardize). The base URL lives only here (and in env) so the browser never
- * talks to Gemini/KIT directly and the API keys stay server-side — same pattern
- * as `engine.ts`.
+ * extract). The base URL lives only here (and in env) so the browser never
+ * talks to Gemini directly and the API key stays server-side — same pattern as
+ * `engine.ts`. The intake service only extracts candidate names; resolving them
+ * to entities is the engine's job (`lib/engine.ts` → `/api/v1/resolve`).
  */
 
 const INTAKE_URL = process.env.INTAKE_URL ?? "http://127.0.0.1:8001";
@@ -55,11 +54,11 @@ export async function ocrImage(file: File): Promise<string> {
   return data.text ?? "";
 }
 
-/** Send confirmed text to the intake service; get back split DB-canonical lists. */
-export async function standardizeText(text: string): Promise<StandardizedMedicines> {
+/** Send confirmed text to the intake service; get back candidate name strings. */
+export async function extractMedicines(text: string): Promise<string[]> {
   let res: Response;
   try {
-    res = await fetchWithTimeout(`${INTAKE_URL}/api/v1/standardize`, {
+    res = await fetchWithTimeout(`${INTAKE_URL}/api/v1/extract`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -72,14 +71,13 @@ export async function standardizeText(text: string): Promise<StandardizedMedicin
   }
 
   if (!res.ok) {
-    throw new IntakeUnavailableError(await describe(res, "standardize the medicines"));
+    throw new IntakeUnavailableError(await describe(res, "extract the medicines"));
   }
 
-  const data = (await res.json()) as Partial<StandardizedMedicines>;
-  return {
-    western_medicines: Array.isArray(data.western_medicines) ? data.western_medicines : [],
-    eastern_medicines: Array.isArray(data.eastern_medicines) ? data.eastern_medicines : [],
-  };
+  const data = (await res.json()) as { candidates?: unknown };
+  return Array.isArray(data.candidates)
+    ? data.candidates.filter((c): c is string => typeof c === "string")
+    : [];
 }
 
 /** Build a readable error, surfacing the service's `detail` when present. */
