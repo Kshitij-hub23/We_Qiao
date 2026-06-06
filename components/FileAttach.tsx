@@ -25,15 +25,17 @@ function prettySize(bytes: number): string {
 
 /**
  * Fully working attach control (drag-drop, multi-file, type validation, preview,
- * remove). Files are held client-side and intentionally NOT processed yet — this
- * is the seam where OCR/extraction plugs in later.
+ * remove). When `onImageUpload` is supplied, each accepted file's raw bytes are
+ * also handed up so the page can run OCR on it.
  */
 export function FileAttach({
   files,
   onChange,
+  onImageUpload,
 }: {
   files: AttachedFile[];
   onChange: (next: AttachedFile[]) => void;
+  onImageUpload?: (file: File) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
@@ -50,6 +52,7 @@ export function FileAttach({
         type: file.type,
         previewUrl: file.type.startsWith("image/") ? URL.createObjectURL(file) : null,
       });
+      onImageUpload?.(file);
     }
     if (accepted.length) onChange([...files, ...accepted]);
   }
@@ -94,7 +97,9 @@ export function FileAttach({
           />
         </svg>
         <span className="text-sm font-medium text-ink-700">Drop files or click to browse</span>
-        <span className="text-xs text-ink-400">JPG, PNG, WebP or PDF · not analysed yet</span>
+        <span className="text-xs text-ink-400">
+          {onImageUpload ? "JPG, PNG, WebP or PDF · text extracted automatically" : "JPG, PNG, WebP or PDF"}
+        </span>
         <input
           ref={inputRef}
           type="file"

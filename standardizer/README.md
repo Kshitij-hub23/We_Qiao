@@ -32,8 +32,8 @@ User input (messy)
        │
        ▼
 ┌──────────────────────────────────────────┐
-│ LLM via KIT SCC Gateway                  │
-│ (OpenAI-compatible API)                  │
+│ Google Gemini API                        │
+│ (gemini-2.5-flash)                       │
 │ - Recognizes medicine names              │
 │ - Resolves synonyms, brands, synonyms    │
 │ - Maps to controlled vocabulary          │
@@ -58,7 +58,7 @@ Ready to POST to HDI API
 /api/v1/check-conflicts
 ```
 
-**Note:** Uses the KIT SCC "ki-toolbox" gateway (OpenAI-compatible), not direct Gemini API.
+**Note:** Uses the Google Gemini API (`gemini-2.5-flash`) directly via the `google-genai` SDK.
 
 ---
 
@@ -147,8 +147,9 @@ Standardize free-text medication input into database-canonical names.
 | Name | Type | Required | Default | Notes |
 |------|------|----------|---------|-------|
 | `user_input` | str | Yes | — | Raw patient medication text (any language, any format) |
-| `client` | OpenAI | No | None | Pre-built OpenAI client (for testing/reuse). If None, created from `OPENAI_API_KEY`. |
-| `model` | str | No | `"azure.gpt-4.1-mini"` | Model ID at the KIT gateway |
+| `client` | genai.Client | No | None | Pre-built Gemini client (for testing/reuse). If None, created from `GEMINI_API_KEY`. |
+| `model` | str | No | `"gemini-2.5-flash"` | Gemini model id |
+| `max_attempts` | int | No | 3 | Retries on transient (429/5xx) API errors, with backoff |
 
 **Returns:**
 
@@ -161,7 +162,7 @@ StandardizedMedicines(
 
 **Raises:**
 
-- `ValueError` — If `OPENAI_API_KEY` is not set and no client is provided
+- `ValueError` — If no Gemini API key (`GEMINI_API_KEY` / `GOOGLE_API_KEY`) is set and no client is provided
 
 **Behavior:**
 
@@ -346,37 +347,33 @@ standardize_medicines("   ")
 
 ## Configuration
 
-### API Gateway
+### API Provider
 
-The standardizer uses the **KIT SCC "ki-toolbox" gateway** — an OpenAI-compatible API that provides access to multiple LLMs (including Gemini via Azure) through a unified interface.
+The standardizer calls the **Google Gemini API** directly via the `google-genai` SDK.
 
-**Gateway:** `https://ki-toolbox.scc.kit.edu/api/v1`
-**Model:** `azure.gpt-4.1-mini` (Gemini, via KIT SCC)
+**Model:** `gemini-2.5-flash` (JSON response mode, temperature 0, retry on transient errors)
 
 ### Environment Variables
 
 | Name | Required | Default | Notes |
 |------|----------|---------|-------|
-| `OPENAI_API_KEY` | Yes* | — | **KIT SCC token, not a raw Gemini/OpenAI key.** Request access at https://www.scc.kit.edu/ |
-| `BASE_URL` | No (hardcoded) | `"https://ki-toolbox.scc.kit.edu/api/v1"` | KIT SCC OpenAI-compatible gateway. Can be overridden in code for testing. |
-| `MODEL` | No (hardcoded) | `"azure.gpt-4.1-mini"` | Model ID at the KIT gateway. Can be overridden in function call. |
+| `GEMINI_API_KEY` | Yes* | — | Google Gemini API key. Falls back to `GOOGLE_API_KEY`. |
+| `MODEL` | No (hardcoded) | `"gemini-2.5-flash"` | Gemini model id. Can be overridden in the function call. |
 
 *Only required if calling `standardize_medicines()` without a pre-built client.
 
 ### .env Template
 
 ```bash
-# .env (add to .gitignore)
-# This is a KIT SCC token, obtained from https://www.scc.kit.edu/
-OPENAI_API_KEY=your-kit-scc-token-here
+# .env (gitignored)
+GEMINI_API_KEY=your-gemini-api-key-here
 ```
 
 ### Getting Started
 
-1. **Request KIT SCC access** at https://www.scc.kit.edu/
-2. **Generate a token** in the KIT SCC dashboard
-3. **Add to .env:** `OPENAI_API_KEY=<your-token>`
-4. **Test it:**
+1. **Create a Gemini API key** at https://aistudio.google.com/apikey
+2. **Add to .env:** `GEMINI_API_KEY=<your-key>`
+3. **Test it:**
    ```bash
    echo "Warfarin and danshen" | python standardize.py
    ```
@@ -510,10 +507,10 @@ export async function standardizeMedicines(input: string): Promise<StandardizedM
 ## Known Limitations & Considerations
 
 ### Operational
-1. **Network required** — Requires active internet connection to KIT SCC gateway
+1. **Network required** — Requires an active internet connection to the Google Gemini API
 2. **Latency** — LLM calls typically take 1-2 seconds (slower than local rule-based matching)
-3. **Gateway dependency** — If KIT SCC gateway is down, standardizer cannot run
-4. **Rate limits** — KIT SCC may have rate limits; large batch processing may be throttled
+3. **Provider dependency** — If the Gemini API is unavailable, the standardizer cannot run (transient 429/5xx errors are retried with backoff)
+4. **Rate limits** — Gemini API quotas apply; large batch processing may be throttled
 
 ### LLM Behavior
 5. **Occasional hallucinations** — LLM might output unexpected names despite constraints
@@ -558,4 +555,4 @@ export async function standardizeMedicines(input: string): Promise<StandardizedM
 - `../CLAUDE.md` — Principles #2 (fuzzy vs. deterministic)
 - `../docs/ARCHITECTURE.md` — System architecture; standardizer is the fuzzy step
 - `../docs/API.md` — Future `/api/v1/extraction/standardize` endpoint
-- `../docs/SETUP.md` — How to set `OPENAI_API_KEY`
+- `../docs/SETUP.md` — How to set `GEMINI_API_KEY`

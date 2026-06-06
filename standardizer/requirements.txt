@@ -1,4 +1,6 @@
-openai
 pydantic
 python-dotenv
 google-genai
+fastapi
+uvicorn[standard]
+python-multipart

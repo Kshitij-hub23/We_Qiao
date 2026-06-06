@@ -24,3 +24,19 @@ export interface ConflictDetail {
 export type CheckResult =
   | { ok: true; conflicts: ConflictDetail[] }
   | { ok: false; error: string };
+
+/* ---- Intake (OCR + standardize) — proxied to the Python intake service ---- */
+
+/** Split, DB-canonical medicine lists returned by the standardize step. */
+export interface StandardizedMedicines {
+  western_medicines: string[];
+  eastern_medicines: string[];
+}
+
+/** Shape our /api/ocr route returns to the browser. */
+export type OcrResult = { ok: true; text: string } | { ok: false; error: string };
+
+/** Shape our /api/standardize route returns to the browser. */
+export type StandardizeResult =
+  | { ok: true; medicines: StandardizedMedicines }
+  | { ok: false; error: string };

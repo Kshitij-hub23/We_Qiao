@@ -31,13 +31,14 @@ FUZZY VS. DETERMINISTIC SPLIT (CLAUDE.md, principle #2)
 
 ARCHITECTURE
 ------------
-- Gateway: KIT SCC "ki-toolbox" (https://ki-toolbox.scc.kit.edu/api/v1)
-- Model: azure.gpt-4.1-mini (Gemini via KIT SCC's OpenAI-compatible API)
-- API key: OPENAI_API_KEY (KIT SCC token, not raw Gemini/OpenAI key)
+- Provider: Google Gemini API (google-genai SDK)
+- Model: gemini-2.5-flash
+- API key: GEMINI_API_KEY (falls back to GOOGLE_API_KEY)
   Read from environment server-side only. Never exposed to the browser.
-- Determinism: temperature=0 + JSON mode for reproducible outputs
+- Determinism: temperature=0 + JSON response mode for reproducible outputs
 - System prompt: Embeds the controlled vocabulary and enforces strict constraints
-  on what the LLM can output.
+  on what the model can output.
+- Resilience: transient API errors (429 / 5xx) are retried with exponential backoff.
 
 CONTROLLED VOCABULARY
 ---------------------
@@ -61,13 +62,17 @@ from __future__ import annotations
 
 import json
 import os
+import random
+import time
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from openai import OpenAI
+from google import genai
+from google.genai import errors as genai_errors
+from google.genai import types
 from pydantic import BaseModel, Field
 
-# Load the repo-root .env (gitignored) so OPENAI_API_KEY is available without
+# Load the repo-root .env (gitignored) so the Gemini API key is available without
 # extra wiring. Anchored to this file, so it works regardless of cwd. No-op if
 # python-dotenv isn't installed or the file is absent — a real env var still wins.
 try:
@@ -77,9 +82,16 @@ try:
 except ImportError:
     pass
 
-# OpenAI-compatible gateway (KIT SCC toolbox) + model id.
-BASE_URL = "https://ki-toolbox.scc.kit.edu/api/v1"
-MODEL = "azure.gpt-4.1-mini"
+# Google Gemini model id + the env vars checked (in order) for the key. Only
+# Google key names are accepted here — never the KIT `OPENAI_API_KEY`.
+MODEL = "gemini-2.5-flash"
+_API_KEY_VARS = ("GEMINI_API_KEY", "GOOGLE_API_KEY")
+
+# Transient API failures worth retrying: rate limiting (429) and server hiccups
+# (5xx, e.g. the 503 "high demand" spike). Other errors fail fast.
+_RETRYABLE_STATUS = frozenset({429, 500, 502, 503, 504})
+_DEFAULT_MAX_ATTEMPTS = 3
+_BASE_RETRY_DELAY = 1.0  # seconds; doubles each attempt, plus jitter
 
 # ============================================================================
 # CONTROLLED VOCABULARY — Single Source of Truth
@@ -287,8 +299,9 @@ class StandardizedMedicines(BaseModel):
 def standardize_medicines(
     user_input: str,
     *,
-    client: Optional[OpenAI] = None,
+    client: Optional[genai.Client] = None,
     model: str = MODEL,
+    max_attempts: int = _DEFAULT_MAX_ATTEMPTS,
 ) -> StandardizedMedicines:
     """Standardize free-text prescription input into HDI-compatible medicine lists.
 
@@ -310,7 +323,7 @@ def standardize_medicines(
     PROCESSING PIPELINE
     ===================
     1. Empty check: If input is empty/whitespace, return empty lists immediately
-    2. LLM call: Send to KIT gateway with system prompt + controlled vocab list
+    2. LLM call: Send to Gemini with the controlled vocab as a system instruction
     3. Parsing: Extract JSON from response (tolerant of code fences, malformed)
     4. Validation: Snap each name case-insensitively to DB exact spelling
     5. Drop: Anything not in the vocabulary is silently removed
@@ -329,11 +342,13 @@ def standardize_medicines(
             - OCR output from a prescription photo
             - Handwritten notes
             - Any combination of English, Chinese, pinyin, brand names, etc.
-        client: Optional. Pre-built OpenAI client for testing or reuse.
-            If omitted, creates a new client from OPENAI_API_KEY env var.
+        client: Optional. Pre-built genai.Client for testing or reuse.
+            If omitted, creates one from GEMINI_API_KEY (or GOOGLE_API_KEY).
             Useful for mocking in tests or reusing a client across calls.
-        model: Optional. Model ID at the KIT gateway. Defaults to azure.gpt-4.1-mini.
+        model: Optional. Gemini model id. Defaults to gemini-2.5-flash.
             Can be overridden for testing with a different model.
+        max_attempts: Optional. Total tries on transient API errors (429 / 5xx),
+            with exponential backoff between them. Set to 1 to disable retries.
 
     Returns:
         StandardizedMedicines with:
@@ -342,8 +357,10 @@ def standardize_medicines(
         Both are empty lists if no medicines found or input is empty.
 
     Raises:
-        ValueError: If OPENAI_API_KEY is not set in the environment and no
-            client was provided. Message: "OPENAI_API_KEY is not set..."
+        ValueError: If no Gemini API key is set in the environment and no
+            client was provided.
+        google.genai.errors.APIError: On a non-retryable error, or after the
+            final attempt fails.
 
     Example:
         >>> result = standardize_medicines(
@@ -364,31 +381,64 @@ def standardize_medicines(
         return StandardizedMedicines()
 
     if client is None:
-        api_key = os.environ.get("OPENAI_API_KEY")
-        if not api_key:
-            raise ValueError(
-                "OPENAI_API_KEY is not set. Provide it in the server environment "
-                "or pass an OpenAI `client` explicitly."
-            )
-        client = OpenAI(api_key=api_key, base_url=BASE_URL)
+        client = genai.Client(api_key=_resolve_api_key())
 
-    response = client.chat.completions.create(
+    response = _generate_with_retry(
+        client,
         model=model,
-        temperature=0,  # Deterministic normalization for the fuzzy step.
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": user_input},
-        ],
+        contents=user_input,
+        config=types.GenerateContentConfig(
+            temperature=0,  # Deterministic normalization for the fuzzy step.
+            response_mime_type="application/json",  # JSON-only output.
+            system_instruction=SYSTEM_PROMPT,
+        ),
+        max_attempts=max_attempts,
     )
 
-    raw = response.choices[0].message.content or "{}"
+    raw = response.text or "{}"
     data = _parse_json_object(raw)
 
     return StandardizedMedicines(
         western_medicines=_constrain(data.get("western_medicines"), _WESTERN_LOOKUP),
         eastern_medicines=_constrain(data.get("eastern_medicines"), _EASTERN_LOOKUP),
     )
+
+
+def _resolve_api_key() -> str:
+    for var in _API_KEY_VARS:
+        value = os.environ.get(var)
+        if value:
+            return value
+    raise ValueError(
+        "No Gemini API key found. Set GEMINI_API_KEY (preferred) in the server "
+        f"environment, or {_API_KEY_VARS[1]}, or pass a `client` explicitly."
+    )
+
+
+def _generate_with_retry(
+    client: genai.Client,
+    *,
+    model: str,
+    contents: str,
+    config: "types.GenerateContentConfig",
+    max_attempts: int,
+    base_delay: float = _BASE_RETRY_DELAY,
+):
+    """Call `generate_content`, retrying transient (429 / 5xx) failures.
+
+    Backoff is exponential (`base_delay * 2**attempt`) plus random jitter. Non-
+    retryable errors and the final failure propagate to the caller.
+    """
+    for attempt in range(max_attempts):
+        try:
+            return client.models.generate_content(
+                model=model, contents=contents, config=config
+            )
+        except genai_errors.APIError as exc:
+            last_attempt = attempt == max_attempts - 1
+            if getattr(exc, "code", None) not in _RETRYABLE_STATUS or last_attempt:
+                raise
+            time.sleep(base_delay * (2 ** attempt) + random.uniform(0, base_delay))
 
 
 def _parse_json_object(raw: str) -> dict:

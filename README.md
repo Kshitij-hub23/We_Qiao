@@ -30,7 +30,7 @@ into one view and flags dangerous drug–herb interactions that the two siloed s
 |---|---|
 | App | Next.js (TypeScript), responsive web |
 | Cloud DB / auth / storage | Supabase (single region) |
-| Fuzzy extraction | **Gemini** via KIT SCC gateway (OpenAI-compatible API, server-side token only) |
+| Fuzzy extraction | **Google Gemini API** — `gemini-2.5-flash` for both OCR and standardization (server-side key only) |
 | Safety engine | Our own deterministic code, fed by a drop-in interaction dataset |
 | Hosting | Vercel + Supabase |
 
@@ -52,10 +52,12 @@ The **application** now exists alongside the docs. The repo is split by branch:
 | `main` | shared | docs baseline; integrates `frontend` + `backend` when we're ready |
 
 ### What this app does (current scope)
-A patient's medicines are entered as text into two lists — **Western** and **Chinese (TCM)** — with
-optional file attachments (image/PDF, *not yet processed*). The user confirms, and we send the two
-lists to the external engine, then show the severity-rated conflicts it returns. No OCR, accounts,
-or database on our side yet — those are deliberately deferred.
+A patient uploads a prescription photo (or types into a single text box). The image is OCR'd by the
+**intake service** (Gemini), the extracted text is shown for the user to confirm/edit, then it is
+**standardized** (mapped to the engine's known medicine names) and merged into their profile under
+**Western** / **Chinese (TCM)** — additively, no duplicates. The profile persists in the browser
+(`localStorage`). The two lists are then sent to the external engine, which returns the severity-rated
+conflicts. Accounts and a server-side database are still deferred (the "profile" is local for now).
 
 ### The engine contract (`hdi-api/` — we only consume it)
 - Runs locally at `http://127.0.0.1:8000` (FastAPI, `hdi-api/`).
@@ -67,18 +69,22 @@ or database on our side yet — those are deliberately deferred.
 
 ## Running locally
 ```bash
-# 1. Start the engine (separate terminal) — see hdi-api/README.md
+# 1. Start the engine (terminal 1) — deterministic conflict lookup, see hdi-api/README.md
 cd hdi-api && pip install -r requirements.txt
 python seed.py                  # populate the interaction DB from Medicine_data/
 python -m uvicorn main:app --reload --port 8000
 
-# 2. Start this app
-cp .env.example .env.local      # sets ENGINE_URL=http://127.0.0.1:8000
+# 2. Start the intake service (terminal 2) — OCR + standardize, see standardizer/
+cd standardizer && pip install -r requirements.txt
+python -m uvicorn server:app --reload --port 8001   # needs GEMINI_API_KEY in .env
+
+# 3. Start this app (terminal 3)
+cp .env.example .env.local      # ENGINE_URL=:8000, INTAKE_URL=:8001
 npm install
 npm run dev                     # http://localhost:3000
 ```
-The only configuration is `ENGINE_URL` (where the engine lives); the browser never calls the engine
-directly — our `app/api/conflicts/check` route proxies it server-side.
+The browser never calls the engine, Gemini, or KIT directly — the `app/api/*` routes proxy them
+server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
 
 ## Documentation
 
@@ -144,4 +150,20 @@ directly — our `app/api/conflicts/check` route proxies it server-side.
   (`google-genai`), the first step of the hero flow (image → OCR → standardize → check-conflicts).
   Accepts a file path or raw bytes, infers MIME type, transcribes only (no translation/normalization).
   Key read server-side from `GEMINI_API_KEY` (falls back to `GOOGLE_API_KEY` / `OPENAI_API_KEY`).
-  Verified live against a bilingual test image.
+  Verified live against a bilingual test image. Later: exponential-backoff retry on transient (429/5xx)
+  Gemini errors.
+- **Wire the intake pipeline into the app:** new `standardizer/server.py` (FastAPI) exposes the OCR +
+  standardize functions over HTTP (`POST /api/v1/ocr`, `POST /api/v1/standardize`), kept separate from
+  the deterministic engine. Next.js gains `lib/intake.ts` + `app/api/ocr` and `app/api/standardize`
+  proxy routes (`INTAKE_URL`, default `:8001`) and `ocrImage`/`standardizeText` in the api-client. The
+  intake page now has a **single text box** (replacing the two tag inputs): upload a prescription photo
+  → OCR fills the box → user confirms/edits → "Confirm & add to profile" standardizes and **merges into
+  the profile** (Western/TCM, additive, de-duplicated, persisted to `localStorage`) → check conflicts.
+  Verified end-to-end through the proxy; build + typecheck clean. **Known gap (now fixed, see next):** the
+  KIT `gpt-4.1-mini` standardizer was unreliable on *Chinese* herb names.
+- **Switch standardizer to Gemini 2.5 Flash:** `standardize.py` now calls the Google Gemini API
+  (`gemini-2.5-flash`, JSON response mode, temperature 0, same retry/backoff as OCR) instead of the KIT
+  `ki-toolbox` OpenAI endpoint — unifying both intake steps on one provider/key (`GEMINI_API_KEY`) and
+  dropping the `openai` dependency. The controlled-vocabulary prompt + output validation are unchanged.
+  This **resolves the Chinese-herb gap**: `绿茶与生姜` → Green tea, Ginger; `当归, 甘草, 银杏` → Dong quai,
+  Licorice, Ginkgo; mixed EN+ZH maps correctly. (`OPENAI_API_KEY` / the KIT key is now unused.)
