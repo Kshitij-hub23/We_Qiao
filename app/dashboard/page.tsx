@@ -137,7 +137,7 @@ export default function DashboardPage() {
               {/* Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h1 className="text-2xl font-bold text-ink-800 tracking-tight">
+                  <h1 className="font-display text-3xl font-bold text-ink-900 tracking-tight">
                     {user.name}
                   </h1>
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-ink-100 text-ink-500 capitalize">
@@ -152,10 +152,10 @@ export default function DashboardPage() {
 
                 {/* Quick stats */}
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <Stat label="Conditions" value={diseases.length} colour="#3182f6" />
-                  <Stat label="Western meds" value={western.length} colour="#e0552b" />
-                  <Stat label="TCM medicines" value={eastern.length} colour="#17aa97" />
-                  <Stat label="Total medicines" value={totalMeds} colour="#647088" />
+                  <Stat label="Conditions" value={diseases.length} colour="#8a5530" />
+                  <Stat label="Western meds" value={western.length} colour="#b04f1d" />
+                  <Stat label="TCM medicines" value={eastern.length} colour="#c98a2b" />
+                  <Stat label="Total medicines" value={totalMeds} colour="#7d6c59" />
                 </div>
               </div>
 
@@ -196,7 +196,7 @@ export default function DashboardPage() {
             title="Medical conditions"
             subtitle="Diagnoses and ongoing conditions"
             accentClass="bg-brand-100 text-brand-700"
-            dotColour="#3182f6"
+            dotColour="#8a5530"
             items={diseases}
             placeholder="e.g. Hypertension"
             emptyLabel="No conditions recorded yet."
@@ -207,8 +207,8 @@ export default function DashboardPage() {
           <MedListCard
             title="Western medicines"
             subtitle="Conventional pharmaceutical drugs"
-            accentClass="bg-red-50 text-red-600"
-            dotColour="#e0552b"
+            accentClass="bg-teal-100 text-teal-700"
+            dotColour="#b04f1d"
             items={western}
             placeholder="e.g. Warfarin"
             emptyLabel="No Western medicines recorded yet."
@@ -219,8 +219,8 @@ export default function DashboardPage() {
           <MedListCard
             title="Chinese medicines (TCM)"
             subtitle="Herbs, formulas and supplements"
-            accentClass="bg-teal-50 text-teal-700"
-            dotColour="#17aa97"
+            accentClass="bg-brand-100 text-brand-700"
+            dotColour="#c98a2b"
             items={eastern}
             placeholder="e.g. Danshen"
             emptyLabel="No TCM medicines recorded yet."

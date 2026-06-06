@@ -1,10 +1,13 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Qiáo design system — Apple "Liquid Glass" inspired, healthcare palette.
- * Soft blues + teal accents on white / off-white, light-gray neutrals.
- * Keep tokens here so every component stays on-system and the look is easy
- * to retune later.
+ * Qiáo design system — warm "coffee house" palette, Apple-inspired restraint.
+ * Espresso text, mocha + terracotta accents, cream/latte surfaces.
+ *
+ * Token names are kept stable (brand / teal / ink / severity) so every existing
+ * component restyles automatically — only the values changed from the old
+ * blue/teal scheme to warm tones. Keep all colour decisions here so the whole
+ * app stays on-system and the look is easy to retune later.
  */
 const config: Config = {
   content: [
@@ -14,51 +17,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary brand — calm clinical blue.
+        // Primary brand — warm coffee / mocha.
         brand: {
-          50: "#eef6ff",
-          100: "#d9ecff",
-          200: "#bcdcff",
-          300: "#8ec5ff",
-          400: "#59a4ff",
-          500: "#3182f6",
-          600: "#1f63db",
-          700: "#1a4eb0",
-          800: "#1c438c",
-          900: "#1c3a72",
+          50: "#faf4ee",
+          100: "#f2e6d8",
+          200: "#e6cfb5",
+          300: "#d4ad84",
+          400: "#bd8553",
+          500: "#a3673a",
+          600: "#8a5530",
+          700: "#6f4327",
+          800: "#5a3722",
+          900: "#4a2f1f",
         },
-        // Teal accent.
+        // Secondary accent — terracotta / burnt caramel (the "highlight" colour).
         teal: {
-          50: "#edfcf7",
-          100: "#d2f7ec",
-          200: "#a8eedd",
-          300: "#6fdec9",
-          400: "#39c6b0",
-          500: "#17aa97",
-          600: "#0d8a7c",
-          700: "#0f6e65",
-          800: "#115852",
-          900: "#124945",
+          50: "#fdf2ea",
+          100: "#fbe1cf",
+          200: "#f5c19e",
+          300: "#ec9b69",
+          400: "#e07a3e",
+          500: "#cf6326",
+          600: "#b04f1d",
+          700: "#8d3f1a",
+          800: "#71341a",
+          900: "#5d2d18",
         },
-        // Neutral surfaces / text.
+        // Neutral surfaces / text — warm taupe → espresso.
         ink: {
-          50: "#f7f9fc",
-          100: "#eef2f7",
-          200: "#dfe5ee",
-          300: "#c5cedd",
-          400: "#94a1b8",
-          500: "#647088",
-          600: "#475066",
-          700: "#343c4f",
-          800: "#222838",
-          900: "#141824",
+          50: "#f7f2ec",
+          100: "#efe7dc",
+          200: "#e0d3c3",
+          300: "#c8b6a0",
+          400: "#a3917c",
+          500: "#7d6c59",
+          600: "#5f5142",
+          700: "#463b30",
+          800: "#2f2820",
+          900: "#1f1a15",
         },
-        // Severity scale for conflict cards.
+        // Severity scale for conflict cards — warm-toned but still clearly distinct.
         severity: {
-          contraindicated: "#b4232a",
-          major: "#e0552b",
-          moderate: "#d6932a",
-          minor: "#4a8fb3",
+          contraindicated: "#a8321f",
+          major: "#c0561f",
+          moderate: "#c98a2b",
+          minor: "#8a6f3c",
         },
       },
       borderRadius: {
@@ -67,9 +70,10 @@ const config: Config = {
         "3xl": "2rem",
       },
       boxShadow: {
-        glass: "0 8px 32px rgba(28, 58, 114, 0.10), inset 0 1px 0 rgba(255,255,255,0.55)",
-        "glass-lg": "0 20px 60px rgba(28, 58, 114, 0.16), inset 0 1px 0 rgba(255,255,255,0.6)",
-        soft: "0 2px 12px rgba(28, 58, 114, 0.08)",
+        // Warm brown-tinted shadows (was blue) so depth matches the palette.
+        glass: "0 8px 32px rgba(74, 47, 31, 0.12), inset 0 1px 0 rgba(255,255,255,0.6)",
+        "glass-lg": "0 20px 60px rgba(74, 47, 31, 0.18), inset 0 1px 0 rgba(255,255,255,0.65)",
+        soft: "0 2px 12px rgba(74, 47, 31, 0.10)",
       },
       backdropBlur: {
         xs: "2px",
@@ -96,6 +100,16 @@ const config: Config = {
           "Segoe UI",
           "system-ui",
           "sans-serif",
+        ],
+        // Elegant serif for wordmark + hero headings (BrewHub-style display type).
+        display: [
+          "ui-serif",
+          "New York",
+          "Iowan Old Style",
+          "Palatino Linotype",
+          "Palatino",
+          "Georgia",
+          "serif",
         ],
       },
     },

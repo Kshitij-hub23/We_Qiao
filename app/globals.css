@@ -13,28 +13,28 @@ body {
 
 body {
   @apply text-ink-800 antialiased;
-  /* Calm, layered healthcare backdrop — soft blue → off-white → teal wash. */
+  /* Warm coffee-house backdrop — latte cream with mocha + terracotta washes. */
   background:
-    radial-gradient(1200px 600px at 12% -10%, rgba(110, 196, 255, 0.35), transparent 60%),
-    radial-gradient(1000px 700px at 95% 0%, rgba(111, 222, 201, 0.28), transparent 55%),
-    radial-gradient(900px 900px at 50% 120%, rgba(143, 197, 255, 0.22), transparent 60%),
-    linear-gradient(180deg, #f7f9fc 0%, #eef4fb 100%);
+    radial-gradient(1200px 600px at 12% -10%, rgba(189, 133, 83, 0.30), transparent 60%),
+    radial-gradient(1000px 700px at 95% 0%, rgba(207, 99, 38, 0.16), transparent 55%),
+    radial-gradient(900px 900px at 50% 120%, rgba(212, 173, 132, 0.32), transparent 60%),
+    linear-gradient(180deg, #faf6ef 0%, #f1e7d8 100%);
   background-attachment: fixed;
 }
 
 @layer components {
-  /* Frosted-glass surface — the core Liquid-Glass primitive. */
+  /* Frosted cream surface — the core warm-glass primitive. */
   .glass {
-    @apply bg-white/55 backdrop-blur-xl border border-white/60 shadow-glass;
+    @apply bg-[#fdfaf4]/60 backdrop-blur-xl border border-white/55 shadow-glass;
   }
 
   .glass-strong {
-    @apply bg-white/70 backdrop-blur-2xl border border-white/70 shadow-glass-lg;
+    @apply bg-[#fdfaf4]/75 backdrop-blur-2xl border border-white/65 shadow-glass-lg;
   }
 
   /* Subtle frosted input field. */
   .glass-input {
-    @apply bg-white/60 backdrop-blur-md border border-white/70 rounded-2xl
+    @apply bg-[#fdfaf4]/65 backdrop-blur-md border border-white/65 rounded-2xl
            placeholder:text-ink-400 text-ink-800
            focus:outline-none focus:ring-2 focus:ring-brand-300/70 focus:border-brand-200
            transition-all duration-200;

@@ -209,7 +209,7 @@ function Header({ engineUp }: { engineUp: boolean | null }) {
   return (
     <header className="flex items-center justify-between">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight text-ink-900">
+        <h1 className="font-display text-3xl font-bold tracking-tight text-ink-900">
           Qiáo <span className="text-brand-500">·</span> 橋
         </h1>
         <p className="text-sm text-ink-500">Medication safety bridge — TCM × Western</p>

@@ -72,10 +72,10 @@ export default function LoginPage() {
       >
         {/* Logo lockup */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-ink-800 tracking-tight">
+          <h1 className="font-display text-4xl font-bold text-ink-900 tracking-tight">
             Qiáo <span className="text-brand-500">·</span> 橋
           </h1>
-          <p className="mt-1.5 text-sm text-ink-500">
+          <p className="mt-2 text-sm text-ink-500">
             Medication safety bridge — TCM × Western
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function LoginPage() {
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="text-sm font-medium"
-                style={{ color: "#e0552b" }}
+                style={{ color: "#c0561f" }}
               >
                 {error}
               </motion.p>

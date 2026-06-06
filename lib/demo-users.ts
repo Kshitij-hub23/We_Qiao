@@ -24,7 +24,7 @@ export const DEMO_USERS: DemoUser[] = [
     age: 72,
     role: "patient",
     initials: "EC",
-    avatarHex: "#3182f6",
+    avatarHex: "#a3673a",
   },
   {
     id: "u2",
@@ -34,7 +34,7 @@ export const DEMO_USERS: DemoUser[] = [
     age: 45,
     role: "caretaker",
     initials: "JW",
-    avatarHex: "#17aa97",
+    avatarHex: "#cf6326",
   },
   {
     id: "u3",
@@ -44,6 +44,6 @@ export const DEMO_USERS: DemoUser[] = [
     age: 52,
     role: "practitioner",
     initials: "LW",
-    avatarHex: "#647088",
+    avatarHex: "#7d6c59",
   },
 ];

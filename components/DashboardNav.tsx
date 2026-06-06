@@ -36,7 +36,7 @@ export function DashboardNav({ user }: { user: SessionUser }) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="text-lg font-bold text-ink-800 tracking-tight leading-none">
+          <span className="font-display text-xl font-bold text-ink-900 tracking-tight leading-none">
             Qiáo <span className="text-brand-500">·</span> 橋
           </span>
         </Link>
