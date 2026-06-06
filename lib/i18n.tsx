@@ -243,6 +243,19 @@ const EN: Strings = {
   "error.retry": "Try again",
   "loading.checking": "Checking for interactions…",
 
+  // doctor portal
+  "doctor.title": "Patients",
+  "doctor.subtitle": "Patients under your care",
+  "doctor.count": "{n} patients",
+  "doctor.empty": "No patients assigned yet.",
+  "doctor.back": "← All patients",
+  "doctor.details": "Patient details",
+  "doctor.editing":
+    "You're editing this patient's record. Changes save to their profile and appear when they sign in.",
+  "doctor.runCheck": "Check interactions",
+  "doctor.checkHint":
+    "Run a deterministic check on this patient's current Western + Chinese medicines.",
+
   // severity
   "sev.contraindicated": "Contraindicated",
   "sev.major": "Major",
@@ -463,6 +476,17 @@ const ZH: Strings = {
   "error.retry": "再試一次",
   "loading.checking": "正在檢查相互作用…",
 
+  // doctor portal
+  "doctor.title": "病人列表",
+  "doctor.subtitle": "您負責的病人",
+  "doctor.count": "{n} 位病人",
+  "doctor.empty": "尚未分配病人。",
+  "doctor.back": "← 所有病人",
+  "doctor.details": "病人資料",
+  "doctor.editing": "您正在編輯此病人的紀錄。變更會儲存至其個人檔案，並在其登入時顯示。",
+  "doctor.runCheck": "檢查相互作用",
+  "doctor.checkHint": "對此病人目前的西藥與中藥進行確定性相互作用檢查。",
+
   // severity
   "sev.contraindicated": "禁用",
   "sev.major": "嚴重",
@@ -485,6 +509,7 @@ const GLOSSARY: Record<string, string> = {
   "hypertension": "高血壓",
   "high cholesterol": "高膽固醇",
   "osteoarthritis": "骨關節炎",
+  "chronic kidney disease": "慢性腎病",
   // western medicines
   "warfarin": "華法林",
   "metformin": "二甲雙胍",
@@ -493,11 +518,15 @@ const GLOSSARY: Record<string, string> = {
   "atorvastatin": "阿托伐他汀",
   "ibuprofen": "布洛芬",
   "paracetamol": "撲熱息痛",
+  "lisinopril": "賴諾普利",
+  "furosemide": "呋塞米",
   // TCM
   "danshen": "丹參",
   "dong quai": "當歸",
   "ginkgo": "銀杏",
   "ginseng": "人參",
+  "huang qi": "黃芪",
+  "astragalus": "黃芪",
   "gan cao": "甘草",
   "licorice": "甘草",
   // allergies

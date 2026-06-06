@@ -12,7 +12,9 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 
 /** Where each role lands after sign-in. */
 function landingFor(user: SessionUser): string {
-  return user.role === "caregiver" ? "/caregiver" : "/dashboard";
+  if (user.role === "caregiver") return "/caregiver";
+  if (user.role === "practitioner") return "/doctor";
+  return "/dashboard";
 }
 
 /* ── Inline SVG icons (no external dep) ─────────────────────────── */
