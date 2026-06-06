@@ -1,0 +1,654 @@
+[
+  {
+    "entity_id": "E-0001",
+    "preferred_name": "Danshen",
+    "type": "TCM-herb",
+    "latin": "Salvia miltiorrhiza",
+    "pinyin": "danshen",
+    "chinese": "丹参",
+    "common_names": [
+      "red sage",
+      "Chinese sage root",
+      "tan shen",
+      "Salviae miltiorrhizae radix"
+    ],
+    "active_constituents": [
+      "tanshinones",
+      "salvianolic acids",
+      "danshensu",
+      "rosmarinic acid"
+    ]
+  },
+  {
+    "entity_id": "E-0002",
+    "preferred_name": "Dong quai",
+    "type": "TCM-herb",
+    "latin": "Angelica sinensis",
+    "pinyin": "danggui",
+    "chinese": "当归",
+    "common_names": [
+      "dong quai",
+      "Chinese angelica",
+      "tang kuei",
+      "Angelicae sinensis radix"
+    ],
+    "active_constituents": [
+      "coumarin derivatives (ferulic acid, osthole)",
+      "ligustilide",
+      "Z-ligustilide"
+    ]
+  },
+  {
+    "entity_id": "E-0003",
+    "preferred_name": "Ginkgo",
+    "type": "TCM-herb",
+    "latin": "Ginkgo biloba",
+    "pinyin": "yinxingye",
+    "chinese": "银杏叶",
+    "common_names": [
+      "ginkgo",
+      "ginkgo leaf extract",
+      "EGb 761",
+      "maidenhair tree",
+      "bai guo (seed)"
+    ],
+    "active_constituents": [
+      "ginkgo flavone glycosides",
+      "ginkgolides (esp. ginkgolide B)",
+      "bilobalide"
+    ]
+  },
+  {
+    "entity_id": "E-0004",
+    "preferred_name": "American ginseng",
+    "type": "TCM-herb",
+    "latin": "Panax quinquefolius",
+    "pinyin": "xiyangshen",
+    "chinese": "西洋参",
+    "common_names": [
+      "American ginseng",
+      "xiyangshen",
+      "Panax quinquefolium"
+    ],
+    "active_constituents": [
+      "ginsenosides"
+    ]
+  },
+  {
+    "entity_id": "E-0005",
+    "preferred_name": "Asian ginseng",
+    "type": "TCM-herb",
+    "latin": "Panax ginseng",
+    "pinyin": "renshen",
+    "chinese": "人参",
+    "common_names": [
+      "Asian ginseng",
+      "Korean red ginseng",
+      "Chinese ginseng",
+      "Panax ginseng",
+      "Ginseng radix"
+    ],
+    "active_constituents": [
+      "ginsenosides",
+      "compound K (gut metabolite)"
+    ]
+  },
+  {
+    "entity_id": "E-0006",
+    "preferred_name": "Garlic",
+    "type": "TCM-herb",
+    "latin": "Allium sativum",
+    "pinyin": "dasuan",
+    "chinese": "大蒜",
+    "common_names": [
+      "garlic",
+      "aged garlic extract",
+      "Allii sativi bulbus"
+    ],
+    "active_constituents": [
+      "allicin",
+      "ajoene",
+      "diallyl sulfides",
+      "S-allylcysteine"
+    ]
+  },
+  {
+    "entity_id": "E-0007",
+    "preferred_name": "Licorice",
+    "type": "TCM-herb",
+    "latin": "Glycyrrhiza glabra / Glycyrrhiza uralensis",
+    "pinyin": "gancao",
+    "chinese": "甘草",
+    "common_names": [
+      "licorice",
+      "liquorice",
+      "gan cao",
+      "Glycyrrhizae radix"
+    ],
+    "active_constituents": [
+      "glycyrrhizin",
+      "glycyrrhizic acid",
+      "glycyrrhetinic acid",
+      "18-beta-glycyrrhetyl-3-O-sulfate"
+    ]
+  },
+  {
+    "entity_id": "E-0008",
+    "preferred_name": "St John's Wort",
+    "type": "TCM-herb",
+    "latin": "Hypericum perforatum",
+    "pinyin": "guanyelianqiao",
+    "chinese": "贯叶连翘",
+    "common_names": [
+      "St John's Wort",
+      "SJW",
+      "hypericum",
+      "Hypericum perforatum",
+      "LI160"
+    ],
+    "active_constituents": [
+      "hyperforin",
+      "hypericin",
+      "flavonoids"
+    ]
+  },
+  {
+    "entity_id": "E-0101",
+    "preferred_name": "Warfarin",
+    "type": "WM-drug",
+    "drug_class": "anticoagulant (vitamin K antagonist)",
+    "rxnorm_id": "11289",
+    "common_names": [
+      "Coumadin",
+      "Jantoven"
+    ]
+  },
+  {
+    "entity_id": "E-0102",
+    "preferred_name": "Aspirin",
+    "type": "WM-drug",
+    "drug_class": "antiplatelet (COX-1 inhibitor)",
+    "rxnorm_id": "1191",
+    "common_names": [
+      "acetylsalicylic acid",
+      "ASA"
+    ]
+  },
+  {
+    "entity_id": "E-0103",
+    "preferred_name": "Clopidogrel",
+    "type": "WM-drug",
+    "drug_class": "antiplatelet (P2Y12 inhibitor)",
+    "rxnorm_id": "32968",
+    "common_names": [
+      "Plavix"
+    ]
+  },
+  {
+    "entity_id": "E-0104",
+    "preferred_name": "Glipizide",
+    "type": "WM-drug",
+    "drug_class": "antidiabetic (sulfonylurea)",
+    "rxnorm_id": "4821",
+    "common_names": [
+      "Glucotrol"
+    ]
+  },
+  {
+    "entity_id": "E-0105",
+    "preferred_name": "Saquinavir",
+    "type": "WM-drug",
+    "drug_class": "antiretroviral (HIV protease inhibitor; CYP3A4/P-gp substrate)",
+    "rxnorm_id": "83395",
+    "common_names": [
+      "Invirase",
+      "Fortovase"
+    ]
+  },
+  {
+    "entity_id": "E-0106",
+    "preferred_name": "Hydrochlorothiazide",
+    "type": "WM-drug",
+    "drug_class": "thiazide diuretic / antihypertensive",
+    "rxnorm_id": "5487",
+    "common_names": [
+      "HCTZ",
+      "Microzide"
+    ]
+  },
+  {
+    "entity_id": "E-0107",
+    "preferred_name": "Cyclosporine",
+    "type": "WM-drug",
+    "drug_class": "immunosuppressant (calcineurin inhibitor; CYP3A4/P-gp substrate)",
+    "rxnorm_id": "3008",
+    "common_names": [
+      "ciclosporin",
+      "cyclosporin A",
+      "Neoral",
+      "Sandimmune"
+    ]
+  },
+  {
+    "entity_id": "E-0108",
+    "preferred_name": "Tacrolimus",
+    "type": "WM-drug",
+    "drug_class": "immunosuppressant (calcineurin inhibitor; CYP3A4/P-gp substrate)",
+    "rxnorm_id": "42316",
+    "common_names": [
+      "Prograf",
+      "FK-506"
+    ]
+  },
+  {
+    "entity_id": "E-0109",
+    "preferred_name": "Simvastatin",
+    "type": "WM-drug",
+    "drug_class": "statin (HMG-CoA reductase inhibitor; CYP3A4 substrate)",
+    "rxnorm_id": "36567",
+    "common_names": [
+      "Zocor"
+    ]
+  },
+  {
+    "entity_id": "E-0110",
+    "preferred_name": "Digoxin",
+    "type": "WM-drug",
+    "drug_class": "cardiac glycoside (narrow therapeutic index; P-gp substrate)",
+    "rxnorm_id": "3407",
+    "common_names": [
+      "Lanoxin"
+    ]
+  },
+  {
+    "entity_id": "E-0111",
+    "preferred_name": "Ethinylestradiol / norethindrone (combined oral contraceptive)",
+    "type": "WM-drug",
+    "drug_class": "combined oral contraceptive",
+    "rxnorm_id": "384410",
+    "common_names": [
+      "combined oral contraceptive",
+      "COC",
+      "Loestrin",
+      "ethinyl estradiol / norethindrone"
+    ]
+  },
+  {
+    "entity_id": "E-0112",
+    "preferred_name": "Amlodipine",
+    "type": "WM-drug",
+    "drug_class": "antihypertensive (dihydropyridine calcium channel blocker)",
+    "rxnorm_id": "17767",
+    "common_names": [
+      "Norvasc"
+    ]
+  },
+  {
+    "entity_id": "E-0009",
+    "preferred_name": "Schisandra (Wuzhi)",
+    "type": "TCM-herb",
+    "latin": "Schisandra sphenanthera",
+    "pinyin": "nan wuweizi",
+    "chinese": "南五味子",
+    "common_names": [
+      "schisandra",
+      "Wuzhi tablet",
+      "nan-wuweizi",
+      "Schisandra chinensis (related, 五味子)"
+    ],
+    "active_constituents": [
+      "schisandrin",
+      "schisantherin A",
+      "deoxyschizandrin",
+      "gomisin"
+    ]
+  },
+  {
+    "entity_id": "E-0010",
+    "preferred_name": "Coptis",
+    "type": "TCM-herb",
+    "latin": "Coptis chinensis",
+    "pinyin": "huanglian",
+    "chinese": "黄连",
+    "common_names": [
+      "coptis",
+      "huang lian",
+      "Chinese goldthread",
+      "berberine (principal constituent)"
+    ],
+    "active_constituents": [
+      "berberine",
+      "coptisine",
+      "palmatine"
+    ]
+  },
+  {
+    "entity_id": "E-0011",
+    "preferred_name": "Green tea",
+    "type": "TCM-herb",
+    "latin": "Camellia sinensis",
+    "pinyin": "lücha",
+    "chinese": "绿茶",
+    "common_names": [
+      "green tea",
+      "Camellia sinensis"
+    ],
+    "active_constituents": [
+      "vitamin K",
+      "catechins (EGCG)",
+      "caffeine"
+    ]
+  },
+  {
+    "entity_id": "E-0012",
+    "preferred_name": "Ginger",
+    "type": "TCM-herb",
+    "latin": "Zingiber officinale",
+    "pinyin": "shengjiang",
+    "chinese": "生姜",
+    "common_names": [
+      "ginger",
+      "sheng jiang",
+      "gan jiang (dried, 干姜)"
+    ],
+    "active_constituents": [
+      "gingerols",
+      "shogaols"
+    ]
+  },
+  {
+    "entity_id": "E-0013",
+    "preferred_name": "Turmeric",
+    "type": "TCM-herb",
+    "latin": "Curcuma longa",
+    "pinyin": "jianghuang",
+    "chinese": "姜黄",
+    "common_names": [
+      "turmeric",
+      "curcumin",
+      "jiang huang"
+    ],
+    "active_constituents": [
+      "curcumin",
+      "curcuminoids"
+    ]
+  },
+  {
+    "entity_id": "E-0014",
+    "preferred_name": "Sargassum",
+    "type": "TCM-herb",
+    "latin": "Sargassum spp.",
+    "pinyin": "haizao",
+    "chinese": "海藻",
+    "common_names": [
+      "sargassum",
+      "seaweed (haizao)"
+    ],
+    "active_constituents": [
+      "algal polysaccharides",
+      "iodine"
+    ]
+  },
+  {
+    "entity_id": "E-0015",
+    "preferred_name": "Kansui",
+    "type": "TCM-herb",
+    "latin": "Euphorbia kansui",
+    "pinyin": "gansui",
+    "chinese": "甘遂",
+    "common_names": [
+      "kansui",
+      "gan sui"
+    ],
+    "active_constituents": [
+      "kansuinine",
+      "ingenol-type diterpenoids"
+    ]
+  },
+  {
+    "entity_id": "E-0016",
+    "preferred_name": "Genkwa",
+    "type": "TCM-herb",
+    "latin": "Daphne genkwa",
+    "pinyin": "yuanhua",
+    "chinese": "芫花",
+    "common_names": [
+      "genkwa flos",
+      "yuan hua"
+    ],
+    "active_constituents": [
+      "yuanhuacine",
+      "genkwanin"
+    ]
+  },
+  {
+    "entity_id": "E-0017",
+    "preferred_name": "Aconite",
+    "type": "TCM-herb",
+    "latin": "Aconitum carmichaelii",
+    "pinyin": "fuzi / wutou",
+    "chinese": "附子/乌头",
+    "common_names": [
+      "aconite",
+      "fuzi",
+      "chuanwu",
+      "wutou",
+      "monkshood"
+    ],
+    "active_constituents": [
+      "aconitine (diester diterpenoid alkaloids)",
+      "mesaconitine",
+      "hypaconitine"
+    ]
+  },
+  {
+    "entity_id": "E-0018",
+    "preferred_name": "Pinellia",
+    "type": "TCM-herb",
+    "latin": "Pinellia ternata",
+    "pinyin": "banxia",
+    "chinese": "半夏",
+    "common_names": [
+      "pinellia",
+      "ban xia"
+    ],
+    "active_constituents": [
+      "alkaloids",
+      "lectins",
+      "ephedrine-type bases"
+    ]
+  },
+  {
+    "entity_id": "E-0019",
+    "preferred_name": "Fritillaria",
+    "type": "TCM-herb",
+    "latin": "Fritillaria thunbergii / cirrhosa",
+    "pinyin": "beimu",
+    "chinese": "贝母",
+    "common_names": [
+      "fritillaria",
+      "bei mu",
+      "chuan bei mu",
+      "zhe bei mu"
+    ],
+    "active_constituents": [
+      "steroidal alkaloids (peimine/peiminine)"
+    ]
+  },
+  {
+    "entity_id": "E-0020",
+    "preferred_name": "Trichosanthes",
+    "type": "TCM-herb",
+    "latin": "Trichosanthes kirilowii",
+    "pinyin": "gualou",
+    "chinese": "瓜蒌",
+    "common_names": [
+      "trichosanthes",
+      "gua lou",
+      "snake gourd fruit"
+    ],
+    "active_constituents": [
+      "triterpenoids",
+      "trichosanthin"
+    ]
+  },
+  {
+    "entity_id": "E-0021",
+    "preferred_name": "Veratrum",
+    "type": "TCM-herb",
+    "latin": "Veratrum nigrum",
+    "pinyin": "lilu",
+    "chinese": "藜芦",
+    "common_names": [
+      "veratrum",
+      "li lu",
+      "black false hellebore"
+    ],
+    "active_constituents": [
+      "veratrum steroidal alkaloids (jervine, veratridine)"
+    ]
+  },
+  {
+    "entity_id": "E-0022",
+    "preferred_name": "Wulingzhi",
+    "type": "TCM-herb",
+    "latin": "Trogopterus xanthipes (faeces)",
+    "pinyin": "wulingzhi",
+    "chinese": "五灵脂",
+    "common_names": [
+      "wu ling zhi",
+      "flying squirrel faeces",
+      "Trogopterus dung"
+    ],
+    "active_constituents": [
+      "resins",
+      "urea derivatives"
+    ]
+  },
+  {
+    "entity_id": "E-0113",
+    "preferred_name": "Omeprazole",
+    "type": "WM-drug",
+    "drug_class": "proton-pump inhibitor (CYP2C19 substrate/inhibitor)",
+    "rxnorm_id": "7646",
+    "common_names": [
+      "Prilosec",
+      "Losec"
+    ]
+  },
+  {
+    "entity_id": "E-0114",
+    "preferred_name": "Ibuprofen",
+    "type": "WM-drug",
+    "drug_class": "NSAID",
+    "rxnorm_id": "5640",
+    "common_names": [
+      "Advil",
+      "Motrin",
+      "Brufen"
+    ]
+  },
+  {
+    "entity_id": "E-0115",
+    "preferred_name": "Amiodarone",
+    "type": "WM-drug",
+    "drug_class": "antiarrhythmic (class III; CYP2C9/3A4 & P-gp inhibitor)",
+    "rxnorm_id": "703",
+    "common_names": [
+      "Cordarone",
+      "Pacerone"
+    ]
+  },
+  {
+    "entity_id": "E-0116",
+    "preferred_name": "Fluconazole",
+    "type": "WM-drug",
+    "drug_class": "azole antifungal (CYP2C9 inhibitor)",
+    "rxnorm_id": "4450",
+    "common_names": [
+      "Diflucan"
+    ]
+  },
+  {
+    "entity_id": "E-0117",
+    "preferred_name": "Clarithromycin",
+    "type": "WM-drug",
+    "drug_class": "macrolide antibiotic (strong CYP3A4 inhibitor)",
+    "rxnorm_id": "21212",
+    "common_names": [
+      "Biaxin"
+    ]
+  },
+  {
+    "entity_id": "E-0118",
+    "preferred_name": "Gemfibrozil",
+    "type": "WM-drug",
+    "drug_class": "fibrate (lipid-lowering; OATP1B1/glucuronidation inhibitor)",
+    "rxnorm_id": "4719",
+    "common_names": [
+      "Lopid"
+    ]
+  },
+  {
+    "entity_id": "E-0119",
+    "preferred_name": "Lisinopril",
+    "type": "WM-drug",
+    "drug_class": "ACE inhibitor (antihypertensive)",
+    "rxnorm_id": "29046",
+    "common_names": [
+      "Prinivil",
+      "Zestril"
+    ]
+  },
+  {
+    "entity_id": "E-0120",
+    "preferred_name": "Spironolactone",
+    "type": "WM-drug",
+    "drug_class": "potassium-sparing diuretic (mineralocorticoid-receptor antagonist)",
+    "rxnorm_id": "9997",
+    "common_names": [
+      "Aldactone"
+    ]
+  },
+  {
+    "entity_id": "E-0121",
+    "preferred_name": "Prednisolone",
+    "type": "WM-drug",
+    "drug_class": "corticosteroid (glucocorticoid)",
+    "rxnorm_id": "8638",
+    "common_names": [
+      "Prelone",
+      "Orapred"
+    ]
+  },
+  {
+    "entity_id": "E-0122",
+    "preferred_name": "Sertraline",
+    "type": "WM-drug",
+    "drug_class": "antidepressant (SSRI)",
+    "rxnorm_id": "36437",
+    "common_names": [
+      "Zoloft"
+    ]
+  },
+  {
+    "entity_id": "E-0123",
+    "preferred_name": "Indinavir",
+    "type": "WM-drug",
+    "drug_class": "antiretroviral (HIV protease inhibitor; CYP3A4 substrate)",
+    "rxnorm_id": "114289",
+    "common_names": [
+      "Crixivan"
+    ]
+  },
+  {
+    "entity_id": "E-0124",
+    "preferred_name": "Metformin",
+    "type": "WM-drug",
+    "drug_class": "antidiabetic (biguanide)",
+    "rxnorm_id": "6809",
+    "common_names": [
+      "Glucophage"
+    ]
+  }
+]

@@ -57,18 +57,19 @@ optional file attachments (image/PDF, *not yet processed*). The user confirms, a
 lists to the external engine, then show the severity-rated conflicts it returns. No OCR, accounts,
 or database on our side yet — those are deliberately deferred.
 
-### The engine contract (owned by the `engine` branch — we only consume it)
+### The engine contract (`hdi-api/` — we only consume it)
 - Runs locally at `http://127.0.0.1:8000` (FastAPI, `hdi-api/`).
 - `POST /api/v1/check-conflicts` — body `{ "western_medicines": string[], "eastern_medicines": string[] }`
-  → returns `[{ western_drug, tcm_herb, severity, mechanism }]`. Case-insensitive; empty lists → `[]`.
+  → returns `[{ western_drug, tcm_herb, severity, mechanism }]`. Case-insensitive + alias-aware; empty lists → `[]`.
 - `GET /health` → `{ "status": "ok" }`.
-- **Note:** the engine's database starts empty; it must be populated (teammate's ingestion) for the
+- **Note:** the engine's tables start empty; run `python seed.py` (loads `hdi-api/Medicine_data/`) for the
   warfarin × danshen demo result to appear.
 
 ## Running locally
 ```bash
-# 1. Start the engine (separate terminal) — see hdi-api/README.md on the engine branch
+# 1. Start the engine (separate terminal) — see hdi-api/README.md
 cd hdi-api && pip install -r requirements.txt
+python seed.py                  # populate the interaction DB from Medicine_data/
 python -m uvicorn main:app --reload --port 8000
 
 # 2. Start this app
@@ -80,10 +81,23 @@ The only configuration is `ENGINE_URL` (where the engine lives); the browser nev
 directly — our `app/api/conflicts/check` route proxies it server-side.
 
 ## Documentation
-- [`docs/PROJECT_BRIEF.md`](docs/PROJECT_BRIEF.md) — the full implementation brief: complete system
-  architecture, hard constraints, the dataset contract, and the end-to-end hero flow.
-- [`CLAUDE.md`](CLAUDE.md) — guidance for any AI agent working in this repo (principles, stack,
-  conventions). Read it before making changes.
+
+**Get started:**
+- [`docs/SETUP.md`](docs/SETUP.md) — 5-minute quick start: install, run, and test locally
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — System diagram, data flow, component breakdown
+
+**Reference:**
+- [`docs/PROJECT_BRIEF.md`](docs/PROJECT_BRIEF.md) — Full implementation brief, constraints, dataset contract
+- [`docs/API.md`](docs/API.md) — All API endpoints, examples, error handling
+- [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — Deploying to Vercel, Railway, or self-hosted
+- [`CLAUDE.md`](CLAUDE.md) — Principles and conventions for AI agents working in the repo
+
+**Component guides:**
+- [`app/README.md`](app/README.md) — Next.js app structure, routes, styling
+- [`components/README.md`](components/README.md) — React component catalog with prop docs
+- [`lib/README.md`](lib/README.md) — Utilities: api-client, engine, types, validation
+- [`hdi-api/README.md`](hdi-api/README.md) — Python HDI API: database schema, endpoints, population
+- [`standardizer/README.md`](standardizer/README.md) — Medicine name standardization (fuzzy step)
 
 ## Push log
 - **Initial commit:** README with project vision, the fuzzy-vs-deterministic design principle, and
@@ -112,3 +126,16 @@ directly — our `app/api/conflicts/check` route proxies it server-side.
   OpenAI-compatible model (`azure.gpt-4.1-mini`) via the KIT SCC `ki-toolbox` gateway rather than
   Gemini; key read server-side from `OPENAI_API_KEY` only. The LLM does fuzzy extraction/normalization
   only — never the safety verdict (CLAUDE.md principle #2).
+- **Populate the HDI dataset:** dropped the curated `hdi-api/Medicine_data/` (46 entities, 51 sourced
+  interactions — 30 TCM-WM, 12 WM-WM, 9 TCM-TCM) into the engine. Reworked `hdi-api/database.py` to the
+  dataset's normalized model (`entities`, `entity_aliases`, class-agnostic `interactions` holding all
+  three classes + explainability fields), added `hdi-api/seed.py` (idempotent ingestion + alias index),
+  and updated `/api/v1/check-conflicts` to resolve names via aliases (brand / pinyin / latin / Chinese)
+  and match **TCM-WM** only — WM-WM and TCM-TCM are stored for later. **Public request/response contract
+  unchanged**, so the frontend is unaffected. Verified end-to-end: warfarin × danshen → major flag.
+- **Constrain standardizer to the DB vocabulary:** `standardizer/standardize.py` now carries
+  `DATABASE_MEDICINES` — the exact 24 WM + 22 TCM `preferred_name`s from the HDI database — and a prompt
+  that forces the LLM to map free-text onto that controlled list only. Output is then validated against
+  the vocabulary (case-insensitively, snapped to canonical spelling), so the standardizer can never emit
+  a medicine the engine doesn't know. Regenerate the lists from the DB if the dataset changes (command in
+  the file header).

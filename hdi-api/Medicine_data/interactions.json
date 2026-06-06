@@ -1,0 +1,1421 @@
+[
+  {
+    "id": "INT-0001",
+    "agent_a_id": "E-0001",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Combined pharmacodynamic and pharmacokinetic effect: danshen independently inhibits platelet aggregation and impairs the extrinsic coagulation pathway, and animal data show it raises warfarin AUC/half-life and lowers clearance (proposed CYP-mediated metabolism inhibition plus albumin displacement of warfarin).",
+    "clinical_effect": "Excessive anticoagulation with elevated INR/prothrombin time and bleeding (reported cases include haemothorax with INR >8.4); INR falls back toward range after the herb is stopped.",
+    "management": "Advise warfarin patients to avoid danshen and danshen-containing products. If co-used, monitor INR closely, watch for bleeding, and adjust/withhold warfarin; suspect this interaction when anticoagulation control becomes unexpectedly unstable.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "7494191",
+        "note": "Rat PK/PD study: danshen increased AUC, Cmax and half-life of R- and S-warfarin, decreased clearance, prolonged prothrombin time (J Pharm Pharmacol 1995)."
+      },
+      {
+        "type": "PMID",
+        "ref": "7487701",
+        "note": "Case report of warfarin-danshen interaction (Aust N Z J Med 1995); PubMed record has no abstract, confirmed by title/MeSH."
+      },
+      {
+        "type": "PMID",
+        "ref": "10215271",
+        "note": "Clinical correspondence on the warfarin-danshen interaction (Ann Thorac Surg 1999)."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.1345/aph.19029",
+        "note": "Review of three case reports of gross over-anticoagulation/bleeding; concludes danshen should be avoided with warfarin (Ann Pharmacother 2001)."
+      },
+      {
+        "type": "DB",
+        "ref": "PMC4325561",
+        "note": "Singapore Med J 2015 review: haemothorax case (INR >8.4), a controlled trial showing PT/INR prolongation, and mechanisms (antiplatelet action, CYP inhibition, albumin displacement)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0002",
+    "agent_a_id": "E-0001",
+    "agent_b_id": "E-0102",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "additive",
+    "mechanism": "Danshen constituents (salvianolic/rosmarinic acid, tanshinones) inhibit platelet activation (in part via platelet protein-disulfide isomerase ERp57), adding to aspirin's COX-1-mediated platelet inhibition.",
+    "clinical_effect": "Theoretically enhanced platelet inhibition and increased bruising/bleeding tendency; a population study did not confirm a significant rise in major bleeding.",
+    "management": "Use cautiously together; counsel patients to disclose danshen use, watch for bruising and gum/GI bleeding, and consider stopping danshen before surgery or invasive procedures.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "23671711",
+        "note": "Review naming danshen among herbs with additive antiplatelet/anticoagulant bleeding risk (PLoS One 2013)."
+      },
+      {
+        "type": "PMID",
+        "ref": "29849736",
+        "note": "In vitro: danshen extract and rosmarinic acid inhibit platelet aggregation via ERp57 - confirms intrinsic antiplatelet activity."
+      },
+      {
+        "type": "PMID",
+        "ref": "28831288",
+        "note": "Conflicting/negative: Taiwan nested case-crossover found no significant increase in major bleeding for danshen + antiplatelet (point estimate trended lower, non-significant)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0003",
+    "agent_a_id": "E-0002",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Proposed pharmacodynamic add-on: Angelica sinensis carries coumarin-type constituents (ferulic acid, osthole) with antiplatelet/antithrombin-like activity, thought to amplify warfarin's anticoagulant action without changing warfarin levels. Mechanism is unproven and animal data conflict.",
+    "clinical_effect": "Rise in PT/INR with increased bleeding/bruising risk in a patient previously stable on warfarin; INR normalizes after the herb is stopped.",
+    "management": "Advise warfarin-treated patients to avoid dong quai. If already co-administered, monitor INR closely, watch for bleeding, and recheck INR after stopping the herb; adjust warfarin dose as needed.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "10417036",
+        "note": "Case report (Page & Lawrence, Pharmacotherapy 1999): >2-fold PT/INR rise after ~4 weeks of dong quai; normalized ~1 month after stopping."
+      },
+      {
+        "type": "DB",
+        "ref": "PMC4325561",
+        "note": "Singapore Med J 2015 review: classifies dong quai-warfarin as a pharmacodynamic interaction causing elevated INR; coumarin/ferulic-acid antiplatelet mechanism."
+      },
+      {
+        "type": "PMID",
+        "ref": "7588995",
+        "note": "Conflicting: controlled rabbit study found no change in warfarin PK and a significant DECREASE in PT (opposite direction)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0004",
+    "agent_a_id": "E-0003",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "Hypothesized antiplatelet add-on: ginkgolide B antagonizes platelet-activating factor, which can impair platelet aggregation independently of warfarin. Controlled trials do not show a consistent change in INR or warfarin pharmacokinetics, so any effect is pharmacodynamic rather than a reliable INR change.",
+    "clinical_effect": "Possible increased bleeding, but controlled trials show no consistent change in INR or warfarin dose requirement; any added risk is likely small and antiplatelet in nature.",
+    "management": "No routine contraindication. If used with warfarin, keep ginkgo dose stable, check INR more frequently after starting/stopping, avoid combining with other antiplatelets, counsel on bleeding signs, and discontinue ginkgo before surgery.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "PMC4765589",
+        "note": "Retrospective VA cohort (~807,399 warfarin users; 11,003 concurrent ginkgo): higher bleeding risk, HR 1.38 (95% CI 1.20-1.58) - observational signal (NLP-extracted exposure, confounding possible)."
+      },
+      {
+        "type": "PMID",
+        "ref": "15801937",
+        "note": "Conflicting/negative: randomized crossover in healthy subjects, ginkgo did not significantly affect INR, platelet aggregation, or warfarin PK."
+      },
+      {
+        "type": "PMID",
+        "ref": "12772396",
+        "note": "Conflicting/negative: RCT in stable warfarin patients, ginkgo 100 mg/day did not change weekly warfarin dose or destabilize INR."
+      },
+      {
+        "type": "PMID",
+        "ref": "28797065",
+        "note": "Systematic review: ginkgo did not significantly alter warfarin pharmacodynamics; PK results conflicting - overall inconclusive, leaning negative."
+      }
+    ]
+  },
+  {
+    "id": "INT-0005",
+    "agent_a_id": "E-0003",
+    "agent_b_id": "E-0103",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "additive",
+    "mechanism": "Ginkgolide B (platelet-activating-factor antagonism) can blunt platelet aggregation, theoretically adding to clopidogrel's P2Y12 blockade and aspirin's COX-1 inhibition. Dedicated pharmacodynamic testing did not confirm enhanced clopidogrel effect, so the additive mechanism is weakly borne out in vivo.",
+    "clinical_effect": "Potential for increased bruising or spontaneous bleeding (case reports of hyphema, intracranial/subdural hemorrhage), but controlled and cohort data show little to no measurable increase with aspirin or clopidogrel.",
+    "management": "No strict contraindication; advise caution. Counsel antiplatelet patients who take ginkgo to watch for unusual bruising/bleeding and consider stopping ginkgo before elective surgery; heightened vigilance in the elderly and those with other bleeding-risk factors.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "NBK71683",
+        "note": "Case report + systematic review: 15 bleeding events (mostly intracranial/subdural, plus hyphema) temporally linked to ginkgo; only 5 involved other bleeding-risk drugs and no case met full causality criteria."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.1371/journal.pone.0321804",
+        "note": "Pharmacovigilance analysis (PLOS ONE 2025): aspirin and clopidogrel most frequent co-medications; small but significant associations with bleeding (aspirin OR 1.12, clopidogrel OR 1.10) and abnormal coagulation."
+      },
+      {
+        "type": "PMID",
+        "ref": "17010102",
+        "note": "Conflicting/negative: ginkgo did NOT enhance clopidogrel antiplatelet effect or prolong bleeding time with clopidogrel in healthy volunteers."
+      },
+      {
+        "type": "PMID",
+        "ref": "18214851",
+        "note": "Conflicting/negative: review concludes ginkgo does not significantly affect haemostasis or the safety of co-administered aspirin."
+      },
+      {
+        "type": "PMID",
+        "ref": "21649517",
+        "note": "Conflicting: Taiwan cohort, adjusted OR for hemorrhage with ginkgo + antiplatelet/anticoagulant 1.5 (95% CI 0.5-5.0), not significant."
+      }
+    ]
+  },
+  {
+    "id": "INT-0006",
+    "agent_a_id": "E-0004",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "American ginseng (Panax quinquefolius) lowers warfarin exposure and anticoagulant response, likely by increasing warfarin clearance (proposed hepatic enzyme induction); in the RCT both plasma warfarin and INR fell. Note: evidence is specific to American ginseng; Asian Panax ginseng data are conflicting.",
+    "clinical_effect": "Reduced anticoagulation - lower INR and plasma warfarin - which can leave a patient subtherapeutic and at increased thrombotic risk if ginseng is started, stopped, or used inconsistently.",
+    "management": "Ask warfarin patients about ginseng (especially American ginseng) use; discourage starting/stopping without informing the prescriber. If co-used, monitor INR more frequently around any change in ginseng intake and adjust warfarin to maintain target INR.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "15238367",
+        "note": "Randomized, double-blind, placebo-controlled trial (Yuan et al., Ann Intern Med 2004, n=20 healthy volunteers): American ginseng significantly decreased peak INR, INR AUC and peak plasma warfarin."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ginseng-american",
+        "note": "MSK About Herbs: American ginseng shown to antagonize warfarin's effects in humans (cites Yuan 2004)."
+      },
+      {
+        "type": "DB",
+        "ref": "PMC4325561",
+        "note": "Singapore Med J 2015 review: confirms American ginseng reduced peak INR/plasma warfarin in an RCT; notes Asian Panax ginseng evidence is conflicting (a stroke-patient trial showed no significant INR/PT change)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0007",
+    "agent_a_id": "E-0005",
+    "agent_b_id": "E-0104",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "additive",
+    "mechanism": "Ginseng ginsenosides independently lower blood glucose (improved insulin secretion and peripheral glucose handling). Stacked on a glucose-lowering antidiabetic such as a sulfonylurea (glipizide) or insulin, the two same-direction effects add up.",
+    "clinical_effect": "Lower-than-expected blood glucose and increased hypoglycemia risk (sweating, shakiness, confusion), especially in well-controlled patients on insulin or insulin-secretagogues.",
+    "management": "Treat as a pharmacodynamic additive effect, not a contraindication. Advise more frequent glucose self-monitoring, counsel on hypoglycemia symptoms, and have the prescriber consider antidiabetic dose adjustment if glucose trends low. (Glipizide is a representative sulfonylurea; the class includes other secretagogues and insulin.)",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "25265315",
+        "note": "Meta-analysis of RCTs (PLoS One 2014): ginseng significantly reduced fasting blood glucose vs control (MD -0.31 mmol/L, 95% CI -0.59 to -0.03, P=0.03)."
+      },
+      {
+        "type": "PMID",
+        "ref": "16860976",
+        "note": "RCT: Korean red ginseng (Panax ginseng) given as adjunct to usual antidiabetic therapy improved postprandial glucose/insulin indices (HbA1c unchanged)."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ginseng-asian",
+        "note": "MSK About Herbs: P. ginseng may increase the hypoglycemic effect of insulin and sulfonylureas."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.1186/s13098-017-0254-9",
+        "note": "Review (Diabetol Metab Syndr 2017): ginseng compound K acts as an insulin secretagogue; additive glucose-lowering shown with metformin."
+      }
+    ]
+  },
+  {
+    "id": "INT-0008",
+    "agent_a_id": "E-0006",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "Garlic organosulfur compounds inhibit platelet aggregation and may raise fibrinolytic activity, an additive antithrombotic effect on top of warfarin. Controlled trials show no change in warfarin pharmacokinetics or INR, so any true interaction is pharmacodynamic and inconsistent.",
+    "clinical_effect": "Potential for increased INR, easy bruising, or bleeding when garlic supplements are added; most controlled data show no measurable change in INR or warfarin PK.",
+    "management": "No absolute contraindication; culinary amounts are not a concern. With concentrated garlic supplements, monitor INR when starting/stopping, watch for bleeding, keep intake consistent, and consider holding supplements ~1-2 weeks before surgery.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/garlic",
+        "note": "MSK About Herbs: advises caution with warfarin/blood thinners due to increased bleeding/bruising; notes reported increased INR and recommends stopping garlic supplements before surgery."
+      },
+      {
+        "type": "PMID",
+        "ref": "18516070",
+        "note": "Conflicting/negative: randomized controlled study in healthy subjects, garlic did not significantly alter warfarin PK, PD, INR, or platelet aggregation (Br J Pharmacol 2008)."
+      },
+      {
+        "type": "PMID",
+        "ref": "28797065",
+        "note": "Conflicting/negative: PLoS One 2017 systematic review, garlic had no significant effect on warfarin PK/PD; case reports judged low-quality and inconsistent."
+      }
+    ]
+  },
+  {
+    "id": "INT-0009",
+    "agent_a_id": "E-0006",
+    "agent_b_id": "E-0105",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "inhibition",
+    "mechanism": "Garlic speeds saquinavir removal during absorption. Originally attributed to intestinal CYP3A4/P-gp induction; later human duodenal-biopsy work attributes it mainly to induction of intestinal P-glycoprotein (CYP3A4 unchanged). Net result: less drug crosses the gut wall and systemic exposure falls.",
+    "clinical_effect": "Lower saquinavir blood levels (AUC down ~51% in the original trial; ~15% in a later controlled study), risking subtherapeutic antiretroviral exposure, loss of HIV virologic control, and resistance if saquinavir is the sole protease inhibitor.",
+    "management": "Avoid garlic supplements with unboosted saquinavir as the sole protease inhibitor. If essential, do not rely on saquinavir alone; consider ritonavir boosting and/or monitor drug levels and viral load. Effect persisted partly after a 10-day washout, so simple temporal separation is unreliable. Culinary garlic is not the concern.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "11740713",
+        "note": "Healthy-volunteer PK study (Piscitelli et al., Clin Infect Dis 2002): garlic cut saquinavir AUC 51%, Cmax 54%, trough 49%."
+      },
+      {
+        "type": "PMID",
+        "ref": "20933082",
+        "note": "Duodenal-biopsy study: garlic induced intestinal P-gp to ~131% with no CYP3A4 effect; saquinavir AUC fell to ~85%, correlating with P-gp induction (refines mechanism, milder magnitude)."
+      },
+      {
+        "type": "PMID",
+        "ref": "21104925",
+        "note": "Ex vivo/in vitro: aged garlic extract increased saquinavir efflux from enterocytes, decreasing the absorbed fraction."
+      }
+    ]
+  },
+  {
+    "id": "INT-0010",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0112",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "Licorice glycyrrhizin is metabolized to glycyrrhetinic acid, which inhibits renal 11-beta-hydroxysteroid dehydrogenase type 2 (and directly activates the mineralocorticoid receptor), causing apparent mineralocorticoid excess: sodium/water retention, potassium wasting and rising blood pressure that opposes antihypertensive therapy. (Amlodipine is a representative antihypertensive; the effect is class-level.)",
+    "clinical_effect": "Rising or hard-to-control blood pressure, hypokalemia, fluid retention/edema and metabolic alkalosis; can present as a hypertensive emergency and reduces antihypertensive efficacy.",
+    "management": "Avoid regular/high-dose licorice (confectionery, teas, cough syrups, TCM formulas) in patients on antihypertensive therapy. If unexplained BP worsening or hypokalemia appears, take a licorice history and stop it; monitor BP and potassium, replete potassium, and consider a mineralocorticoid-receptor antagonist. Extra caution in elderly/low-body-weight patients.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "39753286",
+        "note": "BMJ Case Rep 2025: licorice-induced pseudohyperaldosteronism causing severe uncontrolled hypertension and hypokalemia; BP/potassium normalized after stopping licorice plus MR blocker."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.3389/fnut.2021.719197",
+        "note": "Front Nutr 2021 narrative review (also PMID 34604277): 11-beta-HSD2 inhibition causes sodium retention, hypertension, low renin/aldosterone; names concomitant antihypertensives/diuretics, advanced age and low body weight as risk modifiers."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.3389/fendo.2019.00484",
+        "note": "Front Endocrinol 2019 review: glycyrrhetinic acid blocks 11-beta-HSD2 and directly binds the mineralocorticoid receptor as an agonist, producing hypertension and hypokalemia."
+      }
+    ]
+  },
+  {
+    "id": "INT-0011",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0106",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "additive",
+    "mechanism": "Licorice glycyrrhizin metabolites inhibit renal 11-beta-HSD2, driving sodium retention and potassium wasting (apparent mineralocorticoid excess). Thiazide and loop diuretics independently increase distal potassium excretion, so the two mechanisms add up to deepen total-body potassium loss.",
+    "clinical_effect": "Additive, potentially severe hypokalemia (a case nadir of 1.9 mmol/L) with muscle weakness, edema, hypertension, ECG changes/QT prolongation and arrhythmia risk; low potassium also raises susceptibility to digoxin toxicity.",
+    "management": "Avoid or limit chronic/high-dose licorice (including Glycyrrhiza-containing herbal/Kampo products) in patients on thiazide or loop diuretics. If used, monitor serum potassium and blood pressure, replete potassium, and discontinue licorice if hypokalemia develops. Extra caution with concurrent digoxin.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "39807221",
+        "note": "Case report (Clin Case Rep 2025): 71-year-old on hydrochlorothiazide 12.5 mg developed severe hypokalemia (nadir 1.9 mmol/L) after ~6 weeks of licorice confectionery; authors attribute additive thiazide contribution."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.3389/fnut.2021.719197",
+        "note": "Front Nutr 2021 review (also PMID 34604277): concomitant potassium-losing loop/thiazide diuretics increase hypokalemia risk in patients taking licorice-containing products."
+      }
+    ]
+  },
+  {
+    "id": "INT-0012",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0107",
+    "interaction_class": "TCM-WM",
+    "severity": "contraindicated",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's Wort (chiefly hyperforin) activates the pregnane-X receptor, inducing intestinal/hepatic CYP3A4 and P-glycoprotein. Cyclosporine is a substrate of both, so first-pass metabolism and efflux increase, lowering bioavailability and accelerating clearance, so blood levels fall.",
+    "clinical_effect": "Cyclosporine trough/AUC drops sharply (~30-60%) within days to weeks, often to subtherapeutic levels, precipitating acute organ-transplant rejection.",
+    "management": "Treat as contraindicated in transplant recipients. If a patient on cyclosporine has been taking St John's Wort, stop the herb, monitor trough levels closely and adjust dose; expect levels to rise again over 1-2 weeks after withdrawal (delayed de-induction). Screen all transplant/immunosuppressed patients for herbal use.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "10683008",
+        "note": "Ruschitzka et al., Lancet 2000: two heart-transplant patients developed acute rejection after starting St John's Wort, attributed to reduced cyclosporine levels; resolved after stopping."
+      },
+      {
+        "type": "PMID",
+        "ref": "12580993",
+        "note": "Bauer et al., Br J Clin Pharmacol 2003: in renal transplant patients, dose-corrected cyclosporine AUC/Cmax/Ctrough fell ~41-46% within ~2 weeks, requiring dose increases (median 2.7 to 4.2 mg/kg/day)."
+      },
+      {
+        "type": "PMID",
+        "ref": "12392581",
+        "note": "Henderson et al., Br J Clin Pharmacol 2002: review documenting cyclosporine decreases of ~33-62% via CYP3A4/P-gp induction, with graft rejection reported. (Corrected citation - replaces an erroneous PMID identified during audit.)"
+      }
+    ]
+  },
+  {
+    "id": "INT-0013",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's Wort activates the pregnane-X receptor and induces hepatic CYP enzymes (notably CYP2C9, which clears the more potent S-warfarin, plus CYP3A4 for R-warfarin), speeding clearance of both enantiomers and lowering anticoagulant effect.",
+    "clinical_effect": "Falling INR and loss of anticoagulation, raising thromboembolism risk; INR may rebound excessively if the herb is stopped without re-adjusting the warfarin dose.",
+    "management": "Avoid the combination where possible. If both are used, monitor INR closely when St John's Wort is started or stopped and adjust the warfarin dose; counsel patients not to start/stop the herb without informing their anticoagulation provider.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "15089812",
+        "note": "Jiang et al., Br J Clin Pharmacol 2004: randomized crossover, St John's Wort increased apparent clearance of S- and R-warfarin and reduced anticoagulant effect (INR-AUC ratio 0.79); ginseng had no effect."
+      },
+      {
+        "type": "PMID",
+        "ref": "27340114",
+        "note": "Aust Prescr 2016 correction: St John's Wort DECREASES INR by inducing CYP-mediated warfarin metabolism/increasing clearance; explicitly corrects an earlier opposite-direction claim."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/st-john-wort",
+        "note": "MSK About Herbs: lists warfarin interaction; INR should be monitored routinely (non-directional)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0014",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0109",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's Wort (mainly hyperforin via the pregnane-X receptor) induces intestinal/hepatic CYP3A4. Simvastatin is a high first-pass CYP3A4 substrate, so induction accelerates its metabolism and lowers plasma levels of the active simvastatin hydroxy acid. Effect scales with hyperforin content.",
+    "clinical_effect": "Reduced simvastatin exposure leads to loss of lipid-lowering effect: LDL and total cholesterol rise back toward pre-treatment levels despite continued statin therapy.",
+    "management": "Avoid combining St John's Wort with simvastatin. If the herb is needed, switch to a non-CYP3A4 statin (e.g., pravastatin or rosuvastatin) and monitor the lipid panel after starting/stopping the herb. Low-hyperforin preparations are less likely to cause a clinically relevant interaction.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "11753267",
+        "note": "Sugimoto et al., Clin Pharmacol Ther 2001: double-blind crossover RCT, 14-day St John's Wort cut simvastatin hydroxy-acid AUC to ~0.48 of placebo with no effect on pravastatin (CYP3A4 induction)."
+      },
+      {
+        "type": "PMID",
+        "ref": "17846933",
+        "note": "Eggertsen et al. 2007: randomized crossover in hypercholesterolemic patients on stable simvastatin; adding St John's Wort raised LDL and total cholesterol (both p<0.0001) - loss of efficacy."
+      },
+      {
+        "type": "DB",
+        "ref": "PMC7056460",
+        "note": "Nicolussi et al., Br J Pharmacol 2020 review: CYP3A4 induction correlates with hyperforin content; lists simvastatin among PK-altered drugs; <=1 mg hyperforin/day yields no clinically relevant PK interaction."
+      }
+    ]
+  },
+  {
+    "id": "INT-0015",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0111",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's Wort (hyperforin via the pregnane-X receptor) induces intestinal/hepatic CYP3A4, and likely UGT conjugation and P-glycoprotein, accelerating metabolism/elimination of both contraceptive steroids and lowering exposure to ethinylestradiol and the progestin.",
+    "clinical_effect": "Lower contraceptive hormone levels causing breakthrough/intracyclic bleeding and, in some women, restored follicular activity and probable ovulation - a higher risk of contraceptive failure and unintended pregnancy.",
+    "management": "Advise women relying on combined oral contraceptives to avoid St John's Wort. If used, recommend an additional reliable non-hormonal (barrier) method during use and for >=1-2 weeks after stopping; consider a method less dependent on hepatic steroid levels (e.g., copper IUD) for regular users.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "14663455",
+        "note": "Hall et al., Clin Pharmacol Ther 2003: ethinylestradiol half-life fell ~23.4 to ~12.2 h, norethindrone clearance rose, breakthrough bleeding 2/12 to 7/12; CYP3A induction."
+      },
+      {
+        "type": "PMID",
+        "ref": "15914127",
+        "note": "Murphy et al., Contraception 2005: significant ~13-15% reduction in contraceptive exposure with increased breakthrough bleeding, follicle growth and probable ovulation."
+      },
+      {
+        "type": "PMID",
+        "ref": "14616430",
+        "note": "Pfrunder et al., Br J Clin Pharmacol 2003 RCT: progestin (3-ketodesogestrel) AUC fell ~42-44% and intracyclic bleeding rose markedly."
+      }
+    ]
+  },
+  {
+    "id": "INT-0016",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0110",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "Chronic St John's Wort dosing upregulates intestinal P-glycoprotein (MDR1) and, to a lesser extent, CYP3A4 (hyperforin acting as a PXR agonist). Increased gut efflux pumps more digoxin back into the lumen, lowering oral absorption and systemic exposure; effect is time-dependent (builds over days).",
+    "clinical_effect": "Reduced steady-state digoxin levels (AUC down ~25%, peak ~26%, trough ~33% after 10 days), risking subtherapeutic levels and loss of efficacy (poor AF rate control, heart-failure worsening). Stopping the herb can reverse induction and risk toxicity if the dose was raised.",
+    "management": "Avoid combining with digoxin given its narrow therapeutic index. If unavoidable, monitor serum digoxin and clinical status closely; expect to need a higher dose during St John's Wort use and to reduce it when stopped (re-check levels to avoid rebound toxicity).",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "10546917",
+        "note": "Johne et al., Clin Pharmacol Ther 1999: 10 days of St John's Wort extract LI160 cut digoxin AUC ~25%, Cmax ~26%, trough ~33%; time-dependent, attributed to P-glycoprotein induction."
+      },
+      {
+        "type": "PMID",
+        "ref": "11180019",
+        "note": "Durr et al., Clin Pharmacol Ther 2000: in humans, 14 days St John's Wort induced duodenal P-gp/MDR1 ~1.4-fold and CYP3A4 ~1.5-fold and lowered single-dose digoxin exposure ~18%."
+      },
+      {
+        "type": "PMID",
+        "ref": "12392581",
+        "note": "Henderson et al., Br J Clin Pharmacol 2002: review grading St John's Wort-digoxin as a P-gp-mediated interaction (reduced Cmax/AUC); recommends monitoring digoxin levels."
+      }
+    ]
+  },
+  {
+    "id": "INT-0017",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0108",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's Wort (chiefly hyperforin) potently induces intestinal/hepatic CYP3A and P-glycoprotein. Tacrolimus is a substrate of both, so co-administration speeds first-pass metabolism and clearance, lowering systemic exposure.",
+    "clinical_effect": "Marked drop in tacrolimus blood levels/AUC (roughly halved), risking subtherapeutic immunosuppression and graft rejection unless the dose is substantially increased; levels rebound after the herb is stopped, creating later over-exposure/toxicity risk.",
+    "management": "Avoid concomitant use; effectively contraindicated in transplant recipients on tacrolimus. If a patient has been taking it, monitor whole-blood trough levels closely and anticipate dose adjustment both during use and after discontinuation (levels rise again over ~1-2 weeks).",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "12637655",
+        "note": "Mai et al. 2003: in renal transplant patients, dose-corrected tacrolimus AUC fell from 180 to 75.9 ng/ml/h (~58%), median dose rose 4.5 to 8.0 mg/day; rejection risk noted. Mycophenolic acid PK unaffected."
+      },
+      {
+        "type": "PMID",
+        "ref": "14681346",
+        "note": "Hebert et al. 2004: healthy-volunteer PK study (n=10), tacrolimus AUC fell 306.9 to 198.7 ug.h/L (p=0.004) with increased oral clearance; CYP3A/P-gp induction."
+      }
+    ]
+  },
+  {
+    "id": "INT-0018",
+    "agent_a_id": "E-0003",
+    "agent_b_id": "E-0113",
+    "interaction_class": "TCM-WM",
+    "severity": "minor",
+    "effect_direction": "inhibition",
+    "mechanism": "Ginkgo appears to induce the CYP2C19 enzyme, which speeds up conversion of omeprazole to its 5-hydroxy metabolite. Faster metabolism lowers parent-omeprazole and omeprazole-sulfone blood levels. The induction is genotype-dependent, showing up most in CYP2C19 poor metabolizers who normally clear the drug slowly. The effect is also dose-dependent for the herb.",
+    "clinical_effect": "Lower omeprazole plasma exposure, which could theoretically blunt acid-suppression efficacy; metabolite-ratio shifts are measurable but a clinically meaningful loss of effect has not been demonstrated at recommended Ginkgo doses.",
+    "management": "No routine restriction needed at standard standardized-extract doses (up to ~240 mg/day EGb 761), where no clinically relevant interaction was shown. If acid-suppression seems inadequate in a patient taking Ginkgo, especially a known CYP2C19 poor metabolizer or one using high herbal doses, consider the interaction and monitor symptom control rather than relying on dose change alone.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "15608563",
+        "note": "Yin OQP, Tomlinson B, Waye MMY, Chow AHL, Chow MSS. Pharmacogenetics, Dec 2004. Clinical PK study in 18 CYP2C19-genotyped healthy Chinese subjects: single 40 mg omeprazole at baseline and after 12 days of Ginkgo 140 mg bid. Omeprazole and omeprazole-sulfone plasma levels significantly decreased and 5-hydroxyomeprazole increased; effect (drop in omeprazole/5-OH ratio) greater in poor than extensive metabolizers. Concludes Ginkgo induces CYP2C19-mediated omeprazole hydroxylation in a genotype-dependent manner. Directly supports inhibition (reduced omeprazole exposure)."
+      },
+      {
+        "type": "PMID",
+        "ref": "23865865",
+        "note": "Unger M. Drug Metabolism Reviews, 2013. Review qualifying the interaction: at the maximum recommended dose of standardized EGb 761 (240 mg/day) no clinically relevant CYP2C19 interaction could be shown; only supratherapeutic Ginkgo doses produced weak induction of omeprazole 5-hydroxylation. Confirms the direction/mechanism but grades down clinical significance, supporting a minor/possible rating."
+      }
+    ]
+  },
+  {
+    "id": "INT-0019",
+    "agent_a_id": "E-0009",
+    "agent_b_id": "E-0108",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Schisandra sphenanthera lignans inhibit intestinal and hepatic CYP3A4/CYP3A5 (and P-glycoprotein), the enzymes/transporter that clear tacrolimus. This slows tacrolimus metabolism and reduces its clearance, raising oral bioavailability and blood concentrations. The effect is biphasic: short-term co-dosing inhibits CYP3A and boosts levels, while prolonged exposure can induce CYP3A4, so net direction can shift with duration.",
+    "clinical_effect": "Markedly higher tacrolimus blood trough levels and AUC (Cmax roughly doubled, AUC up ~2.6-fold, clearance roughly halved in healthy-volunteer data). Allows lower tacrolimus dosing, but unmonitored use risks supratherapeutic levels and nephrotoxicity/over-immunosuppression.",
+    "management": "Avoid uncontrolled co-administration. If Schisandra/Wuzhi is used (including intentional dose-sparing), monitor tacrolimus whole-blood trough levels closely with therapeutic drug monitoring and adjust the tacrolimus dose downward; watch for nephrotoxicity and other toxicity. Account for CYP3A5 genotype and for time-dependent induction with chronic use.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "17506780",
+        "note": "Br J Clin Pharmacol 2007. Healthy-volunteer crossover: SchE increased tacrolimus AUC ~164%, Cmax ~227%, decreased clearance ~49%. Direct support for potentiation via increased oral bioavailability."
+      },
+      {
+        "type": "PMID",
+        "ref": "21656210",
+        "note": "Eur J Clin Pharmacol 2011. Clinical study in renal transplant recipients (the Qin/Xin renal-recipient report); title confirms increased tacrolimus blood concentration. PubMed abstract text not displayed but title and corroborating sources support the interaction."
+      },
+      {
+        "type": "PMID",
+        "ref": "32768638",
+        "note": "J Ethnopharmacol 2020. Mechanistic rat study: Wuzhi increased tacrolimus AUC up to ~2.86-fold and inhibited CYP3A activity in a pretreatment time- and concentration-dependent manner; documents the biphasic inhibition/induction mechanism."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/schisandra",
+        "note": "MSKCC About Herbs: states schisandra increased tacrolimus blood levels in liver transplant patients; lignans inhibit CYP3A4/CYP3A5 in vitro, with possible CYP3A4 induction on long-term use. Tertiary institutional confirmation."
+      }
+    ]
+  },
+  {
+    "id": "INT-0020",
+    "agent_a_id": "E-0010",
+    "agent_b_id": "E-0107",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Berberine slows the metabolism of cyclosporine by inhibiting intestinal and hepatic CYP3A4, the enzyme that clears cyclosporine, and likely also competes at the intestinal P-glycoprotein efflux pump, so more drug is absorbed and less is broken down. The net result is higher systemic cyclosporine exposure.",
+    "clinical_effect": "Cyclosporine trough blood levels rise substantially when berberine is co-administered (roughly +89% from baseline, ~29% above untreated controls, in renal transplant patients). Because cyclosporine has a narrow therapeutic index, this elevation risks nephrotoxicity and other concentration-dependent toxicity.",
+    "management": "Avoid berberine-containing products (including Coptis/Huanglian preparations standardized to berberine) in patients on cyclosporine. If co-use is unavoidable, monitor cyclosporine trough levels closely and adjust the cyclosporine dose downward; watch renal function and signs of toxicity.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "16133554",
+        "note": "Wu X, Li Q, Xin H, Yu A, Zhong M. Eur J Clin Pharmacol. 2005 Sep;61(8):567-72. Randomized controlled clinical trial (52 + 52 renal transplant recipients) plus PK substudy (6 recipients). Isolated berberine 0.2 g TID. CsA trough concentration and concentration/dose ratio increased ~88.9% and ~98.4% from baseline (and ~29% above the berberine-free group). Proposed mechanism: CYP3A4 inhibition in liver and/or small intestine. Studied purified berberine, not whole Coptis."
+      },
+      {
+        "type": "PMID",
+        "ref": "16541194",
+        "note": "Xin HW, Wu XC, Li Q, Yu AR, Zhong MY, Liu YY. Methods Find Exp Clin Pharmacol. 2006 Jan-Feb;28(1):25-9. Healthy male volunteers. Berberine increased CsA AUC by ~19.2% at the 3 mg/kg dose (significant) but produced no meaningful change at 6 mg/kg. Confirms potentiation direction; effect smaller/dose-dependent in healthy subjects. Mechanism: CYP3A4 inhibition plus delayed gastric emptying increasing absorption."
+      },
+      {
+        "type": "DB",
+        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3913293/",
+        "note": "Colombo D, Lunardon L, Bellia G. Journal of Toxicology, 2014 (PMC3913293). Review states berberine markedly elevates CsA blood concentration via partly CYP3A4 inhibition and partly competition for the P-gp transporter; identifies berberine as a CYP3A4 inhibitor and P-gp substrate; recommends that medicines containing berberine be avoided during CsA treatment. Supports both mechanism (CYP3A4 + P-gp) and avoidance management."
+      }
+    ]
+  },
+  {
+    "id": "INT-0021",
+    "agent_a_id": "E-0011",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "Green tea leaves carry vitamin K. Warfarin works by blocking vitamin K recycling needed to make active clotting factors (II, VII, IX, X). Ingesting enough vitamin K from very large volumes of green tea supplies the cofactor warfarin is trying to deplete, partially restoring clotting factor synthesis and blunting the anticoagulant effect. The interaction is dose/volume dependent: a normal cup of brewed tea contributes little vitamin K, so only extreme intake is plausibly relevant.",
+    "clinical_effect": "Reduced anticoagulation with a falling INR (in the case report INR dropped from ~3.79 to 1.37, then 1.14, and rebounded to 2.55 after stopping the tea), increasing thromboembolic risk in a patient who needs therapeutic INR.",
+    "management": "Advise warfarin patients to keep vitamin K intake consistent and avoid sudden large increases in green tea consumption; a normal cup or two is generally fine. Ask about beverage/diet changes when INR drops unexpectedly, monitor INR more closely if intake changes substantially, and counsel patients to discuss any plan to drink large daily volumes of green tea before doing so.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "10332534",
+        "note": "Taylor JR, Wilt VM. Ann Pharmacother. 1999;33(4):426-8. PubMed page fetched and confirmed. Single case report: ~0.5-1 gallon/day green tea coincided with INR fall from 3.79 to 1.37/1.14, rebounding to 2.55 on discontinuation; attributed to vitamin K content antagonizing warfarin."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.1345/aph.18238",
+        "note": "Same case report, fetched at SAGE/Annals of Pharmacotherapy. Confirms authors Taylor & Wilt, 1999, and the conclusion that green tea can be a significant vitamin K source antagonizing warfarin."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/green-tea",
+        "note": "MSKCC About Herbs page fetched. States theoretically consuming large amounts of green tea (0.5-1 gallon/day) may provide enough vitamin K to antagonize anticoagulants, and cites the Taylor & Wilt case report. Frames it as dose-dependent/theoretical at large volumes."
+      }
+    ]
+  },
+  {
+    "id": "INT-0022",
+    "agent_a_id": "E-0012",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "minor",
+    "effect_direction": "potentiation",
+    "mechanism": "Ginger constituents (gingerols/shogaols) can dampen thromboxane synthesis and platelet aggregation in vitro, raising a theoretical additive antihemostatic effect on top of warfarin's vitamin-K-dependent anticoagulation. However, a controlled crossover trial found ginger did not alter the metabolism, clearance, protein binding, or INR response of either warfarin enantiomer, so any clinical effect would arise from a pharmacodynamic platelet contribution rather than a true pharmacokinetic change.",
+    "clinical_effect": "Possible modest increase in bruising/bleeding tendency in some warfarin patients; INR and warfarin levels generally unchanged in controlled study.",
+    "management": "No routine restriction required at culinary doses. With concentrated ginger supplements, advise patients on warfarin to maintain a steady intake, watch for unusual bruising/bleeding, and keep INR monitoring routine; consider stopping ginger supplements about 2 weeks before surgery.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "15801937",
+        "note": "Open-label 3-way crossover in 12 healthy subjects; ginger (Blackmores Travel Calm, 0.4 g rhizome/capsule, 3 caps TID x ~2 wk) did NOT significantly affect warfarin. S-warfarin apparent clearance ratio 1.05 (90% CI 0.97-1.13), R-warfarin 1.02 (0.95-1.10), INR AUC0-168 ratio 1.01 (0.93-1.15). Supports grading DOWN (no clinically significant interaction). Fetched full text via PMC1884814."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ginger",
+        "note": "MSKCC About Herbs: states ginger inhibits thromboxane formation and platelet aggregation (dose/formulation dependent); notes healthy-subject research shows no effect on INR or warfarin PK/PD; cites observational bleeding signal and a phenprocoumon case (elevated INR + nosebleed, resolved on discontinuation); recommends stopping 2 wk pre-op. Documents the theoretical concern plus conflicting evidence."
+      },
+      {
+        "type": "PMID",
+        "ref": "17723077",
+        "note": "Shalansky 2007, Pharmacotherapy. Longitudinal analysis (171 warfarin patients): ginger independently associated with self-reported bleeding, OR 3.20 (95% CI 2.42-4.24), but NOT associated with supratherapeutic INR. This is the conflicting/observational evidence supporting a possible (not negligible) bleeding signal; kept and graded as limited."
+      },
+      {
+        "type": "DOI",
+        "ref": "10.1371/journal.pone.0182794",
+        "note": "Choi, Oh, Jerng 2017, PLOS ONE. Systematic review: ginger produced no significant changes in warfarin PK or PD parameters; overall evidence inconclusive/low quality. Supports grading toward possible/no significant interaction."
+      }
+    ]
+  },
+  {
+    "id": "INT-0023",
+    "agent_a_id": "E-0013",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "Two plausible, partly independent routes: (1) pharmacodynamic - curcumin dampens platelet aggregation (e.g., arachidonic-acid-induced) and has NSAID-like/anti-inflammatory activity, adding to warfarin's anticoagulant effect and raising bleeding risk; (2) pharmacokinetic - curcumin can inhibit cytochrome P450 enzymes (CYP2C9, CYP3A4 in vitro/animal data) that clear warfarin, potentially slowing its metabolism and raising blood levels/INR. Note conflicting data: a Wistar-rat study found curcumin altered warfarin pharmacokinetics but did not measurably change anticoagulation, so the PK contribution in humans is uncertain.",
+    "clinical_effect": "Reports of rising INR (one stable patient spiked to over 10) and increased risk of serious bleeding after adding turmeric/curcumin products to warfarin; more likely with concentrated curcumin extracts than dietary turmeric.",
+    "management": "Generally advise against concentrated turmeric/curcumin supplements in patients on warfarin; if co-use occurs, monitor INR more frequently (especially on starting/stopping the supplement) and watch for bleeding signs. Patients should disclose all herbal/supplement use and check product ingredient lists. Adjust warfarin dose per INR as needed.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://medsafe.govt.nz/safety/ews/2018/Turmeric.asp",
+        "note": "New Zealand Medsafe/CARM safety communication. Documents a case report of a warfarin patient with previously stable INR whose INR rose to over 10 within weeks of starting a turmeric product, with serious bleeding risk. Attributes interaction to curcumin's antiplatelet and NSAID-like effects; advises avoiding concurrent use with anticoagulants/antiplatelets/NSAIDs and disclosing use to clinicians."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/turmeric",
+        "note": "MSK About Herbs. Herb-Drug Interactions section: 'Anticoagulants / Antiplatelets: Preclinical studies and a case report suggest that turmeric can increase risk of bleeding.' Patient guidance explicitly says do not take turmeric supplements if taking warfarin (Coumadin) or other blood thinners due to increased bleeding risk; also documents curcumin effects on CYP enzymes."
+      },
+      {
+        "type": "PMID",
+        "ref": "41300526",
+        "note": "Antioxidants (Basel) 2025;14(11):1369, DOI 10.3390/antiox14111369, PMCID PMC12649692. States clinical case reports have documented increased INR in patients on warfarin after starting turmeric-containing products, and that turmeric may raise bleeding risk by decreasing platelet aggregation (e.g., inhibiting arachidonic-acid-induced aggregation); also discusses curcumin CYP3A4/CYP2C9 inhibition. PMID, title, journal, DOI confirmed on the PubMed record page."
+      }
+    ]
+  },
+  {
+    "id": "INT-0024",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0110",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Glycyrrhizin/glycyrrhizic acid from licorice inhibits renal 11-beta-hydroxysteroid dehydrogenase type 2, letting cortisol act as a mineralocorticoid (apparent/pseudo-aldosteronism). This drives renal potassium wasting and sodium/water retention, producing hypokalemia. Because digoxin and the Na/K-ATPase compete with potassium at the same myocardial binding site, low serum potassium increases digoxin binding and myocardial sensitivity, lowering the threshold for glycoside-induced arrhythmia. Sodium/water retention and any blood-pressure effect may also blunt digoxin's intended action. The effect is pharmacodynamic (electrolyte-mediated), not a change in digoxin plasma level.",
+    "clinical_effect": "Increased risk of digoxin toxicity (cardiac arrhythmias, conduction disturbances, cardiac arrest) precipitated by licorice-induced hypokalemia, even when serum digoxin is within the usual therapeutic range. Possible reduced antihypertensive/efficacy effect from sodium-water retention.",
+    "management": "Avoid concurrent use of licorice (especially glycyrrhizin-containing products and large/chronic doses) with digoxin. If unavoidable or if a patient reports licorice intake, monitor serum potassium and correct hypokalemia, monitor blood pressure, and watch for signs of digoxin toxicity with closer digoxin level and ECG surveillance. Prefer deglycyrrhizinated licorice (DGL) if a licorice product is needed. Counsel patients on cardiac glycosides to disclose all herbal/supplement use.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "36825153",
+        "note": "FETCHED via PMC9941676. Directly states Glycyrrhiza glabra (Gancao)/glycyrrhizin 'conserve sodium and drain potassium' causing sharp drop in blood potassium; that low potassium is the most important factor increasing digoxin toxicity/sensitivity even within the therapeutic window; and advises against combining Gancao with digoxin. Strongest source - names the exact A-B pair and mechanism."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/licorice",
+        "note": "FETCHED. Herb-Drug Interactions section explicitly lists 'Cardiac Glycosides: Licorice may potentiate toxicity.' Adverse reactions list hypokalemia, sodium retention, pseudohyperaldosteronism; warns licorice may lower blood potassium."
+      },
+      {
+        "type": "PMID",
+        "ref": "34604277",
+        "note": "FETCHED via PMC8484325. Confirms the licorice-hypokalemia leg: glycyrrhizin metabolites inhibit 11-beta-HSD2 inducing mineralocorticoid activity; hypokalemia/pseudoaldosteronism is a frequent side effect; severe hypokalemia can cause myopathy or arrhythmia. Does NOT mention digoxin (supports mechanism only)."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.nccih.nih.gov/health/licorice-root",
+        "note": "FETCHED. Confirms glycyrrhizin can cause serious adverse effects including irregular heartbeat and cardiac arrest, with risk in people with heart/kidney conditions and high salt intake. Does NOT name digoxin specifically; supports background harm/electrolyte concern only."
+      }
+    ]
+  },
+  {
+    "id": "INT-0025",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0121",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "Licorice's glycyrrhetinic acid blocks the enzymes that break down corticosteroids in the liver (delta-4-5/5-beta-reductase and 11-beta-hydroxysteroid dehydrogenase), so prednisolone is cleared more slowly and its plasma half-life and total exposure rise. Separately, 11-beta-HSD2 inhibition lets endogenous cortisol act on mineralocorticoid receptors, adding a hypermineralocorticoid (sodium retention, potassium loss) burden on top of the steroid.",
+    "clinical_effect": "Stronger and longer-lasting corticosteroid effect from a given prednisolone dose, with increased risk of steroid side effects; co-occurring sodium retention, hypokalemia, edema, and hypertension (pseudoaldosteronism) with regular/high licorice intake.",
+    "management": "Avoid regular or high-dose licorice (especially >2.5-5 g/day or use beyond a few weeks) in patients on systemic prednisolone. If licorice cannot be stopped, monitor blood pressure and serum potassium and watch for fluid retention and excess steroid effect; counsel patients that effects reverse on stopping licorice. Prefer deglycyrrhizinated licorice (DGL), which lacks glycyrrhizin.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "2384181",
+        "note": "Ojima et al., Nihon Naibunpi Gakkai Zasshi, 1990. Glycyrrhetinic acid dose-dependently inhibits hepatic delta-4-5-reductase and 11-beta-HSD; glycyrrhizin increased plasma prednisolone half-life (T1/2) and AUC in 12 patients on oral prednisolone, delaying clearance and prolonging the corticosteroid's biological half-life. Core PK/clinical support for the potentiation claim."
+      },
+      {
+        "type": "PMID",
+        "ref": "8504732",
+        "note": "Whorwood, Sheppard, Stewart; Endocrinology 1993;132(6):2287-92. Glycyrrhizic/glycyrrhetinic acids inhibit 11-beta-HSD and potentiate glucocorticoid hormone action via the glucocorticoid receptor. Mechanistic support."
+      },
+      {
+        "type": "DB",
+        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8484325/",
+        "note": "Frontiers in Nutrition 2021 narrative review. Confirms glycyrrhizin metabolites inhibit 11-beta-HSD2 (cortisol-driven pseudoaldosteronism), notes systemic glucocorticoid use can aggravate 11-beta-HSD2 inhibition, gives ~2.5 g/day and >30-day risk context, and notes cases are usually self-limiting on stopping licorice. Supports mechanism and management; does not itself quantify the prednisolone PK interaction."
+      }
+    ]
+  },
+  {
+    "id": "INT-0026",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0122",
+    "interaction_class": "TCM-WM",
+    "severity": "major",
+    "effect_direction": "additive",
+    "mechanism": "Both agents raise synaptic serotonin: sertraline blocks the serotonin reuptake transporter, while constituents of St John's Wort (e.g., hyperforin) inhibit monoamine reuptake and may have additional serotonergic actions. Taken together their serotonergic effects stack additively, and the combined excess of CNS serotonin can trigger serotonin syndrome.",
+    "clinical_effect": "Increased risk of serotonin syndrome: agitation/confusion, tremor, myoclonus, hyperreflexia, sweating, tachycardia, hyperthermia. Case reports describe this presentation in patients combining the two.",
+    "management": "Avoid concurrent use. Counsel patients on sertraline (and other SSRIs) not to take St John's Wort. If exposure occurs, monitor for serotonergic toxicity, discontinue the offending agents, and provide supportive care; allow an adequate washout before starting or restarting either agent.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "10447148",
+        "note": "J Geriatr Psychiatry Neurol 1999;12(1):7-10. Lantz, Buchalter, Giambanco. Case series of 5 elderly patients with clinically diagnosed central serotonergic syndrome after combining St John's Wort with prescription antidepressants. NOTE: background hint cited 'Mayo Clin Proc' which is the WRONG journal; actual journal is J Geriatr Psychiatry Neurol. Fetched PubMed page directly."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/st-john-wort",
+        "note": "MSKCC About Herbs. Herb-Drug Interactions section, SSRIs entry: 'Increased serotonergic effect and possible serotonin syndrome when combined with citalopram, fluoxetine, fluvoxamine, paroxetine, or sertraline.' Names sertraline explicitly. Fetched and confirmed."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.nccih.nih.gov/health/st-johns-wort",
+        "note": "NCCIH/NIH. States that taking St John's Wort with antidepressants or other drugs that affect serotonin 'may lead to increased serotonin-related side effects, which can be serious.' Fetched and confirmed."
+      }
+    ]
+  },
+  {
+    "id": "INT-0027",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0123",
+    "interaction_class": "TCM-WM",
+    "severity": "contraindicated",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's wort constituents (chiefly hyperforin) activate the pregnane X receptor, strongly inducing intestinal and hepatic CYP3A4 (and P-glycoprotein). Indinavir is a CYP3A4 substrate, so this induction accelerates its presystemic and systemic metabolism, lowering its plasma exposure.",
+    "clinical_effect": "Markedly reduced indinavir plasma levels (mean AUC down ~57%, 8-hour trough down ~81%), risking loss of antiretroviral suppression, rising HIV viral load, and emergence of protease-inhibitor resistance.",
+    "management": "Avoid the combination. Patients on indinavir (or other protease inhibitors / CYP3A4-dependent antiretrovirals) should not take St John's wort; if a patient has been taking it, stop the herb and consider monitoring drug levels/viral load, allowing time for enzyme induction to subside before relying on antiretroviral efficacy.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "10683007",
+        "note": "Piscitelli SC, Burstein AH, Chaitt D, Alfaro RM, Falloon J. Lancet 2000;355(9203):547-548. Primary pharmacokinetic study (n=8 healthy volunteers) showing the indinavir reduction. Exact title/authors/year confirmed via NCBI eutils esummary API (PubMed page itself was behind a CAPTCHA)."
+      },
+      {
+        "type": "DB",
+        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1874438/",
+        "note": "Henderson L, Yue QY, Bergquist C, Gerden B, Arlett P. Br J Clin Pharmacol 2002;54(4):349-356. Review confirms SJW reduced indinavir AUC by mean 57% (range 49-99%) via CYP3A4 induction, with risk of treatment failure/resistance; also cites a UK case report of rising HIV RNA on SJW + indinavir/lamivudine."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/st-john-wort",
+        "note": "MSKCC About Herbs: lists indinavir/protease inhibitors as CYP3A4 substrates; states blood levels of indinavir can be significantly reduced, increasing HIV viral load and viral resistance; attributes induction to hyperforin via PXR activation."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.nccih.nih.gov/health/providers/digest/herb-drug-interactions",
+        "note": "NCCIH provider digest documents a clinically significant interaction between SJW and indinavir and describes SJW as a potent inducer of CYP450 enzymes and intestinal P-glycoprotein. Supports interaction existence but does not give the AUC figure on-page."
+      }
+    ]
+  },
+  {
+    "id": "INT-0028",
+    "agent_a_id": "E-0008",
+    "agent_b_id": "E-0113",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "inhibition",
+    "mechanism": "St John's Wort, chiefly via hyperforin acting as a pregnane X receptor agonist, upregulates intestinal and hepatic CYP3A4 and CYP2C19. Omeprazole is cleared by both isoenzymes, so induction accelerates its metabolism (sulfoxidation by CYP3A4 and 5-hydroxylation by CYP2C19), lowering parent-drug plasma concentrations.",
+    "clinical_effect": "Substantially reduced omeprazole plasma exposure (Cmax down roughly 38-50%, AUC down roughly 38-44%), with corresponding rises in its metabolites, which can blunt acid suppression and lead to inadequate control of reflux or ulcer symptoms.",
+    "management": "Avoid concurrent St John's Wort in patients relying on omeprazole for acid-related disease; if the herb cannot be stopped, monitor for breakthrough symptoms (heartburn, dyspepsia, poor ulcer/GERD control) and consider an alternative PPI strategy or dose review. Counsel patients that herbal SJW products can undermine omeprazole efficacy, and re-evaluate after the herb is discontinued since enzyme induction reverses over 1-2 weeks.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "15001970",
+        "note": "Wang LS et al., Clin Pharmacol Ther 2004. Controlled PK study in healthy volunteers: 14 days of SJW decreased omeprazole Cmax by 37.5-49.6% and AUC by 37.9-43.9%, while increasing CYP3A4 metabolite (omeprazole sulfone, AUC +137-159%) and CYP2C19 metabolite (5-hydroxyomeprazole). Directly confirms reduced omeprazole exposure via CYP3A4/CYP2C19 induction; fetched and read on PubMed."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/st-john-wort",
+        "note": "MSKCC About Herbs: states hyperforin induces CYP3A4 via PXR and that SJW reduces serum concentrations of CYP3A4 (and CYP2C9) substrate drugs. Corroborates the induction mechanism and direction (reduced drug levels) but does not name omeprazole or CYP2C19 specifically; fetched and read."
+      }
+    ]
+  },
+  {
+    "id": "INT-0029",
+    "agent_a_id": "E-0005",
+    "agent_b_id": "E-0101",
+    "interaction_class": "TCM-WM",
+    "severity": "minor",
+    "effect_direction": "inhibition",
+    "mechanism": "Proposed but unconfirmed: Panax ginseng constituents (ginsenosides) might counteract warfarin's anticoagulant effect (e.g., via CYP2C9/CYP3A4 modulation or effects on vitamin K-dependent clotting), which would blunt anticoagulation. However, two controlled studies measuring warfarin enantiomer kinetics and INR found no such effect, so any mechanism remains speculative and not demonstrated for Asian ginseng.",
+    "clinical_effect": "Conflicting. Two prospective controlled studies (Jiang 2004 healthy subjects; Lee 2008 ischemic stroke RCT) showed no measurable change in INR, prothrombin time, warfarin PK, or platelet aggregation. A single 1997 case report (Janetzky & Morreale) described a fall in INR (maintained ~3.0-4.0 down to 1.5) about two weeks after a patient with a mechanical heart valve started a Panax ginseng product, with recovery after stopping it, i.e., possible loss of anticoagulant control. Net: usually no clinically significant change; rare/inconsistent reduced INR cannot be fully excluded.",
+    "management": "No routine contraindication. If a patient on warfarin chooses to start or stop Asian ginseng, keep the regimen consistent and monitor INR more frequently around the change, watching for sub-therapeutic INR. Adjust warfarin dose only if INR actually shifts.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "15089812",
+        "note": "Jiang et al., Br J Clin Pharmacol 2004;57(5):592-9. VERIFIED via PubMed and PMC1884493 full text. Open-label crossover, 12 healthy subjects; ginseng = Golden Glow Korean Panax ginseng (0.5 g root/8.93 mg ginsenosides per cap, 2 caps TID). No effect on PK/PD of S- or R-warfarin; INR and platelet aggregation unchanged. Negative/no-significant-effect controlled evidence (grades down)."
+      },
+      {
+        "type": "PMID",
+        "ref": "18637764",
+        "note": "Lee et al., J Altern Complement Med 2008;14(6):715-21. VERIFIED via PubMed. Randomized controlled trial in 25 ischemic stroke patients on warfarin +/- Panax ginseng; no statistically significant difference in peak INR, PT, or AUC between groups. Second negative controlled study supporting downgraded grading."
+      },
+      {
+        "type": "PMID",
+        "ref": "9075501",
+        "note": "Janetzky & Morreale, Am J Health-Syst Pharm 1997;54(6):692-3, case report. VERIFIED record; PubMed has NO abstract. Clinical detail corroborated via LiverTox (NCBI NBK548200): 47-y-o man with mechanical heart valve, INR ~3.0-4.0 fell to 1.5 ~2 weeks after starting Panax ginseng, recovered on dechallenge. NOTE: the previously stated exact values 'INR 3.1->1.5->3.3' and brand 'Ginsana' could not be independently confirmed from secondary sources (LiverTox gives a 3.0-4.0 baseline range and does not name the product); softened to a baseline range and 'a commercial Panax ginseng product'. Supports the conflicting POSITIVE signal (reduced INR / inhibition)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0030",
+    "agent_a_id": "E-0010",
+    "agent_b_id": "E-0124",
+    "interaction_class": "TCM-WM",
+    "severity": "moderate",
+    "effect_direction": "additive",
+    "mechanism": "Berberine independently lowers blood glucose (improves insulin sensitivity / promotes glucose uptake and reduces hepatic glucose output), so its effect runs in the same direction as antidiabetic drugs. When co-administered with metformin or a sulfonylurea, the two same-direction glucose-lowering actions stack, producing a greater fall in blood glucose. A secondary pharmacokinetic concern exists for sulfonylureas, where in vitro data suggest berberine may alter their metabolism, but that mechanism is not clinically confirmed.",
+    "clinical_effect": "Greater-than-expected reduction in fasting and postprandial glucose and HbA1c when berberine is added to an antidiabetic regimen, with consequent potential for symptomatic hypoglycemia (more likely with insulin secretagogues like glipizide than with metformin alone).",
+    "management": "Treat berberine as an active glucose-lowering agent: if a patient on metformin or a sulfonylurea also takes berberine, advise more frequent self-monitoring of blood glucose, counsel on hypoglycemia recognition (especially with sulfonylureas/insulin), and have the prescriber consider down-titrating the conventional antidiabetic dose to avoid over-treatment. Avoid casual unsupervised stacking.",
+    "evidence_level": "probable",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "18442638",
+        "note": "Yin J, Xing H, Ye J. Metabolism. 2008. RCT (Study A) in newly diagnosed T2DM: berberine's hypoglycemic effect was similar to metformin; significant drops in HbA1c, fasting and postprandial glucose. Establishes berberine's intrinsic glucose-lowering, basis for same-direction additive effect with antidiabetics. Fetched on both PubMed and PMC (PMC2410097)."
+      },
+      {
+        "type": "PMID",
+        "ref": "34956436",
+        "note": "Guo J et al. Oxid Med Cell Longev. 2021 (PMC8696197). Meta-analysis of RCTs: berberine significantly lowered FPG (MD -0.89) and HbA1c (MD -0.75); as add-on to antidiabetic agents it gave an additional HbA1c reduction (MD -0.91), directly demonstrating additive glucose-lowering when combined with conventional antidiabetic drugs."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/berberine",
+        "note": "MSKCC About Herbs. States berberine may lower blood sugar and cautions against concurrent use with sulfonylureas; notes in vitro evidence that berberine may affect sulfonylurea metabolism (or mutual metabolic effects), with clinical relevance not yet determined. Supports the interaction but downgrades certainty on hypoglycemia magnitude."
+      }
+    ]
+  },
+  {
+    "id": "INT-0031",
+    "agent_a_id": "E-0101",
+    "agent_b_id": "E-0102",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "additive",
+    "mechanism": "Two independent, same-direction hits on hemostasis: warfarin blocks vitamin-K-dependent clotting factor synthesis while aspirin irreversibly inhibits platelet COX-1 (blocking thromboxane-mediated aggregation). Aspirin additionally injures the GI mucosa, creating bleeding-prone lesions. The combined anticoagulant plus antiplatelet plus mucosal-erosion effect compounds bleeding risk beyond either drug alone.",
+    "clinical_effect": "Substantially increased risk of major bleeding, especially gastrointestinal hemorrhage and intracranial/cerebral hemorrhage; this combination was among the most frequent and most often fatal serious adverse drug reactions in pharmacovigilance data.",
+    "management": "Avoid the combination unless there is a clear indication (e.g., mechanical valve, recent ACS/stent). If co-prescribed, use the lowest effective aspirin dose (75-100 mg), monitor INR closely (more frequently after starting/stopping aspirin), counsel on bleeding warning signs, and add gastroprotection (PPI) particularly in elderly polypharmacy patients. Reassess duration of dual therapy regularly.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=558b7a0d-5490-4c1b-802e-3ab3f1efe760",
+        "note": "FDA label Section 7.3 'Drugs that Increase Bleeding Risk' lists aspirin among antiplatelet agents (Table 3) and warns: 'Because bleeding risk is increased when these drugs are used concomitantly with warfarin, closely monitor patients receiving any such drug with warfarin.'"
+      },
+      {
+        "type": "PMID",
+        "ref": "33536925",
+        "note": "Frontiers in Pharmacology 2021. Abstract/text: platelet aggregation inhibitors/warfarin were the most frequently involved DDI combination in serious ADRs and had the highest proportion of fatal reports; common outcomes were GI and cerebral hemorrhage."
+      }
+    ]
+  },
+  {
+    "id": "INT-0032",
+    "agent_a_id": "E-0101",
+    "agent_b_id": "E-0114",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Mainly pharmacodynamic and additive: ibuprofen blocks platelet COX-1, blunting platelet aggregation and prolonging bleeding time on top of warfarin's depletion of vitamin-K clotting factors, while NSAID-induced gastric/duodenal mucosal injury creates lesions that can bleed. A pharmacokinetic contribution (protein-binding displacement and competition for CYP2C9, the enzyme that clears the more potent S-warfarin) is plausible but inconsistent across studies, so the bleeding hazard is driven chiefly by the overlapping antiplatelet plus GI-erosion effects rather than by strong enzyme inhibition.",
+    "clinical_effect": "Increased bleeding, especially gastrointestinal hemorrhage and bruising; bleeding time is measurably prolonged and INR may rise. Risk is highest in the elderly and those on multiple drugs.",
+    "management": "Avoid the combination when possible; prefer acetaminophen/paracetamol for analgesia. If an NSAID is unavoidable, use the lowest dose for the shortest duration, add gastroprotection (e.g., a PPI), monitor INR closely, and counsel the patient on bleeding warning signs.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "DailyMed setid 558b7a0d-5490-4c1b-802e-3ab3f1efe760",
+        "note": "FDA prescribing information lists ibuprofen explicitly under NSAIDs that increase bleeding risk and advises close monitoring when used concomitantly with warfarin; documents warfarin's CYP2C9 metabolism. Fetched via DailyMed lookup."
+      },
+      {
+        "type": "PMID",
+        "ref": "2783873",
+        "note": "Study found ibuprofen significantly prolonged bleeding time at 90 min and 1 week in warfarin-treated patients, with microscopic bleeding/bruising; flagged risk particularly in the elderly on complex regimens (antiplatelet/primary-haemostasis mechanism)."
+      },
+      {
+        "type": "PMID",
+        "ref": "813951",
+        "note": "Older study reported no pharmacokinetic effect on prothrombin time; supports that the hazard is pharmacodynamic (antiplatelet + GI) rather than from ibuprofen inhibiting warfarin metabolism. Graded as conflicting/negative PK evidence."
+      }
+    ]
+  },
+  {
+    "id": "INT-0033",
+    "agent_a_id": "E-0101",
+    "agent_b_id": "E-0115",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Amiodarone and its metabolite desethylamiodarone block hepatic CYP2C9 (and to a lesser extent CYP3A4/CYP1A2), the enzymes that clear the more potent S-enantiomer of warfarin. With clearance slowed, warfarin plasma levels rise and the anticoagulant effect is amplified. Because amiodarone has a very long half-life and large tissue stores, the inhibition builds over one to several weeks and lingers for weeks to months after amiodarone is stopped.",
+    "clinical_effect": "Rising INR and increased bleeding risk; the cohort study found amiodarone raised the warfarin sensitivity index by ~36% and roughly doubled the risk of a supratherapeutic INR above 4 (HR ~1.80) in patients with normal renal function. Bleeding ranges from minor bruising to serious GI or intracranial hemorrhage.",
+    "management": "Anticipate the interaction: when amiodarone is started in a warfarin-treated patient, empirically reduce the warfarin dose by roughly 30-50% and monitor INR frequently (initially weekly) until stable. Continue close monitoring for weeks to months after amiodarone is discontinued, when the warfarin dose typically needs to be increased back up. Counsel on bleeding signs.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "32112562",
+        "note": "PubMed page fetched. Clin Pharmacol Ther 2020;107(6):1446-1456. Confirms amiodarone increases warfarin sensitivity index (~36% in normal renal function) and supratherapeutic INR >4 risk (HR 1.80), documenting the potentiation interaction."
+      },
+      {
+        "type": "DB",
+        "ref": "PMC7217725",
+        "note": "Open-access full text of PMID 32112562 (same Miano et al. 2020 propensity-matched cohort; not an independent study)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0034",
+    "agent_a_id": "E-0101",
+    "agent_b_id": "E-0116",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Fluconazole inhibits CYP2C9, the enzyme that clears the more potent S-warfarin enantiomer, so warfarin is metabolized more slowly and its plasma exposure and anticoagulant effect rise. The effect is dose- and duration-dependent.",
+    "clinical_effect": "Prolonged prothrombin time / elevated INR within a few days of starting fluconazole, with increased bleeding risk (reported bruising, epistaxis, GI bleeding, hematuria, melena); INR falls again after fluconazole is stopped.",
+    "management": "If the combination is needed, monitor prothrombin time/INR closely after starting and stopping fluconazole and reduce the warfarin dose as required to keep INR in range; re-titrate warfarin upward when fluconazole is discontinued. Watch for bleeding in elderly polypharmacy patients.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd24a261-9c15-42b4-8040-89d2dbda174e",
+        "note": "Drug Interactions section: prothrombin time may be increased with concomitant coumarin-type anticoagulants; 13-volunteer study showed increased PT response after fluconazole; post-marketing bleeding events (bruising, epistaxis, GI bleeding, hematuria, melena) reported with warfarin; careful PT monitoring recommended and warfarin dose adjustment may be necessary. Label calls fluconazole a moderate CYP2C9 inhibitor."
+      },
+      {
+        "type": "PMID",
+        "ref": "8247921",
+        "note": "Pharmacotherapy 1993;13(5):508-509. Case report: patient stable at INR 2.0-2.7; after fluconazole 50 mg/day INR rose to 5.2 within 4 days despite lowering warfarin dose, and fell to 1.5 after fluconazole was stopped. Attributes effect to CYP450-mediated inhibition of warfarin metabolism."
+      }
+    ]
+  },
+  {
+    "id": "INT-0035",
+    "agent_a_id": "E-0101",
+    "agent_b_id": "E-0117",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Clarithromycin inhibits the cytochrome P450 enzymes that clear warfarin (mainly CYP3A4, with a contribution from CYP2C9), so warfarin is metabolized more slowly and its plasma levels and anticoagulant activity rise. A secondary, lesser contributor common to antibiotics is suppression of vitamin-K-producing gut flora, which can further lower clotting-factor synthesis; this is minor relative to the metabolic effect for clarithromycin.",
+    "clinical_effect": "Supratherapeutic INR and prolonged prothrombin time (often within ~2-5 days of starting clarithromycin; case reports document INR up to 90), with increased risk of serious bleeding including GI and intracranial hemorrhage; risk is amplified in the elderly.",
+    "management": "Avoid the combination when an alternative antibiotic is suitable. If co-prescribed, check INR at baseline and monitor frequently after both starting and stopping clarithromycin; anticipate a preemptive warfarin dose reduction and watch for bleeding signs. The effect can persist for several days after clarithromycin is discontinued.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "37629518",
+        "note": "2023 review in Life (Basel), Vega AJ et al. States significant INR increases in warfarin patients receiving macrolides; macrolides inhibit cytochrome P450 (CYP2C9/CYP3A4) raising warfarin levels/bleeding; elderly adjusted RR up to 3.07. Fetched full text and PubMed record."
+      },
+      {
+        "type": "PMID",
+        "ref": "9545160",
+        "note": "Oberg KC, Pharmacotherapy 1998;18(2):386-91. Case report: two stable warfarin patients (61 and 70 yo) had dramatic anticoagulation rise ~5 days after starting clarithromycin (INR reaching 90.3 and 5.6); both needed warfarin hold and IV phytonadione. Fetched PubMed record."
+      },
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=903939b3-a01d-4593-85ca-cfe8d4d48d3e",
+        "note": "WARNINGS / Oral Anticoagulants section, quoted: 'There is a risk of serious hemorrhage and significant elevations in INR and prothrombin time when clarithromycin is co-administered with warfarin. INR and prothrombin times should be frequently monitored...' Fetched DailyMed label page."
+      }
+    ]
+  },
+  {
+    "id": "INT-0036",
+    "agent_a_id": "E-0109",
+    "agent_b_id": "E-0117",
+    "interaction_class": "WM-WM",
+    "severity": "contraindicated",
+    "effect_direction": "potentiation",
+    "mechanism": "Clarithromycin potently blocks the CYP3A4 enzyme that clears simvastatin. With this pathway shut down, simvastatin and its active acid metabolite accumulate to far higher plasma levels than normal, and that excess statin exposure is what drives skeletal-muscle toxicity.",
+    "clinical_effect": "Marked rise in simvastatin blood levels causing muscle pain/weakness (myopathy) that can escalate to rhabdomyolysis, with possible myoglobinuria, acute kidney injury, and rarely death. Elderly polypharmacy patients are at heightened risk.",
+    "management": "Do not co-prescribe. The FDA label contraindicates simvastatin with strong CYP3A4 inhibitors such as clarithromycin. If short-term clarithromycin is unavoidable, suspend simvastatin for the duration of the antibiotic course (and a few days after), or switch to a statin not dependent on CYP3A4 (e.g., pravastatin, rosuvastatin, fluvastatin). Counsel the patient to report unexplained muscle pain, tenderness, weakness, or dark urine.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b6737b25-0c4f-4131-ba23-b0f2252a18ea",
+        "note": "FDA prescribing information. Contraindications section bars concomitant use of strong CYP3A4 inhibitors (select azole antifungals, macrolide antibiotics, antivirals, nefazodone); Drug Interactions section names clarithromycin explicitly ('select macrolide antibiotics e.g., erythromycin and clarithromycin'). Label states strong CYP3A4 inhibitors increase simvastatin exposure and the risk of myopathy and rhabdomyolysis, and that if short-term strong-inhibitor therapy is unavoidable simvastatin must be suspended during treatment."
+      }
+    ]
+  },
+  {
+    "id": "INT-0037",
+    "agent_a_id": "E-0109",
+    "agent_b_id": "E-0118",
+    "interaction_class": "WM-WM",
+    "severity": "contraindicated",
+    "effect_direction": "potentiation",
+    "mechanism": "Gemfibrozil blocks the clearance of the active simvastatin acid metabolite, chiefly by inhibiting its glucuronidation (a non-CYP3A4 route) and by interfering with hepatic OATP1B1 uptake. With less drug being eliminated, plasma levels of the active acid climb (AUC roughly doubled to tripled), driving up systemic statin exposure.",
+    "clinical_effect": "Markedly higher active statin concentrations raise the chance of muscle injury, ranging from myalgia and CK elevation to severe rhabdomyolysis with possible acute kidney injury; risk is amplified in elderly patients on multiple drugs.",
+    "management": "Do not co-prescribe. The simvastatin label lists gemfibrozil as a contraindicated concomitant medication. If a statin-fibrate combination is clinically required, switch to fenofibrate/fenofibric acid, which carries a much lower interaction risk, and counsel the patient to report unexplained muscle pain or weakness.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ca760e79-5d8c-4b36-9899-0d37e8e1f24e",
+        "note": "FDA label, Contraindications (4) and Warnings/Precautions (5.1): concomitant administration of gemfibrozil with simvastatin is contraindicated due to increased risk of myopathy/rhabdomyolysis."
+      },
+      {
+        "type": "PMID",
+        "ref": "10976543",
+        "note": "Backman JT et al., Clin Pharmacol Ther 2000. Gemfibrozil raised simvastatin acid AUC by 185% (peak +112%) and simvastatin AUC by 35%; gemfibrozil does not inhibit CYP3A4 in vitro, so the interaction is via inhibition of non-CYP3A4 (glucuronidation) metabolism — a PK basis for the higher myopathy risk."
+      }
+    ]
+  },
+  {
+    "id": "INT-0038",
+    "agent_a_id": "E-0109",
+    "agent_b_id": "E-0112",
+    "interaction_class": "WM-WM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "Amlodipine inhibits intestinal and hepatic CYP3A4, the enzyme that clears simvastatin. With less first-pass and hepatic breakdown, simvastatin and its active acid metabolite accumulate, raising systemic exposure in a dose-dependent way.",
+    "clinical_effect": "Higher simvastatin blood levels increase the risk of muscle toxicity (myalgia, myopathy, elevated creatine kinase) and, rarely, rhabdomyolysis. Risk rises with simvastatin dose above 20 mg/day.",
+    "management": "Cap simvastatin at 20 mg once daily when given with amlodipine (per FDA label). Counsel the patient to report unexplained muscle pain or weakness; check creatine kinase if symptoms occur and stop the statin if myopathy is confirmed. Consider a non-CYP3A4 statin (pravastatin, rosuvastatin, fluvastatin) as an alternative, especially in elderly polypharmacy patients.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146",
+        "note": "Label states: 'For patients taking amiodarone, amlodipine, or ranolazine, do not exceed simvastatin 20 mg daily.' Interaction table shows amlodipine 10 mg + simvastatin 80 mg gives AUC geometric mean ratios of 1.58 (simvastatin acid) and 1.77 (simvastatin), i.e. ~58-77% exposure increase. Confirms dose cap and exposure rise."
+      },
+      {
+        "type": "PMID",
+        "ref": "16097365",
+        "note": "Prospective PK/PD study: combined therapy raised simvastatin Cmax from 9.6+/-3.7 to 13.7+/-4.7 ng/ml and AUC from 34.3+/-16.5 to 43.9+/-16.6 ng.h/ml (both p<0.05) without affecting cholesterol-lowering efficacy. Confirms increased exposure; no clinical harm observed in this small cohort."
+      },
+      {
+        "type": "DB",
+        "ref": "https://ddinter.scbdd.com/ddinter/interact/970473/",
+        "note": "DDInter rates this interaction as MAJOR (more severe than the 'moderate' hint). Mechanism: amlodipine inhibits intestinal/hepatic CYP3A4, raising simvastatin levels. Management: do not exceed simvastatin 20 mg daily; consider fluvastatin/pravastatin/rosuvastatin; monitor for muscle symptoms/CK."
+      }
+    ]
+  },
+  {
+    "id": "INT-0039",
+    "agent_a_id": "E-0119",
+    "agent_b_id": "E-0120",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "additive",
+    "mechanism": "Both agents push serum potassium upward through complementary routes. Lisinopril suppresses angiotensin II, which lowers aldosterone and thereby curbs renal potassium excretion; spironolactone independently blocks the aldosterone receptor in the distal nephron, further blunting potassium loss. Stacking the two removes two layers of the body's normal potassium-clearing defense, producing an additive, same-direction rise in serum potassium.",
+    "clinical_effect": "Hyperkalemia (often severe, K+ greater than 6 mmol/L), which can cause cardiac conduction disturbances, arrhythmias, and death; frequently accompanied by acute kidney injury requiring dialysis. Risk is markedly higher in the elderly, in renal impairment, in diabetes, and during dehydration or worsening heart failure.",
+    "management": "Avoid the combination where possible in high-risk elderly/renal patients; if used, cap spironolactone at 25 mg/day, check baseline renal function and potassium, and monitor serum potassium and creatinine closely after initiation and dose changes. Counsel on dehydration risk, avoid additional potassium-raising agents and potassium supplements, and discontinue/treat promptly if potassium rises.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "11331054",
+        "note": "Fetched the PubMed page directly. Case series of 25 patients (mean age 74) on ACEi + spironolactone admitted with K+ 7.7 +/- 0.7 mmol/L and creatinine 3.8 +/- 1.8 mg/dL; 2 deaths, 2 resuscitations, 17 needed hemodialysis. Authors urge caution and close monitoring in renal insufficiency, diabetes, and older age, and recommend max spironolactone 25 mg/day. Am J Med 2001;110(6):438-41. Directly supports major additive hyperkalemia in the elderly/renal population."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.drugs.com/drug-interactions/lisinopril-with-spironolactone-1476-0-2105-0.html?professional=1",
+        "note": "Identified via WebSearch; the professional page returned HTTP 403 on direct fetch so this is corroborating, not a fully opened source. Search snippet states a MAJOR interaction with additive reduction of renal potassium elimination causing hyperkalemia, with monitoring advised in renal dysfunction/diabetes/elderly and spironolactone capped at 25 mg/day with an ACEi. Primary verified source is the PMID above."
+      }
+    ]
+  },
+  {
+    "id": "INT-0040",
+    "agent_a_id": "E-0119",
+    "agent_b_id": "E-0114",
+    "interaction_class": "WM-WM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "NSAIDs block prostaglandin synthesis. Renal vasodilatory prostaglandins normally keep the afferent (incoming) glomerular arteriole open; ACE inhibitors simultaneously relax the efferent (outgoing) arteriole. Losing both pressure-supporting mechanisms drops glomerular filtration pressure, especially when a diuretic has also reduced blood volume. The same prostaglandin loss promotes sodium/fluid retention and rising potassium, which opposes the blood-pressure-lowering and natriuretic action of the ACE inhibitor.",
+    "clinical_effect": "Reduced blood-pressure control on lisinopril plus a higher chance of acute kidney injury and hyperkalemia; risk is greatest in the elderly, volume-depleted, or those also on a diuretic (the \"triple whammy\"). Renal effects are usually reversible if caught.",
+    "management": "Avoid the combination where possible in elderly/at-risk patients; prefer acetaminophen for analgesia. If an NSAID is unavoidable, use the lowest dose for the shortest time, ensure adequate hydration, and monitor blood pressure, serum creatinine/renal function, and potassium, especially when a diuretic is also present.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8f20acd7-2635-4a9b-b732-2a84ea93dea7",
+        "note": "FDA label states the antihypertensive effect of ACE inhibitors including lisinopril may be attenuated by NSAIDs, and that in elderly, volume-depleted (including on diuretics), or renally impaired patients, coadministration may cause deterioration of renal function including possible acute renal failure (usually reversible); advises periodic renal monitoring."
+      },
+      {
+        "type": "PMID",
+        "ref": "36673605",
+        "note": "Healthcare (Basel) 2023, PMC9858958. ED cohort of 80 mostly elderly patients (median age 85) on the triple whammy combination; 58.75% hospitalised and 9/80 showed renal/AKI manifestations with DDIs contributing. Supports the elderly-polypharmacy AKI concern but tempers AKI frequency, hence not the sole basis for severity."
+      }
+    ]
+  },
+  {
+    "id": "INT-0041",
+    "agent_a_id": "E-0110",
+    "agent_b_id": "E-0115",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "Amiodarone reduces digoxin clearance and raises its blood levels through several overlapping routes. The most cited is inhibition of P-glycoprotein, the efflux pump in gut, bile-duct and kidney-tubule cells that normally pushes digoxin out of the body; blocking it lowers renal and non-renal clearance. The Nademanee clinical study attributed the effect chiefly to a roughly 29-33% fall in total and non-renal clearance, and described the mechanism as multifactorial. Both drugs also slow heart rate and AV conduction, so their cardiac-depressant effects can add together.",
+    "clinical_effect": "Serum digoxin concentrations roughly double (about a 70-100% rise), pushing patients toward digoxin toxicity: nausea, anorexia, visual disturbance, bradycardia, AV block and serious arrhythmias. Effect develops over days to weeks after amiodarone is started.",
+    "management": "When amiodarone is started in a patient on digoxin, reassess whether digoxin is still needed and reduce the digoxin dose by approximately one-half (one-third to one-half). Monitor serum digoxin levels and watch for toxicity (GI, neurologic, bradycardia/arrhythmia); counsel the patient to report nausea, visual changes, slow or irregular pulse. Particularly important in elderly polypharmacy patients with reduced renal reserve.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://ddinter.scbdd.com/ddinter/interact/968789/",
+        "note": "DDInter interaction record 968789. Severity label shown: 'Major'. Mechanism described as amiodarone raising serum digoxin up to ~100% via reduced clearance/altered distribution; management advises reducing digitalis dose by one-third to one-half and monitoring levels/toxicity."
+      },
+      {
+        "type": "PMID",
+        "ref": "6736437",
+        "note": "Nademanee et al., J Am Coll Cardiol 1984;4(1):111-116. Clinical study in 28 patients: amiodarone nearly doubled serum digoxin (0.97 to 1.98 ng/mL, p<0.001); total body clearance fell ~29%, non-renal clearance ~33%; GI/neurologic/cardiovascular toxicity observed; authors urge close monitoring of digoxin levels."
+      }
+    ]
+  },
+  {
+    "id": "INT-0042",
+    "agent_a_id": "E-0103",
+    "agent_b_id": "E-0113",
+    "interaction_class": "WM-WM",
+    "severity": "major",
+    "effect_direction": "inhibition",
+    "mechanism": "Clopidogrel is a prodrug that must be oxidized by hepatic CYP2C19 into its active thiol metabolite, which irreversibly blocks platelet P2Y12 receptors. Omeprazole inhibits CYP2C19, so it throttles this bioactivation step, lowering active-metabolite formation and leaving more platelet aggregation unblocked.",
+    "clinical_effect": "Weakened antiplatelet protection from clopidogrel: active-metabolite Cmax/AUC fall by roughly 40 percent and platelet inhibition drops by about 30-47 percent, which can raise the risk of thrombotic events such as MI, stroke, and stent thrombosis. Spacing the doses 12 hours apart does not avoid the interaction.",
+    "management": "Avoid concomitant omeprazole (and esomeprazole) with clopidogrel. If acid suppression is needed, prefer a PPI that does not appreciably inhibit CYP2C19 (e.g., pantoprazole) or an H2 antagonist such as famotidine; antacids are also acceptable. Particularly important in elderly polypharmacy patients on dual antiplatelet therapy.",
+    "evidence_level": "established",
+    "sources": [
+      {
+        "type": "DB",
+        "ref": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=de8b0b67-eb25-4684-83b5-7ad785314227",
+        "note": "Section 7.2 CYP2C19 Inhibitors, subsection Omeprazole or Esomeprazole: 'Avoid concomitant use of Plavix with omeprazole or esomeprazole. In clinical studies, omeprazole was shown to reduce significantly the antiplatelet activity of Plavix when given concomitantly or 12 hours apart.' Confirms prodrug/CYP2C19 mechanism and that esomeprazole gives a similar reduction."
+      },
+      {
+        "type": "DB",
+        "ref": "https://www.medsafe.govt.nz/profs/puarticles/clopidogrelandomeprazole.htm",
+        "note": "Regulatory review: omeprazole inhibits CYP2C19, reducing conversion of clopidogrel prodrug to active metabolite. Reports ~42% Cmax and ~40% AUC0-24 reductions in active metabolite and ~30% reduction in mean platelet aggregation inhibition; advises avoiding concomitant use, and notes 12-hour dose separation does not prevent it."
+      }
+    ]
+  },
+  {
+    "id": "INT-0043",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0014",
+    "interaction_class": "TCM-TCM",
+    "severity": "moderate",
+    "effect_direction": "potentiation",
+    "mechanism": "Co-administration of Sargassum with licorice raises the plasma exposure of glycyrrhetinic acid (GA), the active metabolite of licorice's glycyrrhizin, apparently by increasing the circulating concentration of glycyrrhizin/GA. GA is structurally steroid-like and at higher levels can produce mineralocorticoid (pseudoaldosterone) effects; in rats the combined extract caused dose-related injury to heart, liver, and kidney. This is a pharmacokinetic potentiation of licorice's own active component rather than a distinct new toxin, and it is the experimental rationale offered for the classical \"Eighteen Incompatibles\" prohibition of this pair.",
+    "clinical_effect": "In rats, the combination caused elevated organ coefficients and histopathologic injury (myocardial degeneration, hepatocyte injury, renal inflammation) with raised plasma glycyrrhetinic acid. Extrapolated human concern is amplified licorice-type toxicity (sodium/fluid retention, hypokalemia, hypertension, pseudoaldosteronism) plus possible cardiac/hepatic/renal stress. No direct human adverse-event reports were found; the same pair has been co-used in Haizao Yuhu Decoction for centuries without clearly documented clinical harm.",
+    "management": "Treat as a classically contraindicated pair: avoid deliberately combining Gancao (licorice) and Haizao (Sargassum) outside of established, supervised classical formulas (e.g., Haizao Yuhu Decoction) prescribed by an experienced practitioner. If co-use is intended, keep licorice dose low, limit duration, and monitor blood pressure, serum potassium, and signs of fluid retention; caution in patients with hypertension, cardiac, hepatic, or renal disease. Confirmatory human PK/safety data are lacking, so prefer separation.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "34561335",
+        "note": "Verified directly on PubMed (Chinese Medical Journal (Engl), 2022, Vol 135 Issue 7 pp 872-874; DOI 10.1097/CM9.0000000000001716; authors Jing X, Meng X, Wu Z, Ding Y, Peng Y, Shen M, Wang Q). Experimental: combined licorice-sargassum extract produced toxic effects on heart, liver, and kidney in rats and significantly increased plasma glycyrrhetinic acid (GA) vs licorice alone; toxicity attributed to elevated GA from increased plasma glycyrrhizin. This is the strongest, pair-specific experimental toxicology/PK evidence."
+      },
+      {
+        "type": "PMID",
+        "ref": "34567211",
+        "note": "Verified on PMC (PMC8460382; eCAM 2021; DOI 10.1155/2021/4343239). Explicitly states 'The herbs Glycyrrhiza and Sargassum are one pair of these eighteen antagonistic medicaments and should therefore not be used together, at least in theory.' Documents classical Eighteen-Incompatibles status and the historical paradox of ~1000 years of co-use in Haizao Yuhu Decoction; efficacy study showed antigoiter effect without reported adverse outcomes (conflicting/negative safety signal, supports grading down from probable)."
+      }
+    ]
+  },
+  {
+    "id": "INT-0044",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0015",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "potentiation",
+    "mechanism": "Gancao-gansui is a classical \"Eighteen Incompatibles\" (十八反) pair held to be mutually antagonistic. Mechanistically, co-administration of licorice appears to alter handling of kansui's toxic diterpenoids: experimental work shows the net toxicity of the combination rises as the licorice dose increases (a dose- and ratio-dependent effect rather than a fixed pharmacokinetic interaction). Proposed contributors include licorice-driven shifts in gut microbiota and lipid/cholesterol metabolism and altered systemic exposure to kansui's irritant terpenes, though no single mechanism is firmly established and at least one rodent study found no exacerbation of GI tract tissue/functional damage.",
+    "clinical_effect": "Traditionally contraindicated as a mutually antagonistic pair. In rats, combining licorice with kansui increased measured toxicity (serum biochemistry/immune markers) while reducing kansui's intended water-expelling efficacy in a dose-dependent way (PMID 27084456); a rodent study found gut-microbiota dysbiosis and lipid/cholesterol metabolic disruption rather than overt GI tissue damage (PMID 29198875). Net signal is increased toxicity with diminished benefit, but magnitude is ratio-dependent and evidence is limited and mixed.",
+    "management": "Do not co-prescribe per the classical Eighteen Incompatibles contraindication. If a traditional formula (e.g., Gansui Banxia decoction) pairs them, it should only be used under experienced practitioner supervision at carefully controlled low kansui:licorice ratios, given the documented dose-dependent rise in toxicity and loss of efficacy. Default clinical guidance is avoidance.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "27084456",
+        "note": "Independently re-fetched PubMed. J Ethnopharmacol, 2016. Rat MPE experiment: toxicity increased with rising licorice dose while efficacy fell; 2:1-1:1 kansui:licorice dose-toxicity-efficacy inflection. Abstract explicitly states kansui cannot be co-used with licorice per the 'eighteen incompatible' medicaments. Direct experimental toxicology on this exact pair."
+      },
+      {
+        "type": "PMID",
+        "ref": "29198875",
+        "note": "Independently re-fetched PubMed. J Ethnopharmacol, 2018. Confirms gancao-gansui is one of the EIM incompatible pairs. Combination caused gut microbiota dysbiosis and lipid/cholesterol metabolic disruption but did NOT exacerbate GI tract tissue/functional damage - documents the classical contraindication with nuanced/partly-negative toxicity evidence."
+      }
+    ]
+  },
+  {
+    "id": "INT-0045",
+    "agent_a_id": "E-0007",
+    "agent_b_id": "E-0016",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "potentiation",
+    "mechanism": "This is a classical Eighteen Incompatibles (shiba fan) pair, traditionally proscribed. Fetched preclinical work gives two partly divergent mechanisms: (1) glycyrrhizic acid from licorice hydrophobically self-assembles with the diterpene yuanhuacine from genkwa into nanoscale supramolecular complexes that raise yuanhuacine solubility/bioavailability and amplify hepatocyte apoptosis, i.e. toxicity enhancement; (2) glycyrrhetinic acid from licorice up-regulates renal AQP2 and thereby antagonizes the AQP2-suppressing diuretic action of yuanhuacine/genkwanin (ERK-MAPK pathway), i.e. efficacy impairment. The toxicity-enhancing essence is the basis for grading the affected agent's effect as potentiated.",
+    "clinical_effect": "Increased toxic potential (notably hepatotoxicity signals in vitro) and/or loss of genkwa's intended diuretic/anti-edema effect when the two herbs are co-decocted; consistent with the traditional contraindication.",
+    "management": "Do not combine licorice (gancao) with genkwa (yuanhua) in the same formula; this is a recognized classical contraindicated pair. If both indications exist, separate them or substitute, and have a TCM practitioner reconcile the prescription.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "35004606",
+        "note": "Fetched via PMC8733466 (Frontiers in Chemistry 2021, DOI 10.3389/fchem.2021.740952). Experimental: glycyrrhizic acid self-assembles with yuanhuacine into ~114 nm supramolecular nanoparticles that raise yuanhuacine bioavailability and increase hepatocyte apoptosis vs Genkwa Flos alone, confirming toxicity enhancement and supporting the contraindication."
+      },
+      {
+        "type": "PMID",
+        "ref": "28630457",
+        "note": "Fetched via PMC5476574 (Scientific Reports 2017, DOI 10.1038/s41598-017-03201-1). Network-pharmacology plus experimental: glycyrrhetinic acid from Gancao up-regulates renal AQP2 and antagonizes the diuretic, AQP2-suppressing action of yuanhuacine/genkwanin (ERK-MAPK), i.e. Gancao impairs Yuanhua's efficacy. Documents this specific 18-incompatibles pair; conclusion is efficacy-impairment rather than toxicity, hence conflicting direction with the other source."
+      }
+    ]
+  },
+  {
+    "id": "INT-0046",
+    "agent_a_id": "E-0017",
+    "agent_b_id": "E-0018",
+    "interaction_class": "TCM-TCM",
+    "severity": "major",
+    "effect_direction": "potentiation",
+    "mechanism": "This is the classical \"Eighteen Incompatibles\" (十八反) pairing in which Wutou/Fuzi (Aconitum) must not be combined with Banxia (Pinellia). Experimental work gives a plausible basis: when the two are co-administered, Pinellia shifts the disposition of Aconitum's toxic alkaloids — increasing gut absorption of aconitine and benzoylaconine and altering CYP-enzyme-mediated metabolism of several other alkaloids — so that systemic exposure to the cardiotoxic diester alkaloids rises. A separate cardiac model shows the combination cancels the cardioprotective signaling (PKA / beta2-adrenergic receptor-Gs) that each herb shows alone, worsening myocardial injury.",
+    "clinical_effect": "Greater risk of aconitine-type toxicity, chiefly cardiac: arrhythmia, QT/QTc prolongation, and aggravated cardiomyocyte injury, on a background of possible neuro- and GI toxicity from the aconitine alkaloids.",
+    "management": "Avoid co-prescribing Aconitum (Chuanwu/Caowu/Fuzi) with Pinellia (Banxia); this is a recognized traditional contraindication. If a practitioner judges combined use necessary, it should only be by an experienced TCM physician using well-processed material, prolonged pre-decoction of the aconite, controlled herb ratios, and monitoring for cardiac/neurologic toxicity.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "38636577",
+        "note": "Journal of Ethnopharmacology 2024, DOI 10.1016/j.jep.2024.118212. Rat PK study: Pinellia enhances absorption of aconitine and benzoylaconine and alters CYP-enzyme-mediated metabolism of toxic Aconitum alkaloids; concludes the incompatibility mechanism is linked to increased in vivo exposure to toxic compounds. Fetched and read PubMed page."
+      },
+      {
+        "type": "PMID",
+        "ref": "30258466",
+        "note": "Evidence-Based Complementary and Alternative Medicine 2018, DOI 10.1155/2018/2875873, PMC6146551. Animal study: Fuzi+Banxia combination aggravated adriamycin cardiomyopathy, increased cardiac cell death, prolonged QT/QTc, and abolished PKA/beta2AR-Gs cardioprotection seen with single herbs. Fetched and read PMC page."
+      },
+      {
+        "type": "PMID",
+        "ref": "34315520",
+        "note": "Chinese Medicine 2021, DOI 10.1186/s13020-021-00472-9, PMC8314510. Review explicitly lists Banxia (Pinelliae rhizome) among herbs classically incompatible with Aconitum and notes cardiotoxicity increases when processed Fuzi (Heishunpian) is combined with these herbs; does not detail a hydrolysis mechanism. Fetched and read PMC page."
+      }
+    ]
+  },
+  {
+    "id": "INT-0047",
+    "agent_a_id": "E-0017",
+    "agent_b_id": "E-0019",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "potentiation",
+    "mechanism": "Fritillaria (Beimu) alkaloids inhibit intestinal P-glycoprotein, an efflux transporter. Benzoylmesaconine and related diester/monoester aconite alkaloids from Aconitum are P-gp substrates, so blocking efflux lets more of the toxic alkaloid cross the gut wall and reach the circulation. The toxic load is not raised during co-decoction but during intestinal absorption, so the combined preparation delivers a higher systemic dose of aconite's cardiotoxic alkaloids.",
+    "clinical_effect": "Increased systemic exposure to aconite's cardiotoxic alkaloids, raising the risk of aconitine-type poisoning: palpitations/arrhythmias, paresthesia, nausea, hypotension, and potentially fatal ventricular arrhythmias.",
+    "management": "Do not co-prescribe. This is a classical Eighteen Incompatibles (十八反) wutou-beimu contraindication and modern data support enhanced aconite absorption, so the pair should be avoided in the same formula. If aconite-type toxicity is suspected after exposure, treat supportively with cardiac monitoring and antiarrhythmic management.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "34650616",
+        "note": "Experimental study (Liu, Wei, Kanai, He; Evid Based Complement Alternat Med 2021;2021:8351717; DOI 10.1155/2021/8351717). Fritillaria alkaloids inhibit intestinal P-gp; benzoylmesaconine from prepared aconite is a P-gp substrate, so co-administration increases intestinal absorption/permeability of the toxic aconite alkaloid. Toxicity rises during absorption, not decoction. Provides a modern mechanistic basis for the traditional incompatibility. Fetched and confirmed on PMC8510812 and PubMed."
+      },
+      {
+        "type": "PMID",
+        "ref": "34315520",
+        "note": "Review (Chan, Wang, Feng; Chinese Medicine 2021;16:61; DOI 10.1186/s13020-021-00472-9). Confirms Beimu (Fritillaria) is one of the herbs classically regarded as incompatible with Aconitum under the '18 incompatible medicaments' (十八反), and notes that cardiotoxicity of processed Fuzi (Heishunpian) increases when combined with these herbs. Documents the classical contraindication but gives limited pair-specific toxicology. Fetched and confirmed on PMC8314510 and PubMed."
+      }
+    ]
+  },
+  {
+    "id": "INT-0048",
+    "agent_a_id": "E-0017",
+    "agent_b_id": "E-0020",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "potentiation",
+    "mechanism": "This is a classical Chinese-medicine incompatibility from the \"Eighteen Incompatibles\" (十八反, wutou-gualou pair): aconite and Trichosanthes are traditionally held not to be combined. In modern terms the cited review frames it as opposing herb natures (hot, highly toxic aconitine-bearing aconite versus cold-natured Gualou) and notes that the cardiotoxicity attributed to the diterpenoid alkaloids of processed aconite is reported to rise when it is co-formulated with the five proscribed herbs, of which Gualou is one. The molecular basis for the Gualou pair specifically is not well established; the contraindication itself, not a defined pharmacological pathway, is the sourced fact.",
+    "clinical_effect": "Potential for enhanced aconite-type toxicity (notably cardiotoxicity such as arrhythmia, plus the usual aconitine neuro/cardiac toxic syndrome) if the two herbs are used together; traditionally the combination is simply avoided.",
+    "management": "Avoid co-prescribing aconite (Fuzi/Chuanwu/Wutou) with Trichosanthes (Gualou) in the same formula, consistent with the classical 十八反 contraindication. If aconite is used, ensure it is properly processed and correctly dosed, and monitor for signs of aconitine toxicity (paresthesia, nausea, arrhythmia). Defer to a qualified TCM practitioner before combining.",
+    "evidence_level": "theoretical",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "34315520",
+        "note": "Same article verified directly on its PubMed page (pubmed.ncbi.nlm.nih.gov/34315520): title, authors (Yau-Tuen Chan, Ning Wang, Yibin Feng), journal Chinese Medicine, year 2021, and DOI 10.1186/s13020-021-00472-9 all confirmed. This is the PMID/DOI for the same source, listed separately to document the verification."
+      }
+    ]
+  },
+  {
+    "id": "INT-0049",
+    "agent_a_id": "E-0021",
+    "agent_b_id": "E-0005",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "inhibition",
+    "mechanism": "Classical 十八反 (Eighteen Incompatibles) counter-pair. In experimental models Veratrum nigrum (lilu) attenuates or reverses Panax ginseng's biological activities (anti-metastatic, estrogenic and neuro-active effects), i.e. it diminishes ginseng's pharmacological action; Veratrum's steroidal alkaloids are themselves highly toxic.",
+    "clinical_effect": "Loss of ginseng's intended effects when the two are combined; traditionally a forbidden pair. Independent toxicity of Veratrum alkaloids adds risk.",
+    "management": "Classical 十八反 contraindication - do not combine ginseng with Veratrum. Evidence is experimental (animal/in-vitro) only; no human interaction reports.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "29601980",
+        "note": "J Ethnopharmacol 2018 (DOI 10.1016/j.jep.2018.03.036). Explicitly identifies Veratrum nigrum as incompatible with Panax ginseng within the 'Eighteen Incompatible Medicaments'; experimentally, adding Veratrum attenuated ginseng's anti-metastatic effect in vitro and in vivo (pharmacodynamic antagonism / reduced ginseng efficacy)."
+      },
+      {
+        "type": "PMID",
+        "ref": "27229740",
+        "note": "Sci Rep 2016 (PMCID PMC4882595; DOI 10.1038/srep26924). States the pair is recorded in 'the eighteen incompatible medicaments'; Veratrum attenuated ginseng-induced rises in serum estradiol and ERalpha/ERbeta, i.e., antagonized ginseng's estrogenic activity. Authors call it pharmacological evidence for the doctrine."
+      },
+      {
+        "type": "PMID",
+        "ref": "34749105",
+        "note": "J Pharm Biomed Anal 2022 (DOI 10.1016/j.jpba.2021.114442). Calls PG+VN the most representative incompatibility herb pair in TCM; combining the two decreased ginseng's benefit on depression-like behavior, brain neurotransmitters and serum estrogen in OVX rats, with gut-microbiota and metabolite changes. Does not document human clinical adverse events."
+      }
+    ]
+  },
+  {
+    "id": "INT-0050",
+    "agent_a_id": "E-0021",
+    "agent_b_id": "E-0001",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "inhibition",
+    "mechanism": "This is a classical \"Eighteen Incompatibles\" (十八反) pair: Lilu (Veratrum) is traditionally listed as incompatible with the \"shen\" herbs, including Danshen. The traditional basis is that pairing the strongly emetic, steroidal-alkaloid-bearing Veratrum with these herbs is unsafe. The one experimental study on this exact pair did not find enhanced acute toxicity but rather an antagonistic pharmacodynamic interaction: Veratrum suppressed estradiol secretion and blunted the upregulation of estrogen receptors alpha and beta that Danshen normally produces, so the two herbs work against each other on the estrogenic axis. Mechanistically that is consistent with the classical idea that combining them yields an unfavorable/counterproductive result rather than a useful one.",
+    "clinical_effect": "Per classical doctrine the pair is forbidden and should never be co-prescribed. In the available experimental model, Veratrum reduced (antagonized) Danshen's estrogen-like activity on reproductive tissue, an undesirable loss of expected effect; the broader human toxicity feared traditionally has not been formally demonstrated.",
+    "management": "Treat as an absolute classical contraindication: do not combine Veratrum nigrum (Lilu) with Salvia miltiorrhiza (Danshen) in the same formula. Substitute an appropriate alternative for one of the herbs and consult a qualified TCM practitioner; this restriction is codified in the Chinese Pharmacopoeia tradition.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "29747756",
+        "note": "Phytomedicine, 2018; DOI 10.1016/j.phymed.2018.03.038. Fetched the PubMed abstract page. Explicitly frames the SM+VN pair as one of the 18 incompatible medicaments (shibafan) prohibited for thousands of years and provides experimental evidence: in immature/OVX mice and ER-pathway in vitro assays, Veratrum nigrum inhibited Salvia miltiorrhiza's estrogenic activity by interfering with estradiol secretion and suppressing ERalpha/ERbeta upregulation, concluding the combination produces unfavorable effects. Single endpoint, single study — supports the classical contraindication and gives limited (possible-level) experimental backing."
+      }
+    ]
+  },
+  {
+    "id": "INT-0051",
+    "agent_a_id": "E-0005",
+    "agent_b_id": "E-0022",
+    "interaction_class": "TCM-TCM",
+    "severity": "contraindicated",
+    "effect_direction": "inhibition",
+    "mechanism": "Co-decoction of the two herbs lowers the recoverable amount of ginseng's active ginsenosides, so less of ginseng's pharmacologically active material survives into the combined preparation. The chemical interaction during joint extraction (rather than any newly formed toxin) appears to drive the loss of activity. Classically this is framed as Wulingzhi 'counteracting'/restraining ginseng, one of the Nineteen Mutual Fears (十九畏).",
+    "clinical_effect": "Reduced ginseng effect: lower ginsenoside content and weakened antiplatelet (Qi-tonifying/blood-moving) action of ginseng when the two are decocted together. No toxicity demonstrated in the cited work; the concern is loss of therapeutic efficacy plus traditional contraindication status.",
+    "management": "Treat as a traditional incompatible/forbidden pair: per the Chinese Pharmacopoeia and the Nineteen Mutual Fears (十九畏), renshen (ginseng) co-prescribed with wulingzhi (Trogopterus dung) is not recommended. However, modern prescription-network data show the pair IS still co-used clinically for blood-stasis-with-Qi-deficiency, so the prohibition is contested; if avoiding co-decoction, separate the herbs in time or substitute, since joint extraction diminishes ginseng's activity.",
+    "evidence_level": "possible",
+    "sources": [
+      {
+        "type": "PMID",
+        "ref": "40265573",
+        "note": "Chemistry & Biodiversity, 2025, Wu et al. (DOI 10.1002/cbdv.202500770). VERIFIED by direct re-fetch: title, journal, year, authors, DOI all match. Abstract names Red Ginseng + Trogopterus Feces as a 'nineteen medicaments of mutual antagonism' pair not recommended in the Chinese Pharmacopoeia; in vitro co-decoction significantly reduced bioactive ginsenoside content and diminished antiplatelet efficacy. No toxicity data. Strongest, most pair-specific source; justifies 'possible' (single in vitro herb-pair study)."
+      },
+      {
+        "type": "PMID",
+        "ref": "29218951",
+        "note": "Zhongguo Zhong Yao Za Zhi, 2017, Li et al. (DOI 10.19540/j.cnki.cjcmm.2017.0140). VERIFIED by direct re-fetch: title, journal, year, authors, DOI all match. Scale-free complex-network analysis of renshen-Trogopterus Dung prescriptions within the nineteen-mutual-restraint framework; documents the pair is real, studied, and clinically co-prescribed for blood-stasis syndrome - tempers a blanket prohibition."
+      },
+      {
+        "type": "PMID",
+        "ref": "24369478",
+        "note": "Evidence-Based Complement Alternat Med, 2013, Long et al. (DOI 10.1155/2013/352145). VERIFIED by direct re-fetch (PubMed + Hindawi): title, journal, year, DOI all match. Concludes the 'eighteen antagonisms and nineteen mutual inhibitors' rule has a discernible chemical/network basis. Supports the rule generally; does NOT name the ginseng-wulingzhi pair specifically (disclosed). Background corroboration only."
+      }
+    ]
+  }
+]
