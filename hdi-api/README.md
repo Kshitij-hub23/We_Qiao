@@ -191,22 +191,34 @@ scratch (so re-runs are idempotent), validates referential integrity, builds the
 counts per class. Current dataset: **46 entities, 51 interactions** (30 TCM-WM, 12 WM-WM, 9 TCM-TCM).
 Re-run it whenever the dataset changes.
 
-### Ingesting the herb vocabulary (CSV)
+### Ingesting the vocabularies (CSV)
 
-The interaction links are authored by hand; the TCM **herb vocabulary** (the names the resolver matches
-against, expanding to ~500–600 herbs) arrives separately as a CSV (see [`../HERB_DATASET_SPEC.md`](../HERB_DATASET_SPEC.md)).
-Fold a CSV into `entities.json` and re-seed in one step:
+The interaction links are authored by hand; the **name vocabularies** the resolver matches against arrive
+separately as CSVs and are folded into `entities.json`. There are two ingesters (sharing one core,
+`ingest_common.py`):
 
 ```bash
-python ingest_herbs.py path/to/herbs.csv          # writes entities.json + re-seeds
-python ingest_herbs.py path/to/herbs.csv --dry-run  # preview only
+python ingest_herbs.py    path/to/herbs.csv      # TCM herbs  (HERB_DATASET_SPEC.md)
+python ingest_western.py  path/to/western.csv    # Western drugs
+#   add --dry-run to preview, --no-seed to skip the re-seed
 ```
 
-`ingest_herbs.py` **preserves entity_ids by name** (a CSV herb matching an entity already referenced by an
-interaction reuses that id, so the curated links keep pointing at the right herb), assigns fresh ids above
-the Western-drug block for new herbs, **carries over** any referenced herb the CSV omits (so re-seeding
-never dangles), and leaves Western drugs untouched. A tiny `mock_herbs.csv` (the hero-pair herb + a novel
-one) is included so the pipeline can be validated before the real CSV lands — it's a drop-in replacement.
+Each writes `entities.json` and re-seeds. Run them in any order; the result is the same and re-running is
+idempotent. The shared merge rules:
+
+- **Every existing entity is kept**, so the curated interaction links never dangle (no carry-over step).
+- **Entity_ids are preserved by name**: a row matching an existing curated entity (of *either* kind) reuses
+  its id and merges the CSV's spellings in as aliases, keeping the curated display name. So `Glucophage`
+  folds into the curated **Metformin** `E-0124`, and a herb sold as a supplement (e.g. **ginger**, which
+  appears in *both* CSVs) stays a single entity instead of being duplicated across types.
+- **Literal duplicate rows collapse** (matched on a high-precision identity — Chinese+Latin for a herb,
+  generic name for a drug — so genuinely distinct entries that merely share a loose English name, like
+  白术 vs 蒼朮 both "Atractylodes", are *not* wrongly merged).
+- **New entries get fresh ids** above every existing id.
+
+The herb CSV follows [`../HERB_DATASET_SPEC.md`](../HERB_DATASET_SPEC.md); the Western CSV has columns
+`generic_name, brand_names (pipe-separated), drug_class, uses` (`uses` is an indication, not a name, so it
+is not aliased). A tiny `mock_herbs.csv` is included to validate the herb pipeline against the hero pair.
 
 ### Inspecting the database
 
@@ -282,18 +294,18 @@ After running `python seed.py`, you'll see output like:
 ```
 # curated baseline (entities.json as authored):
 Seeded 46 entities, 231 aliases, 51 interactions.
-# after ingesting the provided 332-herb CSV (python ingest_herbs.py ../TCM_HERBS_DATASET.csv):
-Seeded 354 entities, 2150 aliases, 51 interactions.
+# after ingesting both provided CSVs (ingest_herbs.py TCM_HERBS_DATASET.csv; ingest_western.py WESTERN_MEDICATIONS_DATASET.csv):
+Seeded 756 entities, 3336 aliases, 51 interactions.
   by class: {'TCM-WM': 30, 'WM-WM': 12, 'TCM-TCM': 9}
 ```
 
 ### Breakdown
 
-- **Curated baseline — 46 entities:** 24 WM drugs + 22 TCM herbs/formulas (the entities the 51 interactions
-  reference). The TCM **herb vocabulary** then expands via `ingest_herbs.py` (the provided CSV adds 308 new
-  herbs → 354 entities; 19 of the 22 referenced herbs are matched by name and keep their ids, 3 not in the
-  CSV are carried over).
-- **~5 aliases per entity:** preferred name + synonyms + `/`-splits + tone-stripped pinyin + OpenCC
+- **Curated baseline — 46 entities:** 24 WM drugs + 22 TCM herbs (the entities the 51 interactions
+  reference). Both vocabularies then expand via the ingesters: the 332-herb CSV and the 439-drug CSV grow
+  the set to **756 entities** (curated ids preserved by name; literal duplicate rows and cross-dataset
+  substances like ginger collapse to one entity each).
+- **~4–5 aliases per entity:** preferred name + synonyms/brands + `/`-splits + tone-stripped pinyin + OpenCC
   simplified/traditional.
 - **51 interactions:** 30 TCM-WM, 12 WM-WM, 9 TCM-TCM
   - **TCM-WM:** The core product focus (what the API endpoint returns)
@@ -311,7 +323,9 @@ Seeded 354 entities, 2150 aliases, 51 interactions.
 | `resolver.py` | Deterministic name→entity resolution: normalize + exact alias + `rapidfuzz` fallback |
 | `database.py` | SQLAlchemy ORM models (`Entity`, `EntityAlias`, `Interaction`), engine, sessions |
 | `seed.py` | ETL: loads `Medicine_data/*.json`, validates, populates DB, builds alias index |
-| `ingest_herbs.py` | Fold a herb-vocabulary CSV into `entities.json` (preserve ids by name) + re-seed |
+| `ingest_common.py` | Shared CSV→entity merge core (preserve ids by name, de-dup, keep all base entities) |
+| `ingest_herbs.py` | Ingest a TCM herb CSV into `entities.json` + re-seed (thin wrapper over the core) |
+| `ingest_western.py` | Ingest a Western-drug CSV into `entities.json` + re-seed (thin wrapper over the core) |
 | `mock_herbs.csv` | Tiny sample CSV (hero-pair herb + a novel one) to validate ingest before the real CSV |
 | `Medicine_data/entities.json` | 46 entities (WM drugs + TCM herbs) with all name forms |
 | `Medicine_data/interactions.json` | 51 sourced interaction pairs (all three classes) |

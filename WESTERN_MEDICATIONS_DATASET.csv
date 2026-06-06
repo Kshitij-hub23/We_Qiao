@@ -1,0 +1,440 @@
+generic_name,brand_names,drug_class,uses
+Atorvastatin,Lipitor,Statin,High cholesterol|Cardiovascular disease
+Metformin,Glucophage,Antidiabetic,Type 2 diabetes
+Levothyroxine,Synthroid|Levoxyl,Thyroid hormone,Hypothyroidism
+Lisinopril,Prinivil|Zestril,ACE inhibitor,High blood pressure|Heart failure
+Amlodipine,Norvasc,Calcium channel blocker,High blood pressure|Angina
+Metoprolol,Lopressor|Toprol,Beta blocker,High blood pressure|Heart disease
+Albuterol,Ventolin|Proventil,Bronchodilator,Asthma|COPD
+Losartan,Cozaar,ARB,High blood pressure
+Gabapentin,Neurontin,Anticonvulsant,Nerve pain|Seizures
+Omeprazole,Prilosec,Proton pump inhibitor,GERD|Heartburn
+Sertraline,Zoloft,SSRI,Depression|Anxiety|OCD
+Rosuvastatin,Crestor,Statin,High cholesterol
+Pantoprazole,Protonix,Proton pump inhibitor,GERD|Ulcers
+Escitalopram,Lexapro,SSRI,Depression|Anxiety
+Amphetamine/Dextroamphetamine,Adderall,CNS stimulant,ADHD|Narcolepsy
+Hydrochlorothiazide,HydroDiuril|Esidrix,Thiazide diuretic,High blood pressure
+Bupropion,Wellbutrin|Aplenzin,NDRI antidepressant,Depression|Smoking cessation
+Fluoxetine,Prozac|Sarafem,SSRI,Depression|OCD|Panic
+Semaglutide,Ozempic|Wegovy,GLP-1 agonist,Type 2 diabetes|Weight loss
+Montelukast,Singulair,Leukotriene antagonist,Asthma|Allergies
+Trazodone,Desyrel|Oleptro,Sedating antidepressant,Depression|Insomnia
+Simvastatin,Zocor,Statin,High cholesterol
+Amoxicillin,Amoxil|Moxatag,Beta-lactam antibiotic,Bacterial infections
+Tamsulosin,Flomax|Jalyn,Alpha blocker,Prostate enlargement
+Acetaminophen/Hydrocodone,Tylenol 3|Norco|Vicodin,Analgesic|Opioid,Moderate pain
+Fluticasone,Flovent|Flonase,Inhaled corticosteroid,Asthma|Allergies
+Meloxicam,Celebrex|Anjeso,NSAID,Arthritis|Pain
+Apixaban,Eliquis,Anticoagulant,Atrial fibrillation|Blood clots
+Furosemide,Lasix|Frude,Loop diuretic,Fluid overload|Heart failure
+Insulin Glargine,Lantus|Basaglar|Toujeo,Long-acting insulin,Type 1|Type 2 diabetes
+Duloxetine,Cymbalta|Irenka,SNRI,Depression|Anxiety|Fibromyalgia
+Ibuprofen,Advil|Motrin|Caldolor,NSAID,Pain|Inflammation|Fever
+Famotidine,Pepcid|Pepcid AC,H2 blocker,GERD|Heartburn|Ulcers
+Empagliflozin,Jardiance|Synjardy,SGLT2 inhibitor,Type 2 diabetes|Heart failure
+Carvedilol,Coreg|Coreg CR,Beta blocker,Heart failure|High blood pressure
+Tramadol,Ultram|ConZip,Opioid analgesic,Moderate pain
+Alprazolam,Xanax|Xanax XR,Benzodiazepine,Anxiety|Panic disorder
+Prednisone,Rayos|Deltasone,Corticosteroid,Inflammation|Autoimmune disorders
+Hydroxyzine,Vistaril|Atarax,Antihistamine|Anxiolytic,Anxiety|Itching
+Buspirone,Buspar,Azapirone anxiolytic,Anxiety
+Clopidogrel,Plavix|Lovapix,Antiplatelet,Heart disease|Stroke prevention
+Glipizide,Glucotrol|Glucotrol XL,Sulfonylurea,Type 2 diabetes
+Citalopram,Celexa,SSRI,Depression
+Potassium Chloride,K-Dur|Micro-K|K-Tab,Electrolyte supplement,Low potassium
+Allopurinol,Zyloprim|Aloprim,Xanthine oxidase inhibitor,Gout|High uric acid
+Aspirin,Bayer|Ecotrin,NSAID|Antiplatelet,Pain|Fever|Heart disease
+Cyclobenzaprine,Flexeril|Amrix,Muscle relaxant,Muscle spasms
+Ergocalciferol,Vitamin D2|Calcijex,Vitamin supplement,Vitamin D deficiency
+Oxycodone,Oxycontin|Roxicodone|Peroxetine,Opioid analgesic,Severe pain
+Methylphenidate,Ritalin|Concerta|Daytrana,CNS stimulant,ADHD|Narcolepsy
+Venlafaxine,Effexor|Effexor XR,SNRI,Depression|Anxiety|Hot flashes
+Spironolactone,Aldactone|Carospir,Potassium-sparing diuretic,Heart failure|Hypertension
+Ondansetron,Zofran|Zuplenz,5-HT3 antagonist,Nausea|Vomiting
+Zolpidem,Ambien|Ambien CR|Edluar,Sedative-hypnotic,Insomnia
+Cetirizine,Zyrtec|Zyrtec-D,Antihistamine,Allergies|Itching|Urticaria
+Estradiol,Estrace|Estraderm|Estring,Hormone,Menopause|Hormone replacement
+Pravastatin,Pravachol|Pravigard,Statin,High cholesterol
+Hydrochlorothiazide/Lisinopril,Zestoretic|Prinzide,Combination,High blood pressure
+Lamotrigine,Lamictal|Lamictal XR|Lamictal ODT,Anticonvulsant,Seizures|Bipolar disorder
+Quetiapine,Seroquel|Seroquel XR,Atypical antipsychotic,Schizophrenia|Bipolar
+Fluticasone/Salmeterol,Advair|Advair HFA,Combination,Asthma|COPD
+Clonazepam,Klonopin|Klonopin Wafers,Benzodiazepine,Seizures|Anxiety|Panic
+Dulaglutide,Trulicity|Trulicity Pen,GLP-1 agonist,Type 2 diabetes
+Azithromycin,Z-Pack|Zithromax|Azasite,Macrolide antibiotic,Bacterial infections
+Hydrochlorothiazide/Losartan,Hyzaar|Hyzaar DS,Combination,High blood pressure
+Amoxicillin/Clavulanate,Augmentin|Augmentin ES,Beta-lactam|Beta-lactamase inhibitor,Bacterial infections
+Latanoprost,Xalatan|Xelpea,Prostaglandin analogue,Glaucoma|Eye pressure
+Cholecalciferol,Vitamin D3|Calcifediol,Vitamin supplement,Vitamin D deficiency
+Propranolol,Inderal|Inderal LA|InnopraN XL,Beta blocker,High BP|Migraine|Anxiety
+Ezetimibe,Zetia|Vytorin,Cholesterol absorption inhibitor,High cholesterol
+Topiramate,Topamax|Topamax Sprinkle,Anticonvulsant,Seizures|Migraine prevention
+Paroxetine,Paxil|Paxil CR,SSRI,Depression|Anxiety|PTSD
+Diclofenac,Cataflam|Voltaren|Cambia,NSAID,Pain|Inflammation
+Budesonide/Formoterol,Symbicort|Symbicort Turbuhaler,Combination,Asthma|COPD
+Atenolol,Tenormin|Tenoretic,Beta blocker,High BP|Heart disease
+Lisdexamfetamine,Vyvanse|Vyvanse Chewable,CNS stimulant,ADHD
+Doxycycline,Vibramycin|Doryx|Acticlate,Tetracycline antibiotic,Bacterial infections
+Pregabalin,Lyrica|Lyrica CR,Anticonvulsant,Nerve pain|Fibromyalgia
+Ethinyl Estradiol/Norethindrone,Ortho-Cyclen|Ortho 0-35,Oral contraceptive,Birth control
+Glimepiride,Amaryl|Duetact,Sulfonylurea,Type 2 diabetes
+Tizanidine,Zanaflex|Zanaflex Capsules,Muscle relaxant,Muscle spasms
+Clonidine,Kapvay|Catapres|Catapres-TTS,Alpha-2 agonist,High BP|ADHD
+Fenofibrate,Tricor|Trilipix|Antara,Fibrate,High triglycerides
+Insulin Lispro,Humalog|Humalog Mix,Rapid-acting insulin,Diabetes
+Valsartan,Diovan|Diovan HCT|Exforge,ARB,High BP|Heart failure
+Cephalexin,Keflex|Keflex Pulvules,Cephalosporin antibiotic,Bacterial infections
+Baclofen,Lioresal|Lioresal Intrathecal,Muscle relaxant,Muscle spasticity
+Rivaroxaban,Xarelto|Xarelto Sprinkle,Anticoagulant,Blood clots|Atrial fibrillation
+Ferrous Sulfate,Feosol|Slow Fe|Fer-In-Sol,Iron supplement,Iron deficiency anemia
+Amitriptyline,Elavil|Endep,Tricyclic antidepressant,Depression|Chronic pain
+Finasteride,Proscar|Propecia,5-alpha reductase inhibitor,Prostate|Male pattern baldness
+Dapagliflozin,Farxiga|Forxiga|Xigduo,SGLT2 inhibitor,Type 2 diabetes|Heart failure
+Acetaminophen/Oxycodone,Percocet|Tylenol 4|Roxicet,Analgesic|Opioid,Moderate-severe pain
+Folic Acid,Folvite|Folic Acid,B vitamin,Folate deficiency|Pregnancy
+Aripiprazole,Abilify|Abilify Maintena,Atypical antipsychotic,Schizophrenia|Bipolar
+Olmesartan,Benicar|Benicar HCT|Azor,ARB,High blood pressure
+Ethinyl Estradiol/Norgestimate,Ortho Cyclen|Sprintec,Oral contraceptive,Birth control
+Valacyclovir,Valtrex|Valcyte,Antiviral,Herpes|Shingles|Chickenpox
+Mirtazapine,Remeron|Remeron SolTab,Tetracyclic antidepressant,Depression
+Lorazepam,Ativan|Ativan Injection,Benzodiazepine,Anxiety|Seizures
+Levetiracetam,Keppra|Keppra XR|Roweepra,Anticonvulsant,Seizures
+Insulin Aspart,Novolog|Novolog FlexPen,Rapid-acting insulin,Diabetes
+Naproxen,Aleve|Naprosyn|Naprogesic,NSAID,Pain|Inflammation|Fever
+Cyanocobalamin,Vitamin B12|Cyanokit,B vitamin supplement,B12 deficiency
+Loratadine,Claritin|Claritin-D,Antihistamine,Allergies|Urticaria
+Diltiazem,Cardizem|Cardizem CD|Diltiazem ER,Calcium channel blocker,High BP|Angina
+Sumatriptan,Imitrex|Tosymra,Triptan,Migraine
+Triamcinolone,Kenalog|Aristocort,Corticosteroid,Inflammation|Allergies
+Hydralazine,Apresoline|Bidil,Vasodilator,High BP|Heart failure
+Tirzepatide,Mounjaro|Zepbound,GLP-1/GIP agonist,Type 2 diabetes|Weight loss
+Celecoxib,Celebrex|Elyxyb,COX-2 inhibitor NSAID,Arthritis|Pain
+Acetaminophen,Tylenol|Ofirmev,Analgesic|Antipyretic,Pain|Fever
+Alendronate,Fosamax|Fosamax Plus D,Bisphosphonate,Osteoporosis
+Oxybutynin,Ditropan|Ditropan XL|Oxytrol,Anticholinergic,Overactive bladder
+Hydrochlorothiazide/Triamterene,Dyazide|Maxzide,Combination diuretic,High BP
+Warfarin,Coumadin|Jantoven,Anticoagulant,Blood clots|Atrial fibrillation
+Progesterone,Prometrium|Crinone,Hormone,Hormone replacement|Menstrual
+Fluticasone/Umeclidinium/Vilanterol,Ellipta,Combination,COPD
+Testosterone,Androgel|Testim|Striant,Hormone,Low testosterone
+Nifedipine,Procardia|Adalat|Nifedical,Calcium channel blocker,High BP|Angina
+Methocarbamol,Robaxin|Robaxin-750,Muscle relaxant,Muscle spasms
+Benzonatate,Tessalon|Tessalon Perles,Non-narcotic antitussive,Cough
+Sitagliptin,Januvia|Janumet|Jentadueto,DPP-4 inhibitor,Type 2 diabetes
+Chlorthalidone,Thalitone|Hygroton,Thiazide-like diuretic,High BP
+Isosorbide,Isordil|Imdur|Ismo,Nitrate,Angina
+Donepezil,Aricept|Aricept ODT,Cholinesterase inhibitor,Alzheimer's disease
+Dexmethylphenidate,Focalin|Focalin XR,CNS stimulant,ADHD
+Sulfamethoxazole/Trimethoprim,Bactrim|Septra|Sulfatrim,Antibiotic combination,UTI|Infections
+Clobetasol,Clobex|Temovate|Olux,Topical corticosteroid,Skin inflammation
+Methotrexate,Rheumatrex|Trexall|Otrexup,DMARD|Antimetabolite,Rheumatoid arthritis
+Hydroxychloroquine,Plaquenil|Quineprox,Antimalarial|Immunosuppressant,Lupus|RA
+Lovastatin,Mevacor|Altocor,Statin,High cholesterol
+Pioglitazone,Actos|Duetact,Thiazolidinedione,Type 2 diabetes
+Irbesartan,Avapro|Avalide|Irbesartan HCT,ARB,High BP
+Methylprednisolone,Medrol|Solu-Medrol|Depo-Medrol,Corticosteroid,Inflammation
+Norethindrone,Aygestin|Nor-QD|Camila,Progestin|Oral contraceptive,Birth control
+Meclizine,Antivert|Dramamine|Bonine,Antihistamine,Nausea|Motion sickness
+Ethinyl Estradiol/Levonorgestrel,Levora|Yasmin|Yaz,Oral contraceptive,Birth control
+Fluticasone/Vilanterol,Breo Ellipta,Combination,COPD|Asthma
+Ketoconazole,Nizoral|Extina|Kuric,Antifungal,Fungal infections
+Thyroid,Armour Thyroid|Nature Throid,Desiccated thyroid,Hypothyroidism
+Azelastine,Astelin|Optivar|Astepro,Antihistamine,Allergies|Nasal
+Nitrofurantoin,Macrobid|Macrodantin|Furadantin,Antibiotic,UTI
+Adalimumab,Humira|Hyrimoz|Udenyca,TNF-alpha inhibitor,Rheumatoid arthritis
+Memantine,Namenda|Namenda XR,NMDA receptor antagonist,Alzheimer's
+Prednisolone,Prelone|Orapred|Veripred,Corticosteroid,Inflammation
+Esomeprazole,Nexium|Nexium IV,Proton pump inhibitor,GERD
+Docusate,Colace|Surfak|Docusate Plus,Stool softener,Constipation
+Clindamycin,Cleocin|Cleocinpak,Lincosamide antibiotic,Bacterial infections
+Acyclovir,Zovirax|Sitavig,Antiviral,Herpes|Chickenpox
+Sildenafil,Viagra|Revatio,PDE-5 inhibitor,Erectile dysfunction
+Insulin Degludec,Tresiba|Ryzodeg,Long-acting insulin,Diabetes
+Insulin Detemir,Levemir|Levemir FlexPen,Long-acting insulin,Diabetes
+Drospirenone/Ethinyl Estradiol,Yaz|Yasmin|Ocella,Oral contraceptive,Birth control
+Ciprofloxacin,Cipro|Cipro IV|Cipro XR,Fluoroquinolone,Bacterial infections
+Morphine,MS Contin|Roxanol|Kadian,Opioid analgesic,Severe pain
+Levocetirizine,Xyzal|Xyzal Liquid,Antihistamine,Allergies
+Nirmatrelvir/Ritonavir,Paxlovid,Antiviral combination,COVID-19
+Valproate,Depakote|Depakene|Stavzor,Anticonvulsant,Seizures|Bipolar
+Atomoxetine,Strattera,Norepinephrine reuptake inhibitor,ADHD
+Budesonide,Pulmicort|Entocort|Uceris,Corticosteroid,Asthma|Crohn's
+Tiotropium,Spiriva|Spiriva Respimat,Anticholinergic,COPD
+Melatonin,Various brands,Hormone supplement,Insomnia
+Cefdinir,Omnicef|Cefdinir,Cephalosporin,Bacterial infections
+Doxepin,Silenor|Sinequan,Tricyclic antidepressant,Depression|Insomnia
+Olanzapine,Zyprexa|Zyprexa Intramuscular,Atypical antipsychotic,Schizophrenia
+Phentermine,Adipex-P|Lomaira|Suprenza,Sympathomimetic,Weight loss
+Ofloxacin,Ocuflox|Floxin|Floxin IV,Fluoroquinolone,Bacterial infections
+Ethinyl Estradiol/Etonogestrel,NuvaRing,Vaginal contraceptive,Birth control
+Mupirocin,Bactroban|Bactroban Nasal,Topical antibiotic,Skin infections
+Benazepril,Lotensin|Lotensin HCT,ACE inhibitor,High BP
+Timolol,Timoptic|Betimol,Beta blocker,Glaucoma
+Magnesium Salts,Mag-Oxide|MiraLAX|Citrate,Electrolyte|Laxative,Deficiency
+Fluconazole,Diflucan|Vfend,Antifungal,Fungal infections
+Risperidone,Risperdal|Risperdal Consta,Atypical antipsychotic,Schizophrenia
+Verapamil,Calan|Isoptin|Calan SR,Calcium channel blocker,High BP|Arrhythmia
+Linaclotide,Linzess,Guanylate cyclase agonist,IBS-C
+Cyclosporine,Neoral|Sandimmune|Gengraf,Immunosuppressant,Transplant
+Doxazosin,Cardura|Cardura XL,Alpha blocker,High BP
+Albuterol/Ipratropium,Combivent|Duoneb,Combination,COPD
+Hydrocortisone,Cortef|Hydrocort|Solu-Cortef,Corticosteroid,Inflammation
+Diazepam,Valium|Diastat,Benzodiazepine,Anxiety|Seizures
+Telmisartan,Micardis|Micardis HCT|Twynsta,ARB,High BP
+Carbamazepine,Tegretol|Tegretol XR,Anticonvulsant,Seizures|Bipolar
+Amlodipine/Benazepril,Lotrel,Combination,High BP
+Lithium,Lithobid|Eskalith|Lithium Carbonate,Mood stabilizer,Bipolar
+Evolocumab,Repatha,PCSK9 inhibitor,High cholesterol
+Desvenlafaxine,Pristiq|Pristiq ER,SNRI,Depression
+Dorzolamide,Trusopt|Cosopt,Carbonic anhydrase inhibitor,Glaucoma
+Nebivolol,Bystolic,Beta blocker,High BP
+Dicyclomine,Bentyl|Dilomine,Anticholinergic,IBS
+Torsemide,Demadex|Torsemide IV,Loop diuretic,Edema|Heart failure
+Anastrozole,Arimidex,Aromatase inhibitor,Breast cancer
+Enalapril,Vasotec|Vasotec IV,ACE inhibitor,High BP
+Polyethylene Glycol 3350,Golytely|Miralax|Polyethylene,Laxative,Constipation
+Tretinoin,Retin-A|Atralin|Renova,Retinoid,Acne|Wrinkles
+Tadalafil,Cialis|Adcirca|Vidalista,PDE-5 inhibitor,Erectile dysfunction
+Sacubitril/Valsartan,Entresto,ARNi combination,Heart failure
+Calcium,Various brands,Mineral supplement,Low calcium
+Pramipexole,Mirapex|Mirapex ER,Dopamine agonist,Parkinson's
+Mesalamine,Asacol|Pentasa|Rowasa,Anti-inflammatory,Ulcerative colitis
+Metronidazole,Flagyl|MetroGel|Metrogel-Vaginal,Antibiotic,Infections
+Nortriptyline,Pamelor|Aventyl,Tricyclic antidepressant,Depression
+Emtricitabine/Tenofovir,Truvada|Descovy,Antiretroviral,HIV|PrEP
+Rimegepant,Nurtec|Nurtec ODT,CGRP antagonist,Migraine
+Nitroglycerin,Nitrostat|Nitro-Dur|Minitran,Nitrate,Angina
+Rizatriptan,Maxalt|Maxalt-MLT,Triptan,Migraine
+Liraglutide,Saxenda|Victoza,GLP-1 agonist,Weight loss|Diabetes
+Acetaminophen/Codeine,Tylenol 2|Tylenol 3|Tylenol 4,Analgesic,Pain
+Ramipril,Altace|Ramipril,ACE inhibitor,High BP
+Ropinirole,Requip|Requip XL,Dopamine agonist,Parkinson's
+Brimonidine,Alphagan|Alphagan P,Alpha-2 agonist,Glaucoma
+Mirabegron,Myrbetriq|Myrbetriq ER,Beta-3 agonist,Overactive bladder
+Fexofenadine,Allegra|Allegra-D,Antihistamine,Allergies
+Labetalol,Trandate|Normodyne|Labetalol IV,Alpha-beta blocker,High BP
+Pitavastatin,Livalo|Zypitamag,Statin,High cholesterol
+Omalizumab,Xolair,IgE monoclonal antibody,Asthma
+Apremilast,Otezla,PDE4 inhibitor,Psoriasis
+Phenylephrine,Neo-Synephrine|Sudafed PE,Decongestant,Nasal congestion
+Pseudoephedrine,Sudafed|Sudafed 12hr,Decongestant,Nasal congestion
+Diphenhydramine,Benadryl|Nytol|Sleepinal,Antihistamine,Allergies|Sleep
+Dextromethorphan,Robitussin|Delsym|Mucinex DM,Antitussive,Cough
+Guaifenesin,Mucinex|Humibid|Robitussin,Expectorant,Cough
+Zinc,Various brands,Mineral,Immune support
+Vitamin C,Ascorbic acid|Emergen-C,Vitamin,Immune support
+Vitamin A,Retinol|Aquasol A,Vitamin,Night blindness
+Vitamin E,Tocopherol|Alpha E,Vitamin,Antioxidant
+Vitamin B6,Pyridoxine|Pyridoxal,B vitamin,B6 deficiency
+Thiamine,Vitamin B1|Thiamine HCl,B vitamin,B1 deficiency
+Riboflavin,Vitamin B2|Avin-B,B vitamin,B2 deficiency
+Niacin,Vitamin B3|Niaspan,B vitamin,High cholesterol
+Pantothenic Acid,Vitamin B5|Calcium pantothenate,B vitamin,B5 deficiency
+Biotin,Vitamin B7|Bioctin,B vitamin,Hair/skin health
+Choline,Bitartrate|Lecithin,Nutrient,Brain health
+Alpha Lipoic Acid,ALA|Thioctacid,Antioxidant,Neuropathy
+CoQ10,Ubiquinone|Ubiquinol,Antioxidant,Heart health
+Resveratrol,Resveratrol|Longevinex,Polyphenol,Antioxidant
+Quercetin,Bioflavonoid|Quercetin-C,Flavonoid,Allergy relief
+Ginseng,Panax|Red Ginseng,Herbal,Energy|Stamina
+Turmeric,Curcumin|Standardized,Herbal,Inflammation
+Ginger,Dried rhizome|Ginger extract,Herbal,Nausea|Inflammation
+Garlic,Aged garlic|Allicin,Herbal,Heart health
+Echinacea,Purple coneflower|Echinacea extract,Herbal,Cold prevention
+Elderberry,Black elderberry|Sambucus,Herbal,Cold|Flu
+Probiotics,Lactobacillus|Bifidobacterium,Supplement,Gut health
+Glucosamine,Glucosamine HCl|N-Acetyl,Joint support,Arthritis
+Chondroitin,Chondroitin sulfate|Bovine,Joint support,Arthritis
+MSM,Methylsulfonylmethane|Organic sulfur,Supplement,Joint pain
+Collagen,Type I|Type II|Hydrolyzed,Protein,Joint|Skin
+Hyaluronic Acid,HA|Cross-linked HA,Supplement,Joint|Skin hydration
+L-Arginine,L-arginine|Free-form,Amino acid,Blood flow
+L-Citrulline,L-citrulline|Citrulline malate,Amino acid,Blood flow
+L-Taurine,L-taurine|Taurine,Amino acid,Heart health
+L-Carnitine,L-carnitine|Acetyl-L-carnitine,Amino acid,Energy
+L-Glutamine,L-glutamine|Glutamine,Amino acid,Gut health
+Creatine Monohydrate,Creatine|Creatine monohydrate,Amino acid,Muscle strength
+Rhodiola,Rhodiola rosea|Standardized extract,Adaptogen,Stress|Fatigue
+Ashwagandha,Withania somnifera|KSM-66,Adaptogen,Stress|Sleep
+Cordyceps,Cordyceps sinensis|Cordyceps militaris,Mushroom,Energy
+Reishi,Ganoderma lucidum|Red reishi,Mushroom,Sleep|Stress
+Shiitake,Lentinula edodes|Shiitake extract,Mushroom,Immunity
+Maitake,Grifola frondosa|Maitake D-fraction,Mushroom,Immunity
+Lion's Mane,Hericium erinaceus|Lion's Mane extract,Mushroom,Cognitive
+Chaga,Inonotus obliquus|Chaga extract,Mushroom,Immune support
+Berberine,Berberine HCl|Berberine sulfate,Plant alkaloid,Blood sugar
+Curcumin,Curcumin extract|BCM-95,Polyphenol,Inflammation
+EGCG,Green tea extract|EGCG,Catechin,Antioxidant
+NAC,N-acetylcysteine|NAC,Amino acid,Antioxidant
+Milk Thistle,Silybum marianum|Silymarin,Herbal,Liver support
+Saw Palmetto,Serenoa repens|Saw palmetto extract,Herbal,Prostate
+Red Yeast Rice,Monascus purpureus|Red yeast rice,Herbal,Cholesterol
+Policosanol,Sugar cane wax|Policosanol,Plant compound,Cholesterol
+Bacitracin,Bacitracin topical,Antibiotic,Topical wounds
+Neomycin,Various topical,Aminoglycoside,Topical infections
+Polymyxin B,Bacitracin-Neomycin-Polymyxin,Antibiotic,Topical infections
+Miconazole,Monistat|Lotrimin,Antifungal,Yeast infections
+Clotrimazole,Lotrimin|Mycelex,Antifungal,Fungal infections
+Terbinafine,Lamisil|Terbinex,Antifungal,Fungal infections
+Nystatin,Mycostatin|Nilstat,Antifungal,Candida infections
+Griseofulvin,Fulvicin|Gris-Peg,Antifungal,Fungal infections
+Posaconazole,Noxafil|Posanol,Antifungal,Invasive fungal
+Voriconazole,Vfend|Vfend IV,Antifungal,Invasive fungal
+Micafungin,Mycamine,Echinocandin,Invasive fungal
+Anidulafungin,Eraxis,Echinocandin,Invasive fungal
+Caspofungin,Cancidas,Echinocandin,Invasive fungal
+Amphotericin B,Fungizone|Amphotec,Antifungal,Systemic fungal
+Pentamidine,Pentam,Antiprotozoal,PCP|Leishmaniasis
+Pyrantel Pamoate,Pin-X|Reese's,Anthelmintic,Pinworms
+Mebendazole,Vermox|Emverm,Anthelmintic,Intestinal worms
+Albendazole,Albenza,Anthelmintic,Parasites
+Ivermectin,Stromectol|Soolantra,Antiparasitic,Parasites|Scabies
+Permethrin,Elimite|Nix,Pediculicide,Lice|Scabies
+Lindane,Kwell|Lindane,Pediculicide,Lice|Scabies
+Malathion,Ovide,Pediculicide,Lice
+Spinosad,Natroba,Pediculicide,Lice
+Praziquantel,Biltricide,Anthelmintic,Tapeworms
+Metronidazole,Flagyl Vaginal|Trichomoniasis|Bacterial infections
+Tinidazole,Tindamax,Nitroimidazole,Parasitic|Protozoal
+Paromomycin,Humatin,Aminoglycoside,Intestinal parasites
+Furazolidone,Furoxone,Antimicrobial,Diarrhea|Infections
+Mupirocin Nasal,Bactroban Nasal,Topical antibiotic,Nasal MRSA
+Retapamulin,Altabax,Topical antibiotic,Skin infections
+Sulfacetamide,Klaron|AK-Sulf,Sulfonamide,Acne|Eye infections
+Sulfadiazine,Silver sulfadiazine|Silvadene,Sulfonamide,Burn wounds
+Sulfisoxazole,Gantrisin,Sulfonamide,UTI|Infections
+Trimethoprim,Trimpex,Dihydrofolate reductase inhibitor,UTI
+Fosfomycin,Monurol,Antibiotic,UTI
+Cefadroxil,Duricef|Ultracef,Cephalosporin,Bacterial infections
+Cefaclor,Ceclor|Ceclor CD,Cephalosporin,Bacterial infections
+Cefamandole,Mandol,Cephalosporin,Bacterial infections
+Cefazolin,Ancef|Cefazolin,Cephalosporin,Bacterial infections
+Cefixime,Suprax,Cephalosporin,Bacterial infections
+Cefotaxime,Claforan,Cephalosporin,Bacterial infections
+Cefotetan,Cefotan,Cephalosporin,Bacterial infections
+Cefoxitin,Mefoxin,Cephalosporin,Bacterial infections
+Cefpodoxime,Vantin,Cephalosporin,Bacterial infections
+Ceftazidime,Fortaz|Tazicef,Cephalosporin,Pseudomonas aeruginosa
+Ceftibuten,Cedax,Cephalosporin,Bacterial infections
+Ceftizoxime,Cefizox,Cephalosporin,Bacterial infections
+Ceftriaxone,Rocephin,Cephalosporin,Bacterial infections
+Cefuroxime,Zinacef|Ceftin,Cephalosporin,Bacterial infections
+Cephalexin,Keflex,Cephalosporin,Bacterial infections
+Meropenem,Merrem IV,Carbapenem,Bacterial infections
+Ertapenem,Invanz,Carbapenem,Bacterial infections
+Imipenem/Cilastatin,Primaxin,Carbapenem,Bacterial infections
+Doripenem,Doribax,Carbapenem,Bacterial infections
+Piperacillin/Tazobactam,Zosyn,Beta-lactam,Bacterial infections
+Ticarcillin/Clavulanate,Timentin,Beta-lactam,Bacterial infections
+Azlocillin,Azlin,Beta-lactam antibiotic,Pseudomonas
+Mezlocillin,Mezlin,Beta-lactam antibiotic,Pseudomonas
+Piperacillin,Pipracil,Beta-lactam antibiotic,Pseudomonas
+Ampicillin,Principen|Omnipen,Beta-lactam,Bacterial infections
+Ampicillin/Sulbactam,Unasyn,Beta-lactam,Bacterial infections
+Oxacillin,Bactocill,Beta-lactam,Staphylococcal infections
+Nafcillin,Nafcil|Unipen,Beta-lactam,Staphylococcal infections
+Dicloxacillin,Dynapen|Pathocil,Beta-lactam,Staphylococcal infections
+Cloxacillin,Cloxapen,Beta-lactam,Staphylococcal infections
+Vancomycin,Vancocin|Firvanq,Glycopeptide,MRSA|C difficile
+Dalbavancin,Dalvance,Glycopeptide,Gram-positive
+Oritavancin,Orbactiv,Glycopeptide,Gram-positive
+Telavancin,Vibativ,Glycopeptide,Hospital-acquired pneumonia
+Tedizolid,Sivextro,Oxazolidinone,Gram-positive
+Linezolid,Zyvox|Zyvoxam,Oxazolidinone,MRSA|VRE
+Doxycycline Hyclate,Vibramycin|Doryx,Tetracycline,Bacterial infections
+Minocycline,Minocin|Solodyn,Tetracycline,Acne|Infections
+Tetracycline,Achromycin|Tetrex,Tetracycline,Bacterial infections
+Demeclocycline,Declomycin,Tetracycline,SIADH|Infections
+Tigecycline,Tygacil,Tetracycline,Gram-positive|Gram-negative
+Streptomycin,Streptomycin IV,Aminoglycoside,TB|Infections
+Gentamicin,Garamycin|Gentacidin,Aminoglycoside,Gram-negative
+Tobramycin,Tobrex|Bethkis,Aminoglycoside,Gram-negative
+Amikacin,Amikin|Arikayce,Aminoglycoside,Gram-negative
+Netilmicin,Netromycin,Aminoglycoside,Gram-negative
+Kanamycin,Kantrex|Klebcil,Aminoglycoside,Gram-negative
+Spectinomycin,Trobicin,Aminoglycoside,Gonorrhea
+Erythromycin,Erythrocin|Ery-Tab,Macrolide,Bacterial infections
+Clarithromycin,Biaxin|Biaxin XL,Macrolide,Bacterial infections
+Telithromycin,Ketek,Ketolide,Respiratory infections
+Roxithromycin,Roxid,Macrolide,Bacterial infections
+Dirithromycin,Dynabac,Macrolide,Respiratory infections
+Clindamycin Topical,Cleocin T|Clindagel,Lincosamide,Acne
+Chloramphenicol,Chloromycetin,Amphenicol,Serious infections
+Cefmetazole,Zefazone,Cephalosporin,Bacterial infections
+Cefotiam,Cefotiam,Cephalosporin,Bacterial infections
+Loracarbef,Lorabid,Beta-lactam,Bacterial infections
+Aztreonam,Azactam,Monobactam,Gram-negative
+Fluoroquinolone,Levaquin|Cipro|Avelox,Fluoroquinolone,Infections
+Levofloxacin,Levaquin|L-Flox,Fluoroquinolone,Respiratory|UTI
+Moxifloxacin,Avelox|Vigamox,Fluoroquinolone,Respiratory
+Gemifloxacin,Factive,Fluoroquinolone,Respiratory
+Norfloxacin,Noroxin,Fluoroquinolone,UTI
+Enoxacin,Penetrex,Fluoroquinolone,UTI
+Sparfloxacin,Zagam,Fluoroquinolone,Respiratory
+Grepafloxacin,Raxar,Fluoroquinolone,Respiratory
+Trovafloxacin,Trovan,Fluoroquinolone,Serious infections
+Methenamine,Hipprex|Urex,Urinary antiseptic,UTI
+Mandelic Acid,Urinary antiseptic,Organic acid,UTI
+Metronidazole Vaginal,MetroGel-Vaginal,Antibiotic,Bacterial vaginosis
+Secnidazole,Solosec,Nitroimidazole,Bacterial vaginosis
+Fidaxomicin,Dificlor,Macrolide,C difficile infection
+Vancomycin,Vancocin oral,Glycopeptide,C difficile
+Bezlotoxumab,Zinplava,Monoclonal antibody,C difficile prevention
+Cholestyramine,Questran|Questran Light,Bile acid sequestrant,Diarrhea
+Octreotide,Sandostatin|Sandostatin LAR,Somatostatin analogue,Diarrhea|Acromegaly
+Loperamide,Imodium|Diamode,Opioid antidiarrheal,Diarrhea
+Diphenoxylate/Atropine,Lomotil,Opioid|Anticholinergic,Diarrhea
+Bismuth Subsalicylate,Pepto-Bismol|Kaopectate,Antidiarrheal,Diarrhea
+Pancrelipase,Creon|Pancreaze,Enzyme supplement,Pancreatic insufficiency
+Ursodeoxycholic Acid,Actigall|Ursodiol,Bile acid,Gallstones
+Sulfasalazine,Azulfidine|Sulfazine,Sulfonamide,IBD|RA
+Olsalazine,Dipentum,Salicylate,Ulcerative colitis
+Balsalazide,Colazal|Giazo,Salicylate,Ulcerative colitis
+Lactulose,Cephulac|Kristalose,Osmotic laxative,Constipation|Hepatic encephalopathy
+Sorbitol,Sorbitol,Osmotic,Constipation
+Glycerin,Glycerin suppository,Osmotic,Constipation
+Psyllium,Metamucil|Konsyl,Bulk laxative,Constipation
+Calcium Polycarbophil,Fiber-Con|Equalactin,Bulk laxative,Constipation|Diarrhea
+Methylcellulose,Citrucel,Bulk laxative,Constipation
+Wheat Dextrin,Benefiber,Prebiotic fiber,Constipation
+Inulin,Inulin|Prebiotic,Prebiotic fiber,Constipation
+Bisacodyl,Dulcolax|Correctol,Stimulant laxative,Constipation
+Senna,Senna-S|Senokot,Stimulant laxative,Constipation
+Castor Oil,Castor Oil,Stimulant laxative,Constipation
+Aloe Vera,Aloe latex|Aloe juice,Stimulant laxative,Constipation
+Phenolphthalein,Phenolphthalein,Stimulant laxative,Constipation
+Tenesmus,Lubricating laxative,Mineral oil,Constipation
+Paraffin Oil,Liquid paraffin,Lubricating laxative,Constipation
+Olive Oil,Olive oil rectal,Lubricating laxative,Constipation
+Milk of Magnesia,Mag-Ox|Magnesium hydroxide,Saline laxative,Constipation
+Sodium Phosphate,Fleet Enema,Saline laxative,Constipation
+Magnesium Citrate,Citrate of magnesia,Saline laxative,Constipation
+Sodium Sulfate,Glauber salt,Saline laxative,Constipation
+Prucalopride,Motegrity,5-HT4 agonist,Chronic constipation
+Linaclotide,Linzess,Guanylate cyclase,IBS-C|Opioid constipation
+Lubiprostone,Amitiza,Chloride channel activator,Constipation
+Naloxegol,Movantik,Opioid antagonist,Opioid constipation
+Methylnaltrexone,Relistor,Opioid antagonist,Opioid constipation
+Alvimopan,Entereg,Opioid antagonist,Post-op ileus
+Ispaghula,Metamucil|Psyllium,Bulk laxative,Constipation
+Anthraquinone,Senna|Aloe vera,Stimulant,Constipation
+Domperidone,Motilium,Dopamine antagonist,Nausea|GI motility
+Metoclopramide,Reglan|Metoclopramide,Dopamine antagonist,GERD|Nausea
+Cisapride,Propulsid,5-HT4 agonist,GI motility
+Bethanechol,Urecholine,Cholinergic agonist,Urinary retention
+Neostigmine,Prostigmin,Cholinesterase inhibitor,Myasthenia gravis
+Pyridostigmine,Mestinon|Regonol,Cholinesterase inhibitor,Myasthenia gravis
+Edrophonium,Enlon,Cholinesterase inhibitor,Myasthenia gravis testing
+Physostigmine,Antilirium,Cholinesterase inhibitor,Anticholinergic toxicity
+Pancreatinum,Enzymatic,Pancreatic enzyme,Pancreatic insufficiency
+Trypsin,Enzymatic supplement,Protease,Debridement
+Chymotrypsin,Enzymatic,Protease,Debridement
+Hyaluronidase,Hyase|Hydase,Enzyme,Tissue infiltration
+Collagenase,Santyl|Xiaflex,Enzyme,Necrotic tissue
+Papain,Debridase|Papase,Protease,Tissue debridement
+Bromelain,Bromelain,Protease,Anti-inflammatory
+Serratiopeptidase,Serrapeptase|Eidon,Serine protease,Inflammation
+Nattokinase,Nattokinase,Serine protease,Blood flow
+Glucose Oxidase,Diagnostic,Enzyme,Wound irrigation
+Laccase,Enzymatic,Enzyme,Medical uses

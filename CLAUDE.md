@@ -36,7 +36,8 @@ The app is now **three local processes**, not the single cloud app the Stack sec
 - **Conflict engine** — `hdi-api/` (FastAPI + SQLite), port **8000**. `POST /api/v1/resolve`
   (deterministic name→entity matching — exact alias + `rapidfuzz` fuzzy fallback, the safety boundary),
   `POST /api/v1/check-conflicts`, `GET /health`. Seed it with `python seed.py` (loads
-  `hdi-api/Medicine_data/`); fold a herb CSV in with `python ingest_herbs.py <csv>`.
+  `hdi-api/Medicine_data/`); fold the name vocabularies in with `python ingest_herbs.py <csv>` and
+  `python ingest_western.py <csv>` (shared core in `ingest_common.py`).
 - **Intake service** — `standardizer/` (FastAPI), port **8001**. `POST /api/v1/ocr` (Gemini image OCR)
   + `POST /api/v1/extract` (Gemini name **extraction** — candidate name strings only, **no vocabulary in
   the prompt**; the engine does the matching). Needs `GEMINI_API_KEY`.

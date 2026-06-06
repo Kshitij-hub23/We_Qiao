@@ -111,7 +111,8 @@
       "ren shen",
       "人參",
       "Ginseng",
-      "Panax"
+      "Panax",
+      "Red Ginseng"
     ],
     "active_constituents": [
       "ginsenosides",
@@ -128,7 +129,9 @@
     "common_names": [
       "garlic",
       "aged garlic extract",
-      "Allii sativi bulbus"
+      "Allii sativi bulbus",
+      "Aged garlic",
+      "Allicin"
     ],
     "active_constituents": [
       "allicin",
@@ -267,7 +270,9 @@
       "Zingiber",
       "Fresh Ginger",
       "Rhizoma Zingiberis Recens",
-      "生薑"
+      "生薑",
+      "Dried rhizome",
+      "Ginger extract"
     ],
     "active_constituents": [
       "gingerols",
@@ -291,7 +296,10 @@
       "Golden root",
       "Radix Curcumae",
       "yu jin",
-      "郁金"
+      "郁金",
+      "Standardized",
+      "Curcumin extract",
+      "BCM-95"
     ],
     "active_constituents": [
       "curcumin",
@@ -501,7 +509,8 @@
     "rxnorm_id": "11289",
     "common_names": [
       "Coumadin",
-      "Jantoven"
+      "Jantoven",
+      "Warfarin"
     ]
   },
   {
@@ -512,7 +521,10 @@
     "rxnorm_id": "1191",
     "common_names": [
       "acetylsalicylic acid",
-      "ASA"
+      "ASA",
+      "Aspirin",
+      "Bayer",
+      "Ecotrin"
     ]
   },
   {
@@ -522,7 +534,9 @@
     "drug_class": "antiplatelet (P2Y12 inhibitor)",
     "rxnorm_id": "32968",
     "common_names": [
-      "Plavix"
+      "Plavix",
+      "Clopidogrel",
+      "Lovapix"
     ]
   },
   {
@@ -532,7 +546,9 @@
     "drug_class": "antidiabetic (sulfonylurea)",
     "rxnorm_id": "4821",
     "common_names": [
-      "Glucotrol"
+      "Glucotrol",
+      "Glipizide",
+      "Glucotrol XL"
     ]
   },
   {
@@ -554,7 +570,10 @@
     "rxnorm_id": "5487",
     "common_names": [
       "HCTZ",
-      "Microzide"
+      "Microzide",
+      "Hydrochlorothiazide",
+      "HydroDiuril",
+      "Esidrix"
     ]
   },
   {
@@ -567,7 +586,9 @@
       "ciclosporin",
       "cyclosporin A",
       "Neoral",
-      "Sandimmune"
+      "Sandimmune",
+      "Cyclosporine",
+      "Gengraf"
     ]
   },
   {
@@ -588,7 +609,8 @@
     "drug_class": "statin (HMG-CoA reductase inhibitor; CYP3A4 substrate)",
     "rxnorm_id": "36567",
     "common_names": [
-      "Zocor"
+      "Zocor",
+      "Simvastatin"
     ]
   },
   {
@@ -621,7 +643,8 @@
     "drug_class": "antihypertensive (dihydropyridine calcium channel blocker)",
     "rxnorm_id": "17767",
     "common_names": [
-      "Norvasc"
+      "Norvasc",
+      "Amlodipine"
     ]
   },
   {
@@ -632,7 +655,8 @@
     "rxnorm_id": "7646",
     "common_names": [
       "Prilosec",
-      "Losec"
+      "Losec",
+      "Omeprazole"
     ]
   },
   {
@@ -644,7 +668,9 @@
     "common_names": [
       "Advil",
       "Motrin",
-      "Brufen"
+      "Brufen",
+      "Ibuprofen",
+      "Caldolor"
     ]
   },
   {
@@ -665,7 +691,9 @@
     "drug_class": "azole antifungal (CYP2C9 inhibitor)",
     "rxnorm_id": "4450",
     "common_names": [
-      "Diflucan"
+      "Diflucan",
+      "Fluconazole",
+      "Vfend"
     ]
   },
   {
@@ -675,7 +703,9 @@
     "drug_class": "macrolide antibiotic (strong CYP3A4 inhibitor)",
     "rxnorm_id": "21212",
     "common_names": [
-      "Biaxin"
+      "Biaxin",
+      "Clarithromycin",
+      "Biaxin XL"
     ]
   },
   {
@@ -696,7 +726,8 @@
     "rxnorm_id": "29046",
     "common_names": [
       "Prinivil",
-      "Zestril"
+      "Zestril",
+      "Lisinopril"
     ]
   },
   {
@@ -706,7 +737,9 @@
     "drug_class": "potassium-sparing diuretic (mineralocorticoid-receptor antagonist)",
     "rxnorm_id": "9997",
     "common_names": [
-      "Aldactone"
+      "Aldactone",
+      "Spironolactone",
+      "Carospir"
     ]
   },
   {
@@ -717,7 +750,9 @@
     "rxnorm_id": "8638",
     "common_names": [
       "Prelone",
-      "Orapred"
+      "Orapred",
+      "Prednisolone",
+      "Veripred"
     ]
   },
   {
@@ -727,7 +762,8 @@
     "drug_class": "antidepressant (SSRI)",
     "rxnorm_id": "36437",
     "common_names": [
-      "Zoloft"
+      "Zoloft",
+      "Sertraline"
     ]
   },
   {
@@ -747,7 +783,8 @@
     "drug_class": "antidiabetic (biguanide)",
     "rxnorm_id": "6809",
     "common_names": [
-      "Glucophage"
+      "Glucophage",
+      "Metformin"
     ]
   },
   {
@@ -1314,7 +1351,16 @@
     "chinese": "草決明",
     "common_names": [
       "Foetid cassia",
-      "Senna"
+      "Senna",
+      "Cassiae Seed",
+      "Semen Cassiae",
+      "jue ming zi",
+      "決明子",
+      "Cassia",
+      "Senna-S",
+      "Senokot",
+      "Anthraquinone",
+      "Aloe vera"
     ],
     "active_constituents": []
   },
@@ -1402,7 +1448,12 @@
     "chinese": "昌蒲",
     "common_names": [
       "Grassleaf sweetflag",
-      "Acorus"
+      "Acorus",
+      "Sweetflag",
+      "Rhizoma Acori Graminei",
+      "shi chang pu",
+      "石菖蒲",
+      "Grass-leaf"
     ],
     "active_constituents": []
   },
@@ -1464,7 +1515,13 @@
     "chinese": "陳蒿",
     "common_names": [
       "Oriental wormwood",
-      "Capillaris"
+      "Capillaris",
+      "Yin Chen Shoots",
+      "Herba Artemisiae Scopariae",
+      "yin chen hao",
+      "茵陳蒿",
+      "Artemisia",
+      "Yin chen"
     ],
     "active_constituents": []
   },
@@ -1490,7 +1547,12 @@
     "chinese": "陳砂",
     "common_names": [
       "Cinnabar mineral",
-      "Vermilion"
+      "Vermilion",
+      "Cinnabar",
+      "Cinnabaris",
+      "zhu sha",
+      "朱砂",
+      "Mercury sulfide"
     ],
     "active_constituents": []
   },
@@ -1542,7 +1604,13 @@
     "chinese": "赤小豆",
     "common_names": [
       "Adzuki",
-      "Red bean"
+      "Red bean",
+      "Mung Bean",
+      "Semen Phaseoli",
+      "lu dou",
+      "綠豆",
+      "Mung",
+      "Green bean"
     ],
     "active_constituents": []
   },
@@ -1567,7 +1635,12 @@
     "chinese": "川椒",
     "common_names": [
       "Sichuan",
-      "Chinese pepper"
+      "Chinese pepper",
+      "Szechuan Pepper",
+      "Pericarpium Zanthoxyli",
+      "hua jiao",
+      "花椒",
+      "Zanthoxylum"
     ],
     "active_constituents": []
   },
@@ -1830,7 +1903,10 @@
     "chinese": "冬蟲夏草",
     "common_names": [
       "Caterpillar fungus",
-      "Yartsa gunbu"
+      "Yartsa gunbu",
+      "Cordyceps",
+      "Cordyceps sinensis",
+      "Cordyceps militaris"
     ],
     "active_constituents": []
   },
@@ -2313,7 +2389,9 @@
     "chinese": "紅曲",
     "common_names": [
       "Fermented rice",
-      "Koji"
+      "Koji",
+      "Red Yeast Rice",
+      "Monascus purpureus"
     ],
     "active_constituents": []
   },
@@ -2409,19 +2487,6 @@
   },
   {
     "entity_id": "E-0256",
-    "preferred_name": "Szechuan Pepper",
-    "type": "TCM-herb",
-    "latin": "Pericarpium Zanthoxyli",
-    "pinyin": "hua jiao",
-    "chinese": "花椒",
-    "common_names": [
-      "Chinese pepper",
-      "Zanthoxylum"
-    ],
-    "active_constituents": []
-  },
-  {
-    "entity_id": "E-0257",
     "preferred_name": "Talc",
     "type": "TCM-herb",
     "latin": "Talcum",
@@ -2434,7 +2499,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0258",
+    "entity_id": "E-0257",
     "preferred_name": "Sophora Flower",
     "type": "TCM-herb",
     "latin": "Flos Sophorae",
@@ -2447,7 +2512,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0259",
+    "entity_id": "E-0258",
     "preferred_name": "Phellodendron",
     "type": "TCM-herb",
     "latin": "Cortex Phellodendri",
@@ -2459,7 +2524,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0260",
+    "entity_id": "E-0259",
     "preferred_name": "Siberian Solomon Seal",
     "type": "TCM-herb",
     "latin": "Rhizoma Polygonati",
@@ -2471,7 +2536,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0261",
+    "entity_id": "E-0260",
     "preferred_name": "Astragalus Root",
     "type": "TCM-herb",
     "latin": "Radix Astragali",
@@ -2484,7 +2549,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0262",
+    "entity_id": "E-0261",
     "preferred_name": "Scutellaria",
     "type": "TCM-herb",
     "latin": "Radix Scutellariae",
@@ -2496,7 +2561,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0263",
+    "entity_id": "E-0262",
     "preferred_name": "Cannabis Seed",
     "type": "TCM-herb",
     "latin": "Fructus Cannabis",
@@ -2509,7 +2574,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0264",
+    "entity_id": "E-0263",
     "preferred_name": "Patchouli",
     "type": "TCM-herb",
     "latin": "Herba Pogostemonis",
@@ -2522,7 +2587,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0265",
+    "entity_id": "E-0264",
     "preferred_name": "Gizzard Lining",
     "type": "TCM-herb",
     "latin": "Endothelium Corneum Gigeriae Galli",
@@ -2534,7 +2599,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0266",
+    "entity_id": "E-0265",
     "preferred_name": "Millettia Vine",
     "type": "TCM-herb",
     "latin": "Caulis Spatholobi",
@@ -2547,7 +2612,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0267",
+    "entity_id": "E-0266",
     "preferred_name": "Health Herb",
     "type": "TCM-herb",
     "latin": "Tonic preparation",
@@ -2559,7 +2624,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0268",
+    "entity_id": "E-0267",
     "preferred_name": "Silkworm",
     "type": "TCM-herb",
     "latin": "Bombyx Batryticatus",
@@ -2571,7 +2636,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0269",
+    "entity_id": "E-0268",
     "preferred_name": "Dalbergia",
     "type": "TCM-herb",
     "latin": "Lignum Dalbergiae Odoriferae",
@@ -2584,7 +2649,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0270",
+    "entity_id": "E-0269",
     "preferred_name": "Platycodon",
     "type": "TCM-herb",
     "latin": "Radix Platycodi",
@@ -2596,7 +2661,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0271",
+    "entity_id": "E-0270",
     "preferred_name": "Spirulina",
     "type": "TCM-herb",
     "latin": "Spirulina",
@@ -2608,7 +2673,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0272",
+    "entity_id": "E-0271",
     "preferred_name": "Buckwheat",
     "type": "TCM-herb",
     "latin": "Fagopyrum esculentum",
@@ -2621,7 +2686,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0273",
+    "entity_id": "E-0272",
     "preferred_name": "Golden Fruit",
     "type": "TCM-herb",
     "latin": "Unknown",
@@ -2633,7 +2698,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0274",
+    "entity_id": "E-0273",
     "preferred_name": "Lysimachia",
     "type": "TCM-herb",
     "latin": "Herba Lysimachiae",
@@ -2646,7 +2711,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0275",
+    "entity_id": "E-0274",
     "preferred_name": "Honeysuckle",
     "type": "TCM-herb",
     "latin": "Flos Lonicerae",
@@ -2659,7 +2724,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0276",
+    "entity_id": "E-0275",
     "preferred_name": "Rosehip",
     "type": "TCM-herb",
     "latin": "Fructus Rosae Laevigatae",
@@ -2672,7 +2737,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0277",
+    "entity_id": "E-0276",
     "preferred_name": "Schizonepeta",
     "type": "TCM-herb",
     "latin": "Herba Schizonepetae",
@@ -2685,7 +2750,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0278",
+    "entity_id": "E-0277",
     "preferred_name": "Schizonepeta Spike",
     "type": "TCM-herb",
     "latin": "Spica Schizonepetae",
@@ -2697,7 +2762,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0279",
+    "entity_id": "E-0278",
     "preferred_name": "Chrysanthemum",
     "type": "TCM-herb",
     "latin": "Flos Chrysanthemi",
@@ -2709,7 +2774,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0280",
+    "entity_id": "E-0279",
     "preferred_name": "Orange Peel Red",
     "type": "TCM-herb",
     "latin": "Pericarpium Citri Reticulatae Rubra",
@@ -2721,20 +2786,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0281",
-    "preferred_name": "Cassiae Seed",
-    "type": "TCM-herb",
-    "latin": "Semen Cassiae",
-    "pinyin": "jue ming zi",
-    "chinese": "決明子",
-    "common_names": [
-      "Foetid cassia",
-      "Cassia"
-    ],
-    "active_constituents": []
-  },
-  {
-    "entity_id": "E-0282",
+    "entity_id": "E-0280",
     "preferred_name": "Chinaberry Bark",
     "type": "TCM-herb",
     "latin": "Cortex Meliae",
@@ -2746,7 +2798,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0283",
+    "entity_id": "E-0281",
     "preferred_name": "Sophora Root",
     "type": "TCM-herb",
     "latin": "Radix Sophorae Flavescentis",
@@ -2759,7 +2811,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0284",
+    "entity_id": "E-0282",
     "preferred_name": "Coltsfoot",
     "type": "TCM-herb",
     "latin": "Flos Farfarae",
@@ -2772,7 +2824,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0285",
+    "entity_id": "E-0283",
     "preferred_name": "Kelp",
     "type": "TCM-herb",
     "latin": "Thallus Laminariae",
@@ -2785,7 +2837,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0286",
+    "entity_id": "E-0284",
     "preferred_name": "Radish Seed",
     "type": "TCM-herb",
     "latin": "Semen Raphani",
@@ -2798,7 +2850,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0287",
+    "entity_id": "E-0285",
     "preferred_name": "Forsythia",
     "type": "TCM-herb",
     "latin": "Fructus Forsythiae",
@@ -2810,7 +2862,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0288",
+    "entity_id": "E-0286",
     "preferred_name": "Lotus Seed",
     "type": "TCM-herb",
     "latin": "Semen Nelumbinis",
@@ -2823,7 +2875,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0289",
+    "entity_id": "E-0287",
     "preferred_name": "Litchi Seed",
     "type": "TCM-herb",
     "latin": "Semen Litchi",
@@ -2836,7 +2888,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0290",
+    "entity_id": "E-0288",
     "preferred_name": "Sulfur",
     "type": "TCM-herb",
     "latin": "Sulfur",
@@ -2849,7 +2901,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0291",
+    "entity_id": "E-0289",
     "preferred_name": "Gentian Root",
     "type": "TCM-herb",
     "latin": "Radix Gentianae",
@@ -2861,7 +2913,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0292",
+    "entity_id": "E-0290",
     "preferred_name": "Fossilized Bone",
     "type": "TCM-herb",
     "latin": "Os Draconis",
@@ -2874,7 +2926,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0293",
+    "entity_id": "E-0291",
     "preferred_name": "Longan Fruit",
     "type": "TCM-herb",
     "latin": "Arillus Longan",
@@ -2887,20 +2939,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0294",
-    "preferred_name": "Mung Bean",
-    "type": "TCM-herb",
-    "latin": "Semen Phaseoli",
-    "pinyin": "lu dou",
-    "chinese": "綠豆",
-    "common_names": [
-      "Mung",
-      "Green bean"
-    ],
-    "active_constituents": []
-  },
-  {
-    "entity_id": "E-0295",
+    "entity_id": "E-0292",
     "preferred_name": "Hornet Nest",
     "type": "TCM-herb",
     "latin": "Nidus Vespae",
@@ -2912,7 +2951,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0296",
+    "entity_id": "E-0293",
     "preferred_name": "Reed Rhizome",
     "type": "TCM-herb",
     "latin": "Rhizoma Phragmitis",
@@ -2925,7 +2964,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0297",
+    "entity_id": "E-0294",
     "preferred_name": "Aloe",
     "type": "TCM-herb",
     "latin": "Aloe",
@@ -2938,7 +2977,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0298",
+    "entity_id": "E-0295",
     "preferred_name": "Deer Antler Velvet",
     "type": "TCM-herb",
     "latin": "Cornu Cervi Pantotrichum",
@@ -2951,7 +2990,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0299",
+    "entity_id": "E-0296",
     "preferred_name": "Birthwort",
     "type": "TCM-herb",
     "latin": "Fructus Aristolochiae",
@@ -2964,7 +3003,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0300",
+    "entity_id": "E-0297",
     "preferred_name": "Ephedra",
     "type": "TCM-herb",
     "latin": "Herba Ephedrae",
@@ -2977,7 +3016,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0301",
+    "entity_id": "E-0298",
     "preferred_name": "Ephedra Root",
     "type": "TCM-herb",
     "latin": "Radix Ephedrae",
@@ -2989,7 +3028,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0302",
+    "entity_id": "E-0299",
     "preferred_name": "Nux Vomica",
     "type": "TCM-herb",
     "latin": "Semen Nux-Vomica",
@@ -3002,7 +3041,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0303",
+    "entity_id": "E-0300",
     "preferred_name": "Ophiopogon",
     "type": "TCM-herb",
     "latin": "Radix Ophiopogonis",
@@ -3015,7 +3054,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0304",
+    "entity_id": "E-0301",
     "preferred_name": "Barley Sprout",
     "type": "TCM-herb",
     "latin": "Fructus Hordei Germinatus",
@@ -3028,7 +3067,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0305",
+    "entity_id": "E-0302",
     "preferred_name": "Vitex Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Viticis",
@@ -3041,19 +3080,20 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0306",
+    "entity_id": "E-0303",
     "preferred_name": "Glauber's Salt",
     "type": "TCM-herb",
     "latin": "Natrii Sulfas",
     "pinyin": "mang xiao",
     "chinese": "芒硝",
     "common_names": [
-      "Sodium sulfate"
+      "Sodium sulfate",
+      "Glauber salt"
     ],
     "active_constituents": []
   },
   {
-    "entity_id": "E-0307",
+    "entity_id": "E-0304",
     "preferred_name": "Rose Flower",
     "type": "TCM-herb",
     "latin": "Flos Rosae",
@@ -3066,7 +3106,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0308",
+    "entity_id": "E-0305",
     "preferred_name": "Buddleia",
     "type": "TCM-herb",
     "latin": "Flos Buddlejae",
@@ -3079,7 +3119,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0309",
+    "entity_id": "E-0306",
     "preferred_name": "Myrrh",
     "type": "TCM-herb",
     "latin": "Myrrha",
@@ -3092,7 +3132,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0310",
+    "entity_id": "E-0307",
     "preferred_name": "Tree Peony Bark",
     "type": "TCM-herb",
     "latin": "Cortex Moutan Radicis",
@@ -3105,7 +3145,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0311",
+    "entity_id": "E-0308",
     "preferred_name": "Quince Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Chaenomelis",
@@ -3118,7 +3158,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0312",
+    "entity_id": "E-0309",
     "preferred_name": "Oyster Shell",
     "type": "TCM-herb",
     "latin": "Concha Ostreae",
@@ -3131,7 +3171,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0313",
+    "entity_id": "E-0310",
     "preferred_name": "Akebia Stem",
     "type": "TCM-herb",
     "latin": "Caulis Akebiae",
@@ -3144,7 +3184,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0314",
+    "entity_id": "E-0311",
     "preferred_name": "Aucklandia",
     "type": "TCM-herb",
     "latin": "Radix Aucklandiae",
@@ -3157,7 +3197,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0315",
+    "entity_id": "E-0312",
     "preferred_name": "Burdock Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Arctii",
@@ -3170,7 +3210,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0316",
+    "entity_id": "E-0313",
     "preferred_name": "Achyranthes",
     "type": "TCM-herb",
     "latin": "Radix Achyranthis Bidentatae",
@@ -3182,7 +3222,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0317",
+    "entity_id": "E-0314",
     "preferred_name": "Privet Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Ligustri Lucidi",
@@ -3195,7 +3235,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0318",
+    "entity_id": "E-0315",
     "preferred_name": "Lotus Rhizome Node",
     "type": "TCM-herb",
     "latin": "Nodus Nelumbinis Rhizomatis",
@@ -3207,7 +3247,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0319",
+    "entity_id": "E-0316",
     "preferred_name": "Eupatorium",
     "type": "TCM-herb",
     "latin": "Herba Eupatorii",
@@ -3220,7 +3260,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0320",
+    "entity_id": "E-0317",
     "preferred_name": "Loquat Leaf",
     "type": "TCM-herb",
     "latin": "Folium Eriobotryas",
@@ -3233,7 +3273,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0321",
+    "entity_id": "E-0318",
     "preferred_name": "Dandelion",
     "type": "TCM-herb",
     "latin": "Herba Taraxaci",
@@ -3246,7 +3286,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0322",
+    "entity_id": "E-0319",
     "preferred_name": "Cattail Pollen",
     "type": "TCM-herb",
     "latin": "Pollen Typhae",
@@ -3259,7 +3299,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0323",
+    "entity_id": "E-0320",
     "preferred_name": "Rubia Root",
     "type": "TCM-herb",
     "latin": "Radix Rubiae",
@@ -3272,7 +3312,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0324",
+    "entity_id": "E-0321",
     "preferred_name": "Hogfennel",
     "type": "TCM-herb",
     "latin": "Radix Peucedani",
@@ -3284,7 +3324,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0325",
+    "entity_id": "E-0322",
     "preferred_name": "Euryale Seed",
     "type": "TCM-herb",
     "latin": "Semen Euryales",
@@ -3297,7 +3337,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0326",
+    "entity_id": "E-0323",
     "preferred_name": "Notopterygium",
     "type": "TCM-herb",
     "latin": "Rhizoma Notopterygii",
@@ -3309,7 +3349,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0327",
+    "entity_id": "E-0324",
     "preferred_name": "Gentiana Root",
     "type": "TCM-herb",
     "latin": "Radix Gentianae Macrophyllae",
@@ -3321,7 +3361,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0328",
+    "entity_id": "E-0325",
     "preferred_name": "Ash Tree Bark",
     "type": "TCM-herb",
     "latin": "Cortex Fraxini",
@@ -3334,7 +3374,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0329",
+    "entity_id": "E-0326",
     "preferred_name": "Indigo",
     "type": "TCM-herb",
     "latin": "Indigo Naturalis",
@@ -3347,7 +3387,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0330",
+    "entity_id": "E-0327",
     "preferred_name": "Wormwood",
     "type": "TCM-herb",
     "latin": "Herba Artemisiae Annuae",
@@ -3360,7 +3400,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0331",
+    "entity_id": "E-0328",
     "preferred_name": "Green Tangerine Peel",
     "type": "TCM-herb",
     "latin": "Pericarpium Citri Reticulatae Viride",
@@ -3372,7 +3412,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0332",
+    "entity_id": "E-0329",
     "preferred_name": "Dianthus",
     "type": "TCM-herb",
     "latin": "Herba Dianthi",
@@ -3385,7 +3425,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0333",
+    "entity_id": "E-0330",
     "preferred_name": "Scorpion",
     "type": "TCM-herb",
     "latin": "Scorpio",
@@ -3397,7 +3437,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0334",
+    "entity_id": "E-0331",
     "preferred_name": "Cistanche",
     "type": "TCM-herb",
     "latin": "Herba Cistanches",
@@ -3410,7 +3450,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0335",
+    "entity_id": "E-0332",
     "preferred_name": "Nutmeg",
     "type": "TCM-herb",
     "latin": "Semen Myristicae",
@@ -3423,7 +3463,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0336",
+    "entity_id": "E-0333",
     "preferred_name": "Cinnamon Bark",
     "type": "TCM-herb",
     "latin": "Cortex Cinnamomi",
@@ -3436,7 +3476,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0337",
+    "entity_id": "E-0334",
     "preferred_name": "Frankincense",
     "type": "TCM-herb",
     "latin": "Olibanum",
@@ -3449,7 +3489,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0338",
+    "entity_id": "E-0335",
     "preferred_name": "Scirpus",
     "type": "TCM-herb",
     "latin": "Rhizoma Sparganii",
@@ -3462,7 +3502,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0339",
+    "entity_id": "E-0336",
     "preferred_name": "Notoginseng",
     "type": "TCM-herb",
     "latin": "Radix Notoginseng",
@@ -3475,7 +3515,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0340",
+    "entity_id": "E-0337",
     "preferred_name": "Mulberry Bark",
     "type": "TCM-herb",
     "latin": "Cortex Mori Radicis",
@@ -3488,7 +3528,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0341",
+    "entity_id": "E-0338",
     "preferred_name": "Mulberry Mistletoe",
     "type": "TCM-herb",
     "latin": "Ramulus Taxilli",
@@ -3501,7 +3541,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0342",
+    "entity_id": "E-0339",
     "preferred_name": "Mantis Egg",
     "type": "TCM-herb",
     "latin": "Ootheca Mantidis",
@@ -3514,7 +3554,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0343",
+    "entity_id": "E-0340",
     "preferred_name": "Mulberry Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Mori",
@@ -3527,7 +3567,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0344",
+    "entity_id": "E-0341",
     "preferred_name": "Mulberry Leaf",
     "type": "TCM-herb",
     "latin": "Folium Mori",
@@ -3539,7 +3579,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0345",
+    "entity_id": "E-0342",
     "preferred_name": "Cardamom",
     "type": "TCM-herb",
     "latin": "Fructus Amomi",
@@ -3552,7 +3592,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0346",
+    "entity_id": "E-0343",
     "preferred_name": "Glehnia Root",
     "type": "TCM-herb",
     "latin": "Radix Glehniae",
@@ -3565,7 +3605,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0347",
+    "entity_id": "E-0344",
     "preferred_name": "Chinese Yam",
     "type": "TCM-herb",
     "latin": "Rhizoma Dioscoreae",
@@ -3578,7 +3618,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0348",
+    "entity_id": "E-0345",
     "preferred_name": "Hawthorn Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Crataegi",
@@ -3591,7 +3631,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0349",
+    "entity_id": "E-0346",
     "preferred_name": "Cornus Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Corni",
@@ -3604,7 +3644,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0350",
+    "entity_id": "E-0347",
     "preferred_name": "Cnidium Seed",
     "type": "TCM-herb",
     "latin": "Fructus Cnidii",
@@ -3617,7 +3657,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0351",
+    "entity_id": "E-0348",
     "preferred_name": "Belamcanda",
     "type": "TCM-herb",
     "latin": "Rhizoma Belamcandae",
@@ -3630,7 +3670,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0352",
+    "entity_id": "E-0349",
     "preferred_name": "Medicated Leaven",
     "type": "TCM-herb",
     "latin": "Massa Medicata Fermentata",
@@ -3643,7 +3683,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0353",
+    "entity_id": "E-0350",
     "preferred_name": "Fresh Rehmannia",
     "type": "TCM-herb",
     "latin": "Radix Rehmanniae",
@@ -3656,7 +3696,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0354",
+    "entity_id": "E-0351",
     "preferred_name": "Cohosh",
     "type": "TCM-herb",
     "latin": "Rhizoma Cimicifugae",
@@ -3669,20 +3709,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0355",
-    "preferred_name": "Sweetflag",
-    "type": "TCM-herb",
-    "latin": "Rhizoma Acori Graminei",
-    "pinyin": "shi chang pu",
-    "chinese": "石菖蒲",
-    "common_names": [
-      "Acorus",
-      "Grass-leaf"
-    ],
-    "active_constituents": []
-  },
-  {
-    "entity_id": "E-0356",
+    "entity_id": "E-0352",
     "preferred_name": "Gypsum",
     "type": "TCM-herb",
     "latin": "Gypsum Fibrosum",
@@ -3695,7 +3722,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0357",
+    "entity_id": "E-0353",
     "preferred_name": "Dendrobium",
     "type": "TCM-herb",
     "latin": "Herba Dendrobii",
@@ -3708,7 +3735,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0358",
+    "entity_id": "E-0354",
     "preferred_name": "Abalone Shell",
     "type": "TCM-herb",
     "latin": "Concha Haliotidis",
@@ -3721,7 +3748,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0359",
+    "entity_id": "E-0355",
     "preferred_name": "Quisqualis",
     "type": "TCM-herb",
     "latin": "Fructus Quisqualis",
@@ -3734,7 +3761,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0360",
+    "entity_id": "E-0356",
     "preferred_name": "Pyrrosia Leaf",
     "type": "TCM-herb",
     "latin": "Folium Pyrrosiae",
@@ -3747,7 +3774,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0361",
+    "entity_id": "E-0357",
     "preferred_name": "Cooked Rehmannia",
     "type": "TCM-herb",
     "latin": "Radix Rehmanniae Praeparata",
@@ -3760,7 +3787,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0362",
+    "entity_id": "E-0358",
     "preferred_name": "Leech",
     "type": "TCM-herb",
     "latin": "Hirudo",
@@ -3773,7 +3800,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0363",
+    "entity_id": "E-0359",
     "preferred_name": "Sponge Gourd",
     "type": "TCM-herb",
     "latin": "Vascularis Luffae",
@@ -3786,7 +3813,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0364",
+    "entity_id": "E-0360",
     "preferred_name": "Styrax",
     "type": "TCM-herb",
     "latin": "Resin Liquidambaris",
@@ -3799,7 +3826,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0365",
+    "entity_id": "E-0361",
     "preferred_name": "Sappan Wood",
     "type": "TCM-herb",
     "latin": "Lignum Sappan",
@@ -3812,7 +3839,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0366",
+    "entity_id": "E-0362",
     "preferred_name": "Perilla Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Perillae",
@@ -3825,7 +3852,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0367",
+    "entity_id": "E-0363",
     "preferred_name": "Jujube Seed",
     "type": "TCM-herb",
     "latin": "Semen Ziziphi Spinosae",
@@ -3838,7 +3865,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0368",
+    "entity_id": "E-0364",
     "preferred_name": "Cynomorium",
     "type": "TCM-herb",
     "latin": "Herba Cynomorii",
@@ -3851,7 +3878,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0369",
+    "entity_id": "E-0365",
     "preferred_name": "Pseudostellaria",
     "type": "TCM-herb",
     "latin": "Radix Pseudostellariae",
@@ -3863,7 +3890,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0370",
+    "entity_id": "E-0366",
     "preferred_name": "Sandalwood",
     "type": "TCM-herb",
     "latin": "Lignum Santali Albi",
@@ -3876,7 +3903,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0371",
+    "entity_id": "E-0367",
     "preferred_name": "Peach Seed",
     "type": "TCM-herb",
     "latin": "Semen Persicae",
@@ -3889,7 +3916,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0372",
+    "entity_id": "E-0368",
     "preferred_name": "Gastrodia",
     "type": "TCM-herb",
     "latin": "Rhizoma Gastrodiae",
@@ -3902,7 +3929,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0373",
+    "entity_id": "E-0369",
     "preferred_name": "Asparagus Root",
     "type": "TCM-herb",
     "latin": "Radix Asparagi",
@@ -3914,7 +3941,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0374",
+    "entity_id": "E-0370",
     "preferred_name": "Descurainia",
     "type": "TCM-herb",
     "latin": "Semen Descurainiae",
@@ -3927,7 +3954,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0375",
+    "entity_id": "E-0371",
     "preferred_name": "Rice Pith",
     "type": "TCM-herb",
     "latin": "Medulla Tetrapanacis",
@@ -3940,7 +3967,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0376",
+    "entity_id": "E-0372",
     "preferred_name": "Smilax",
     "type": "TCM-herb",
     "latin": "Rhizoma Smilacis Glabrae",
@@ -3953,7 +3980,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0377",
+    "entity_id": "E-0373",
     "preferred_name": "Cuscuta Seed",
     "type": "TCM-herb",
     "latin": "Semen Cuscutae",
@@ -3966,7 +3993,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0378",
+    "entity_id": "E-0374",
     "preferred_name": "Ark Shell",
     "type": "TCM-herb",
     "latin": "Concha Arcae",
@@ -3979,7 +4006,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0379",
+    "entity_id": "E-0375",
     "preferred_name": "Vaccaria Seed",
     "type": "TCM-herb",
     "latin": "Semen Vaccariae",
@@ -3992,7 +4019,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0380",
+    "entity_id": "E-0376",
     "preferred_name": "Clematis Root",
     "type": "TCM-herb",
     "latin": "Radix Clematidis",
@@ -4005,7 +4032,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0381",
+    "entity_id": "E-0377",
     "preferred_name": "Gallnut",
     "type": "TCM-herb",
     "latin": "Galla Chinensis",
@@ -4018,7 +4045,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0382",
+    "entity_id": "E-0378",
     "preferred_name": "Centipede",
     "type": "TCM-herb",
     "latin": "Scolopendra",
@@ -4031,7 +4058,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0383",
+    "entity_id": "E-0379",
     "preferred_name": "Acanthopanax",
     "type": "TCM-herb",
     "latin": "Cortex Acanthopanacis Radicis",
@@ -4043,7 +4070,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0384",
+    "entity_id": "E-0380",
     "preferred_name": "Mume Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Mume",
@@ -4056,7 +4083,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0385",
+    "entity_id": "E-0381",
     "preferred_name": "Lindera Root",
     "type": "TCM-herb",
     "latin": "Radix Linderae",
@@ -4069,7 +4096,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0386",
+    "entity_id": "E-0382",
     "preferred_name": "Evodia Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Evodiae",
@@ -4082,7 +4109,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0387",
+    "entity_id": "E-0383",
     "preferred_name": "Asarum",
     "type": "TCM-herb",
     "latin": "Herba Asari",
@@ -4094,7 +4121,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0388",
+    "entity_id": "E-0384",
     "preferred_name": "Prunella Spike",
     "type": "TCM-herb",
     "latin": "Spica Prunellae",
@@ -4107,7 +4134,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0389",
+    "entity_id": "E-0385",
     "preferred_name": "Agrimony",
     "type": "TCM-herb",
     "latin": "Herba Agrimoniae",
@@ -4120,7 +4147,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0390",
+    "entity_id": "E-0386",
     "preferred_name": "Curculigo Root",
     "type": "TCM-herb",
     "latin": "Rhizoma Curculiginis",
@@ -4133,7 +4160,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0391",
+    "entity_id": "E-0387",
     "preferred_name": "Nutgrass",
     "type": "TCM-herb",
     "latin": "Rhizoma Cyperi",
@@ -4146,7 +4173,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0392",
+    "entity_id": "E-0388",
     "preferred_name": "Elsholzia",
     "type": "TCM-herb",
     "latin": "Herba Elsholtziae",
@@ -4159,7 +4186,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0393",
+    "entity_id": "E-0389",
     "preferred_name": "Fennel Seed",
     "type": "TCM-herb",
     "latin": "Fructus Foeniculi",
@@ -4172,7 +4199,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0394",
+    "entity_id": "E-0390",
     "preferred_name": "Cirsium Herb",
     "type": "TCM-herb",
     "latin": "Herba Cephalanoploris",
@@ -4185,7 +4212,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0395",
+    "entity_id": "E-0391",
     "preferred_name": "Allium",
     "type": "TCM-herb",
     "latin": "Bulbus Allii Macrostemi",
@@ -4197,7 +4224,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0396",
+    "entity_id": "E-0392",
     "preferred_name": "Magnolia Flower",
     "type": "TCM-herb",
     "latin": "Flos Magnoliae",
@@ -4210,7 +4237,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0397",
+    "entity_id": "E-0393",
     "preferred_name": "Apricot Seed",
     "type": "TCM-herb",
     "latin": "Semen Armeniacae Amarum",
@@ -4223,7 +4250,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0398",
+    "entity_id": "E-0394",
     "preferred_name": "Bear Bile",
     "type": "TCM-herb",
     "latin": "Vesica Fellis Ursi",
@@ -4235,7 +4262,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0399",
+    "entity_id": "E-0395",
     "preferred_name": "Realgar",
     "type": "TCM-herb",
     "latin": "Realgar",
@@ -4247,7 +4274,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0400",
+    "entity_id": "E-0396",
     "preferred_name": "Dipsacus",
     "type": "TCM-herb",
     "latin": "Radix Dipsaci",
@@ -4260,7 +4287,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0401",
+    "entity_id": "E-0397",
     "preferred_name": "Inula Flower",
     "type": "TCM-herb",
     "latin": "Flos Inulae",
@@ -4273,7 +4300,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0402",
+    "entity_id": "E-0398",
     "preferred_name": "Scrophularia",
     "type": "TCM-herb",
     "latin": "Radix Scrophularia",
@@ -4286,7 +4313,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0403",
+    "entity_id": "E-0399",
     "preferred_name": "Corydalis",
     "type": "TCM-herb",
     "latin": "Rhizoma Corydalis",
@@ -4299,7 +4326,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0404",
+    "entity_id": "E-0400",
     "preferred_name": "Polygonum Vine",
     "type": "TCM-herb",
     "latin": "Caulis Polygoni Multiflori",
@@ -4311,7 +4338,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0405",
+    "entity_id": "E-0401",
     "preferred_name": "Motherwort",
     "type": "TCM-herb",
     "latin": "Herba Leonuri",
@@ -4324,7 +4351,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0406",
+    "entity_id": "E-0402",
     "preferred_name": "Job's Tears",
     "type": "TCM-herb",
     "latin": "Semen Coicis",
@@ -4337,7 +4364,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0407",
+    "entity_id": "E-0403",
     "preferred_name": "Alpinia Seed",
     "type": "TCM-herb",
     "latin": "Fructus Alpiniae Oxyphyllae",
@@ -4350,7 +4377,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0408",
+    "entity_id": "E-0404",
     "preferred_name": "Stellaria Root",
     "type": "TCM-herb",
     "latin": "Radix Stellariae",
@@ -4363,20 +4390,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0409",
-    "preferred_name": "Yin Chen Shoots",
-    "type": "TCM-herb",
-    "latin": "Herba Artemisiae Scopariae",
-    "pinyin": "yin chen hao",
-    "chinese": "茵陳蒿",
-    "common_names": [
-      "Artemisia",
-      "Yin chen"
-    ],
-    "active_constituents": []
-  },
-  {
-    "entity_id": "E-0410",
+    "entity_id": "E-0405",
     "preferred_name": "Epimedium",
     "type": "TCM-herb",
     "latin": "Herba Epimedii",
@@ -4389,7 +4403,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0411",
+    "entity_id": "E-0406",
     "preferred_name": "Bush Cherry",
     "type": "TCM-herb",
     "latin": "Semen Pruni",
@@ -4402,7 +4416,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0412",
+    "entity_id": "E-0407",
     "preferred_name": "Corn Silk",
     "type": "TCM-herb",
     "latin": "Stigma Maydis",
@@ -4415,7 +4429,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0413",
+    "entity_id": "E-0408",
     "preferred_name": "Houttuynia",
     "type": "TCM-herb",
     "latin": "Herba Houttuyniae",
@@ -4428,7 +4442,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0414",
+    "entity_id": "E-0409",
     "preferred_name": "Solomon's Seal",
     "type": "TCM-herb",
     "latin": "Rhizoma Polygonati Odorati",
@@ -4441,7 +4455,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0415",
+    "entity_id": "E-0410",
     "preferred_name": "Senega Root",
     "type": "TCM-herb",
     "latin": "Radix Polygalae",
@@ -4454,7 +4468,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0416",
+    "entity_id": "E-0411",
     "preferred_name": "Honeylocust Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Gleditsiae",
@@ -4467,7 +4481,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0417",
+    "entity_id": "E-0412",
     "preferred_name": "Honeylocust Spine",
     "type": "TCM-herb",
     "latin": "Spina Gleditsiae",
@@ -4479,7 +4493,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0418",
+    "entity_id": "E-0413",
     "preferred_name": "Bugleweed",
     "type": "TCM-herb",
     "latin": "Herba Lycopi",
@@ -4492,7 +4506,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0419",
+    "entity_id": "E-0414",
     "preferred_name": "Alisma Root",
     "type": "TCM-herb",
     "latin": "Rhizoma Alismatis",
@@ -4505,7 +4519,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0420",
+    "entity_id": "E-0415",
     "preferred_name": "Pearl Shell",
     "type": "TCM-herb",
     "latin": "Concha Margartifera Usta",
@@ -4517,7 +4531,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0421",
+    "entity_id": "E-0416",
     "preferred_name": "Aurantii Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Aurantii",
@@ -4530,7 +4544,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0422",
+    "entity_id": "E-0417",
     "preferred_name": "Anemarrhena",
     "type": "TCM-herb",
     "latin": "Rhizoma Anemarrhenae",
@@ -4543,7 +4557,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0423",
+    "entity_id": "E-0418",
     "preferred_name": "Aurantii Immaturus",
     "type": "TCM-herb",
     "latin": "Fructus Aurantii Immaturus",
@@ -4555,7 +4569,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0424",
+    "entity_id": "E-0419",
     "preferred_name": "Gardenia Fruit",
     "type": "TCM-herb",
     "latin": "Fructus Gardeniae",
@@ -4568,7 +4582,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0425",
+    "entity_id": "E-0420",
     "preferred_name": "Polyporus",
     "type": "TCM-herb",
     "latin": "Polyporus Umbellatus",
@@ -4580,7 +4594,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0426",
+    "entity_id": "E-0421",
     "preferred_name": "Bamboo Shavings",
     "type": "TCM-herb",
     "latin": "Caulis Bambusae in Taeniam",
@@ -4593,20 +4607,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0427",
-    "preferred_name": "Cinnabar",
-    "type": "TCM-herb",
-    "latin": "Cinnabaris",
-    "pinyin": "zhu sha",
-    "chinese": "朱砂",
-    "common_names": [
-      "Mercury sulfide",
-      "Cinnabar"
-    ],
-    "active_constituents": []
-  },
-  {
-    "entity_id": "E-0428",
+    "entity_id": "E-0422",
     "preferred_name": "Lithospermum",
     "type": "TCM-herb",
     "latin": "Radix Lithospermi",
@@ -4619,7 +4620,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0429",
+    "entity_id": "E-0423",
     "preferred_name": "Yedeon's Violet",
     "type": "TCM-herb",
     "latin": "Herba Violae",
@@ -4632,7 +4633,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0430",
+    "entity_id": "E-0424",
     "preferred_name": "Perilla Leaf",
     "type": "TCM-herb",
     "latin": "Folium Perillae",
@@ -4645,7 +4646,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0431",
+    "entity_id": "E-0425",
     "preferred_name": "Aster Root",
     "type": "TCM-herb",
     "latin": "Radix Asteris",
@@ -4657,7 +4658,7 @@
     "active_constituents": []
   },
   {
-    "entity_id": "E-0432",
+    "entity_id": "E-0426",
     "preferred_name": "Trachycarpus Fiber",
     "type": "TCM-herb",
     "latin": "Traachycarpi Carbonisatus",
@@ -4665,6 +4666,4849 @@
     "chinese": "棕櫚炭",
     "common_names": [
       "Palm fiber"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0427",
+    "preferred_name": "Atorvastatin",
+    "type": "WM-drug",
+    "drug_class": "Statin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lipitor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0428",
+    "preferred_name": "Levothyroxine",
+    "type": "WM-drug",
+    "drug_class": "Thyroid hormone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Synthroid",
+      "Levoxyl"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0429",
+    "preferred_name": "Metoprolol",
+    "type": "WM-drug",
+    "drug_class": "Beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lopressor",
+      "Toprol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0430",
+    "preferred_name": "Albuterol",
+    "type": "WM-drug",
+    "drug_class": "Bronchodilator",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ventolin",
+      "Proventil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0431",
+    "preferred_name": "Losartan",
+    "type": "WM-drug",
+    "drug_class": "ARB",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cozaar"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0432",
+    "preferred_name": "Gabapentin",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Neurontin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0433",
+    "preferred_name": "Rosuvastatin",
+    "type": "WM-drug",
+    "drug_class": "Statin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Crestor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0434",
+    "preferred_name": "Pantoprazole",
+    "type": "WM-drug",
+    "drug_class": "Proton pump inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Protonix"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0435",
+    "preferred_name": "Escitalopram",
+    "type": "WM-drug",
+    "drug_class": "SSRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lexapro"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0436",
+    "preferred_name": "Amphetamine/Dextroamphetamine",
+    "type": "WM-drug",
+    "drug_class": "CNS stimulant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Adderall"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0437",
+    "preferred_name": "Bupropion",
+    "type": "WM-drug",
+    "drug_class": "NDRI antidepressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Wellbutrin",
+      "Aplenzin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0438",
+    "preferred_name": "Fluoxetine",
+    "type": "WM-drug",
+    "drug_class": "SSRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Prozac",
+      "Sarafem"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0439",
+    "preferred_name": "Semaglutide",
+    "type": "WM-drug",
+    "drug_class": "GLP-1 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ozempic",
+      "Wegovy"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0440",
+    "preferred_name": "Montelukast",
+    "type": "WM-drug",
+    "drug_class": "Leukotriene antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Singulair"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0441",
+    "preferred_name": "Trazodone",
+    "type": "WM-drug",
+    "drug_class": "Sedating antidepressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Desyrel",
+      "Oleptro"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0442",
+    "preferred_name": "Amoxicillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Amoxil",
+      "Moxatag"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0443",
+    "preferred_name": "Tamsulosin",
+    "type": "WM-drug",
+    "drug_class": "Alpha blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Flomax",
+      "Jalyn"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0444",
+    "preferred_name": "Acetaminophen/Hydrocodone",
+    "type": "WM-drug",
+    "drug_class": "Analgesic|Opioid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tylenol 3",
+      "Norco",
+      "Vicodin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0445",
+    "preferred_name": "Fluticasone",
+    "type": "WM-drug",
+    "drug_class": "Inhaled corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Flovent",
+      "Flonase"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0446",
+    "preferred_name": "Meloxicam",
+    "type": "WM-drug",
+    "drug_class": "NSAID",
+    "rxnorm_id": null,
+    "common_names": [
+      "Celebrex",
+      "Anjeso"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0447",
+    "preferred_name": "Apixaban",
+    "type": "WM-drug",
+    "drug_class": "Anticoagulant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Eliquis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0448",
+    "preferred_name": "Furosemide",
+    "type": "WM-drug",
+    "drug_class": "Loop diuretic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lasix",
+      "Frude"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0449",
+    "preferred_name": "Insulin Glargine",
+    "type": "WM-drug",
+    "drug_class": "Long-acting insulin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lantus",
+      "Basaglar",
+      "Toujeo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0450",
+    "preferred_name": "Duloxetine",
+    "type": "WM-drug",
+    "drug_class": "SNRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cymbalta",
+      "Irenka"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0451",
+    "preferred_name": "Famotidine",
+    "type": "WM-drug",
+    "drug_class": "H2 blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pepcid",
+      "Pepcid AC"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0452",
+    "preferred_name": "Empagliflozin",
+    "type": "WM-drug",
+    "drug_class": "SGLT2 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Jardiance",
+      "Synjardy"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0453",
+    "preferred_name": "Carvedilol",
+    "type": "WM-drug",
+    "drug_class": "Beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Coreg",
+      "Coreg CR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0454",
+    "preferred_name": "Tramadol",
+    "type": "WM-drug",
+    "drug_class": "Opioid analgesic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ultram",
+      "ConZip"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0455",
+    "preferred_name": "Alprazolam",
+    "type": "WM-drug",
+    "drug_class": "Benzodiazepine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Xanax",
+      "Xanax XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0456",
+    "preferred_name": "Prednisone",
+    "type": "WM-drug",
+    "drug_class": "Corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Rayos",
+      "Deltasone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0457",
+    "preferred_name": "Hydroxyzine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine|Anxiolytic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vistaril",
+      "Atarax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0458",
+    "preferred_name": "Buspirone",
+    "type": "WM-drug",
+    "drug_class": "Azapirone anxiolytic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Buspar"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0459",
+    "preferred_name": "Citalopram",
+    "type": "WM-drug",
+    "drug_class": "SSRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Celexa"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0460",
+    "preferred_name": "Potassium Chloride",
+    "type": "WM-drug",
+    "drug_class": "Electrolyte supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "K-Dur",
+      "Micro-K",
+      "K-Tab"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0461",
+    "preferred_name": "Allopurinol",
+    "type": "WM-drug",
+    "drug_class": "Xanthine oxidase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zyloprim",
+      "Aloprim"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0462",
+    "preferred_name": "Cyclobenzaprine",
+    "type": "WM-drug",
+    "drug_class": "Muscle relaxant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Flexeril",
+      "Amrix"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0463",
+    "preferred_name": "Ergocalciferol",
+    "type": "WM-drug",
+    "drug_class": "Vitamin supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin D2",
+      "Calcijex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0464",
+    "preferred_name": "Oxycodone",
+    "type": "WM-drug",
+    "drug_class": "Opioid analgesic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Oxycontin",
+      "Roxicodone",
+      "Peroxetine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0465",
+    "preferred_name": "Methylphenidate",
+    "type": "WM-drug",
+    "drug_class": "CNS stimulant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ritalin",
+      "Concerta",
+      "Daytrana"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0466",
+    "preferred_name": "Venlafaxine",
+    "type": "WM-drug",
+    "drug_class": "SNRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Effexor",
+      "Effexor XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0467",
+    "preferred_name": "Ondansetron",
+    "type": "WM-drug",
+    "drug_class": "5-HT3 antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zofran",
+      "Zuplenz"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0468",
+    "preferred_name": "Zolpidem",
+    "type": "WM-drug",
+    "drug_class": "Sedative-hypnotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ambien",
+      "Ambien CR",
+      "Edluar"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0469",
+    "preferred_name": "Cetirizine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zyrtec",
+      "Zyrtec-D"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0470",
+    "preferred_name": "Estradiol",
+    "type": "WM-drug",
+    "drug_class": "Hormone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Estrace",
+      "Estraderm",
+      "Estring"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0471",
+    "preferred_name": "Pravastatin",
+    "type": "WM-drug",
+    "drug_class": "Statin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pravachol",
+      "Pravigard"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0472",
+    "preferred_name": "Hydrochlorothiazide/Lisinopril",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zestoretic",
+      "Prinzide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0473",
+    "preferred_name": "Lamotrigine",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lamictal",
+      "Lamictal XR",
+      "Lamictal ODT"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0474",
+    "preferred_name": "Quetiapine",
+    "type": "WM-drug",
+    "drug_class": "Atypical antipsychotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Seroquel",
+      "Seroquel XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0475",
+    "preferred_name": "Fluticasone/Salmeterol",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Advair",
+      "Advair HFA"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0476",
+    "preferred_name": "Clonazepam",
+    "type": "WM-drug",
+    "drug_class": "Benzodiazepine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Klonopin",
+      "Klonopin Wafers"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0477",
+    "preferred_name": "Dulaglutide",
+    "type": "WM-drug",
+    "drug_class": "GLP-1 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Trulicity",
+      "Trulicity Pen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0478",
+    "preferred_name": "Azithromycin",
+    "type": "WM-drug",
+    "drug_class": "Macrolide antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Z-Pack",
+      "Zithromax",
+      "Azasite"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0479",
+    "preferred_name": "Hydrochlorothiazide/Losartan",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Hyzaar",
+      "Hyzaar DS"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0480",
+    "preferred_name": "Amoxicillin/Clavulanate",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam|Beta-lactamase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Augmentin",
+      "Augmentin ES"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0481",
+    "preferred_name": "Latanoprost",
+    "type": "WM-drug",
+    "drug_class": "Prostaglandin analogue",
+    "rxnorm_id": null,
+    "common_names": [
+      "Xalatan",
+      "Xelpea"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0482",
+    "preferred_name": "Cholecalciferol",
+    "type": "WM-drug",
+    "drug_class": "Vitamin supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin D3",
+      "Calcifediol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0483",
+    "preferred_name": "Propranolol",
+    "type": "WM-drug",
+    "drug_class": "Beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Inderal",
+      "Inderal LA",
+      "InnopraN XL"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0484",
+    "preferred_name": "Ezetimibe",
+    "type": "WM-drug",
+    "drug_class": "Cholesterol absorption inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zetia",
+      "Vytorin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0485",
+    "preferred_name": "Topiramate",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Topamax",
+      "Topamax Sprinkle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0486",
+    "preferred_name": "Paroxetine",
+    "type": "WM-drug",
+    "drug_class": "SSRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Paxil",
+      "Paxil CR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0487",
+    "preferred_name": "Diclofenac",
+    "type": "WM-drug",
+    "drug_class": "NSAID",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cataflam",
+      "Voltaren",
+      "Cambia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0488",
+    "preferred_name": "Budesonide/Formoterol",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Symbicort",
+      "Symbicort Turbuhaler"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0489",
+    "preferred_name": "Atenolol",
+    "type": "WM-drug",
+    "drug_class": "Beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tenormin",
+      "Tenoretic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0490",
+    "preferred_name": "Lisdexamfetamine",
+    "type": "WM-drug",
+    "drug_class": "CNS stimulant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vyvanse",
+      "Vyvanse Chewable"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0491",
+    "preferred_name": "Doxycycline",
+    "type": "WM-drug",
+    "drug_class": "Tetracycline antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vibramycin",
+      "Doryx",
+      "Acticlate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0492",
+    "preferred_name": "Pregabalin",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lyrica",
+      "Lyrica CR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0493",
+    "preferred_name": "Ethinyl Estradiol/Norethindrone",
+    "type": "WM-drug",
+    "drug_class": "Oral contraceptive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ortho-Cyclen",
+      "Ortho 0-35"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0494",
+    "preferred_name": "Glimepiride",
+    "type": "WM-drug",
+    "drug_class": "Sulfonylurea",
+    "rxnorm_id": null,
+    "common_names": [
+      "Amaryl",
+      "Duetact"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0495",
+    "preferred_name": "Tizanidine",
+    "type": "WM-drug",
+    "drug_class": "Muscle relaxant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zanaflex",
+      "Zanaflex Capsules"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0496",
+    "preferred_name": "Clonidine",
+    "type": "WM-drug",
+    "drug_class": "Alpha-2 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Kapvay",
+      "Catapres",
+      "Catapres-TTS"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0497",
+    "preferred_name": "Fenofibrate",
+    "type": "WM-drug",
+    "drug_class": "Fibrate",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tricor",
+      "Trilipix",
+      "Antara"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0498",
+    "preferred_name": "Insulin Lispro",
+    "type": "WM-drug",
+    "drug_class": "Rapid-acting insulin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Humalog",
+      "Humalog Mix"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0499",
+    "preferred_name": "Valsartan",
+    "type": "WM-drug",
+    "drug_class": "ARB",
+    "rxnorm_id": null,
+    "common_names": [
+      "Diovan",
+      "Diovan HCT",
+      "Exforge"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0500",
+    "preferred_name": "Cephalexin",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Keflex",
+      "Keflex Pulvules",
+      "Cephalexin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0501",
+    "preferred_name": "Baclofen",
+    "type": "WM-drug",
+    "drug_class": "Muscle relaxant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lioresal",
+      "Lioresal Intrathecal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0502",
+    "preferred_name": "Rivaroxaban",
+    "type": "WM-drug",
+    "drug_class": "Anticoagulant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Xarelto",
+      "Xarelto Sprinkle"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0503",
+    "preferred_name": "Ferrous Sulfate",
+    "type": "WM-drug",
+    "drug_class": "Iron supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Feosol",
+      "Slow Fe",
+      "Fer-In-Sol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0504",
+    "preferred_name": "Amitriptyline",
+    "type": "WM-drug",
+    "drug_class": "Tricyclic antidepressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Elavil",
+      "Endep"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0505",
+    "preferred_name": "Finasteride",
+    "type": "WM-drug",
+    "drug_class": "5-alpha reductase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Proscar",
+      "Propecia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0506",
+    "preferred_name": "Dapagliflozin",
+    "type": "WM-drug",
+    "drug_class": "SGLT2 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Farxiga",
+      "Forxiga",
+      "Xigduo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0507",
+    "preferred_name": "Acetaminophen/Oxycodone",
+    "type": "WM-drug",
+    "drug_class": "Analgesic|Opioid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Percocet",
+      "Tylenol 4",
+      "Roxicet"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0508",
+    "preferred_name": "Folic Acid",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Folvite",
+      "Folic Acid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0509",
+    "preferred_name": "Aripiprazole",
+    "type": "WM-drug",
+    "drug_class": "Atypical antipsychotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Abilify",
+      "Abilify Maintena"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0510",
+    "preferred_name": "Olmesartan",
+    "type": "WM-drug",
+    "drug_class": "ARB",
+    "rxnorm_id": null,
+    "common_names": [
+      "Benicar",
+      "Benicar HCT",
+      "Azor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0511",
+    "preferred_name": "Ethinyl Estradiol/Norgestimate",
+    "type": "WM-drug",
+    "drug_class": "Oral contraceptive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ortho Cyclen",
+      "Sprintec"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0512",
+    "preferred_name": "Valacyclovir",
+    "type": "WM-drug",
+    "drug_class": "Antiviral",
+    "rxnorm_id": null,
+    "common_names": [
+      "Valtrex",
+      "Valcyte"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0513",
+    "preferred_name": "Mirtazapine",
+    "type": "WM-drug",
+    "drug_class": "Tetracyclic antidepressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Remeron",
+      "Remeron SolTab"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0514",
+    "preferred_name": "Lorazepam",
+    "type": "WM-drug",
+    "drug_class": "Benzodiazepine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ativan",
+      "Ativan Injection"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0515",
+    "preferred_name": "Levetiracetam",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Keppra",
+      "Keppra XR",
+      "Roweepra"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0516",
+    "preferred_name": "Insulin Aspart",
+    "type": "WM-drug",
+    "drug_class": "Rapid-acting insulin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Novolog",
+      "Novolog FlexPen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0517",
+    "preferred_name": "Naproxen",
+    "type": "WM-drug",
+    "drug_class": "NSAID",
+    "rxnorm_id": null,
+    "common_names": [
+      "Aleve",
+      "Naprosyn",
+      "Naprogesic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0518",
+    "preferred_name": "Cyanocobalamin",
+    "type": "WM-drug",
+    "drug_class": "B vitamin supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin B12",
+      "Cyanokit"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0519",
+    "preferred_name": "Loratadine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Claritin",
+      "Claritin-D"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0520",
+    "preferred_name": "Diltiazem",
+    "type": "WM-drug",
+    "drug_class": "Calcium channel blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cardizem",
+      "Cardizem CD",
+      "Diltiazem ER"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0521",
+    "preferred_name": "Sumatriptan",
+    "type": "WM-drug",
+    "drug_class": "Triptan",
+    "rxnorm_id": null,
+    "common_names": [
+      "Imitrex",
+      "Tosymra"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0522",
+    "preferred_name": "Triamcinolone",
+    "type": "WM-drug",
+    "drug_class": "Corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Kenalog",
+      "Aristocort"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0523",
+    "preferred_name": "Hydralazine",
+    "type": "WM-drug",
+    "drug_class": "Vasodilator",
+    "rxnorm_id": null,
+    "common_names": [
+      "Apresoline",
+      "Bidil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0524",
+    "preferred_name": "Tirzepatide",
+    "type": "WM-drug",
+    "drug_class": "GLP-1/GIP agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mounjaro",
+      "Zepbound"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0525",
+    "preferred_name": "Celecoxib",
+    "type": "WM-drug",
+    "drug_class": "COX-2 inhibitor NSAID",
+    "rxnorm_id": null,
+    "common_names": [
+      "Celebrex",
+      "Elyxyb"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0526",
+    "preferred_name": "Acetaminophen",
+    "type": "WM-drug",
+    "drug_class": "Analgesic|Antipyretic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tylenol",
+      "Ofirmev"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0527",
+    "preferred_name": "Alendronate",
+    "type": "WM-drug",
+    "drug_class": "Bisphosphonate",
+    "rxnorm_id": null,
+    "common_names": [
+      "Fosamax",
+      "Fosamax Plus D"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0528",
+    "preferred_name": "Oxybutynin",
+    "type": "WM-drug",
+    "drug_class": "Anticholinergic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ditropan",
+      "Ditropan XL",
+      "Oxytrol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0529",
+    "preferred_name": "Hydrochlorothiazide/Triamterene",
+    "type": "WM-drug",
+    "drug_class": "Combination diuretic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dyazide",
+      "Maxzide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0530",
+    "preferred_name": "Progesterone",
+    "type": "WM-drug",
+    "drug_class": "Hormone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Prometrium",
+      "Crinone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0531",
+    "preferred_name": "Fluticasone/Umeclidinium/Vilanterol",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ellipta"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0532",
+    "preferred_name": "Testosterone",
+    "type": "WM-drug",
+    "drug_class": "Hormone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Androgel",
+      "Testim",
+      "Striant"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0533",
+    "preferred_name": "Nifedipine",
+    "type": "WM-drug",
+    "drug_class": "Calcium channel blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Procardia",
+      "Adalat",
+      "Nifedical"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0534",
+    "preferred_name": "Methocarbamol",
+    "type": "WM-drug",
+    "drug_class": "Muscle relaxant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Robaxin",
+      "Robaxin-750"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0535",
+    "preferred_name": "Benzonatate",
+    "type": "WM-drug",
+    "drug_class": "Non-narcotic antitussive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tessalon",
+      "Tessalon Perles"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0536",
+    "preferred_name": "Sitagliptin",
+    "type": "WM-drug",
+    "drug_class": "DPP-4 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Januvia",
+      "Janumet",
+      "Jentadueto"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0537",
+    "preferred_name": "Chlorthalidone",
+    "type": "WM-drug",
+    "drug_class": "Thiazide-like diuretic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Thalitone",
+      "Hygroton"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0538",
+    "preferred_name": "Isosorbide",
+    "type": "WM-drug",
+    "drug_class": "Nitrate",
+    "rxnorm_id": null,
+    "common_names": [
+      "Isordil",
+      "Imdur",
+      "Ismo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0539",
+    "preferred_name": "Donepezil",
+    "type": "WM-drug",
+    "drug_class": "Cholinesterase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Aricept",
+      "Aricept ODT"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0540",
+    "preferred_name": "Dexmethylphenidate",
+    "type": "WM-drug",
+    "drug_class": "CNS stimulant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Focalin",
+      "Focalin XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0541",
+    "preferred_name": "Sulfamethoxazole/Trimethoprim",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bactrim",
+      "Septra",
+      "Sulfatrim"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0542",
+    "preferred_name": "Clobetasol",
+    "type": "WM-drug",
+    "drug_class": "Topical corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Clobex",
+      "Temovate",
+      "Olux"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0543",
+    "preferred_name": "Methotrexate",
+    "type": "WM-drug",
+    "drug_class": "DMARD|Antimetabolite",
+    "rxnorm_id": null,
+    "common_names": [
+      "Rheumatrex",
+      "Trexall",
+      "Otrexup"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0544",
+    "preferred_name": "Hydroxychloroquine",
+    "type": "WM-drug",
+    "drug_class": "Antimalarial|Immunosuppressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Plaquenil",
+      "Quineprox"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0545",
+    "preferred_name": "Lovastatin",
+    "type": "WM-drug",
+    "drug_class": "Statin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mevacor",
+      "Altocor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0546",
+    "preferred_name": "Pioglitazone",
+    "type": "WM-drug",
+    "drug_class": "Thiazolidinedione",
+    "rxnorm_id": null,
+    "common_names": [
+      "Actos",
+      "Duetact"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0547",
+    "preferred_name": "Irbesartan",
+    "type": "WM-drug",
+    "drug_class": "ARB",
+    "rxnorm_id": null,
+    "common_names": [
+      "Avapro",
+      "Avalide",
+      "Irbesartan HCT"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0548",
+    "preferred_name": "Methylprednisolone",
+    "type": "WM-drug",
+    "drug_class": "Corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Medrol",
+      "Solu-Medrol",
+      "Depo-Medrol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0549",
+    "preferred_name": "Norethindrone",
+    "type": "WM-drug",
+    "drug_class": "Progestin|Oral contraceptive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Aygestin",
+      "Nor-QD",
+      "Camila"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0550",
+    "preferred_name": "Meclizine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Antivert",
+      "Dramamine",
+      "Bonine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0551",
+    "preferred_name": "Ethinyl Estradiol/Levonorgestrel",
+    "type": "WM-drug",
+    "drug_class": "Oral contraceptive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Levora",
+      "Yasmin",
+      "Yaz"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0552",
+    "preferred_name": "Fluticasone/Vilanterol",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Breo Ellipta"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0553",
+    "preferred_name": "Ketoconazole",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Nizoral",
+      "Extina",
+      "Kuric"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0554",
+    "preferred_name": "Thyroid",
+    "type": "WM-drug",
+    "drug_class": "Desiccated thyroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Armour Thyroid",
+      "Nature Throid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0555",
+    "preferred_name": "Azelastine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Astelin",
+      "Optivar",
+      "Astepro"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0556",
+    "preferred_name": "Nitrofurantoin",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Macrobid",
+      "Macrodantin",
+      "Furadantin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0557",
+    "preferred_name": "Adalimumab",
+    "type": "WM-drug",
+    "drug_class": "TNF-alpha inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Humira",
+      "Hyrimoz",
+      "Udenyca"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0558",
+    "preferred_name": "Memantine",
+    "type": "WM-drug",
+    "drug_class": "NMDA receptor antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Namenda",
+      "Namenda XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0559",
+    "preferred_name": "Esomeprazole",
+    "type": "WM-drug",
+    "drug_class": "Proton pump inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Nexium",
+      "Nexium IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0560",
+    "preferred_name": "Docusate",
+    "type": "WM-drug",
+    "drug_class": "Stool softener",
+    "rxnorm_id": null,
+    "common_names": [
+      "Colace",
+      "Surfak",
+      "Docusate Plus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0561",
+    "preferred_name": "Clindamycin",
+    "type": "WM-drug",
+    "drug_class": "Lincosamide antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cleocin",
+      "Cleocinpak"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0562",
+    "preferred_name": "Acyclovir",
+    "type": "WM-drug",
+    "drug_class": "Antiviral",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zovirax",
+      "Sitavig"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0563",
+    "preferred_name": "Sildenafil",
+    "type": "WM-drug",
+    "drug_class": "PDE-5 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Viagra",
+      "Revatio"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0564",
+    "preferred_name": "Insulin Degludec",
+    "type": "WM-drug",
+    "drug_class": "Long-acting insulin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tresiba",
+      "Ryzodeg"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0565",
+    "preferred_name": "Insulin Detemir",
+    "type": "WM-drug",
+    "drug_class": "Long-acting insulin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Levemir",
+      "Levemir FlexPen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0566",
+    "preferred_name": "Drospirenone/Ethinyl Estradiol",
+    "type": "WM-drug",
+    "drug_class": "Oral contraceptive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Yaz",
+      "Yasmin",
+      "Ocella"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0567",
+    "preferred_name": "Ciprofloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cipro",
+      "Cipro IV",
+      "Cipro XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0568",
+    "preferred_name": "Morphine",
+    "type": "WM-drug",
+    "drug_class": "Opioid analgesic",
+    "rxnorm_id": null,
+    "common_names": [
+      "MS Contin",
+      "Roxanol",
+      "Kadian"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0569",
+    "preferred_name": "Levocetirizine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Xyzal",
+      "Xyzal Liquid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0570",
+    "preferred_name": "Nirmatrelvir/Ritonavir",
+    "type": "WM-drug",
+    "drug_class": "Antiviral combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Paxlovid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0571",
+    "preferred_name": "Valproate",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Depakote",
+      "Depakene",
+      "Stavzor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0572",
+    "preferred_name": "Atomoxetine",
+    "type": "WM-drug",
+    "drug_class": "Norepinephrine reuptake inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Strattera"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0573",
+    "preferred_name": "Budesonide",
+    "type": "WM-drug",
+    "drug_class": "Corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pulmicort",
+      "Entocort",
+      "Uceris"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0574",
+    "preferred_name": "Tiotropium",
+    "type": "WM-drug",
+    "drug_class": "Anticholinergic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Spiriva",
+      "Spiriva Respimat"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0575",
+    "preferred_name": "Melatonin",
+    "type": "WM-drug",
+    "drug_class": "Hormone supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Various brands"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0576",
+    "preferred_name": "Cefdinir",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Omnicef",
+      "Cefdinir"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0577",
+    "preferred_name": "Doxepin",
+    "type": "WM-drug",
+    "drug_class": "Tricyclic antidepressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Silenor",
+      "Sinequan"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0578",
+    "preferred_name": "Olanzapine",
+    "type": "WM-drug",
+    "drug_class": "Atypical antipsychotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zyprexa",
+      "Zyprexa Intramuscular"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0579",
+    "preferred_name": "Phentermine",
+    "type": "WM-drug",
+    "drug_class": "Sympathomimetic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Adipex-P",
+      "Lomaira",
+      "Suprenza"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0580",
+    "preferred_name": "Ofloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ocuflox",
+      "Floxin",
+      "Floxin IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0581",
+    "preferred_name": "Ethinyl Estradiol/Etonogestrel",
+    "type": "WM-drug",
+    "drug_class": "Vaginal contraceptive",
+    "rxnorm_id": null,
+    "common_names": [
+      "NuvaRing"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0582",
+    "preferred_name": "Mupirocin",
+    "type": "WM-drug",
+    "drug_class": "Topical antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bactroban",
+      "Bactroban Nasal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0583",
+    "preferred_name": "Benazepril",
+    "type": "WM-drug",
+    "drug_class": "ACE inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lotensin",
+      "Lotensin HCT"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0584",
+    "preferred_name": "Timolol",
+    "type": "WM-drug",
+    "drug_class": "Beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Timoptic",
+      "Betimol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0585",
+    "preferred_name": "Magnesium Salts",
+    "type": "WM-drug",
+    "drug_class": "Electrolyte|Laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mag-Oxide",
+      "MiraLAX",
+      "Citrate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0586",
+    "preferred_name": "Risperidone",
+    "type": "WM-drug",
+    "drug_class": "Atypical antipsychotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Risperdal",
+      "Risperdal Consta"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0587",
+    "preferred_name": "Verapamil",
+    "type": "WM-drug",
+    "drug_class": "Calcium channel blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Calan",
+      "Isoptin",
+      "Calan SR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0588",
+    "preferred_name": "Linaclotide",
+    "type": "WM-drug",
+    "drug_class": "Guanylate cyclase agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Linzess",
+      "Linaclotide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0589",
+    "preferred_name": "Doxazosin",
+    "type": "WM-drug",
+    "drug_class": "Alpha blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cardura",
+      "Cardura XL"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0590",
+    "preferred_name": "Albuterol/Ipratropium",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Combivent",
+      "Duoneb"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0591",
+    "preferred_name": "Hydrocortisone",
+    "type": "WM-drug",
+    "drug_class": "Corticosteroid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cortef",
+      "Hydrocort",
+      "Solu-Cortef"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0592",
+    "preferred_name": "Diazepam",
+    "type": "WM-drug",
+    "drug_class": "Benzodiazepine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Valium",
+      "Diastat"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0593",
+    "preferred_name": "Telmisartan",
+    "type": "WM-drug",
+    "drug_class": "ARB",
+    "rxnorm_id": null,
+    "common_names": [
+      "Micardis",
+      "Micardis HCT",
+      "Twynsta"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0594",
+    "preferred_name": "Carbamazepine",
+    "type": "WM-drug",
+    "drug_class": "Anticonvulsant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tegretol",
+      "Tegretol XR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0595",
+    "preferred_name": "Amlodipine/Benazepril",
+    "type": "WM-drug",
+    "drug_class": "Combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lotrel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0596",
+    "preferred_name": "Lithium",
+    "type": "WM-drug",
+    "drug_class": "Mood stabilizer",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lithobid",
+      "Eskalith",
+      "Lithium Carbonate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0597",
+    "preferred_name": "Evolocumab",
+    "type": "WM-drug",
+    "drug_class": "PCSK9 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Repatha"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0598",
+    "preferred_name": "Desvenlafaxine",
+    "type": "WM-drug",
+    "drug_class": "SNRI",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pristiq",
+      "Pristiq ER"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0599",
+    "preferred_name": "Dorzolamide",
+    "type": "WM-drug",
+    "drug_class": "Carbonic anhydrase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Trusopt",
+      "Cosopt"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0600",
+    "preferred_name": "Nebivolol",
+    "type": "WM-drug",
+    "drug_class": "Beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bystolic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0601",
+    "preferred_name": "Dicyclomine",
+    "type": "WM-drug",
+    "drug_class": "Anticholinergic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bentyl",
+      "Dilomine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0602",
+    "preferred_name": "Torsemide",
+    "type": "WM-drug",
+    "drug_class": "Loop diuretic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Demadex",
+      "Torsemide IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0603",
+    "preferred_name": "Anastrozole",
+    "type": "WM-drug",
+    "drug_class": "Aromatase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Arimidex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0604",
+    "preferred_name": "Enalapril",
+    "type": "WM-drug",
+    "drug_class": "ACE inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vasotec",
+      "Vasotec IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0605",
+    "preferred_name": "Polyethylene Glycol 3350",
+    "type": "WM-drug",
+    "drug_class": "Laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Golytely",
+      "Miralax",
+      "Polyethylene"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0606",
+    "preferred_name": "Tretinoin",
+    "type": "WM-drug",
+    "drug_class": "Retinoid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Retin-A",
+      "Atralin",
+      "Renova"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0607",
+    "preferred_name": "Tadalafil",
+    "type": "WM-drug",
+    "drug_class": "PDE-5 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cialis",
+      "Adcirca",
+      "Vidalista"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0608",
+    "preferred_name": "Sacubitril/Valsartan",
+    "type": "WM-drug",
+    "drug_class": "ARNi combination",
+    "rxnorm_id": null,
+    "common_names": [
+      "Entresto"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0609",
+    "preferred_name": "Calcium",
+    "type": "WM-drug",
+    "drug_class": "Mineral supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Various brands"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0610",
+    "preferred_name": "Pramipexole",
+    "type": "WM-drug",
+    "drug_class": "Dopamine agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mirapex",
+      "Mirapex ER"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0611",
+    "preferred_name": "Mesalamine",
+    "type": "WM-drug",
+    "drug_class": "Anti-inflammatory",
+    "rxnorm_id": null,
+    "common_names": [
+      "Asacol",
+      "Pentasa",
+      "Rowasa"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0612",
+    "preferred_name": "Metronidazole",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Flagyl",
+      "MetroGel",
+      "Metrogel-Vaginal",
+      "Metronidazole",
+      "Flagyl Vaginal",
+      "Trichomoniasis",
+      "Bacterial infections"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0613",
+    "preferred_name": "Nortriptyline",
+    "type": "WM-drug",
+    "drug_class": "Tricyclic antidepressant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pamelor",
+      "Aventyl"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0614",
+    "preferred_name": "Emtricitabine/Tenofovir",
+    "type": "WM-drug",
+    "drug_class": "Antiretroviral",
+    "rxnorm_id": null,
+    "common_names": [
+      "Truvada",
+      "Descovy"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0615",
+    "preferred_name": "Rimegepant",
+    "type": "WM-drug",
+    "drug_class": "CGRP antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Nurtec",
+      "Nurtec ODT"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0616",
+    "preferred_name": "Nitroglycerin",
+    "type": "WM-drug",
+    "drug_class": "Nitrate",
+    "rxnorm_id": null,
+    "common_names": [
+      "Nitrostat",
+      "Nitro-Dur",
+      "Minitran"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0617",
+    "preferred_name": "Rizatriptan",
+    "type": "WM-drug",
+    "drug_class": "Triptan",
+    "rxnorm_id": null,
+    "common_names": [
+      "Maxalt",
+      "Maxalt-MLT"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0618",
+    "preferred_name": "Liraglutide",
+    "type": "WM-drug",
+    "drug_class": "GLP-1 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Saxenda",
+      "Victoza"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0619",
+    "preferred_name": "Acetaminophen/Codeine",
+    "type": "WM-drug",
+    "drug_class": "Analgesic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tylenol 2",
+      "Tylenol 3",
+      "Tylenol 4"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0620",
+    "preferred_name": "Ramipril",
+    "type": "WM-drug",
+    "drug_class": "ACE inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Altace",
+      "Ramipril"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0621",
+    "preferred_name": "Ropinirole",
+    "type": "WM-drug",
+    "drug_class": "Dopamine agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Requip",
+      "Requip XL"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0622",
+    "preferred_name": "Brimonidine",
+    "type": "WM-drug",
+    "drug_class": "Alpha-2 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Alphagan",
+      "Alphagan P"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0623",
+    "preferred_name": "Mirabegron",
+    "type": "WM-drug",
+    "drug_class": "Beta-3 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Myrbetriq",
+      "Myrbetriq ER"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0624",
+    "preferred_name": "Fexofenadine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Allegra",
+      "Allegra-D"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0625",
+    "preferred_name": "Labetalol",
+    "type": "WM-drug",
+    "drug_class": "Alpha-beta blocker",
+    "rxnorm_id": null,
+    "common_names": [
+      "Trandate",
+      "Normodyne",
+      "Labetalol IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0626",
+    "preferred_name": "Pitavastatin",
+    "type": "WM-drug",
+    "drug_class": "Statin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Livalo",
+      "Zypitamag"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0627",
+    "preferred_name": "Omalizumab",
+    "type": "WM-drug",
+    "drug_class": "IgE monoclonal antibody",
+    "rxnorm_id": null,
+    "common_names": [
+      "Xolair"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0628",
+    "preferred_name": "Apremilast",
+    "type": "WM-drug",
+    "drug_class": "PDE4 inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Otezla"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0629",
+    "preferred_name": "Phenylephrine",
+    "type": "WM-drug",
+    "drug_class": "Decongestant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Neo-Synephrine",
+      "Sudafed PE"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0630",
+    "preferred_name": "Pseudoephedrine",
+    "type": "WM-drug",
+    "drug_class": "Decongestant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Sudafed",
+      "Sudafed 12hr"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0631",
+    "preferred_name": "Diphenhydramine",
+    "type": "WM-drug",
+    "drug_class": "Antihistamine",
+    "rxnorm_id": null,
+    "common_names": [
+      "Benadryl",
+      "Nytol",
+      "Sleepinal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0632",
+    "preferred_name": "Dextromethorphan",
+    "type": "WM-drug",
+    "drug_class": "Antitussive",
+    "rxnorm_id": null,
+    "common_names": [
+      "Robitussin",
+      "Delsym",
+      "Mucinex DM"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0633",
+    "preferred_name": "Guaifenesin",
+    "type": "WM-drug",
+    "drug_class": "Expectorant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mucinex",
+      "Humibid",
+      "Robitussin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0634",
+    "preferred_name": "Zinc",
+    "type": "WM-drug",
+    "drug_class": "Mineral",
+    "rxnorm_id": null,
+    "common_names": [
+      "Various brands"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0635",
+    "preferred_name": "Vitamin C",
+    "type": "WM-drug",
+    "drug_class": "Vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ascorbic acid",
+      "Emergen-C"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0636",
+    "preferred_name": "Vitamin A",
+    "type": "WM-drug",
+    "drug_class": "Vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Retinol",
+      "Aquasol A"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0637",
+    "preferred_name": "Vitamin E",
+    "type": "WM-drug",
+    "drug_class": "Vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tocopherol",
+      "Alpha E"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0638",
+    "preferred_name": "Vitamin B6",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pyridoxine",
+      "Pyridoxal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0639",
+    "preferred_name": "Thiamine",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin B1",
+      "Thiamine HCl"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0640",
+    "preferred_name": "Riboflavin",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin B2",
+      "Avin-B"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0641",
+    "preferred_name": "Niacin",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin B3",
+      "Niaspan"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0642",
+    "preferred_name": "Pantothenic Acid",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin B5",
+      "Calcium pantothenate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0643",
+    "preferred_name": "Biotin",
+    "type": "WM-drug",
+    "drug_class": "B vitamin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vitamin B7",
+      "Bioctin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0644",
+    "preferred_name": "Choline",
+    "type": "WM-drug",
+    "drug_class": "Nutrient",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bitartrate",
+      "Lecithin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0645",
+    "preferred_name": "Alpha Lipoic Acid",
+    "type": "WM-drug",
+    "drug_class": "Antioxidant",
+    "rxnorm_id": null,
+    "common_names": [
+      "ALA",
+      "Thioctacid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0646",
+    "preferred_name": "CoQ10",
+    "type": "WM-drug",
+    "drug_class": "Antioxidant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ubiquinone",
+      "Ubiquinol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0647",
+    "preferred_name": "Resveratrol",
+    "type": "WM-drug",
+    "drug_class": "Polyphenol",
+    "rxnorm_id": null,
+    "common_names": [
+      "Resveratrol",
+      "Longevinex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0648",
+    "preferred_name": "Quercetin",
+    "type": "WM-drug",
+    "drug_class": "Flavonoid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bioflavonoid",
+      "Quercetin-C"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0649",
+    "preferred_name": "Echinacea",
+    "type": "WM-drug",
+    "drug_class": "Herbal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Purple coneflower",
+      "Echinacea extract"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0650",
+    "preferred_name": "Elderberry",
+    "type": "WM-drug",
+    "drug_class": "Herbal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Black elderberry",
+      "Sambucus"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0651",
+    "preferred_name": "Probiotics",
+    "type": "WM-drug",
+    "drug_class": "Supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lactobacillus",
+      "Bifidobacterium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0652",
+    "preferred_name": "Glucosamine",
+    "type": "WM-drug",
+    "drug_class": "Joint support",
+    "rxnorm_id": null,
+    "common_names": [
+      "Glucosamine HCl",
+      "N-Acetyl"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0653",
+    "preferred_name": "Chondroitin",
+    "type": "WM-drug",
+    "drug_class": "Joint support",
+    "rxnorm_id": null,
+    "common_names": [
+      "Chondroitin sulfate",
+      "Bovine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0654",
+    "preferred_name": "MSM",
+    "type": "WM-drug",
+    "drug_class": "Supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Methylsulfonylmethane",
+      "Organic sulfur"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0655",
+    "preferred_name": "Collagen",
+    "type": "WM-drug",
+    "drug_class": "Protein",
+    "rxnorm_id": null,
+    "common_names": [
+      "Type I",
+      "Type II",
+      "Hydrolyzed"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0656",
+    "preferred_name": "Hyaluronic Acid",
+    "type": "WM-drug",
+    "drug_class": "Supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "HA",
+      "Cross-linked HA"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0657",
+    "preferred_name": "L-Arginine",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "L-arginine",
+      "Free-form"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0658",
+    "preferred_name": "L-Citrulline",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "L-citrulline",
+      "Citrulline malate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0659",
+    "preferred_name": "L-Taurine",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "L-taurine",
+      "Taurine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0660",
+    "preferred_name": "L-Carnitine",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "L-carnitine",
+      "Acetyl-L-carnitine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0661",
+    "preferred_name": "L-Glutamine",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "L-glutamine",
+      "Glutamine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0662",
+    "preferred_name": "Creatine Monohydrate",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Creatine",
+      "Creatine monohydrate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0663",
+    "preferred_name": "Rhodiola",
+    "type": "WM-drug",
+    "drug_class": "Adaptogen",
+    "rxnorm_id": null,
+    "common_names": [
+      "Rhodiola rosea",
+      "Standardized extract"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0664",
+    "preferred_name": "Ashwagandha",
+    "type": "WM-drug",
+    "drug_class": "Adaptogen",
+    "rxnorm_id": null,
+    "common_names": [
+      "Withania somnifera",
+      "KSM-66"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0665",
+    "preferred_name": "Reishi",
+    "type": "WM-drug",
+    "drug_class": "Mushroom",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ganoderma lucidum",
+      "Red reishi"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0666",
+    "preferred_name": "Shiitake",
+    "type": "WM-drug",
+    "drug_class": "Mushroom",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lentinula edodes",
+      "Shiitake extract"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0667",
+    "preferred_name": "Maitake",
+    "type": "WM-drug",
+    "drug_class": "Mushroom",
+    "rxnorm_id": null,
+    "common_names": [
+      "Grifola frondosa",
+      "Maitake D-fraction"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0668",
+    "preferred_name": "Lion's Mane",
+    "type": "WM-drug",
+    "drug_class": "Mushroom",
+    "rxnorm_id": null,
+    "common_names": [
+      "Hericium erinaceus",
+      "Lion's Mane extract"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0669",
+    "preferred_name": "Chaga",
+    "type": "WM-drug",
+    "drug_class": "Mushroom",
+    "rxnorm_id": null,
+    "common_names": [
+      "Inonotus obliquus",
+      "Chaga extract"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0670",
+    "preferred_name": "Berberine",
+    "type": "WM-drug",
+    "drug_class": "Plant alkaloid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Berberine HCl",
+      "Berberine sulfate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0671",
+    "preferred_name": "EGCG",
+    "type": "WM-drug",
+    "drug_class": "Catechin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Green tea extract",
+      "EGCG"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0672",
+    "preferred_name": "NAC",
+    "type": "WM-drug",
+    "drug_class": "Amino acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "N-acetylcysteine",
+      "NAC"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0673",
+    "preferred_name": "Milk Thistle",
+    "type": "WM-drug",
+    "drug_class": "Herbal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Silybum marianum",
+      "Silymarin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0674",
+    "preferred_name": "Saw Palmetto",
+    "type": "WM-drug",
+    "drug_class": "Herbal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Serenoa repens",
+      "Saw palmetto extract"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0675",
+    "preferred_name": "Policosanol",
+    "type": "WM-drug",
+    "drug_class": "Plant compound",
+    "rxnorm_id": null,
+    "common_names": [
+      "Sugar cane wax",
+      "Policosanol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0676",
+    "preferred_name": "Bacitracin",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bacitracin topical"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0677",
+    "preferred_name": "Neomycin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Various topical"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0678",
+    "preferred_name": "Polymyxin B",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bacitracin-Neomycin-Polymyxin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0679",
+    "preferred_name": "Miconazole",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Monistat",
+      "Lotrimin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0680",
+    "preferred_name": "Clotrimazole",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lotrimin",
+      "Mycelex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0681",
+    "preferred_name": "Terbinafine",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lamisil",
+      "Terbinex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0682",
+    "preferred_name": "Nystatin",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mycostatin",
+      "Nilstat"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0683",
+    "preferred_name": "Griseofulvin",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Fulvicin",
+      "Gris-Peg"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0684",
+    "preferred_name": "Posaconazole",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Noxafil",
+      "Posanol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0685",
+    "preferred_name": "Voriconazole",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vfend",
+      "Vfend IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0686",
+    "preferred_name": "Micafungin",
+    "type": "WM-drug",
+    "drug_class": "Echinocandin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mycamine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0687",
+    "preferred_name": "Anidulafungin",
+    "type": "WM-drug",
+    "drug_class": "Echinocandin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Eraxis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0688",
+    "preferred_name": "Caspofungin",
+    "type": "WM-drug",
+    "drug_class": "Echinocandin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cancidas"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0689",
+    "preferred_name": "Amphotericin B",
+    "type": "WM-drug",
+    "drug_class": "Antifungal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Fungizone",
+      "Amphotec"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0690",
+    "preferred_name": "Pentamidine",
+    "type": "WM-drug",
+    "drug_class": "Antiprotozoal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pentam"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0691",
+    "preferred_name": "Pyrantel Pamoate",
+    "type": "WM-drug",
+    "drug_class": "Anthelmintic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pin-X",
+      "Reese's"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0692",
+    "preferred_name": "Mebendazole",
+    "type": "WM-drug",
+    "drug_class": "Anthelmintic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vermox",
+      "Emverm"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0693",
+    "preferred_name": "Albendazole",
+    "type": "WM-drug",
+    "drug_class": "Anthelmintic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Albenza"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0694",
+    "preferred_name": "Ivermectin",
+    "type": "WM-drug",
+    "drug_class": "Antiparasitic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Stromectol",
+      "Soolantra"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0695",
+    "preferred_name": "Permethrin",
+    "type": "WM-drug",
+    "drug_class": "Pediculicide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Elimite",
+      "Nix"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0696",
+    "preferred_name": "Lindane",
+    "type": "WM-drug",
+    "drug_class": "Pediculicide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Kwell",
+      "Lindane"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0697",
+    "preferred_name": "Malathion",
+    "type": "WM-drug",
+    "drug_class": "Pediculicide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ovide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0698",
+    "preferred_name": "Spinosad",
+    "type": "WM-drug",
+    "drug_class": "Pediculicide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Natroba"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0699",
+    "preferred_name": "Praziquantel",
+    "type": "WM-drug",
+    "drug_class": "Anthelmintic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Biltricide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0700",
+    "preferred_name": "Tinidazole",
+    "type": "WM-drug",
+    "drug_class": "Nitroimidazole",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tindamax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0701",
+    "preferred_name": "Paromomycin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Humatin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0702",
+    "preferred_name": "Furazolidone",
+    "type": "WM-drug",
+    "drug_class": "Antimicrobial",
+    "rxnorm_id": null,
+    "common_names": [
+      "Furoxone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0703",
+    "preferred_name": "Mupirocin Nasal",
+    "type": "WM-drug",
+    "drug_class": "Topical antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bactroban Nasal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0704",
+    "preferred_name": "Retapamulin",
+    "type": "WM-drug",
+    "drug_class": "Topical antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Altabax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0705",
+    "preferred_name": "Sulfacetamide",
+    "type": "WM-drug",
+    "drug_class": "Sulfonamide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Klaron",
+      "AK-Sulf"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0706",
+    "preferred_name": "Sulfadiazine",
+    "type": "WM-drug",
+    "drug_class": "Sulfonamide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Silver sulfadiazine",
+      "Silvadene"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0707",
+    "preferred_name": "Sulfisoxazole",
+    "type": "WM-drug",
+    "drug_class": "Sulfonamide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Gantrisin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0708",
+    "preferred_name": "Trimethoprim",
+    "type": "WM-drug",
+    "drug_class": "Dihydrofolate reductase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Trimpex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0709",
+    "preferred_name": "Fosfomycin",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Monurol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0710",
+    "preferred_name": "Cefadroxil",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Duricef",
+      "Ultracef"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0711",
+    "preferred_name": "Cefaclor",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ceclor",
+      "Ceclor CD"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0712",
+    "preferred_name": "Cefamandole",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mandol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0713",
+    "preferred_name": "Cefazolin",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ancef",
+      "Cefazolin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0714",
+    "preferred_name": "Cefixime",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Suprax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0715",
+    "preferred_name": "Cefotaxime",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Claforan"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0716",
+    "preferred_name": "Cefotetan",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cefotan"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0717",
+    "preferred_name": "Cefoxitin",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mefoxin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0718",
+    "preferred_name": "Cefpodoxime",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vantin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0719",
+    "preferred_name": "Ceftazidime",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Fortaz",
+      "Tazicef"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0720",
+    "preferred_name": "Ceftibuten",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cedax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0721",
+    "preferred_name": "Ceftizoxime",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cefizox"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0722",
+    "preferred_name": "Ceftriaxone",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Rocephin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0723",
+    "preferred_name": "Cefuroxime",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zinacef",
+      "Ceftin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0724",
+    "preferred_name": "Meropenem",
+    "type": "WM-drug",
+    "drug_class": "Carbapenem",
+    "rxnorm_id": null,
+    "common_names": [
+      "Merrem IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0725",
+    "preferred_name": "Ertapenem",
+    "type": "WM-drug",
+    "drug_class": "Carbapenem",
+    "rxnorm_id": null,
+    "common_names": [
+      "Invanz"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0726",
+    "preferred_name": "Imipenem/Cilastatin",
+    "type": "WM-drug",
+    "drug_class": "Carbapenem",
+    "rxnorm_id": null,
+    "common_names": [
+      "Primaxin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0727",
+    "preferred_name": "Doripenem",
+    "type": "WM-drug",
+    "drug_class": "Carbapenem",
+    "rxnorm_id": null,
+    "common_names": [
+      "Doribax"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0728",
+    "preferred_name": "Piperacillin/Tazobactam",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zosyn"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0729",
+    "preferred_name": "Ticarcillin/Clavulanate",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Timentin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0730",
+    "preferred_name": "Azlocillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Azlin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0731",
+    "preferred_name": "Mezlocillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mezlin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0732",
+    "preferred_name": "Piperacillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pipracil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0733",
+    "preferred_name": "Ampicillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Principen",
+      "Omnipen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0734",
+    "preferred_name": "Ampicillin/Sulbactam",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Unasyn"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0735",
+    "preferred_name": "Oxacillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bactocill"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0736",
+    "preferred_name": "Nafcillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Nafcil",
+      "Unipen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0737",
+    "preferred_name": "Dicloxacillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dynapen",
+      "Pathocil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0738",
+    "preferred_name": "Cloxacillin",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cloxapen"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0739",
+    "preferred_name": "Vancomycin",
+    "type": "WM-drug",
+    "drug_class": "Glycopeptide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vancocin",
+      "Firvanq",
+      "Vancomycin",
+      "Vancocin oral"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0740",
+    "preferred_name": "Dalbavancin",
+    "type": "WM-drug",
+    "drug_class": "Glycopeptide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dalvance"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0741",
+    "preferred_name": "Oritavancin",
+    "type": "WM-drug",
+    "drug_class": "Glycopeptide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Orbactiv"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0742",
+    "preferred_name": "Telavancin",
+    "type": "WM-drug",
+    "drug_class": "Glycopeptide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vibativ"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0743",
+    "preferred_name": "Tedizolid",
+    "type": "WM-drug",
+    "drug_class": "Oxazolidinone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Sivextro"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0744",
+    "preferred_name": "Linezolid",
+    "type": "WM-drug",
+    "drug_class": "Oxazolidinone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zyvox",
+      "Zyvoxam"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0745",
+    "preferred_name": "Doxycycline Hyclate",
+    "type": "WM-drug",
+    "drug_class": "Tetracycline",
+    "rxnorm_id": null,
+    "common_names": [
+      "Vibramycin",
+      "Doryx"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0746",
+    "preferred_name": "Minocycline",
+    "type": "WM-drug",
+    "drug_class": "Tetracycline",
+    "rxnorm_id": null,
+    "common_names": [
+      "Minocin",
+      "Solodyn"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0747",
+    "preferred_name": "Tetracycline",
+    "type": "WM-drug",
+    "drug_class": "Tetracycline",
+    "rxnorm_id": null,
+    "common_names": [
+      "Achromycin",
+      "Tetrex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0748",
+    "preferred_name": "Demeclocycline",
+    "type": "WM-drug",
+    "drug_class": "Tetracycline",
+    "rxnorm_id": null,
+    "common_names": [
+      "Declomycin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0749",
+    "preferred_name": "Tigecycline",
+    "type": "WM-drug",
+    "drug_class": "Tetracycline",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tygacil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0750",
+    "preferred_name": "Streptomycin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Streptomycin IV"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0751",
+    "preferred_name": "Gentamicin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Garamycin",
+      "Gentacidin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0752",
+    "preferred_name": "Tobramycin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Tobrex",
+      "Bethkis"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0753",
+    "preferred_name": "Amikacin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Amikin",
+      "Arikayce"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0754",
+    "preferred_name": "Netilmicin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Netromycin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0755",
+    "preferred_name": "Kanamycin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Kantrex",
+      "Klebcil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0756",
+    "preferred_name": "Spectinomycin",
+    "type": "WM-drug",
+    "drug_class": "Aminoglycoside",
+    "rxnorm_id": null,
+    "common_names": [
+      "Trobicin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0757",
+    "preferred_name": "Erythromycin",
+    "type": "WM-drug",
+    "drug_class": "Macrolide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Erythrocin",
+      "Ery-Tab"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0758",
+    "preferred_name": "Telithromycin",
+    "type": "WM-drug",
+    "drug_class": "Ketolide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Ketek"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0759",
+    "preferred_name": "Roxithromycin",
+    "type": "WM-drug",
+    "drug_class": "Macrolide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Roxid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0760",
+    "preferred_name": "Dirithromycin",
+    "type": "WM-drug",
+    "drug_class": "Macrolide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dynabac"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0761",
+    "preferred_name": "Clindamycin Topical",
+    "type": "WM-drug",
+    "drug_class": "Lincosamide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cleocin T",
+      "Clindagel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0762",
+    "preferred_name": "Chloramphenicol",
+    "type": "WM-drug",
+    "drug_class": "Amphenicol",
+    "rxnorm_id": null,
+    "common_names": [
+      "Chloromycetin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0763",
+    "preferred_name": "Cefmetazole",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zefazone"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0764",
+    "preferred_name": "Cefotiam",
+    "type": "WM-drug",
+    "drug_class": "Cephalosporin",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cefotiam"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0765",
+    "preferred_name": "Loracarbef",
+    "type": "WM-drug",
+    "drug_class": "Beta-lactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lorabid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0766",
+    "preferred_name": "Aztreonam",
+    "type": "WM-drug",
+    "drug_class": "Monobactam",
+    "rxnorm_id": null,
+    "common_names": [
+      "Azactam"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0767",
+    "preferred_name": "Fluoroquinolone",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Levaquin",
+      "Cipro",
+      "Avelox"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0768",
+    "preferred_name": "Levofloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Levaquin",
+      "L-Flox"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0769",
+    "preferred_name": "Moxifloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Avelox",
+      "Vigamox"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0770",
+    "preferred_name": "Gemifloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Factive"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0771",
+    "preferred_name": "Norfloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Noroxin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0772",
+    "preferred_name": "Enoxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Penetrex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0773",
+    "preferred_name": "Sparfloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zagam"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0774",
+    "preferred_name": "Grepafloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Raxar"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0775",
+    "preferred_name": "Trovafloxacin",
+    "type": "WM-drug",
+    "drug_class": "Fluoroquinolone",
+    "rxnorm_id": null,
+    "common_names": [
+      "Trovan"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0776",
+    "preferred_name": "Methenamine",
+    "type": "WM-drug",
+    "drug_class": "Urinary antiseptic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Hipprex",
+      "Urex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0777",
+    "preferred_name": "Mandelic Acid",
+    "type": "WM-drug",
+    "drug_class": "Organic acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Urinary antiseptic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0778",
+    "preferred_name": "Metronidazole Vaginal",
+    "type": "WM-drug",
+    "drug_class": "Antibiotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "MetroGel-Vaginal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0779",
+    "preferred_name": "Secnidazole",
+    "type": "WM-drug",
+    "drug_class": "Nitroimidazole",
+    "rxnorm_id": null,
+    "common_names": [
+      "Solosec"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0780",
+    "preferred_name": "Fidaxomicin",
+    "type": "WM-drug",
+    "drug_class": "Macrolide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dificlor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0781",
+    "preferred_name": "Bezlotoxumab",
+    "type": "WM-drug",
+    "drug_class": "Monoclonal antibody",
+    "rxnorm_id": null,
+    "common_names": [
+      "Zinplava"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0782",
+    "preferred_name": "Cholestyramine",
+    "type": "WM-drug",
+    "drug_class": "Bile acid sequestrant",
+    "rxnorm_id": null,
+    "common_names": [
+      "Questran",
+      "Questran Light"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0783",
+    "preferred_name": "Octreotide",
+    "type": "WM-drug",
+    "drug_class": "Somatostatin analogue",
+    "rxnorm_id": null,
+    "common_names": [
+      "Sandostatin",
+      "Sandostatin LAR"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0784",
+    "preferred_name": "Loperamide",
+    "type": "WM-drug",
+    "drug_class": "Opioid antidiarrheal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Imodium",
+      "Diamode"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0785",
+    "preferred_name": "Diphenoxylate/Atropine",
+    "type": "WM-drug",
+    "drug_class": "Opioid|Anticholinergic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lomotil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0786",
+    "preferred_name": "Bismuth Subsalicylate",
+    "type": "WM-drug",
+    "drug_class": "Antidiarrheal",
+    "rxnorm_id": null,
+    "common_names": [
+      "Pepto-Bismol",
+      "Kaopectate"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0787",
+    "preferred_name": "Pancrelipase",
+    "type": "WM-drug",
+    "drug_class": "Enzyme supplement",
+    "rxnorm_id": null,
+    "common_names": [
+      "Creon",
+      "Pancreaze"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0788",
+    "preferred_name": "Ursodeoxycholic Acid",
+    "type": "WM-drug",
+    "drug_class": "Bile acid",
+    "rxnorm_id": null,
+    "common_names": [
+      "Actigall",
+      "Ursodiol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0789",
+    "preferred_name": "Sulfasalazine",
+    "type": "WM-drug",
+    "drug_class": "Sulfonamide",
+    "rxnorm_id": null,
+    "common_names": [
+      "Azulfidine",
+      "Sulfazine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0790",
+    "preferred_name": "Olsalazine",
+    "type": "WM-drug",
+    "drug_class": "Salicylate",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dipentum"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0791",
+    "preferred_name": "Balsalazide",
+    "type": "WM-drug",
+    "drug_class": "Salicylate",
+    "rxnorm_id": null,
+    "common_names": [
+      "Colazal",
+      "Giazo"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0792",
+    "preferred_name": "Lactulose",
+    "type": "WM-drug",
+    "drug_class": "Osmotic laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Cephulac",
+      "Kristalose"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0793",
+    "preferred_name": "Sorbitol",
+    "type": "WM-drug",
+    "drug_class": "Osmotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Sorbitol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0794",
+    "preferred_name": "Glycerin",
+    "type": "WM-drug",
+    "drug_class": "Osmotic",
+    "rxnorm_id": null,
+    "common_names": [
+      "Glycerin suppository"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0795",
+    "preferred_name": "Psyllium",
+    "type": "WM-drug",
+    "drug_class": "Bulk laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Metamucil",
+      "Konsyl"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0796",
+    "preferred_name": "Calcium Polycarbophil",
+    "type": "WM-drug",
+    "drug_class": "Bulk laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Fiber-Con",
+      "Equalactin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0797",
+    "preferred_name": "Methylcellulose",
+    "type": "WM-drug",
+    "drug_class": "Bulk laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Citrucel"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0798",
+    "preferred_name": "Wheat Dextrin",
+    "type": "WM-drug",
+    "drug_class": "Prebiotic fiber",
+    "rxnorm_id": null,
+    "common_names": [
+      "Benefiber"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0799",
+    "preferred_name": "Inulin",
+    "type": "WM-drug",
+    "drug_class": "Prebiotic fiber",
+    "rxnorm_id": null,
+    "common_names": [
+      "Inulin",
+      "Prebiotic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0800",
+    "preferred_name": "Bisacodyl",
+    "type": "WM-drug",
+    "drug_class": "Stimulant laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Dulcolax",
+      "Correctol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0801",
+    "preferred_name": "Castor Oil",
+    "type": "WM-drug",
+    "drug_class": "Stimulant laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Castor Oil"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0802",
+    "preferred_name": "Aloe Vera",
+    "type": "WM-drug",
+    "drug_class": "Stimulant laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Aloe latex",
+      "Aloe juice"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0803",
+    "preferred_name": "Phenolphthalein",
+    "type": "WM-drug",
+    "drug_class": "Stimulant laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Phenolphthalein"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0804",
+    "preferred_name": "Tenesmus",
+    "type": "WM-drug",
+    "drug_class": "Mineral oil",
+    "rxnorm_id": null,
+    "common_names": [
+      "Lubricating laxative"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0805",
+    "preferred_name": "Paraffin Oil",
+    "type": "WM-drug",
+    "drug_class": "Lubricating laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Liquid paraffin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0806",
+    "preferred_name": "Olive Oil",
+    "type": "WM-drug",
+    "drug_class": "Lubricating laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Olive oil rectal"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0807",
+    "preferred_name": "Milk of Magnesia",
+    "type": "WM-drug",
+    "drug_class": "Saline laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mag-Ox",
+      "Magnesium hydroxide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0808",
+    "preferred_name": "Sodium Phosphate",
+    "type": "WM-drug",
+    "drug_class": "Saline laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Fleet Enema"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0809",
+    "preferred_name": "Magnesium Citrate",
+    "type": "WM-drug",
+    "drug_class": "Saline laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Citrate of magnesia"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0810",
+    "preferred_name": "Prucalopride",
+    "type": "WM-drug",
+    "drug_class": "5-HT4 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Motegrity"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0811",
+    "preferred_name": "Lubiprostone",
+    "type": "WM-drug",
+    "drug_class": "Chloride channel activator",
+    "rxnorm_id": null,
+    "common_names": [
+      "Amitiza"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0812",
+    "preferred_name": "Naloxegol",
+    "type": "WM-drug",
+    "drug_class": "Opioid antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Movantik"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0813",
+    "preferred_name": "Methylnaltrexone",
+    "type": "WM-drug",
+    "drug_class": "Opioid antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Relistor"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0814",
+    "preferred_name": "Alvimopan",
+    "type": "WM-drug",
+    "drug_class": "Opioid antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Entereg"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0815",
+    "preferred_name": "Ispaghula",
+    "type": "WM-drug",
+    "drug_class": "Bulk laxative",
+    "rxnorm_id": null,
+    "common_names": [
+      "Metamucil",
+      "Psyllium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0816",
+    "preferred_name": "Domperidone",
+    "type": "WM-drug",
+    "drug_class": "Dopamine antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Motilium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0817",
+    "preferred_name": "Metoclopramide",
+    "type": "WM-drug",
+    "drug_class": "Dopamine antagonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Reglan",
+      "Metoclopramide"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0818",
+    "preferred_name": "Cisapride",
+    "type": "WM-drug",
+    "drug_class": "5-HT4 agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Propulsid"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0819",
+    "preferred_name": "Bethanechol",
+    "type": "WM-drug",
+    "drug_class": "Cholinergic agonist",
+    "rxnorm_id": null,
+    "common_names": [
+      "Urecholine"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0820",
+    "preferred_name": "Neostigmine",
+    "type": "WM-drug",
+    "drug_class": "Cholinesterase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Prostigmin"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0821",
+    "preferred_name": "Pyridostigmine",
+    "type": "WM-drug",
+    "drug_class": "Cholinesterase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Mestinon",
+      "Regonol"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0822",
+    "preferred_name": "Edrophonium",
+    "type": "WM-drug",
+    "drug_class": "Cholinesterase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Enlon"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0823",
+    "preferred_name": "Physostigmine",
+    "type": "WM-drug",
+    "drug_class": "Cholinesterase inhibitor",
+    "rxnorm_id": null,
+    "common_names": [
+      "Antilirium"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0824",
+    "preferred_name": "Pancreatinum",
+    "type": "WM-drug",
+    "drug_class": "Pancreatic enzyme",
+    "rxnorm_id": null,
+    "common_names": [
+      "Enzymatic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0825",
+    "preferred_name": "Trypsin",
+    "type": "WM-drug",
+    "drug_class": "Protease",
+    "rxnorm_id": null,
+    "common_names": [
+      "Enzymatic supplement"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0826",
+    "preferred_name": "Chymotrypsin",
+    "type": "WM-drug",
+    "drug_class": "Protease",
+    "rxnorm_id": null,
+    "common_names": [
+      "Enzymatic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0827",
+    "preferred_name": "Hyaluronidase",
+    "type": "WM-drug",
+    "drug_class": "Enzyme",
+    "rxnorm_id": null,
+    "common_names": [
+      "Hyase",
+      "Hydase"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0828",
+    "preferred_name": "Collagenase",
+    "type": "WM-drug",
+    "drug_class": "Enzyme",
+    "rxnorm_id": null,
+    "common_names": [
+      "Santyl",
+      "Xiaflex"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0829",
+    "preferred_name": "Papain",
+    "type": "WM-drug",
+    "drug_class": "Protease",
+    "rxnorm_id": null,
+    "common_names": [
+      "Debridase",
+      "Papase"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0830",
+    "preferred_name": "Bromelain",
+    "type": "WM-drug",
+    "drug_class": "Protease",
+    "rxnorm_id": null,
+    "common_names": [
+      "Bromelain"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0831",
+    "preferred_name": "Serratiopeptidase",
+    "type": "WM-drug",
+    "drug_class": "Serine protease",
+    "rxnorm_id": null,
+    "common_names": [
+      "Serrapeptase",
+      "Eidon"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0832",
+    "preferred_name": "Nattokinase",
+    "type": "WM-drug",
+    "drug_class": "Serine protease",
+    "rxnorm_id": null,
+    "common_names": [
+      "Nattokinase"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0833",
+    "preferred_name": "Glucose Oxidase",
+    "type": "WM-drug",
+    "drug_class": "Enzyme",
+    "rxnorm_id": null,
+    "common_names": [
+      "Diagnostic"
+    ],
+    "active_constituents": []
+  },
+  {
+    "entity_id": "E-0834",
+    "preferred_name": "Laccase",
+    "type": "WM-drug",
+    "drug_class": "Enzyme",
+    "rxnorm_id": null,
+    "common_names": [
+      "Enzymatic"
     ],
     "active_constituents": []
   }

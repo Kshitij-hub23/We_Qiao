@@ -226,3 +226,14 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   intact; 308 new herbs got fresh ids above the WM block. Switched the fuzzy scorer to
   `token_sort_ratio` (WRatio over-matched junk at scale — `"totally unknown zzz"`→0.90; now unmatched),
   keeping real typos (`danshne`→Danshen, confirm) working.
+- **Ingest the Western-drug vocabulary (same pipeline as herbs):** refactored the ingest into a shared core
+  (`hdi-api/ingest_common.py`) and added `ingest_western.py` alongside `ingest_herbs.py`. Ran the provided
+  `WESTERN_MEDICATIONS_DATASET.csv` (439 drugs); with both CSVs the engine now holds **756 entities, 3336
+  aliases, 51 interactions**. The merge core was hardened: it now keeps every existing entity (curated links
+  never dangle — no carry-over step), preserves curated ids by name across *both* kinds (so `Glucophage`→
+  **Metformin** `E-0124`, and a herb sold as a supplement like **ginger** that appears in both CSVs stays a
+  single entity instead of duplicating across types), and collapses literal duplicate rows on a
+  high-precision identity (Chinese+Latin for herbs, generic name for drugs) so genuinely distinct entries
+  sharing a loose English name (白术 vs 蒼朮 "Atractylodes") are *not* merged. Verified live end-to-end:
+  "Lipitor … Coumadin … 丹参茶 … Synthroid" → brands resolve to Atorvastatin / Warfarin / Danshen /
+  Levothyroxine, and Warfarin × Danshen still flags **major**.
