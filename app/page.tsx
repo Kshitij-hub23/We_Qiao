@@ -13,6 +13,8 @@ import { ErrorState } from "@/components/ErrorState";
 import { SEVERITY_RANK } from "@/components/SeverityBadge";
 import { checkConflicts, getEngineHealth, ApiError } from "@/lib/api-client";
 import type { ConflictDetail } from "@/lib/types";
+import { getSession } from "@/lib/auth";
+import { useRouter } from "next/navigation";
 
 type Step = "intake" | "confirm" | "results";
 type Status = "loading" | "success" | "error";
@@ -25,6 +27,7 @@ const fade = {
 };
 
 export default function Home() {
+  const router = useRouter();
   const [step, setStep] = useState<Step>("intake");
   const [western, setWestern] = useState<string[]>([]);
   const [eastern, setEastern] = useState<string[]>([]);
@@ -36,9 +39,11 @@ export default function Home() {
 
   const [engineUp, setEngineUp] = useState<boolean | null>(null);
 
+  // Redirect to login if no active session.
   useEffect(() => {
+    if (!getSession()) { router.replace("/login"); return; }
     getEngineHealth().then(setEngineUp);
-  }, []);
+  }, [router]);
 
   const canCheck = western.length > 0 && eastern.length > 0;
 
