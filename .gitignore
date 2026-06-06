@@ -39,3 +39,7 @@ venv/
 
 # local sqlite databases (regenerated on startup)
 *.db
+
+# local dev helpers (personal, not shared)
+start.bat
+standardizer/intake.log

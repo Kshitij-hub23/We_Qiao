@@ -1,0 +1,14 @@
+
+> qiao-app@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://172.25.0.1:3000
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1670ms (1259 modules)
+ GET /login 200 in 2338ms
