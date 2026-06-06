@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState, type DragEvent } from "react";
+import { useT } from "@/lib/i18n";
 
 export interface AttachedFile {
   id: string;
@@ -39,6 +40,7 @@ export function FileAttach({
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
+  const t = useT();
 
   function addFiles(list: FileList | null) {
     if (!list) return;
@@ -72,7 +74,7 @@ export function FileAttach({
   return (
     <div className="flex flex-col gap-3">
       <span className="text-sm font-semibold text-ink-700">
-        Attach prescriptions <span className="font-normal text-ink-400">(optional)</span>
+        {t("attach.title")} <span className="font-normal text-ink-400">{t("attach.optional")}</span>
       </span>
 
       <div
@@ -96,9 +98,9 @@ export function FileAttach({
             strokeLinejoin="round"
           />
         </svg>
-        <span className="text-sm font-medium text-ink-700">Drop files or click to browse</span>
+        <span className="text-sm font-medium text-ink-700">{t("attach.drop")}</span>
         <span className="text-xs text-ink-400">
-          {onImageUpload ? "JPG, PNG, WebP or PDF · text extracted automatically" : "JPG, PNG, WebP or PDF"}
+          {onImageUpload ? t("attach.typesOcr") : t("attach.types")}
         </span>
         <input
           ref={inputRef}

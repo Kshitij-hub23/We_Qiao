@@ -1,8 +1,12 @@
+"use client";
+
 import { GlassCard } from "./GlassCard";
 import { Button } from "./Button";
+import { useT } from "@/lib/i18n";
 
 /** Shown when the request fails (most often: the engine is not running). */
 export function ErrorState({ message, onRetry }: { message: string; onRetry?: () => void }) {
+  const t = useT();
   return (
     <GlassCard className="p-8 text-center">
       <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-severity-major/10">
@@ -16,12 +20,12 @@ export function ErrorState({ message, onRetry }: { message: string; onRetry?: ()
           />
         </svg>
       </div>
-      <h3 className="text-lg font-semibold text-ink-900">Couldn’t complete the check</h3>
+      <h3 className="text-lg font-semibold text-ink-900">{t("error.title")}</h3>
       <p className="mx-auto mt-2 max-w-md text-sm text-ink-500">{message}</p>
       {onRetry && (
         <div className="mt-5">
           <Button variant="secondary" onClick={onRetry}>
-            Try again
+            {t("error.retry")}
           </Button>
         </div>
       )}
