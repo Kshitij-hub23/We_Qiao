@@ -43,3 +43,6 @@ venv/
 # local dev helpers (personal, not shared)
 start.bat
 standardizer/intake.log
+
+# local-only docs (not committed)
+HERB_DATASET_SPEC.md
