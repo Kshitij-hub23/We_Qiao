@@ -30,7 +30,7 @@ into one view and flags dangerous drug–herb interactions that the two siloed s
 |---|---|
 | App | Next.js (TypeScript), responsive web |
 | Cloud DB / auth / storage | Supabase (single region) |
-| Fuzzy extraction | Google **Gemini** API (server-side key only) |
+| Fuzzy extraction | **Gemini** via KIT SCC gateway (OpenAI-compatible API, server-side token only) |
 | Safety engine | Our own deterministic code, fed by a drop-in interaction dataset |
 | Hosting | Vercel + Supabase |
 
@@ -139,3 +139,9 @@ directly — our `app/api/conflicts/check` route proxies it server-side.
   the vocabulary (case-insensitively, snapped to canonical spelling), so the standardizer can never emit
   a medicine the engine doesn't know. Regenerate the lists from the DB if the dataset changes (command in
   the file header).
+- **Add image OCR (intake step):** `standardizer/ocr.py` — `extract_text_from_image()` transcribes a
+  prescription/label image (English, Chinese, or mixed) to verbatim text using **Gemini 2.5 Flash**
+  (`google-genai`), the first step of the hero flow (image → OCR → standardize → check-conflicts).
+  Accepts a file path or raw bytes, infers MIME type, transcribes only (no translation/normalization).
+  Key read server-side from `GEMINI_API_KEY` (falls back to `GOOGLE_API_KEY` / `OPENAI_API_KEY`).
+  Verified live against a bilingual test image.

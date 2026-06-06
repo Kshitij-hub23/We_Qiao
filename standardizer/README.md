@@ -31,29 +31,34 @@ The standardizer is the **LLM-backed fuzzy step** of the fuzzy-vs-deterministic 
 User input (messy)
        │
        ▼
-┌──────────────────────────────┐
-│ Gemini/GPT (via KIT SCC)     │
-│ - Recognizes medicine names  │
-│ - Resolves synonyms, brands  │
-│ - Maps to controlled vocab   │
-└────────────┬─────────────────┘
-             │
-             ▼
-Validation + snapping to DB spelling
-             │
-             ▼
+┌──────────────────────────────────────────┐
+│ LLM via KIT SCC Gateway                  │
+│ (OpenAI-compatible API)                  │
+│ - Recognizes medicine names              │
+│ - Resolves synonyms, brands, synonyms    │
+│ - Maps to controlled vocabulary          │
+│ Temperature: 0 (deterministic)           │
+│ Format: JSON only                        │
+└──────────────┬───────────────────────────┘
+               │
+               ▼
+Validation + snapping to DB exact spelling
+               │
+               ▼
 ┌──────────────────────────────┐
 │ StandardizedMedicines        │
 │ {                            │
 │   "western_medicines": [...],│
 │   "eastern_medicines": [...]│
 │ }                            │
-└────────────┬─────────────────┘
-             │
-             ▼
+└──────────────┬───────────────┘
+               │
+               ▼
 Ready to POST to HDI API
 /api/v1/check-conflicts
 ```
+
+**Note:** Uses the KIT SCC "ki-toolbox" gateway (OpenAI-compatible), not direct Gemini API.
 
 ---
 
@@ -341,13 +346,20 @@ standardize_medicines("   ")
 
 ## Configuration
 
+### API Gateway
+
+The standardizer uses the **KIT SCC "ki-toolbox" gateway** — an OpenAI-compatible API that provides access to multiple LLMs (including Gemini via Azure) through a unified interface.
+
+**Gateway:** `https://ki-toolbox.scc.kit.edu/api/v1`
+**Model:** `azure.gpt-4.1-mini` (Gemini, via KIT SCC)
+
 ### Environment Variables
 
 | Name | Required | Default | Notes |
 |------|----------|---------|-------|
-| `OPENAI_API_KEY` | Yes* | — | API key for the KIT SCC gateway. Set in `.env` (gitignored). |
-| `BASE_URL` | No | `"https://ki-toolbox.scc.kit.edu/api/v1"` | OpenAI-compatible gateway. Can be overridden (for local testing). |
-| `MODEL` | No | `"azure.gpt-4.1-mini"` | Model ID at the gateway. Can be overridden in function call. |
+| `OPENAI_API_KEY` | Yes* | — | **KIT SCC token, not a raw Gemini/OpenAI key.** Request access at https://www.scc.kit.edu/ |
+| `BASE_URL` | No (hardcoded) | `"https://ki-toolbox.scc.kit.edu/api/v1"` | KIT SCC OpenAI-compatible gateway. Can be overridden in code for testing. |
+| `MODEL` | No (hardcoded) | `"azure.gpt-4.1-mini"` | Model ID at the KIT gateway. Can be overridden in function call. |
 
 *Only required if calling `standardize_medicines()` without a pre-built client.
 
@@ -355,8 +367,19 @@ standardize_medicines("   ")
 
 ```bash
 # .env (add to .gitignore)
-OPENAI_API_KEY=sk-...  # Or your KIT SCC token
+# This is a KIT SCC token, obtained from https://www.scc.kit.edu/
+OPENAI_API_KEY=your-kit-scc-token-here
 ```
+
+### Getting Started
+
+1. **Request KIT SCC access** at https://www.scc.kit.edu/
+2. **Generate a token** in the KIT SCC dashboard
+3. **Add to .env:** `OPENAI_API_KEY=<your-token>`
+4. **Test it:**
+   ```bash
+   echo "Warfarin and danshen" | python standardize.py
+   ```
 
 ---
 
@@ -484,13 +507,29 @@ export async function standardizeMedicines(input: string): Promise<StandardizedM
 
 ---
 
-## Known Limitations
+## Known Limitations & Considerations
 
-1. **No offline mode** — Requires network access to KIT SCC gateway
-2. **Latency** — LLM calls take 1-2 seconds
-3. **Cost** — Each call costs a small amount (KIT SCC may charge per token)
-4. **Hallucinations** — Even with constraints, the LLM might occasionally output unexpected names (caught by validation layer)
-5. **Language support** — Works best with English, Chinese, and pinyin; other languages untested
+### Operational
+1. **Network required** — Requires active internet connection to KIT SCC gateway
+2. **Latency** — LLM calls typically take 1-2 seconds (slower than local rule-based matching)
+3. **Gateway dependency** — If KIT SCC gateway is down, standardizer cannot run
+4. **Rate limits** — KIT SCC may have rate limits; large batch processing may be throttled
+
+### LLM Behavior
+5. **Occasional hallucinations** — LLM might output unexpected names despite constraints
+   - Mitigated by validation layer (invalid names are dropped)
+   - Temperature=0 makes it deterministic, but not infallible
+6. **Non-deterministic fixes** — Same input may occasionally produce different outputs
+   - Rare (temperature=0), but possible with prompt interpretation edge cases
+   - Cache frequently-seen inputs if consistency is critical
+
+### Coverage
+7. **Language support** — Works best with English, Chinese characters, and pinyin
+   - Other languages (Arabic, Cyrillic, etc.) untested
+   - Mixed-language input usually works
+8. **Medicine scope** — Limited to medicines in `DATABASE_MEDICINES` (46 items)
+   - Grows with the HDI dataset
+   - Unknown medicines are dropped (safety by design)
 
 ---
 

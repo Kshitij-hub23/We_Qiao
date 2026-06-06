@@ -31,9 +31,11 @@ FUZZY VS. DETERMINISTIC SPLIT (CLAUDE.md, principle #2)
 
 ARCHITECTURE
 ------------
-- Model: Reached through KIT SCC "ki-toolbox" gateway (OpenAI-compatible API)
-- API key: Read from environment (OPENAI_API_KEY) server-side only. Never
-  exposed to the browser.
+- Gateway: KIT SCC "ki-toolbox" (https://ki-toolbox.scc.kit.edu/api/v1)
+- Model: azure.gpt-4.1-mini (Gemini via KIT SCC's OpenAI-compatible API)
+- API key: OPENAI_API_KEY (KIT SCC token, not raw Gemini/OpenAI key)
+  Read from environment server-side only. Never exposed to the browser.
+- Determinism: temperature=0 + JSON mode for reproducible outputs
 - System prompt: Embeds the controlled vocabulary and enforces strict constraints
   on what the LLM can output.
 
