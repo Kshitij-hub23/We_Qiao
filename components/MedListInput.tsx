@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, type KeyboardEvent } from "react";
+import { useT, useTerm } from "@/lib/i18n";
 
 type Accent = "brand" | "teal";
 
@@ -40,6 +41,8 @@ export function MedListInput({
 }) {
   const [draft, setDraft] = useState("");
   const a = ACCENT[accent];
+  const t = useT();
+  const term = useTerm();
 
   function commit(raw: string) {
     const value = raw.trim().replace(/,$/, "").trim();
@@ -86,7 +89,7 @@ export function MedListInput({
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm font-medium ${a.chip}`}
             >
-              {item}
+              {term(item)}
               <button
                 type="button"
                 aria-label={`Remove ${item}`}
@@ -104,7 +107,7 @@ export function MedListInput({
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={handleKeyDown}
           onBlur={() => commit(draft)}
-          placeholder={items.length === 0 ? placeholder : "Add another…"}
+          placeholder={items.length === 0 ? placeholder : t("intake.addAnother")}
           className="min-w-[8rem] flex-1 bg-transparent px-1 py-1 text-sm outline-none placeholder:text-ink-400"
         />
       </div>
