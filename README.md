@@ -45,6 +45,12 @@ neither practitioner saw.
 This is an early commit — **project context only, no application code yet**. Architecture and the
 end-to-end "hero flow" are next.
 
+## Documentation
+- [`docs/PROJECT_BRIEF.md`](docs/PROJECT_BRIEF.md) — the full implementation brief: complete system
+  architecture, hard constraints, the dataset contract, and the end-to-end hero flow.
+
 ## Push log
 - **Initial commit:** README with project vision, the fuzzy-vs-deterministic design principle, and
   the planned stack (Gemini for extraction).
+- **Add project brief:** `docs/PROJECT_BRIEF.md` with the complete system architecture and
+  constraints, plus a README link to it.
