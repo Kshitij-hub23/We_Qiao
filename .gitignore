@@ -30,3 +30,12 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# python (hdi-api/, standardizer/)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# local sqlite databases (regenerated on startup)
+*.db
