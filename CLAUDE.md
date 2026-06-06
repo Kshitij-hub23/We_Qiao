@@ -31,10 +31,25 @@ Kong Talent Engage hackathon (HealthTech track), elderly-care focus.
   patients they are explicitly linked to. Demo-grade auth is fine (seeded accounts) — do not burn
   time on production identity.
 
+## Current implementation (as built — read this before assuming)
+The app is now **three local processes**, not the single cloud app the Stack section envisaged:
+- **Conflict engine** — `hdi-api/` (FastAPI + SQLite), port **8000**. `POST /api/v1/check-conflicts`,
+  `GET /health`. Seed it with `python seed.py` (loads `hdi-api/Medicine_data/`).
+- **Intake service** — `standardizer/` (FastAPI), port **8001**. `POST /api/v1/ocr` (Gemini image OCR)
+  + `POST /api/v1/standardize` (Gemini name standardization). Needs `GEMINI_API_KEY`.
+- **Next.js frontend** — port **3000**. API routes under `app/api/*` proxy the two services
+  server-side (`ENGINE_URL`, `INTAKE_URL`); the browser never holds a key.
+
+What's actually built: a sign-in flow + **patient portal** (dashboard, profile with a system Patient
+ID, caregivers with permission-scoped access, read-only caregiver view) and a **bilingual EN / 繁體中文**
+UI. **Auth and storage are demo-grade and client-side (`localStorage`)** — Supabase / a real server DB
+are still *planned*, not implemented. The two fuzzy steps run on **Gemini** (`gemini-2.5-flash`); the
+KIT `OPENAI_API_KEY` is unused. PDF passport export and the audit log are not built yet.
+
 ## Dataset contract (do NOT create the clinical data)
-A **separate agent** produces the interaction dataset; this engine only *consumes* it. Build to two
-JSON files (use a small mock in the same schema until the real one lands — it should be a drop-in
-replacement):
+A **separate agent** produces the interaction dataset; this engine only *consumes* it. **The real
+dataset has landed** — it lives in `hdi-api/Medicine_data/` (46 entities, 51 sourced interactions) and
+is loaded by `hdi-api/seed.py`. The two JSON files follow this schema (do not hand-edit the clinical data):
 - `entities.json`: `{ entity_id, preferred_name, type ("WM-drug"|"TCM-herb"|"TCM-formula"),
   drug_class, rxnorm_id, latin, pinyin, chinese, common_names[], active_constituents[] }`
 - `interactions.json`: `{ id, agent_a_id, agent_b_id, interaction_class ("TCM-WM"|"WM-WM"|"TCM-TCM"),

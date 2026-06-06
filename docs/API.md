@@ -154,6 +154,42 @@ if (connected) {
 
 ---
 
+### POST /api/ocr
+
+Transcribe a prescription image. Proxies to the intake service (`INTAKE_URL` → `POST /api/v1/ocr`).
+
+**Request:** `multipart/form-data` with an `image` field (JPG/PNG/WebP/PDF).
+
+**Response (200 OK):**
+```json
+{ "text": "绿茶与生姜" }
+```
+
+**Errors:** `502` (`{ "error": "The intake service could not be reached…" }`) if the intake service is
+down or its Gemini key/quota fails. Implemented via `lib/intake.ocrImage()`.
+
+---
+
+### POST /api/standardize
+
+Turn confirmed free text into split, DB-canonical medicine lists. Proxies to the intake service
+(`INTAKE_URL` → `POST /api/v1/standardize`).
+
+**Request (application/json):**
+```json
+{ "text": "Coumadin 5mg daily, 丹参, panadol" }
+```
+
+**Response (200 OK):**
+```json
+{ "western_medicines": ["Warfarin", "Paracetamol"], "eastern_medicines": ["Danshen"] }
+```
+
+**Notes:** names are mapped to the engine's controlled vocabulary (so they match
+`/api/conflicts/check`). `502` on intake-service failure. Implemented via `lib/intake.standardizeText()`.
+
+---
+
 ## Python HDI API Routes
 
 The deterministic conflict-detection service. Queried by Next.js; never called directly by the browser.
@@ -553,24 +589,19 @@ Import the following:
 
 ## Future Endpoints
 
-### Phase 2 — Extraction
+### ✅ Extraction — implemented
+The OCR + standardize flow is live as **`POST /api/ocr`** and **`POST /api/standardize`** (documented
+above), backed by the intake service. (The earlier `/api/extraction/*` naming was never built.)
 
-```
-POST /api/extraction/upload-pdf
-POST /api/extraction/extract-text
-```
-
-Takes free-text or PDF input, uses Gemini to standardize, returns CheckRequest.
-
-### Phase 3 — Patient Profiles
-
+### Patient profiles — client-side today
+Patient records, profile, and caregivers exist, but are stored in the **browser (`localStorage`)** via
+`lib/profile.ts` / `lib/user-records.ts` / `lib/caregivers.ts` — there are no server endpoints yet.
+A future server DB would add something like:
 ```
 POST /api/patients/:id/medicines
-GET /api/patients/:id/medicines
-GET /api/patients/:id/history
+GET  /api/patients/:id/medicines
+GET  /api/patients/:id/history
 ```
-
-Persist intake results, compare with historical records.
 
 ### Phase 4 — Audit Log
 

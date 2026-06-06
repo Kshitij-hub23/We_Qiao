@@ -4,7 +4,7 @@ Shared utilities, types, and API client code for the Qiáo application.
 
 ## Principle: Single Data Seam
 
-**All data access in the UI must go through `api-client.ts`.** Components never call `fetch()` directly. This keeps the integration point isolated so when new endpoints land (OCR, extraction, patient profiles), we only modify one file.
+**All network data access in the UI goes through `api-client.ts`.** Components never call `fetch()` directly — that keeps the integration point isolated. (Conflict checks and OCR/standardize go through it; the portal layer below — auth, profile, caregivers, records — is `localStorage`-backed and called directly by its own modules.)
 
 ---
 
@@ -318,6 +318,53 @@ type ParsedCheckRequest = z.infer<typeof checkRequestSchema>
 
 ---
 
+## intake.ts (OCR + standardize)
+
+**Purpose:** Server-side wrapper around the Python **intake service** (`standardizer/`, port 8001) —
+the fuzzy step. Used by Next.js route handlers only; the browser never talks to Gemini directly.
+
+**Exports:**
+- `ocrImage(bytes, mimeType): Promise<string>` — POSTs an uploaded image to `${INTAKE_URL}/api/v1/ocr`,
+  returns the transcribed prescription text. ~45s timeout (vision calls are slow).
+- `standardizeText(text): Promise<StandardizedMedicines>` — POSTs confirmed text to
+  `${INTAKE_URL}/api/v1/standardize`, returns `{ western_medicines, eastern_medicines }` (canonical,
+  DB-matched names).
+- `class IntakeUnavailableError extends Error` — thrown when the intake service is unreachable, times
+  out, or errors (route handlers map it to HTTP 502).
+
+The browser reaches these via `app/api/ocr` and `app/api/standardize`, and the client-side wrappers
+`ocrImage`/`standardizeText` in `api-client.ts`.
+
+---
+
+## Portal layer (demo-grade, client-side)
+
+These power the patient portal. **All state lives in `localStorage`** — there is no server. Each
+module is a drop-in seam: swap the storage calls for real API calls later without touching components.
+
+- **`auth.ts`** — demo auth. `login(email, password)` checks `DEMO_USERS` then patient-created
+  caregiver accounts; `getSession()` / `logout()` manage a `localStorage` session. Exports the
+  `SessionUser` shape (id, email, name, role, initials, avatarHex, optional `linkedPatientId` for
+  caregivers) and `Role = "patient" | "caretaker" | "practitioner" | "caregiver"`.
+- **`demo-users.ts`** — seeded demo accounts (Eleanor Chen / patient, James Wong / caretaker,
+  Dr. Liu Wei / practitioner). Plain-text passwords — **demo only**.
+- **`profile.ts`** — the full `PatientProfile` (immutable system **Patient ID** `PAT-2026-NNNNNN`,
+  demographics, emergency contact, insurance, registration date). `getProfile()` seeds/loads,
+  `updateProfile()` saves editable fields (Patient ID + registration date are never editable).
+- **`caregivers.ts`** — per-patient caregiver list with permission flags (`profile`, `prescriptions`,
+  `medications`, `history`). `addCaregiver()` generates a one-time credential and registers a login
+  account; `findCaregiverAccount()` backs caregiver sign-in; plus `updateCaregiverPermissions()` /
+  `removeCaregiver()`.
+- **`user-records.ts`** — per-user clinical lists keyed by `RecordKind`
+  (`diseases | western | eastern | allergies | treatment`). `getItems` / `addItem` (de-dupes) /
+  `removeItem` / `seedIfEmpty`.
+- **`i18n.tsx`** — bilingual EN / 繁體中文. `LanguageProvider` + `useT()` (UI strings) and `useTerm()` /
+  `localizeTerm()` (a clinical-term glossary that translates stored names for **display only** — stored
+  values stay canonical English so the engine lookup and delete-by-value keep working). Choice persists
+  in `localStorage`.
+
+---
+
 ## Data Flow Summary
 
 ```
@@ -350,40 +397,21 @@ URL of the Python HDI API. Defaults to `http://127.0.0.1:8000`.
 vercel env add ENGINE_URL https://my-hdi-api.railway.app
 ```
 
-**Read in `lib/engine.ts`:**
+### `INTAKE_URL` (optional)
+
+URL of the Python intake service (OCR + standardize). Defaults to `http://127.0.0.1:8001`.
+Read in `lib/intake.ts`. Set in production the same way as `ENGINE_URL`.
+
 ```typescript
-const ENGINE_URL = process.env.ENGINE_URL ?? "http://127.0.0.1:8000";
+const ENGINE_URL = process.env.ENGINE_URL ?? "http://127.0.0.1:8000";  // lib/engine.ts
+const INTAKE_URL = process.env.INTAKE_URL ?? "http://127.0.0.1:8001";  // lib/intake.ts
 ```
 
 ---
 
-## Future Extensions
+## Future / not yet built
 
-### OCR Extraction (`Phase 2`)
-Add a new export to `api-client.ts`:
-```typescript
-async function extractFromPDF(file: File): Promise<CheckRequest> {
-  // POST to /api/extraction/upload
-  // Returns split WM/TCM lists
-}
-```
-
-### Patient Profiles (`Phase 3`)
-```typescript
-async function saveMedicines(patientId: string, req: CheckRequest): Promise<void> {
-  // POST to /api/patients/:id/medicines
-}
-
-async function getPatientHistory(patientId: string): Promise<CheckRequest[]> {
-  // GET /api/patients/:id/history
-}
-```
-
-### Audit Log (`Phase 4`)
-```typescript
-async function flagInteraction(conflictId: string, note: string): Promise<void> {
-  // POST to /api/audit/flag
-}
-```
-
-Each new endpoint only requires changes to `api-client.ts` (and optionally `types.ts` if the data shape changes). Components remain untouched.
+OCR + standardize and the patient profile are now **implemented** (see `intake.ts` and the portal
+layer above). Still deferred: a **server database + real auth** (today everything is `localStorage`),
+a PDF "passport" export, and a tamper-evident audit log. When those land, keep the same seam pattern —
+add functions to `api-client.ts` (and `types.ts` if shapes change); components stay untouched.

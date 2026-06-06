@@ -10,28 +10,26 @@ Qiáo is a **medication conflict-detection bridge** connecting Western Medicine 
 └────────────────────────────┬────────────────────────────────────┘
                              │ HTTP
                              ▼
-         ┌───────────────────────────────────────────┐
-         │      Next.js App (port 3000)              │
-         │  - /page.tsx: Intake & results UI         │
-         │  - /api/conflicts/check: Proxy endpoint   │
-         │  - /api/engine/health: Connection probe   │
-         └────────┬───────────────────────┬──────────┘
-                  │                       │
-         (calls)  │                       │
-                  ▼                       ▼
-        ┌──────────────────┐    ┌────────────────┐
-        │ lib/api-client   │    │ lib/engine     │
-        │ (browser-facing) │    │ (server-side)  │
-        └──────────────────┘    └────────┬───────┘
-                                         │
-                                  (HTTP) │
-                                         ▼
-                    ┌────────────────────────────────────┐
-                    │   Python HDI API (port 8000)       │
-                    │  - /api/v1/check-conflicts (POST)  │
-                    │  - /health (GET)                   │
-                    │  - SQLite database                 │
-                    └────────────────────────────────────┘
+         ┌───────────────────────────────────────────────┐
+         │      Next.js App (port 3000)                  │
+         │  Pages: /login /dashboard /profile /caregiver │
+         │         / (intake → confirm → results)        │
+         │  API proxies (server-side):                   │
+         │   /api/conflicts/check, /api/engine/health    │
+         │   /api/ocr, /api/standardize                  │
+         └──────┬───────────────────────────────┬────────┘
+        (HTTP, server-side via lib/engine.ts | lib/intake.ts)
+                ▼                               ▼
+   ┌────────────────────────────┐   ┌──────────────────────────────┐
+   │  Conflict engine (8000)    │   │  Intake service (8001)       │
+   │  hdi-api/ — FastAPI+SQLite │   │  standardizer/ — FastAPI     │
+   │  POST /api/v1/check-       │   │  POST /api/v1/ocr (Gemini)   │
+   │       conflicts            │   │  POST /api/v1/standardize    │
+   │  GET  /health              │   │  GET  /health                │
+   │  (seed.py loads dataset)   │   │  (needs GEMINI_API_KEY)      │
+   └────────────────────────────┘   └──────────────────────────────┘
+
+Portal state (sessions, profile, records, caregivers) is client-side in localStorage — no server DB yet.
 ```
 
 ## Data Flow: Hero Flow (Warfarin + Danshen)
@@ -42,11 +40,11 @@ Patient/Caretaker enters:
   "I take warfarin for heart, and danshen tea"
          │
          ▼
-┌─────────────────────────────────┐
-│ Standardizer (standardize.py)   │
-│ Uses Gemini API to normalize    │
-│ (future: server endpoint)       │
-└────────────┬────────────────────┘
+┌─────────────────────────────────────────┐
+│ Intake service (standardizer/, port 8001)│
+│ image → POST /api/v1/ocr (Gemini)         │
+│ text  → POST /api/v1/standardize (Gemini) │
+└────────────┬──────────────────────────────┘
              │
              ▼
 Output: {
@@ -115,13 +113,22 @@ Browser renders conflicts in ConflictCard component:
 - **MedListInput**: Chip/tag entry for medicine names (Enter, comma, Backspace)
 - **ConflictCard**: Display a single detected interaction with severity
 - **SeverityBadge**: Color-coded severity indicator
-- **Button, GlassCard, EmptyState, ErrorState, LoadingState, FileAttach**: Supporting UI
+- **DashboardNav, MedListCard, ConfirmDialog, SegmentedControl, LanguageToggle, CaregiverSection**:
+  patient-portal UI (see `components/README.md`)
+- **Button, GlassCard, EmptyState, ErrorState, LoadingState, FileAttach, MedListInput**: supporting UI
 
-### Fuzzy Step (Future)
-- **standardizer/standardize.py**: Gemini API-backed medicine name standardization
-  - Takes free-text input (typed, OCR'd, multilingual)
-  - Returns split WM/TCM lists
-  - Output shape matches HDI API request (ready to POST)
+### Patient portal (frontend)
+Signed-in pages backed by the `lib/` portal modules (demo-grade, `localStorage`): `app/login`,
+`app/dashboard`, `app/profile` (Patient ID + caregivers), `app/caregiver` (read-only). Bilingual via
+`lib/i18n.tsx`. No server DB yet.
+
+### Fuzzy Step — intake service (`standardizer/`, port 8001, implemented)
+A standalone FastAPI service, separate from the engine:
+- **ocr.py** → `POST /api/v1/ocr`: Gemini (`gemini-2.5-flash`) transcribes a prescription image.
+- **standardize.py** → `POST /api/v1/standardize`: Gemini maps free text to the engine's controlled
+  vocabulary, returning split WM/TCM lists ready to POST to the engine.
+- **server.py**: the FastAPI app exposing both + `/health`.
+Reached from Next.js via `lib/intake.ts` and the `/api/ocr` + `/api/standardize` proxy routes.
 
 ### Deterministic Step (`hdi-api/`)
 - **database.py**: SQLAlchemy ORM, SQLite engine, session management

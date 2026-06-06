@@ -29,7 +29,7 @@ into one view and flags dangerous drug–herb interactions that the two siloed s
 | Layer | Choice |
 |---|---|
 | App | Next.js (TypeScript), responsive web |
-| Cloud DB / auth / storage | Supabase (single region) |
+| Auth / storage | **Currently:** demo-grade, client-side (`localStorage` sessions + records). **Planned:** Supabase (single region) for real accounts + a server database |
 | Fuzzy extraction | **Google Gemini API** — `gemini-2.5-flash` for both OCR and standardization (server-side key only) |
 | Safety engine | Our own deterministic code, fed by a drop-in interaction dataset |
 | Hosting | Vercel + Supabase |
@@ -46,18 +46,28 @@ The **application** now exists alongside the docs. The repo is split by branch:
 
 | Branch | Owner | Holds |
 |---|---|---|
-| `engine` | teammate | the deterministic conflict engine — a Python/FastAPI service in `hdi-api/` |
-| `backend` | us | the Next.js app scaffold + our API routes that proxy the engine |
-| `frontend` | us | the UI: the "Liquid Glass" design system + the intake → confirm → results flow |
-| `main` | shared | docs baseline; integrates `frontend` + `backend` when we're ready |
+| `engine` | teammate | the deterministic conflict engine (`hdi-api/`) + the intake service (`standardizer/`) |
+| `backend` | us | the Next.js app scaffold + our API routes that proxy the engine/intake |
+| `frontend` | us | the "Liquid Glass" (warm coffee) design system + the intake → confirm → results flow |
+| `users` | us | the patient portal: login/auth, dashboard, profile, caregivers, bilingual i18n |
+| `main` | shared | everything above is now **merged here** — `main` is the complete, runnable app |
 
 ### What this app does (current scope)
-A patient uploads a prescription photo (or types into a single text box). The image is OCR'd by the
-**intake service** (Gemini), the extracted text is shown for the user to confirm/edit, then it is
-**standardized** (mapped to the engine's known medicine names) and merged into their profile under
-**Western** / **Chinese (TCM)** — additively, no duplicates. The profile persists in the browser
-(`localStorage`). The two lists are then sent to the external engine, which returns the severity-rated
-conflicts. Accounts and a server-side database are still deferred (the "profile" is local for now).
+The app is a small **patient portal**. A user signs in (demo accounts, role-aware: patient /
+caretaker / practitioner / caregiver) and lands on a **dashboard** showing their conditions and
+their **Western** / **Chinese (TCM)** medicine lists, plus a **profile** page (Patient ID,
+demographics, emergency contact, insurance) with a **caregivers** section — a patient can grant a
+trusted person credentialed, permission-scoped read access to their record.
+
+To add medicines, a user uploads a prescription photo (or types into a text box). The image is OCR'd
+by the **intake service** (Gemini), the text is shown for the user to confirm/edit, then it is
+**standardized** (mapped to the engine's known medicine names) and merged into their lists — additive,
+de-duplicated. The Western + Chinese lists are sent to the external engine, which returns the
+severity-rated conflicts. The whole UI is **bilingual (English / 繁體中文)** via a header toggle, and
+clinical term names are localized for display.
+
+**Auth and storage are demo-grade and client-side:** sessions and records live in the browser
+(`localStorage`); there is no server database or real identity yet (see "Planned stack").
 
 ### The engine contract (`hdi-api/` — we only consume it)
 - Runs locally at `http://127.0.0.1:8000` (FastAPI, `hdi-api/`).
@@ -101,7 +111,8 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
 **Component guides:**
 - [`app/README.md`](app/README.md) — Next.js app structure, routes, styling
 - [`components/README.md`](components/README.md) — React component catalog with prop docs
-- [`lib/README.md`](lib/README.md) — Utilities: api-client, engine, types, validation
+- [`lib/README.md`](lib/README.md) — Utilities: conflict-check (api-client, engine, types, validation),
+  intake (intake), and the portal layer (auth, demo-users, profile, caregivers, user-records, i18n)
 - [`hdi-api/README.md`](hdi-api/README.md) — Python HDI API: database schema, endpoints, population
 - [`standardizer/README.md`](standardizer/README.md) — Medicine name standardization (fuzzy step)
 
@@ -167,3 +178,19 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   dropping the `openai` dependency. The controlled-vocabulary prompt + output validation are unchanged.
   This **resolves the Chinese-herb gap**: `绿茶与生姜` → Green tea, Ginger; `当归, 甘草, 银杏` → Dong quai,
   Licorice, Ginkgo; mixed EN+ZH maps correctly. (`OPENAI_API_KEY` / the KIT key is now unused.)
+- **`users` branch — patient portal:** a sign-in flow (`app/login`) with demo-grade, `localStorage`
+  sessions (`lib/auth.ts`, `lib/demo-users.ts`); a role-aware **dashboard** (`app/dashboard`) showing
+  conditions + Western/TCM medicine lists; a **profile** portal (`app/profile`) with an immutable
+  system **Patient ID** (`lib/profile.ts`), demographics, and a **caregivers** section
+  (`lib/caregivers.ts`, `components/CaregiverSection.tsx`) — invite a caregiver, generate credentials,
+  set per-section permissions; and a read-only **caregiver view** (`app/caregiver`) honoring those
+  permissions. New shared components: `DashboardNav`, `MedListCard`, `ConfirmDialog`, `SegmentedControl`.
+- **Safe deletion + prescription type:** every medical-info deletion goes through a mandatory two-step
+  `ConfirmDialog`. The intake adds a Western/TCM `SegmentedControl` (no dropdown) before file upload.
+- **Bilingual EN / 繁體中文:** `lib/i18n.tsx` provides a dictionary + `LanguageProvider`/`useT` and a
+  `LanguageToggle`; `localizeTerm`/`useTerm` translate stored clinical names for *display only* (stored
+  values stay canonical English so the engine lookup and delete-by-value keep working).
+- **Warm "coffee" rebrand:** retuned the design tokens (`tailwind.config.ts`, `app/globals.css`) from the
+  blue/teal palette to a warm espresso/terracotta scheme, with a single dark-brown bullet/indicator colour.
+- **Merge `users` → `main`:** the portal, i18n, and the engine/intake/docs work now live together on
+  `main` — the complete runnable app. Conflict-free (disjoint file sets).

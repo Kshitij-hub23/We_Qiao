@@ -104,11 +104,13 @@ const [western, setWestern] = useState<string[]>([]);
 - Severity label (e.g., "MAJOR", "CONTRAINDICATED")
 - Used in ConflictCard and optionally elsewhere
 
-**Severity colors:**
-- `contraindicated` — Red (#dc2626)
-- `major` — Orange (#ea580c)
-- `moderate` — Amber (#d97706)
-- `minor` — Green (#059669)
+**Severity colors** (warm scale, from `tailwind.config.ts` `severity.*`):
+- `contraindicated` — deep red (#a8321f)
+- `major` — burnt orange (#c0561f)
+- `moderate` — amber (#c98a2b)
+- `minor` — olive-brown (#8a6f3c)
+
+The label text is localized (EN / 中文) via the i18n layer.
 
 **Example:**
 ```tsx
@@ -243,7 +245,9 @@ const [western, setWestern] = useState<string[]>([]);
 
 ### FileAttach
 
-**Purpose:** File upload UI for prescription PDFs/images (future: OCR).
+**Purpose:** File upload UI for prescription images/PDFs. On the intake page the uploaded image is
+sent to the OCR endpoint (`/api/ocr` → intake service); this component handles the attach UX
+(drag-drop, preview, remove).
 
 **Props:**
 ```typescript
@@ -273,13 +277,72 @@ const [attachments, setAttachments] = useState<AttachedFile[]>([]);
 
 ---
 
+## Portal components
+
+Added with the patient portal. These are presentational; data comes from the `lib/` portal modules.
+
+### DashboardNav
+Sticky glass header used on every signed-in page. Shows the wordmark, a `LanguageToggle`, a clickable
+profile pill (avatar + name + role), and sign out.
+```typescript
+{ user: SessionUser; profileHref?: string | null }  // profileHref=null disables the link (caregivers)
+```
+
+### MedListCard
+A glass card managing one clinical list (conditions / Western / TCM / allergies): chip items with an
+inline add field and a × that **requests** removal (parent shows a `ConfirmDialog` first).
+```typescript
+{
+  title: string; subtitle: string; items: string[];
+  placeholder: string; emptyLabel: string;
+  onAdd: (value: string) => void;
+  onRemove: (value: string) => void;          // request removal — parent confirms
+  localize?: (value: string) => string;       // optional display transform (i18n); raw value kept
+}
+```
+
+### ConfirmDialog
+Mandatory two-step confirmation modal. `tone="danger"` (default) shows the medical-deletion safety
+warning + red confirm; `tone="info"` is a neutral acknowledgement (e.g. revealing a caregiver's
+one-time password).
+```typescript
+{
+  open: boolean; title: string; itemLabel: string;
+  context?: string; confirmLabel?: string;
+  tone?: "danger" | "info"; warning?: string; hideCancel?: boolean;
+  onCancel: () => void; onConfirm: () => void;
+}
+```
+
+### SegmentedControl
+Accessible two-option toggle with a sliding highlight (used for Western vs TCM prescription type — no
+dropdown). Generic over the option value type.
+```typescript
+{ options: {value, label, hint?}[]; value: T | null; onChange: (v: T) => void; layoutId?: string }
+```
+
+### LanguageToggle
+Compact EN / 中文 switch wired to the i18n `LanguageProvider`. No props.
+
+### CaregiverSection
+Full caregiver management for the profile page: list linked caregivers, add one (generates login
+credentials, shown once), toggle per-section permissions, and revoke (with confirmation).
+```typescript
+{ patientUserId: string; patientName: string }
+```
+
+---
+
 ## Design Principles
 
-### Color System
-- **Brand (blue):** Western medicines, primary actions
-- **Teal:** TCM herbs, secondary accent
-- **Severity colors:** Danger (red) to safe (green)
-- **Ink (grayscale):** Text, backgrounds, borders
+### Color System (warm "coffee" palette)
+The blue/teal clinical scheme was retuned to a warm coffee palette (see `tailwind.config.ts`):
+- **Brand (mocha/coffee):** Western medicines, primary actions
+- **Teal token (now terracotta):** TCM herbs, secondary accent — the token name is kept `teal` for
+  compatibility, but its values are warm
+- **Severity colors:** deep red → olive-brown (see SeverityBadge above)
+- **Ink (warm taupe → espresso):** text, surfaces, borders
+- **Bullets/indicators:** a single standardized dark brown (`brand-900`) everywhere
 
 ### Spacing
 - Uses Tailwind spacing scale (0.25rem increments)
