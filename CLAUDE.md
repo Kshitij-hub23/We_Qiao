@@ -44,6 +44,15 @@ The app is now **three local processes**, not the single cloud app the Stack sec
 - **Next.js frontend** — port **3000**. API routes under `app/api/*` proxy the two services
   server-side (`ENGINE_URL`, `INTAKE_URL`); the browser never holds a key. `/api/resolve` runs
   extract (intake) → resolve (engine) in one call.
+  - **Routing:** the root path `/` (`app/page.tsx`) is a pure **auth gate**, not a page — it currently
+    forces the login screen (clears the session) for demos; to restore "stay signed in", redirect to
+    `landingFor(getSession())` instead. The intake / conflict-checker tool lives at **`/check`**
+    (`app/check/page.tsx`). Post-login landing + the Qiáo logo both use the shared `landingFor()` in
+    `lib/auth.ts` (patient → `/dashboard`, caregiver → `/caregiver`, practitioner → `/doctor`).
+  - **OCR review:** when a prescription scan finishes, `components/OcrReviewDialog.tsx` pops up the
+    extracted text for the user to confirm / edit / retry before it enters the intake box.
+  - **Severity colours** are traffic-light coded in `tailwind.config.ts` (`severity.*` tokens):
+    contraindicated/major = red, moderate = orange, minor = green.
 
 What's actually built: a sign-in flow + **patient portal** (dashboard, profile with a system Patient
 ID, caregivers with permission-scoped access, read-only caregiver view) and a **bilingual EN / 繁體中文**
@@ -52,20 +61,32 @@ are still *planned*, not implemented. The two fuzzy steps run on **Gemini** (`ge
 KIT `OPENAI_API_KEY` is unused. PDF passport export and the audit log are not built yet.
 
 ## Running locally (gotchas that bite — read before starting services)
-- **Start order:** engine (8000) → intake (8001) → frontend (3000). `.env` (repo root, gitignored)
-  holds `GEMINI_API_KEY`; `OPENAI_API_KEY` is legacy/unused. `.env.local` holds `ENGINE_URL` /
-  `INTAKE_URL` for the Next.js proxy routes.
+- **One command:** `npm run dev:all` (root) boots all three — engine (8000), intake (8001),
+  frontend (3000) — via `concurrently`, colour-coded, Ctrl-C stops all. Individual pieces:
+  `npm run dev:engine` / `dev:intake` / `dev:web`. `.env` (repo root, gitignored) holds
+  `GEMINI_API_KEY` (`OPENAI_API_KEY` is legacy/unused); `.env.local` holds `ENGINE_URL` / `INTAKE_URL`.
+- **The Python services run from a project-local `.venv`** (gitignored). The `dev:engine` / `dev:intake`
+  scripts call `.venv\Scripts\python` **explicitly** — never bare `python` — so they can't drift to
+  another interpreter on PATH (the recurring `ModuleNotFoundError` root cause: this machine had four
+  Pythons). One-time setup: `py -3.12 -m venv .venv`, then
+  `.venv\Scripts\python -m pip install -r hdi-api\requirements.txt -r standardizer\requirements.txt`,
+  then `.venv\Scripts\python hdi-api\seed.py`. **Use 3.12, not 3.14** (3.14 lacks some wheels). If you
+  add a Python dep, install it into `.venv` AND add it to the relevant `requirements.txt`.
 - **Run the Python services with `--ws none` and WITHOUT `--reload`.** `--ws none` avoids a
   `websockets.client` ImportError in google-genai. `--reload` causes a flapping restart loop because
-  the engine writes `hdi.db` into the watched directory (WatchFiles sees it and restarts).
+  the engine writes `hdi.db` into the watched directory (WatchFiles sees it and restarts). The
+  `dev:*` scripts, `start.bat`, and `share.bat` all omit `--reload` deliberately — don't re-add it.
 - **`standardizer/requirements.txt` pins `websockets>=13.0,<15.1`** — websockets 16.0 removed the
   legacy `websockets.client` module that google-genai imports. Do not loosen this pin.
 - **Dependencies the engine needs:** `rapidfuzz` (fuzzy match) and `opencc-python-reimplemented`
   (Chinese simplified⇄traditional). Both must be installed or the engine crashes on startup.
-- **`share.bat`** (gitignored, root) is a one-click launcher: starts all 3 services + a Cloudflare
-  quick tunnel (`cloudflared tunnel --url http://localhost:3000 --protocol http2`), polls the log for
-  the random `*.trycloudflare.com` URL, prints it, and copies it to the clipboard. The URL changes
-  every launch (free quick tunnels).
+- **`start.bat`** (local, root) opens the 3 services in separate windows (no tunnel) — laptop dev.
+- **`share.bat`** (local, root) is the public launcher: starts all 3 services (via `.venv`) + a
+  Cloudflare quick tunnel (`cloudflared tunnel --url http://localhost:3000 --protocol http2`), polls
+  the log for the random `*.trycloudflare.com` URL, prints it, and copies it to the clipboard. The URL
+  changes every launch (free quick tunnels). Both `.bat`s use `.venv` and omit `--reload`. NOTE: the
+  `cloudflared.exe` path has a space (`C:\Program Files (x86)\...`) — it must stay quoted inside the
+  `cmd /k` call or Windows runs `C:\Program` and the tunnel never starts.
 
 ## Chinese name resolution (how it works — keep it intact)
 The resolver (`hdi-api/resolver.py`) uses **OpenCC** in `normalize_variants()` to expand each input

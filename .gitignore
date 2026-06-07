@@ -42,6 +42,7 @@ venv/
 
 # local dev helpers (personal, not shared)
 start.bat
+share.bat
 standardizer/intake.log
 
 # local-only docs (not committed)
