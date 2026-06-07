@@ -293,6 +293,11 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   the full record from `getProfile()` + the dashboard's condition/medicine lists, respects the EN / 繁體中文
   language choice, and localizes clinical terms via the i18n glossary. New `dash.export.*` keys in both
   languages. Typecheck clean.
+- **One-click PDF download:** upgraded the export from a print-dialog to a direct download. `lib/export-pdf.ts`
+  now renders the styled passport off-screen, rasterizes it with **html2canvas**, and writes a real
+  multi-page A4 PDF via **jsPDF** that the browser downloads immediately (`Qiao-<name>-<patientId>.pdf`).
+  Rasterizing through the browser means 繁體中文 renders with the system CJK font. Both libs are lazy-imported
+  (only loaded on export); the button shows a "Preparing PDF…" busy state. New deps: `jspdf`, `html2canvas`.
 - **Role-based conflict detail:** the conflict engine now returns the full sourced record
   (`effect_direction`, `clinical_effect`, `management`, `evidence_level`, `sources[]` — previously stored
   but discarded), and detail is **gated by who is viewing**. The `app/api/conflicts/check` proxy projects
