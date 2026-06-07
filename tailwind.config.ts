@@ -64,6 +64,15 @@ const config: Config = {
           moderate: "#ea7c0c", // orange
           minor: "#16a34a", // green
         },
+        // Muted, warm severity scale used ONLY by the /landing marketing page
+        // (its mock alert card). Separate token so the app's real conflict-card
+        // severity colours above are never touched. See components/landing/.
+        lsev: {
+          contraindicated: "#a8321f",
+          major: "#c0561f",
+          moderate: "#c98a2b",
+          minor: "#8a6f3c",
+        },
       },
       borderRadius: {
         xl: "1rem",
@@ -104,6 +113,16 @@ const config: Config = {
         ],
         // Elegant serif for wordmark + hero headings (BrewHub-style display type).
         display: [
+          "ui-serif",
+          "New York",
+          "Iowan Old Style",
+          "Palatino Linotype",
+          "Palatino",
+          "Georgia",
+          "serif",
+        ],
+        // Same elegant serif under the `font-serif` name the /landing page uses.
+        serif: [
           "ui-serif",
           "New York",
           "Iowan Old Style",

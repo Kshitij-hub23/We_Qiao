@@ -88,6 +88,15 @@ export default function LoginPage() {
           <p className="mt-2 text-sm text-ink-500">
             {t("brand.tagline")}
           </p>
+          <Link
+            href="/landing"
+            className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-white/60
+                       bg-white/40 px-3.5 py-1.5 text-xs font-medium text-brand-600 backdrop-blur-sm
+                       transition-colors hover:bg-white/60 hover:text-brand-700"
+          >
+            About Qiáo · the pitch
+            <span aria-hidden>→</span>
+          </Link>
         </div>
 
         {/* Login card */}
