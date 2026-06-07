@@ -109,12 +109,18 @@ export default function CheckPage() {
 
     let w = getItems(s.id, "western");
     let e = getItems(s.id, "eastern");
+    let autoRun = false;
     try {
       const raw = sessionStorage.getItem("qiao:prefill");
       if (raw) {
-        const p = JSON.parse(raw) as { western?: string[]; eastern?: string[] };
+        const p = JSON.parse(raw) as {
+          western?: string[];
+          eastern?: string[];
+          run?: boolean;
+        };
         if (Array.isArray(p.western)) w = mergeUnique(w, p.western);
         if (Array.isArray(p.eastern)) e = mergeUnique(e, p.eastern);
+        autoRun = p.run === true;
         sessionStorage.removeItem("qiao:prefill");
       }
     } catch {
@@ -125,6 +131,14 @@ export default function CheckPage() {
     setMounted(true);
 
     getEngineHealth().then(setEngineUp);
+
+    // "Check interactions" (from the dashboard) skips the upload step and runs
+    // the check straight away on the patient's existing medicines. If they have
+    // no medicines to check yet, fall through to the intake step instead.
+    if (autoRun && w.length > 0 && e.length > 0) {
+      runCheck(w, e);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
 
   const canCheck = western.length > 0 && eastern.length > 0;
@@ -248,13 +262,13 @@ export default function CheckPage() {
     setEastern(removeItem(user.id, "eastern", item));
   }
 
-  async function runCheck() {
+  async function runCheck(w: string[] = western, e: string[] = eastern) {
     setStep("results");
     setStatus("loading");
     try {
       const result = await checkConflicts({
-        western_medicines: western,
-        eastern_medicines: eastern,
+        western_medicines: w,
+        eastern_medicines: e,
       });
       setConflicts(result);
       setStatus("success");
@@ -401,7 +415,7 @@ export default function CheckPage() {
                 <p className="text-xs text-ink-400">
                   {canCheck ? t("intake.ready") : t("intake.needMeds")}
                 </p>
-                <Button onClick={runCheck} disabled={!canCheck}>
+                <Button onClick={() => runCheck()} disabled={!canCheck}>
                   {t("intake.check")}
                 </Button>
               </div>
@@ -413,7 +427,7 @@ export default function CheckPage() {
           <motion.section key="results" {...fade} className="flex flex-col gap-4">
             {status === "loading" && <LoadingState />}
 
-            {status === "error" && <ErrorState message={error} onRetry={runCheck} />}
+            {status === "error" && <ErrorState message={error} onRetry={() => runCheck()} />}
 
             {status === "success" && (
               <>
