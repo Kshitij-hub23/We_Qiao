@@ -26,6 +26,17 @@ export interface SessionUser {
   linkedPatientName?: string;
 }
 
+/**
+ * The home/landing route for a role — where login lands the user and where the
+ * Qiáo logo should return them. Keep this the single source of truth so the nav
+ * logo and the post-login redirect never drift apart.
+ */
+export function landingFor(user: Pick<SessionUser, "role">): string {
+  if (user.role === "caregiver") return "/caregiver";
+  if (user.role === "practitioner") return "/doctor";
+  return "/dashboard";
+}
+
 /** First-letter initials from a full name (max two). */
 function initialsOf(name: string): string {
   const parts = name.trim().split(/\s+/).filter(Boolean);

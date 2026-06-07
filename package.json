@@ -5,6 +5,10 @@
   "description": "Qiáo — TCM/WM medication-conflict intake & check UI. Calls the external HDI engine.",
   "scripts": {
     "dev": "next dev",
+    "dev:engine": "cd hdi-api && ..\\.venv\\Scripts\\python -m uvicorn main:app --ws none --host 127.0.0.1 --port 8000",
+    "dev:intake": "cd standardizer && ..\\.venv\\Scripts\\python -m uvicorn server:app --ws none --host 127.0.0.1 --port 8001",
+    "dev:web": "next dev",
+    "dev:all": "concurrently -k -n engine,intake,web -c blue,magenta,green \"npm:dev:engine\" \"npm:dev:intake\" \"npm:dev:web\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,6 +25,7 @@
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^10.0.3",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"

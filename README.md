@@ -84,21 +84,27 @@ clinical term names are localized for display.
   warfarin × danshen demo result to appear.
 
 ## Running locally
-```bash
-# 1. Start the engine (terminal 1) — deterministic conflict lookup, see hdi-api/README.md
-cd hdi-api && pip install -r requirements.txt
-python seed.py                  # populate the interaction DB from Medicine_data/
-python -m uvicorn main:app --reload --port 8000
 
-# 2. Start the intake service (terminal 2) — OCR + standardize, see standardizer/
-cd standardizer && pip install -r requirements.txt
-python -m uvicorn server:app --reload --port 8001   # needs GEMINI_API_KEY in .env
-
-# 3. Start this app (terminal 3)
-cp .env.example .env.local      # ENGINE_URL=:8000, INTAKE_URL=:8001
-npm install
-npm run dev                     # http://localhost:3000
+**One-time setup** (Windows / PowerShell). The Python services run from a project-local virtualenv
+(`.venv`) so they never pick up the wrong system Python — the `dev:*` scripts call `.venv` explicitly:
+```powershell
+py -3.12 -m venv .venv                                            # create the isolated interpreter
+.venv\Scripts\python -m pip install -r hdi-api\requirements.txt -r standardizer\requirements.txt
+.venv\Scripts\python hdi-api\seed.py                             # build the interaction DB
+copy .env.example .env.local                                     # ENGINE_URL=:8000, INTAKE_URL=:8001
+npm install                                                      # needs GEMINI_API_KEY in .env
 ```
+
+**Then start everything with one command (from the repo root):**
+```bash
+npm run dev:all   # engine :8000 + intake :8001 + frontend :3000, colour-coded, Ctrl-C stops all
+```
+> Do **not** pass `--reload` to the Python services. The engine writes `hdi.db` into its own folder,
+> so `--reload` makes WatchFiles restart in a flapping loop. `npm run dev:all` omits it deliberately.
+
+Prefer separate terminals? `npm run dev:engine`, `npm run dev:intake`, and `npm run dev:web` are the
+individual pieces. To demo on a phone, `share.bat` (gitignored) launches all three plus a Cloudflare
+tunnel and prints the public URL.
 The browser never calls the engine, Gemini, or KIT directly — the `app/api/*` routes proxy them
 server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
 
@@ -237,3 +243,19 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   sharing a loose English name (白术 vs 蒼朮 "Atractylodes") are *not* merged. Verified live end-to-end:
   "Lipitor … Coumadin … 丹参茶 … Synthroid" → brands resolve to Atorvastatin / Warfarin / Danshen /
   Levothyroxine, and Warfarin × Danshen still flags **major**.
+- **DX: one-command dev + OCR review dialog + traffic-light severity + logo-to-home:** added `npm run
+  dev:all` (via `concurrently`) to boot engine :8000 + intake :8001 + frontend :3000 with one command,
+  colour-coded and Ctrl-C-stops-all; removed the flapping `--reload` from `share.bat` (the engine writes
+  `hdi.db` into its own watched folder). The Qiáo logo now returns to the role's home page via a shared
+  `landingFor()` in `lib/auth.ts` (was a hardcoded `/`). Severity colours are now traffic-light coded
+  (contraindicated/major = red, moderate = orange, minor = green) in `tailwind.config.ts`. New
+  `components/OcrReviewDialog.tsx`: the moment a prescription scan finishes, a pop-up shows the extracted
+  text in an editable box — the user confirms (text flows into the intake box) or retries the scan.
+- **Pin the Python services to a project venv:** root cause of recurring `ModuleNotFoundError`s was four
+  Python installs on PATH — `pip install` and `python` resolving to different interpreters. Created
+  `.venv` (Python 3.12, gitignored) with both requirement sets installed, and pointed `dev:engine` /
+  `dev:intake` (and `share.bat`) at `.venv\Scripts\python` explicitly so they can never drift to the
+  wrong interpreter again. Setup is now `py -3.12 -m venv .venv` once; thereafter `npm run dev:all`.
+- **Root path is now an auth gate, not the tool:** opening `localhost:3000` used to dump you straight
+  into the conflict-checker. The checker moved to `/check`; `/` is now a pure redirect — no session →
+  `/login`, signed in → the role's home (`landingFor`). Dashboard links + `goCheck` updated to `/check`.

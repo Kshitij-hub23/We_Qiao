@@ -56,12 +56,13 @@ const config: Config = {
           800: "#2f2820",
           900: "#1f1a15",
         },
-        // Severity scale for conflict cards — warm-toned but still clearly distinct.
+        // Severity scale for conflict cards — traffic-light coded so danger reads
+        // at a glance: most severe = red, moderate = orange, minor = green.
         severity: {
-          contraindicated: "#a8321f",
-          major: "#c0561f",
-          moderate: "#c98a2b",
-          minor: "#8a6f3c",
+          contraindicated: "#b91c1c", // deep red (most severe)
+          major: "#dc2626", // red
+          moderate: "#ea7c0c", // orange
+          minor: "#16a34a", // green
         },
       },
       borderRadius: {

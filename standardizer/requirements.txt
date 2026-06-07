@@ -1,6 +1,10 @@
 pydantic
 python-dotenv
 google-genai
+# Pin below websockets 16: google-genai imports the legacy `websockets.client`
+# module, which 16.0 removed. uvicorn runs with `--ws none`, so it never needs
+# the newer websockets — keeping this ceiling avoids breaking OCR/standardize.
+websockets>=13.0,<15.1
 fastapi
 uvicorn[standard]
 python-multipart

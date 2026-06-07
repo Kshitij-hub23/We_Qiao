@@ -64,7 +64,8 @@
       "Semen Ginkgo",
       "bai guo",
       "白果",
-      "Maidenhair nut"
+      "Maidenhair nut",
+      "銀杏"
     ],
     "active_constituents": [
       "ginkgo flavone glycosides",
@@ -511,7 +512,8 @@
       "Coumadin",
       "Jantoven",
       "Warfarin"
-    ]
+    ],
+    "chinese": "華法林"
   },
   {
     "entity_id": "E-0102",
@@ -524,8 +526,10 @@
       "ASA",
       "Aspirin",
       "Bayer",
-      "Ecotrin"
-    ]
+      "Ecotrin",
+      "阿士匹靈"
+    ],
+    "chinese": "阿司匹林"
   },
   {
     "entity_id": "E-0103",
@@ -537,7 +541,8 @@
       "Plavix",
       "Clopidogrel",
       "Lovapix"
-    ]
+    ],
+    "chinese": "氯吡格雷"
   },
   {
     "entity_id": "E-0104",
@@ -549,7 +554,8 @@
       "Glucotrol",
       "Glipizide",
       "Glucotrol XL"
-    ]
+    ],
+    "chinese": "格列吡嗪"
   },
   {
     "entity_id": "E-0105",
@@ -560,7 +566,8 @@
     "common_names": [
       "Invirase",
       "Fortovase"
-    ]
+    ],
+    "chinese": "沙奎那韋"
   },
   {
     "entity_id": "E-0106",
@@ -574,7 +581,8 @@
       "Hydrochlorothiazide",
       "HydroDiuril",
       "Esidrix"
-    ]
+    ],
+    "chinese": "氫氯噻嗪"
   },
   {
     "entity_id": "E-0107",
@@ -589,7 +597,8 @@
       "Sandimmune",
       "Cyclosporine",
       "Gengraf"
-    ]
+    ],
+    "chinese": "環孢素"
   },
   {
     "entity_id": "E-0108",
@@ -600,7 +609,8 @@
     "common_names": [
       "Prograf",
       "FK-506"
-    ]
+    ],
+    "chinese": "他克莫司"
   },
   {
     "entity_id": "E-0109",
@@ -611,7 +621,8 @@
     "common_names": [
       "Zocor",
       "Simvastatin"
-    ]
+    ],
+    "chinese": "辛伐他汀"
   },
   {
     "entity_id": "E-0110",
@@ -621,7 +632,8 @@
     "rxnorm_id": "3407",
     "common_names": [
       "Lanoxin"
-    ]
+    ],
+    "chinese": "地高辛"
   },
   {
     "entity_id": "E-0111",
@@ -634,7 +646,8 @@
       "COC",
       "Loestrin",
       "ethinyl estradiol / norethindrone"
-    ]
+    ],
+    "chinese": "炔雌醇/炔諾酮"
   },
   {
     "entity_id": "E-0112",
@@ -645,7 +658,8 @@
     "common_names": [
       "Norvasc",
       "Amlodipine"
-    ]
+    ],
+    "chinese": "氨氯地平"
   },
   {
     "entity_id": "E-0113",
@@ -657,7 +671,8 @@
       "Prilosec",
       "Losec",
       "Omeprazole"
-    ]
+    ],
+    "chinese": "奧美拉唑"
   },
   {
     "entity_id": "E-0114",
@@ -671,7 +686,8 @@
       "Brufen",
       "Ibuprofen",
       "Caldolor"
-    ]
+    ],
+    "chinese": "布洛芬"
   },
   {
     "entity_id": "E-0115",
@@ -682,7 +698,8 @@
     "common_names": [
       "Cordarone",
       "Pacerone"
-    ]
+    ],
+    "chinese": "胺碘酮"
   },
   {
     "entity_id": "E-0116",
@@ -694,7 +711,8 @@
       "Diflucan",
       "Fluconazole",
       "Vfend"
-    ]
+    ],
+    "chinese": "氟康唑"
   },
   {
     "entity_id": "E-0117",
@@ -706,7 +724,8 @@
       "Biaxin",
       "Clarithromycin",
       "Biaxin XL"
-    ]
+    ],
+    "chinese": "克拉黴素"
   },
   {
     "entity_id": "E-0118",
@@ -716,7 +735,8 @@
     "rxnorm_id": "4719",
     "common_names": [
       "Lopid"
-    ]
+    ],
+    "chinese": "吉非貝齊"
   },
   {
     "entity_id": "E-0119",
@@ -728,7 +748,8 @@
       "Prinivil",
       "Zestril",
       "Lisinopril"
-    ]
+    ],
+    "chinese": "賴諾普利"
   },
   {
     "entity_id": "E-0120",
@@ -739,8 +760,10 @@
     "common_names": [
       "Aldactone",
       "Spironolactone",
-      "Carospir"
-    ]
+      "Carospir",
+      "安體舒通"
+    ],
+    "chinese": "螺內酯"
   },
   {
     "entity_id": "E-0121",
@@ -753,7 +776,8 @@
       "Orapred",
       "Prednisolone",
       "Veripred"
-    ]
+    ],
+    "chinese": "潑尼松龍"
   },
   {
     "entity_id": "E-0122",
@@ -764,7 +788,8 @@
     "common_names": [
       "Zoloft",
       "Sertraline"
-    ]
+    ],
+    "chinese": "舍曲林"
   },
   {
     "entity_id": "E-0123",
@@ -774,7 +799,8 @@
     "rxnorm_id": "114289",
     "common_names": [
       "Crixivan"
-    ]
+    ],
+    "chinese": "茚地那韋"
   },
   {
     "entity_id": "E-0124",
@@ -785,7 +811,8 @@
     "common_names": [
       "Glucophage",
       "Metformin"
-    ]
+    ],
+    "chinese": "二甲雙胍"
   },
   {
     "entity_id": "E-0125",
@@ -2544,7 +2571,8 @@
     "chinese": "黃耆",
     "common_names": [
       "Milkvetch",
-      "Astragalus"
+      "Astragalus",
+      "黃芪"
     ],
     "active_constituents": []
   },
@@ -4678,7 +4706,8 @@
     "common_names": [
       "Lipitor"
     ],
-    "active_constituents": []
+    "active_constituents": [],
+    "chinese": "阿托伐他汀"
   },
   {
     "entity_id": "E-0428",
@@ -4923,7 +4952,8 @@
       "Lasix",
       "Frude"
     ],
-    "active_constituents": []
+    "active_constituents": [],
+    "chinese": "呋塞米"
   },
   {
     "entity_id": "E-0449",
@@ -5876,6 +5906,7 @@
     "drug_class": "Analgesic|Antipyretic",
     "rxnorm_id": null,
     "common_names": [
+      "Paracetamol",
       "Tylenol",
       "Ofirmev"
     ],
