@@ -229,7 +229,7 @@ function ReadField({ label, value, className = "" }: { label: string; value: str
     <div className={className}>
       <p className="text-[11px] font-medium uppercase tracking-wide text-ink-400 mb-0.5">{label}</p>
       <p className="text-sm font-medium text-ink-800 break-words">
-        {value && value.trim() && value !== "—" ? value : <span className="text-ink-300">—</span>}
+        {value && value.trim() && value !== "-" ? value : <span className="text-ink-300">-</span>}
       </p>
     </div>
   );

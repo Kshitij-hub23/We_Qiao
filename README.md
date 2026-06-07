@@ -298,6 +298,10 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   multi-page A4 PDF via **jsPDF** that the browser downloads immediately (`Qiao-<name>-<patientId>.pdf`).
   Rasterizing through the browser means 繁體中文 renders with the system CJK font. Both libs are lazy-imported
   (only loaded on export); the button shows a "Preparing PDF…" busy state. New deps: `jspdf`, `html2canvas`.
+- **Copy polish:** removed em dashes from all user-facing text (login/dashboard disclaimers, intake/OCR
+  prompts, taglines, PDF passport strings, empty-value placeholders) in both EN + 繁體中文, rewording with
+  professional punctuation. Renamed the "Chinese medicines (TCM)" label to **"Traditional Chinese Medicines"**
+  everywhere it appears in the UI and PDF (zh: 傳統中藥). Typecheck clean.
 - **Role-based conflict detail:** the conflict engine now returns the full sourced record
   (`effect_direction`, `clinical_effect`, `management`, `evidence_level`, `sources[]` — previously stored
   but discarded), and detail is **gated by who is viewing**. The `app/api/conflicts/check` proxy projects

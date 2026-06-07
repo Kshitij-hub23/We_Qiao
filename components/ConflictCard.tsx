@@ -119,7 +119,7 @@ export function ConflictCard({
                       ) : (
                         <span className="font-medium text-ink-700">{label}</span>
                       )}
-                      {s.note && <span className="text-ink-500"> — {s.note}</span>}
+                      {s.note && <span className="text-ink-500">: {s.note}</span>}
                     </li>
                   );
                 })}

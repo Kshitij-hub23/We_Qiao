@@ -191,7 +191,7 @@ export default function ProfilePage() {
 /* ── helpers & subcomponents ──────────────────────────────────────── */
 
 function formatDate(iso: string): string {
-  if (!iso || iso === "—") return iso || "—";
+  if (!iso || iso === "-") return iso || "-";
   const d = new Date(iso + "T00:00:00");
   if (isNaN(d.getTime())) return iso;
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
@@ -259,7 +259,7 @@ function Field({
         />
       ) : (
         <p className="text-sm font-medium text-ink-800 break-words">
-          {value ? (render ? render(value) : value) : <span className="text-ink-300">—</span>}
+          {value ? (render ? render(value) : value) : <span className="text-ink-300">-</span>}
         </p>
       )}
     </div>

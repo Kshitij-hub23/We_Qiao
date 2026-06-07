@@ -31,7 +31,7 @@ function esc(value: string): string {
 const STR = {
   en: {
     title: "Patient Health Passport",
-    subtitle: "Reconciled medication record — Qiáo (橋)",
+    subtitle: "Reconciled medication record · Qiáo (橋)",
     patientId: "Patient ID",
     registered: "Registered",
     personal: "Personal details",
@@ -49,15 +49,15 @@ const STR = {
     policyNo: "Policy number",
     conditions: "Medical conditions",
     western: "Western medicines",
-    eastern: "Chinese medicines (TCM)",
+    eastern: "Traditional Chinese Medicines",
     none: "None recorded.",
     generated: "Generated",
     disclaimer:
-      "Synthetic demo data. Qiáo is a reconciliation tool — not a diagnosis, and not medical advice. Confirm all medicines with a pharmacist or clinician.",
+      "Synthetic demo data. Qiáo is a reconciliation tool, not a diagnosis, and not medical advice. Confirm all medicines with a pharmacist or clinician.",
   },
   zh: {
     title: "病人健康護照",
-    subtitle: "已核對藥物紀錄 — Qiáo（橋）",
+    subtitle: "已核對藥物紀錄 · Qiáo（橋）",
     patientId: "病人編號",
     registered: "註冊日期",
     personal: "個人資料",
@@ -75,11 +75,11 @@ const STR = {
     policyNo: "保單編號",
     conditions: "病症",
     western: "西藥",
-    eastern: "中藥（傳統中醫）",
+    eastern: "傳統中藥",
     none: "暫無紀錄。",
     generated: "產生時間",
     disclaimer:
-      "合成示範資料。Qiáo 是藥物核對工具 — 並非診斷，亦非醫療建議。請向藥劑師或醫生確認所有藥物。",
+      "合成示範資料。Qiáo 是藥物核對工具，並非診斷，亦非醫療建議。請向藥劑師或醫生確認所有藥物。",
   },
 } as const;
 
@@ -88,7 +88,7 @@ function row(label: string, value: string): string {
   return `
     <div class="row">
       <div class="label">${esc(label)}</div>
-      <div class="value">${value ? esc(value) : "—"}</div>
+      <div class="value">${value ? esc(value) : "-"}</div>
     </div>`;
 }
 
@@ -178,7 +178,7 @@ function buildBody(data: ExportData, generatedAt: string): string {
       <div>${esc(s.patientId)}</div>
       <div class="pid">${esc(p.patientId)}</div>
       <div class="role">${esc(role)}</div>
-      <div style="margin-top:8px">${esc(s.registered)}: ${esc(p.registrationDate || "—")}</div>
+      <div style="margin-top:8px">${esc(s.registered)}: ${esc(p.registrationDate || "-")}</div>
     </div>
   </div>
 

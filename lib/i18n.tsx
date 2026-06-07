@@ -31,7 +31,7 @@ const EN: Strings = {
   "common.add": "Add",
 
   // brand
-  "brand.tagline": "Medication safety bridge — TCM × Western",
+  "brand.tagline": "Medication safety bridge: TCM × Western",
 
   // roles
   "role.patient": "Patient",
@@ -55,7 +55,7 @@ const EN: Strings = {
   "login.demoAccounts": "Demo accounts",
   "login.demoPassword": "Password for all accounts:",
   "login.demoHint": "Click a name to auto-fill.",
-  "login.disclaimer": "Qiáo surfaces research-based interaction data — it is not a diagnostic tool. Always verify results with a clinician.",
+  "login.disclaimer": "Qiáo surfaces research-based interaction data. It is not a diagnostic tool. Always verify results with a clinician.",
 
   // dashboard
   "dash.checkInteractions": "Check interactions",
@@ -73,19 +73,19 @@ const EN: Strings = {
   "card.western.subtitle": "Conventional pharmaceutical drugs",
   "card.western.placeholder": "e.g. Warfarin",
   "card.western.empty": "No Western medicines recorded yet.",
-  "card.tcm.title": "Chinese medicines (TCM)",
+  "card.tcm.title": "Traditional Chinese Medicines",
   "card.tcm.subtitle": "Herbs, formulas and supplements",
   "card.tcm.placeholder": "e.g. Danshen",
   "card.tcm.empty": "No TCM medicines recorded yet.",
   "dash.addRx.title": "Add a new prescription",
   "dash.addRx.subtitle":
-    "Upload or paste a prescription — OCR extraction coming soon. Run a full conflict check with your updated medicine list.",
+    "Upload or paste a prescription. OCR extraction coming soon. Run a full conflict check with your updated medicine list.",
   "dash.export.title": "Export details",
   "dash.export.subtitle":
     "Download a formatted PDF passport with personal details, conditions, and all current Western & Chinese medicines.",
   "dash.export.exporting": "Preparing PDF…",
   "disclaimer.recon":
-    "Qiáo surfaces research-based interaction data — it is not a diagnostic tool. Always verify results with a qualified clinician.",
+    "Qiáo surfaces research-based interaction data. It is not a diagnostic tool. Always verify results with a qualified clinician.",
 
   // med list card
   "medlist.add": "Add",
@@ -122,7 +122,7 @@ const EN: Strings = {
   "field.provider": "Provider",
   "field.policyNo": "Policy number",
   "profile.disclaimer":
-    "Synthetic demo data only. Qiáo is a reconciliation tool — not a diagnosis, and not medical advice.",
+    "Synthetic demo data only. Qiáo is a reconciliation tool, not a diagnosis, and not medical advice.",
 
   // caregivers
   "cg.title": "Caregivers",
@@ -148,7 +148,7 @@ const EN: Strings = {
   "cg.remove": "Remove",
   "cg.invited.title": "Caregiver invited & linked",
   "cg.invited.context":
-    "Temporary password: {pw} — share this securely. They sign in at the login page with their email and this password.",
+    "Temporary password: {pw}. Share this securely. They sign in at the login page with their email and this password.",
   "cg.revoke.title": "Revoke caregiver access",
   "cg.revoke.context":
     "They will immediately lose access and will no longer be able to sign in to view this record.",
@@ -166,22 +166,22 @@ const EN: Strings = {
     "No uploaded prescription files on record. Medication lists are shown under “Current medications”.",
   "cgv.emergency": "Emergency contact",
   "cgv.western": "Western medicines",
-  "cgv.tcm": "Chinese medicines (TCM)",
+  "cgv.tcm": "Traditional Chinese Medicines",
   "cgv.allergies": "Allergies",
   "cgv.conditions": "Conditions",
   "cgv.noPerms":
     "You don’t currently have permission to view any sections of this record. Please ask the patient to grant access.",
   "cgv.disclaimer":
-    "Read-only caregiver access. Qiáo is a reconciliation tool — not a diagnosis, and not medical advice.",
+    "Read-only caregiver access. Qiáo is a reconciliation tool, not a diagnosis, and not medical advice.",
 
   // intake / checker
   "intake.title": "Enter the medicines",
   "intake.instructions":
-    "Add each Western drug and each Chinese medicine (TCM) separately. Press Enter or comma after each name.",
+    "Add each Western drug and each Traditional Chinese Medicine separately. Press Enter or comma after each name.",
   "intake.western": "Western medicines",
   "intake.westernHint": "e.g. warfarin",
   "intake.westernPh": "Type a drug name…",
-  "intake.tcm": "Chinese medicines (TCM)",
+  "intake.tcm": "Traditional Chinese Medicines",
   "intake.tcmHint": "e.g. danshen",
   "intake.tcmPh": "Type a herb or formula…",
   "intake.addAnother": "Add another…",
@@ -217,32 +217,32 @@ const EN: Strings = {
   "intake.rxText": "Prescription text",
   "intake.extracting": "extracting…",
   "intake.rxPlaceholder":
-    "e.g. warfarin 5mg daily, 丹参茶, dong quai — or upload a photo above",
+    "e.g. warfarin 5mg daily, 丹参茶, dong quai, or upload a photo above",
   "intake.addToProfile": "Confirm & add to profile",
   "intake.adding": "Adding…",
   "intake.myMeds": "My medicines",
   "intake.check": "Check for conflicts →",
-  "intake.ocrDone": "Text extracted — review and edit it below, then add it.",
+  "intake.ocrDone": "Text extracted. Review and edit it below, then add it.",
   "intake.ocrEmpty": "No text was found in that image.",
   "intake.added": "Added {n} medicine(s) to your profile.",
   "intake.noNew": "No new recognized medicines to add.",
   "intake.ocrError": "Could not read that image.",
   // OCR review dialog (pops up as soon as a scan finishes)
   "ocr.title": "Prescription scanned",
-  "ocr.subtitle": "We read this text from your image. Check it's correct — edit if needed — then confirm. If it's wrong, retry the scan.",
+  "ocr.subtitle": "We read this text from your image. Check it's correct, edit if needed, then confirm. If it's wrong, retry the scan.",
   "ocr.empty": "We couldn't find any text in that image. Try a clearer, well-lit photo, then retry.",
   "ocr.reading": "Reading image…",
-  "ocr.confirm": "Looks right — use this",
+  "ocr.confirm": "Looks right, use this",
   "ocr.retry": "Retry scan",
   "intake.stdError": "Could not process that text.",
   "intake.needsConfirm": "{n} need your confirmation.",
   "intake.someUnmatched": "{n} not in the interaction database.",
   "intake.confirmTitle": "Confirm these matches",
   "intake.confirmHint":
-    "We weren't certain about these. Confirm the ones that are right — only confirmed medicines are checked for interactions.",
+    "We weren't certain about these. Confirm the ones that are right. Only confirmed medicines are checked for interactions.",
   "intake.unmatchedTitle": "Recognized, but not in our interaction database",
   "intake.unmatchedHint":
-    "These were read from your text but don't match a known medicine, so they were not checked. Nothing was dropped — review them with a clinician.",
+    "These were read from your text but don't match a known medicine, so they were not checked. Nothing was dropped. Review them with a clinician.",
 
   // attach
   "attach.title": "Attach prescriptions",
@@ -262,7 +262,7 @@ const EN: Strings = {
     "None of the entered medicines matched a known interaction in the database. This is ",
   "empty.emphasis": "not",
   "empty.body2":
-    " a guarantee of safety — always confirm with a pharmacist or clinician.",
+    " a guarantee of safety. Always confirm with a pharmacist or clinician.",
   "error.title": "Couldn’t complete the check",
   "error.retry": "Try again",
   "loading.checking": "Checking for interactions…",
@@ -341,7 +341,7 @@ const ZH: Strings = {
   "common.add": "新增",
 
   // brand
-  "brand.tagline": "藥物安全橋樑 — 中醫 × 西醫",
+  "brand.tagline": "藥物安全橋樑：中醫 × 西醫",
 
   // roles
   "role.patient": "病人",
@@ -365,7 +365,7 @@ const ZH: Strings = {
   "login.demoAccounts": "示範帳戶",
   "login.demoPassword": "所有帳戶的密碼：",
   "login.demoHint": "點擊名稱自動填入。",
-  "login.disclaimer": "Qiáo 提供基於研究的相互作用資料 — 並非診斷工具。請務必向醫生核實結果。",
+  "login.disclaimer": "Qiáo 提供基於研究的相互作用資料，並非診斷工具。請務必向醫生核實結果。",
 
   // dashboard
   "dash.checkInteractions": "檢查相互作用",
@@ -383,19 +383,19 @@ const ZH: Strings = {
   "card.western.subtitle": "傳統西方藥物",
   "card.western.placeholder": "例如：華法林",
   "card.western.empty": "暫未記錄西藥。",
-  "card.tcm.title": "中藥（傳統中醫）",
+  "card.tcm.title": "傳統中藥",
   "card.tcm.subtitle": "草藥、方劑及補充品",
   "card.tcm.placeholder": "例如：丹參",
   "card.tcm.empty": "暫未記錄中藥。",
   "dash.addRx.title": "新增處方",
   "dash.addRx.subtitle":
-    "上載或貼上處方 — 文字辨識功能即將推出。以更新後的藥物清單進行完整的相互作用檢查。",
+    "上載或貼上處方，文字辨識功能即將推出。以更新後的藥物清單進行完整的相互作用檢查。",
   "dash.export.title": "匯出資料",
   "dash.export.subtitle":
     "下載格式化的 PDF 健康護照，包含個人資料、病症，以及所有目前的西藥與中藥。",
   "dash.export.exporting": "正在準備 PDF…",
   "disclaimer.recon":
-    "Qiáo 提供基於研究的相互作用資料 — 並非診斷工具。請務必向合資格的醫生核實結果。",
+    "Qiáo 提供基於研究的相互作用資料，並非診斷工具。請務必向合資格的醫生核實結果。",
 
   // med list card
   "medlist.add": "新增",
@@ -432,7 +432,7 @@ const ZH: Strings = {
   "field.provider": "保險公司",
   "field.policyNo": "保單編號",
   "profile.disclaimer":
-    "僅為合成示範資料。Qiáo 是藥物核對工具 — 並非診斷，亦非醫療建議。",
+    "僅為合成示範資料。Qiáo 是藥物核對工具，並非診斷，亦非醫療建議。",
 
   // caregivers
   "cg.title": "照顧者",
@@ -457,7 +457,7 @@ const ZH: Strings = {
   "cg.remove": "移除",
   "cg.invited.title": "已邀請並連結照顧者",
   "cg.invited.context":
-    "臨時密碼：{pw} — 請安全地分享。對方可於登入頁面以其電郵及此密碼登入。",
+    "臨時密碼：{pw}，請安全地分享。對方可於登入頁面以其電郵及此密碼登入。",
   "cg.revoke.title": "撤銷照顧者存取權",
   "cg.revoke.context": "對方將立即失去存取權，並無法再登入查看此紀錄。",
   "cg.revoke.confirm": "撤銷存取權",
@@ -472,12 +472,12 @@ const ZH: Strings = {
   "cgv.rx.empty": "紀錄中沒有已上載的處方檔案。藥物清單顯示於「目前用藥」。",
   "cgv.emergency": "緊急聯絡人",
   "cgv.western": "西藥",
-  "cgv.tcm": "中藥（傳統中醫）",
+  "cgv.tcm": "傳統中藥",
   "cgv.allergies": "過敏",
   "cgv.conditions": "病症",
   "cgv.noPerms": "您目前沒有權限查看此紀錄的任何部分。請要求病人授予存取權。",
   "cgv.disclaimer":
-    "照顧者唯讀存取。Qiáo 是藥物核對工具 — 並非診斷，亦非醫療建議。",
+    "照顧者唯讀存取。Qiáo 是藥物核對工具，並非診斷，亦非醫療建議。",
 
   // intake / checker
   "intake.title": "輸入藥物",
@@ -486,7 +486,7 @@ const ZH: Strings = {
   "intake.western": "西藥",
   "intake.westernHint": "例如：華法林",
   "intake.westernPh": "輸入藥物名稱…",
-  "intake.tcm": "中藥（傳統中醫）",
+  "intake.tcm": "傳統中藥",
   "intake.tcmHint": "例如：丹參",
   "intake.tcmPh": "輸入草藥或方劑…",
   "intake.addAnother": "再加入…",
@@ -518,32 +518,32 @@ const ZH: Strings = {
     "上載處方相片，或於下方輸入藥物。我們會辨識文字供您確認，再分類為西藥及中藥。",
   "intake.rxText": "處方文字",
   "intake.extracting": "辨識中…",
-  "intake.rxPlaceholder": "例如：warfarin 5mg、丹參茶、當歸 — 或於上方上載相片",
+  "intake.rxPlaceholder": "例如：warfarin 5mg、丹參茶、當歸，或於上方上載相片",
   "intake.addToProfile": "確認並加入紀錄",
   "intake.adding": "新增中…",
   "intake.myMeds": "我的藥物",
   "intake.check": "檢查相互作用 →",
-  "intake.ocrDone": "已辨識文字 — 請於下方檢視及編輯，然後加入。",
+  "intake.ocrDone": "已辨識文字，請於下方檢視及編輯，然後加入。",
   "intake.ocrEmpty": "在該相片中找不到文字。",
   "intake.added": "已將 {n} 種藥物加入您的紀錄。",
   "intake.noNew": "沒有可新增的已識別藥物。",
   "intake.ocrError": "無法讀取該相片。",
   // OCR review dialog (掃描完成後立即彈出)
   "ocr.title": "已掃描處方",
-  "ocr.subtitle": "我們從相片中辨識出以下文字。請確認是否正確 — 如有需要可編輯 — 然後確認。若不正確，請重新掃描。",
+  "ocr.subtitle": "我們從相片中辨識出以下文字。請確認是否正確，如有需要可編輯，然後確認。若不正確，請重新掃描。",
   "ocr.empty": "在該相片中找不到文字。請改用更清晰、光線充足的相片，再重新掃描。",
   "ocr.reading": "正在辨識相片…",
-  "ocr.confirm": "正確 — 使用此文字",
+  "ocr.confirm": "正確，使用此文字",
   "ocr.retry": "重新掃描",
   "intake.stdError": "無法處理該文字。",
   "intake.needsConfirm": "{n} 項需要您確認。",
   "intake.someUnmatched": "{n} 項不在相互作用資料庫中。",
   "intake.confirmTitle": "請確認以下配對",
   "intake.confirmHint":
-    "我們未能確定以下配對。請確認正確的項目 — 只有經確認的藥物才會進行相互作用檢查。",
+    "我們未能確定以下配對。請確認正確的項目，只有經確認的藥物才會進行相互作用檢查。",
   "intake.unmatchedTitle": "已辨識，但不在我們的相互作用資料庫中",
   "intake.unmatchedHint":
-    "以下項目已從文字中辨識，但未能對應已知藥物，因此未作檢查。沒有任何項目被略去 — 請與醫護人員一同檢視。",
+    "以下項目已從文字中辨識，但未能對應已知藥物，因此未作檢查。沒有任何項目被略去，請與醫護人員一同檢視。",
 
   // attach
   "attach.title": "附加處方",
@@ -561,7 +561,7 @@ const ZH: Strings = {
   "empty.title": "未發現已知相互作用",
   "empty.body1": "所輸入的藥物均未在資料庫中匹配到已知的相互作用。這",
   "empty.emphasis": "並不",
-  "empty.body2": "代表絕對安全 — 請務必向藥劑師或醫生確認。",
+  "empty.body2": "代表絕對安全，請務必向藥劑師或醫生確認。",
   "error.title": "無法完成檢查",
   "error.retry": "再試一次",
   "loading.checking": "正在檢查相互作用…",

@@ -162,7 +162,7 @@ export default function DoctorPatientPage() {
             onRemove={(v) => setPendingDelete({ kind: "diseases", item: v })}
           />
           <MedListCard
-            title={t("cgv.allergies")} subtitle="—"
+            title={t("cgv.allergies")} subtitle="-"
             items={allergies} placeholder="e.g. Penicillin"
             emptyLabel={t("common.none")} localize={term}
             onAdd={(v) => handleAdd("allergies", v)}
@@ -241,7 +241,7 @@ function Detail({ label, value }: { label: string; value: string }) {
     <div>
       <p className="text-[11px] font-medium uppercase tracking-wide text-ink-400">{label}</p>
       <p className="text-sm font-medium text-ink-800 break-words">
-        {value && value.trim() && value !== "—" ? value : <span className="text-ink-300">—</span>}
+        {value && value.trim() && value !== "-" ? value : <span className="text-ink-300">-</span>}
       </p>
     </div>
   );
