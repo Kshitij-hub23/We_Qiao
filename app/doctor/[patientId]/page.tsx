@@ -96,7 +96,10 @@ export default function DoctorPatientPage() {
   async function runCheck() {
     setCheckStatus("loading");
     try {
-      const result = await checkConflicts({ western_medicines: western, eastern_medicines: eastern });
+      const result = await checkConflicts(
+        { western_medicines: western, eastern_medicines: eastern },
+        "clinical", // practitioner: full sourced detail
+      );
       setConflicts(result);
       setCheckStatus("success");
     } catch (err) {
@@ -207,7 +210,7 @@ export default function DoctorPatientPage() {
                   <motion.div key="s" className="flex flex-col gap-3">
                     {sorted.length > 0
                       ? sorted.map((c, i) => (
-                          <ConflictCard key={`${c.western_drug}-${c.tcm_herb}-${i}`} conflict={c} index={i} />
+                          <ConflictCard key={`${c.western_drug}-${c.tcm_herb}-${i}`} conflict={c} index={i} detail="clinical" />
                         ))
                       : <EmptyState />}
                   </motion.div>

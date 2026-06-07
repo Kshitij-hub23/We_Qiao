@@ -317,6 +317,16 @@ const EN: Strings = {
   "sev.major": "Major",
   "sev.moderate": "Moderate",
   "sev.minor": "Minor",
+
+  // conflict detail — clinical (practitioner) view; summary view shows severity only
+  "conflict.clinicianNote": "Share with your clinician for the full clinical details.",
+  "conflict.mechanism": "Mechanism",
+  "conflict.effect": "Clinical effect",
+  "conflict.management": "Management",
+  "conflict.direction": "Effect direction",
+  "conflict.evidence": "Evidence",
+  "conflict.references": "References",
+  "conflict.source": "Source",
 };
 
 const ZH: Strings = {
@@ -602,6 +612,16 @@ const ZH: Strings = {
   "sev.major": "嚴重",
   "sev.moderate": "中度",
   "sev.minor": "輕微",
+
+  // conflict detail — clinical (practitioner) view; summary view shows severity only
+  "conflict.clinicianNote": "請與您的醫生分享以取得完整臨床資訊。",
+  "conflict.mechanism": "機轉",
+  "conflict.effect": "臨床影響",
+  "conflict.management": "處理建議",
+  "conflict.direction": "作用方向",
+  "conflict.evidence": "證據等級",
+  "conflict.references": "參考文獻",
+  "conflict.source": "來源",
 };
 
 const DICT: Record<Lang, Strings> = { en: EN, zh: ZH };

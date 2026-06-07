@@ -81,7 +81,10 @@ clinical term names are localized for display.
   deterministic name→entity matcher (exact alias + `rapidfuzz` fuzzy fallback; normalizes pinyin tones
   and simplified⇄traditional Chinese). This is the safety boundary — only resolved entities reach the check.
 - `POST /api/v1/check-conflicts` — body `{ "western_medicines": string[], "eastern_medicines": string[] }`
-  → returns `[{ western_drug, tcm_herb, severity, mechanism }]`. Case-insensitive + alias-aware; empty lists → `[]`.
+  → returns the full sourced record per interaction `[{ western_drug, tcm_herb, severity, mechanism,
+  effect_direction, clinical_effect, management, evidence_level, sources[] }]`. Case-insensitive +
+  alias-aware; empty lists → `[]`. Our `app/api/conflicts/check` proxy then **projects by viewer role**
+  (patients/caretakers: severity only; practitioners: the full record).
 - `GET /health` → `{ "status": "ok" }`.
 - **Note:** the engine's tables start empty; run `python seed.py` (loads `hdi-api/Medicine_data/`) for the
   warfarin × danshen demo result to appear.
@@ -290,3 +293,13 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   the full record from `getProfile()` + the dashboard's condition/medicine lists, respects the EN / 繁體中文
   language choice, and localizes clinical terms via the i18n glossary. New `dash.export.*` keys in both
   languages. Typecheck clean.
+- **Role-based conflict detail:** the conflict engine now returns the full sourced record
+  (`effect_direction`, `clinical_effect`, `management`, `evidence_level`, `sources[]` — previously stored
+  but discarded), and detail is **gated by who is viewing**. The `app/api/conflicts/check` proxy projects
+  the engine response to a `view`: **patients & caretakers see severity (and the drug pair) only**, while
+  **practitioners see everything** — mechanism, effect direction, clinical effect, management, and linked
+  study references (PMID/DOI/PMC). Stripping happens server-side, so clinical detail never reaches a
+  non-clinician's browser; `view` defaults to the safe minimum. `ConflictCard` renders summary vs. clinical
+  (sources shown as links); the doctor portal opts into `"clinical"`, all other call sites get summary.
+  New EN + 繁體中文 `conflict.*` strings. Verified end-to-end through the proxy (summary → 3 fields;
+  clinical → full record) and `npm run build` clean.

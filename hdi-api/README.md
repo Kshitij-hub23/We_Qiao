@@ -84,16 +84,17 @@ an entity wins).
 ```json
 [
   {
-    "western_drug": "warfarin",
-    "tcm_herb": "danshen",
+    "western_drug": "Warfarin",
+    "tcm_herb": "Danshen",
     "severity": "major",
-    "mechanism": "Additive anticoagulant effect — increased bleeding risk."
-  },
-  {
-    "western_drug": "warfarin",
-    "tcm_herb": "ginkgo",
-    "severity": "moderate",
-    "mechanism": "Enhanced anticoagulant activity — may increase bleeding tendency."
+    "mechanism": "Combined pharmacodynamic and pharmacokinetic effect …",
+    "effect_direction": "potentiation",
+    "clinical_effect": "Excessive anticoagulation with elevated INR and bleeding …",
+    "management": "Avoid danshen with warfarin; if co-used, monitor INR closely …",
+    "evidence_level": "probable",
+    "sources": [
+      { "type": "PMID", "ref": "7494191", "note": "Rat PK/PD study …" }
+    ]
   }
 ]
 ```
@@ -109,6 +110,10 @@ an entity wins).
   endpoint yet.)
 - Response `western_drug` / `tcm_herb` are the dataset's canonical `preferred_name`s, not the strings you
   sent.
+- **The engine returns the full sourced record** (`mechanism`, `effect_direction`, `clinical_effect`,
+  `management`, `evidence_level`, `sources`). **Role-based projection is the Next.js proxy's job**
+  (`app/api/conflicts/check`): patients/caretakers receive severity + the pair only; practitioners receive
+  everything. This keeps clinical detail off non-clinician browsers.
 
 **cURL examples:**
 
@@ -174,8 +179,9 @@ Indexed on `alias`; unique on `(alias, entity_id)`. This is what makes lookups a
 | `mechanism`, `clinical_effect`, `management` | Text | Explainability fields. |
 | `sources` | Text | JSON array of `{type, ref, note}`. |
 
-> The current API response surfaces only `severity` + `mechanism` (plus the two names). The remaining
-> fields (`clinical_effect`, `management`, `evidence_level`, `sources`) are persisted for later use.
+> The API response now surfaces the full record (`severity`, `mechanism`, `effect_direction`,
+> `clinical_effect`, `management`, `evidence_level`, `sources`). The Next.js proxy projects this to the
+> viewer's role (patients/caretakers: severity only; practitioners: everything).
 
 ### Populating the database
 

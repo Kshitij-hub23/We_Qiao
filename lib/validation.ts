@@ -13,6 +13,9 @@ const nameList = z
 export const checkRequestSchema = z.object({
   western_medicines: nameList,
   eastern_medicines: nameList,
+  // Viewer-driven detail level. Defaults to the safe minimum so anything that
+  // doesn't explicitly request the clinician view only gets severity.
+  view: z.enum(["summary", "clinical"]).default("summary"),
 });
 
 export type ParsedCheckRequest = z.infer<typeof checkRequestSchema>;

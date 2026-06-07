@@ -1,6 +1,6 @@
 """Pydantic request/response models for the HDI API."""
 
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -18,16 +18,33 @@ class InteractionRequest(BaseModel):
     )
 
 
+class Source(BaseModel):
+    """One evidence reference backing an interaction (PMID / DOI / DB id, + note)."""
+
+    type: Optional[str] = None
+    ref: Optional[str] = None
+    note: Optional[str] = None
+
+
 class ConflictDetail(BaseModel):
     """A single detected conflict, mirroring an `interactions` row.
 
-    `from_attributes` lets us build this directly from a SQLAlchemy model.
+    The engine always returns the full record; the Next.js proxy decides which
+    fields a given viewer is allowed to see (patients/caretakers get severity
+    only; clinicians get everything). `from_attributes` lets us build this
+    directly from a SQLAlchemy model.
     """
 
     western_drug: str
     tcm_herb: str
     severity: str
     mechanism: str
+    # Full clinical detail (surfaced to clinicians only by the proxy).
+    effect_direction: Optional[str] = None
+    clinical_effect: Optional[str] = None
+    management: Optional[str] = None
+    evidence_level: Optional[str] = None
+    sources: List[Source] = Field(default_factory=list)
 
     model_config = {"from_attributes": True}
 

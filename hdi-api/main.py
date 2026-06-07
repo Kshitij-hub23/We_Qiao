@@ -11,6 +11,7 @@ The database stores all three interaction classes; this endpoint surfaces
 TCM-WM (the product's core value); WM-WM and TCM-TCM are reserved for later.
 """
 
+import json
 from contextlib import asynccontextmanager
 from typing import List
 
@@ -122,8 +123,10 @@ def check_conflicts(
     - severity: level of risk from the interaction record
     - mechanism: clinical explanation
 
-    NOTE: The full interaction records (clinical_effect, management,
-    evidence_level, sources) are stored in the DB but not surfaced here yet.
+    NOTE: The engine returns the full record (mechanism, effect_direction,
+    clinical_effect, management, evidence_level, sources). The Next.js proxy is
+    responsible for projecting this to the viewer's role — patients/caretakers
+    see severity only; clinicians see everything.
     """
     western = [name.strip().lower() for name in request.western_medicines if name.strip()]
     eastern = [name.strip().lower() for name in request.eastern_medicines if name.strip()]
@@ -174,12 +177,21 @@ def check_conflicts(
     for r in rows:
         a, b = entities[r.agent_a_id], entities[r.agent_b_id]
         wm, tcm = (a, b) if a.type == "WM-drug" else (b, a)
+        try:
+            sources = json.loads(r.sources) if r.sources else []
+        except (json.JSONDecodeError, TypeError):
+            sources = []
         results.append(
             ConflictDetail(
                 western_drug=wm.preferred_name,
                 tcm_herb=tcm.preferred_name,
                 severity=r.severity,
                 mechanism=r.mechanism,
+                effect_direction=r.effect_direction,
+                clinical_effect=r.clinical_effect,
+                management=r.management,
+                evidence_level=r.evidence_level,
+                sources=sources,
             )
         )
     return results

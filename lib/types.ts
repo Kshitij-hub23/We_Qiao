@@ -6,18 +6,42 @@
 
 export type Severity = "contraindicated" | "major" | "moderate" | "minor";
 
+/**
+ * Who is viewing the conflict, which decides how much detail they get:
+ * - "summary"  — patients & caretakers: severity (and the drug pair) only.
+ * - "clinical" — practitioners: the full sourced record.
+ * The proxy (`/api/conflicts/check`) projects the engine response to this view.
+ */
+export type ConflictView = "summary" | "clinical";
+
 /** Request body the engine expects: two lists of medicine names, already split. */
 export interface CheckRequest {
   western_medicines: string[];
   eastern_medicines: string[];
 }
 
-/** A single detected interaction, exactly as the engine returns it. */
+/** One evidence reference backing an interaction (PMID / DOI / DB id, + note). */
+export interface Source {
+  type?: string;
+  ref?: string;
+  note?: string;
+}
+
+/**
+ * A single detected interaction. `western_drug`, `tcm_herb` and `severity` are
+ * always present. The clinical fields are present only in the "clinical" view —
+ * the proxy strips them for the "summary" view, so they are optional here.
+ */
 export interface ConflictDetail {
   western_drug: string;
   tcm_herb: string;
   severity: Severity;
-  mechanism: string;
+  mechanism?: string;
+  effect_direction?: string;
+  clinical_effect?: string;
+  management?: string;
+  evidence_level?: string;
+  sources?: Source[];
 }
 
 /** Shape our /api/conflicts/check route returns to the browser. */
