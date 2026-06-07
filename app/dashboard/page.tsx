@@ -9,13 +9,15 @@ import { MedListCard } from "@/components/MedListCard";
 import { GlassCard } from "@/components/GlassCard";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { getSession, type SessionUser } from "@/lib/auth";
-import { useT, useTerm } from "@/lib/i18n";
+import { useT, useTerm, useLang } from "@/lib/i18n";
 import {
   getItems,
   addItem,
   removeItem,
   seedIfEmpty,
 } from "@/lib/user-records";
+import { getProfile } from "@/lib/profile";
+import { exportPatientPdf } from "@/lib/export-pdf";
 
 /* ── Seed data shown for the hero demo user ───────────────────────── */
 const ELEANOR_SEED = {
@@ -36,6 +38,17 @@ function ShieldIcon() {
   );
 }
 
+function DownloadIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  );
+}
+
 function ArrowRightIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -51,6 +64,7 @@ export default function DashboardPage() {
   const router = useRouter();
   const t = useT();
   const term = useTerm();
+  const { lang } = useLang();
   const [user, setUser] = useState<SessionUser | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -119,6 +133,19 @@ export default function DashboardPage() {
       );
     }
     router.push("/check");
+  }
+
+  // Build the patient passport and open the print → Save-as-PDF dialog.
+  function handleExport() {
+    if (!user) return;
+    exportPatientPdf({
+      profile: getProfile(user.id, { email: user.email, name: user.name }),
+      role: t(`role.${user.role}`),
+      diseases,
+      western,
+      eastern,
+      lang,
+    });
   }
 
   // Render a minimal loading screen server-side / before hydration.
@@ -273,6 +300,34 @@ export default function DashboardPage() {
               </span>
             </div>
           </Link>
+        </motion.div>
+
+        {/* ── Export details banner ───────────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.22, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <button
+            type="button"
+            onClick={handleExport}
+            className="w-full glass rounded-3xl p-5 flex items-center justify-between gap-4
+                       hover:bg-white/65 transition-colors duration-200 cursor-pointer text-left group"
+          >
+            <div>
+              <p className="text-sm font-semibold text-ink-800">
+                {t("dash.export.title")}
+              </p>
+              <p className="text-xs text-ink-500 mt-0.5">
+                {t("dash.export.subtitle")}
+              </p>
+            </div>
+            <span className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full
+                             bg-brand-100 text-brand-600 group-hover:bg-brand-500
+                             group-hover:text-white transition-colors">
+              <DownloadIcon />
+            </span>
+          </button>
         </motion.div>
 
         {/* ── Disclaimer ──────────────────────────────────────────── */}

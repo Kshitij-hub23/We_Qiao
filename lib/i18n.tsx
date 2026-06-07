@@ -80,6 +80,9 @@ const EN: Strings = {
   "dash.addRx.title": "Add a new prescription",
   "dash.addRx.subtitle":
     "Upload or paste a prescription — OCR extraction coming soon. Run a full conflict check with your updated medicine list.",
+  "dash.export.title": "Export details",
+  "dash.export.subtitle":
+    "Download a formatted PDF passport with personal details, conditions, and all current Western & Chinese medicines.",
   "disclaimer.recon":
     "Qiáo surfaces known, sourced interactions and hands the decision to a human. It is a reconciliation tool — not a diagnosis, and not medical advice.",
 
@@ -376,6 +379,9 @@ const ZH: Strings = {
   "dash.addRx.title": "新增處方",
   "dash.addRx.subtitle":
     "上載或貼上處方 — 文字辨識功能即將推出。以更新後的藥物清單進行完整的相互作用檢查。",
+  "dash.export.title": "匯出資料",
+  "dash.export.subtitle":
+    "下載格式化的 PDF 健康護照，包含個人資料、病症，以及所有目前的西藥與中藥。",
   "disclaimer.recon":
     "Qiáo 列出已知並具來源的相互作用，並將決定權交予人類。它是藥物核對工具 — 並非診斷，亦非醫療建議。",
 

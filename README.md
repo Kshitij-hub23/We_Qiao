@@ -282,3 +282,11 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   (labelled text returns at `sm:`+), gaps/padding are tighter, the logo shrinks slightly on mobile, and
   the toggle/avatar/logout are `shrink-0` so the bar can't overflow. Verified at 360 px in EN + 繁體中文,
   including the caretaker roster, the read-only patient detail, and a live conflict check.
+- **Patient PDF export:** new **Export details** button on the dashboard (under "Add a new prescription")
+  produces a formatted **health-passport PDF**. `lib/export-pdf.ts` is dependency-free — it builds a
+  self-contained, styled HTML document (large bold patient name + Patient ID header rule, then sectioned
+  Personal details / Emergency contact / Insurance grids, Conditions, and Western + Chinese medicines as
+  pills) and opens it in a print window for **Save as PDF** (Blob fallback if popups are blocked). Pulls
+  the full record from `getProfile()` + the dashboard's condition/medicine lists, respects the EN / 繁體中文
+  language choice, and localizes clinical terms via the i18n glossary. New `dash.export.*` keys in both
+  languages. Typecheck clean.
