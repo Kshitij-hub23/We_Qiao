@@ -127,9 +127,12 @@ export default function DashboardPage() {
   // Store prefill in sessionStorage so the conflict checker can pick it up.
   function goCheck() {
     if (typeof window !== "undefined") {
+      // `run: true` tells /check to skip the upload step and immediately run the
+      // conflict check on these medicines (the "Add a new prescription" link, by
+      // contrast, omits it and lands on the intake/upload step).
       sessionStorage.setItem(
         "qiao:prefill",
-        JSON.stringify({ western, eastern }),
+        JSON.stringify({ western, eastern, run: true }),
       );
     }
     router.push("/check");
