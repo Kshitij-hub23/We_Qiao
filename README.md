@@ -53,11 +53,14 @@ The **application** now exists alongside the docs. The repo is split by branch:
 | `main` | shared | everything above is now **merged here** — `main` is the complete, runnable app |
 
 ### What this app does (current scope)
-The app is a small **patient portal**. A user signs in (demo accounts, role-aware: patient /
-caretaker / practitioner / caregiver) and lands on a **dashboard** showing their conditions and
-their **Western** / **Chinese (TCM)** medicine lists, plus a **profile** page (Patient ID,
-demographics, emergency contact, insurance) with a **caregivers** section — a patient can grant a
-trusted person credentialed, permission-scoped read access to their record.
+The app is a small **patient portal**. A user signs in or **self-registers** at `/register` (choosing
+patient / caretaker / practitioner) and lands on a role-aware home. A **patient** sees a **dashboard**
+of their conditions and **Western** / **Chinese (TCM)** medicine lists, plus a **profile** page
+(Patient ID, demographics, emergency contact, insurance) with a **caretakers** section — the patient
+links a trusted caretaker **by their existing account email** and grants permission-scoped access. A
+**caretaker** gets a doctor-style **roster** of every patient who has linked them and a read-only
+per-patient view (cannot edit conditions/medicines, but can run the conflict check). A **practitioner**
+gets their own patient roster with full edit access.
 
 To add medicines, a user uploads a prescription photo (or types into a text box). The image is OCR'd
 by the **intake service** (Gemini), the text is shown for the user to confirm/edit, then it is
@@ -259,3 +262,17 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
 - **Root path is now an auth gate, not the tool:** opening `localhost:3000` used to dump you straight
   into the conflict-checker. The checker moved to `/check`; `/` is now a pure redirect — no session →
   `/login`, signed in → the role's home (`landingFor`). Dashboard links + `goCheck` updated to `/check`.
+- **Self-registration + multi-patient caretaker portal:** added a `/register` page with a three-way role
+  chooser (patient / caretaker / practitioner) and a role-specific form; new `lib/accounts.ts` is the
+  unified registered-account store (`localStorage`, keyed by email), and `lib/auth.ts` `login()` now
+  checks demo users → registered accounts (the old patient-generated caregiver credential path is gone).
+  Registration auto-signs-in and lands on the role's home; `/login` gained a "Create an account" link.
+  The **caretaker portal is now a doctor-style roster**: `/caregiver` lists every patient who has linked
+  the caretaker, and a new `/caregiver/[patientId]` shows that patient's record **read-only** (permission-
+  scoped) — the caretaker **cannot edit** conditions or medicines, but **can run** the deterministic
+  conflict check. Linking changed in the patient profile (`components/CaregiverSection.tsx`): instead of
+  generating a login, the patient **links an existing caretaker account by email** (`linkCaregiver` in
+  `lib/caregivers.ts`, with `not_found` / `already_linked` errors); a caretaker can now be linked to many
+  patients via a reverse index, surfaced through `getCaretakerPatients()` in `lib/patients.ts`. Role
+  string consolidated on `caretaker` (routes recognize the legacy `caregiver` too). New i18n keys
+  (`register.*`, `care.*`, updated `cg.*`) in EN + 繁體中文. Typecheck clean.

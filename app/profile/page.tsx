@@ -32,8 +32,12 @@ export default function ProfilePage() {
       router.replace("/login");
       return;
     }
-    if (session.role === "caregiver") {
+    if (session.role === "caregiver" || session.role === "caretaker") {
       router.replace("/caregiver");
+      return;
+    }
+    if (session.role === "practitioner") {
+      router.replace("/doctor");
       return;
     }
 

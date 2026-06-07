@@ -1,8 +1,15 @@
 /**
- * Caregiver management — lets a patient grant trusted people permission-based
- * access to their record. Demo-grade: caregiver accounts + credentials live in
- * localStorage. The permission flags are the seam for future role restrictions.
+ * Caretaker links — lets a patient grant a trusted caretaker permission-based,
+ * read-only access to their record. Demo-grade: links live in localStorage.
+ *
+ * A caretaker is an independent account (lib/accounts.ts or a seeded demo user).
+ * Patients LINK to an existing caretaker by their account email — no credentials
+ * are generated here. One caretaker can be linked to many patients (the reverse
+ * index powers the caretaker's patient roster).
  */
+
+import { findAccountByEmail } from "./accounts";
+import { DEMO_USERS } from "./demo-users";
 
 export interface CaregiverPermissions {
   profile: boolean; // demographics & contact details
@@ -11,14 +18,14 @@ export interface CaregiverPermissions {
   history: boolean; // conditions, allergies, treatment history
 }
 
+/** One caretaker's link to one patient (their permissions for THIS patient). */
 export interface Caregiver {
-  id: string;
-  name: string;
-  email: string;
+  id: string; // link id
+  name: string; // caretaker's name (from their account)
+  email: string; // caretaker's account email (the link key)
   relationship: string;
-  password: string; // generated demo credential, shown once on creation
   permissions: CaregiverPermissions;
-  patientUserId: string; // the patient's *user* id this caregiver is linked to
+  patientUserId: string; // the patient this link belongs to
   patientName: string;
   addedAt: string; // YYYY-MM-DD
 }
@@ -38,7 +45,7 @@ export const PERMISSION_LABELS: Record<keyof CaregiverPermissions, string> = {
 };
 
 const LIST_KEY = (patientUserId: string) => `qiao:${patientUserId}:caregivers`;
-const ACCOUNTS_KEY = "qiao:caregiver-accounts"; // email(lower) -> Caregiver
+const REVERSE_KEY = "qiao:caretaker-links"; // email(lower) -> patientUserId[]
 
 /* ── low-level storage ────────────────────────────────────────────── */
 function readList(patientUserId: string): Caregiver[] {
@@ -56,19 +63,34 @@ function writeList(patientUserId: string, list: Caregiver[]): void {
   }
 }
 
-function readAccounts(): Record<string, Caregiver> {
+function readReverse(): Record<string, string[]> {
   if (typeof window === "undefined") return {};
   try {
-    return JSON.parse(localStorage.getItem(ACCOUNTS_KEY) ?? "{}");
+    return JSON.parse(localStorage.getItem(REVERSE_KEY) ?? "{}");
   } catch {
     return {};
   }
 }
 
-function writeAccounts(accounts: Record<string, Caregiver>): void {
+function writeReverse(index: Record<string, string[]>): void {
   if (typeof window !== "undefined") {
-    localStorage.setItem(ACCOUNTS_KEY, JSON.stringify(accounts));
+    localStorage.setItem(REVERSE_KEY, JSON.stringify(index));
   }
+}
+
+function addReverse(email: string, patientUserId: string): void {
+  const index = readReverse();
+  const ids = new Set(index[email] ?? []);
+  ids.add(patientUserId);
+  index[email] = [...ids];
+  writeReverse(index);
+}
+
+function removeReverse(email: string, patientUserId: string): void {
+  const index = readReverse();
+  index[email] = (index[email] ?? []).filter((id) => id !== patientUserId);
+  if (index[email].length === 0) delete index[email];
+  writeReverse(index);
 }
 
 /* ── helpers ──────────────────────────────────────────────────────── */
@@ -76,69 +98,111 @@ function makeId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
   }
-  return `cg-${Math.floor(Math.random() * 1e9).toString(36)}`;
-}
-
-/** A readable temporary password the patient can hand to the caregiver. */
-function makePassword(): string {
-  const chars = "abcdefghjkmnpqrstuvwxyz23456789";
-  let out = "";
-  for (let i = 0; i < 6; i++) {
-    out += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return `care-${out}`;
+  return `lnk-${Math.floor(Math.random() * 1e9).toString(36)}`;
 }
 
 function today(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+/** Resolve a caretaker account by email: registered accounts, then demo users. */
+export function resolveCaretaker(
+  email: string,
+): { id: string; name: string; email: string } | null {
+  const lower = email.trim().toLowerCase();
+  const account = findAccountByEmail(lower);
+  if (account && account.role === "caretaker") {
+    return { id: account.id, name: account.name, email: account.email };
+  }
+  const demo = DEMO_USERS.find(
+    (u) => u.email.toLowerCase() === lower && u.role === "caretaker",
+  );
+  if (demo) return { id: demo.id, name: demo.name, email: demo.email.toLowerCase() };
+  return null;
+}
+
+/* ── demo seed ────────────────────────────────────────────────────── */
+const SEED_FLAG = "qiao:caretaker-links-seeded";
+
+/**
+ * Seed one demo link so the caretaker roster isn't empty on first load:
+ * James Wong (u2, james@demo.qiao) is a linked caretaker for Eleanor Chen (u1).
+ * Idempotent — runs once, then a flag short-circuits it.
+ */
+function ensureSeed(): void {
+  if (typeof window === "undefined") return;
+  if (localStorage.getItem(SEED_FLAG)) return;
+  localStorage.setItem(SEED_FLAG, "1");
+
+  const email = "james@demo.qiao";
+  if (readList("u1").some((c) => c.email === email)) return;
+
+  const link: Caregiver = {
+    id: makeId(),
+    name: "James Wong",
+    email,
+    relationship: "Son-in-law / caretaker",
+    permissions: { ...DEFAULT_PERMISSIONS },
+    patientUserId: "u1",
+    patientName: "Eleanor Chen",
+    addedAt: "2026-01-12",
+  };
+  writeList("u1", [...readList("u1"), link]);
+  addReverse(email, "u1");
+}
+
 /* ── public API ───────────────────────────────────────────────────── */
 
-/** All caregivers linked to a patient. */
+/** All caretakers linked to a patient. */
 export function getCaregivers(patientUserId: string): Caregiver[] {
+  ensureSeed();
   return readList(patientUserId);
 }
 
-export interface NewCaregiverInput {
-  name: string;
+export interface LinkCaregiverInput {
   email: string;
   relationship: string;
   permissions: CaregiverPermissions;
 }
 
+export type LinkResult =
+  | { ok: true; caregiver: Caregiver }
+  | { ok: false; error: "not_found" | "already_linked" };
+
 /**
- * Invite + link a caregiver: generates a credential, registers the account so
- * the caregiver can log in, and links it to the patient. Returns the created
- * record (including the one-time password to show the patient).
+ * Link an EXISTING caretaker account to a patient by the caretaker's email.
+ * No credentials are generated — the caretaker must already have an account.
  */
-export function addCaregiver(
+export function linkCaregiver(
   patientUserId: string,
   patientName: string,
-  input: NewCaregiverInput,
-): Caregiver {
+  input: LinkCaregiverInput,
+): LinkResult {
+  const caretaker = resolveCaretaker(input.email);
+  if (!caretaker) return { ok: false, error: "not_found" };
+
+  const list = readList(patientUserId);
+  if (list.some((c) => c.email === caretaker.email)) {
+    return { ok: false, error: "already_linked" };
+  }
+
   const caregiver: Caregiver = {
     id: makeId(),
-    name: input.name.trim(),
-    email: input.email.trim().toLowerCase(),
+    name: caretaker.name,
+    email: caretaker.email,
     relationship: input.relationship.trim(),
-    password: makePassword(),
     permissions: input.permissions,
     patientUserId,
     patientName,
     addedAt: today(),
   };
 
-  writeList(patientUserId, [...readList(patientUserId), caregiver]);
-
-  const accounts = readAccounts();
-  accounts[caregiver.email] = caregiver;
-  writeAccounts(accounts);
-
-  return caregiver;
+  writeList(patientUserId, [...list, caregiver]);
+  addReverse(caretaker.email, patientUserId);
+  return { ok: true, caregiver };
 }
 
-/** Update a caregiver's permission flags. Returns the updated list. */
+/** Update a caretaker's permission flags for this patient. Returns the list. */
 export function updateCaregiverPermissions(
   patientUserId: string,
   caregiverId: string,
@@ -148,18 +212,10 @@ export function updateCaregiverPermissions(
     c.id === caregiverId ? { ...c, permissions } : c,
   );
   writeList(patientUserId, list);
-
-  // Keep the login account record in sync.
-  const target = list.find((c) => c.id === caregiverId);
-  if (target) {
-    const accounts = readAccounts();
-    accounts[target.email] = target;
-    writeAccounts(accounts);
-  }
   return list;
 }
 
-/** Revoke a caregiver: removes the link and the login account. */
+/** Unlink a caretaker from this patient (the caretaker account is untouched). */
 export function removeCaregiver(
   patientUserId: string,
   caregiverId: string,
@@ -168,21 +224,21 @@ export function removeCaregiver(
   const target = list.find((c) => c.id === caregiverId);
   const remaining = list.filter((c) => c.id !== caregiverId);
   writeList(patientUserId, remaining);
-
-  if (target) {
-    const accounts = readAccounts();
-    delete accounts[target.email];
-    writeAccounts(accounts);
-  }
+  if (target) removeReverse(target.email, patientUserId);
   return remaining;
 }
 
-/** Match a caregiver login. Returns the account or null. */
-export function findCaregiverAccount(
+/** The patient user-ids a caretaker is linked to (their roster). */
+export function getCaretakerPatientIds(email: string): string[] {
+  ensureSeed();
+  return readReverse()[email.trim().toLowerCase()] ?? [];
+}
+
+/** This caretaker's permissions for a specific patient, or null if not linked. */
+export function getCaretakerPermissions(
+  patientUserId: string,
   email: string,
-  password: string,
-): Caregiver | null {
-  const accounts = readAccounts();
-  const match = accounts[email.trim().toLowerCase()];
-  return match && match.password === password ? match : null;
+): CaregiverPermissions | null {
+  const lower = email.trim().toLowerCase();
+  return readList(patientUserId).find((c) => c.email === lower)?.permissions ?? null;
 }

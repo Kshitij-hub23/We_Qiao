@@ -97,7 +97,7 @@ export default function CheckPage() {
       router.replace("/login");
       return;
     }
-    if (s.role === "caregiver") {
+    if (s.role === "caregiver" || s.role === "caretaker") {
       router.replace("/caregiver");
       return;
     }

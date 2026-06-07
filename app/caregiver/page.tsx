@@ -6,55 +6,40 @@ import { useEffect, useState } from "react";
 import { DashboardNav } from "@/components/DashboardNav";
 import { GlassCard } from "@/components/GlassCard";
 import { getSession, type SessionUser } from "@/lib/auth";
-import { useT, useTerm } from "@/lib/i18n";
-import { getProfile, type PatientProfile } from "@/lib/profile";
-import { getItems } from "@/lib/user-records";
-import {
-  getCaregivers,
-  type CaregiverPermissions,
-} from "@/lib/caregivers";
+import { useT } from "@/lib/i18n";
+import { getCaretakerPatients } from "@/lib/patients";
+import type { RosterPatient } from "@/lib/patients";
 
-export default function CaregiverPage() {
+function ChevronIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  );
+}
+
+export default function CaretakerPage() {
   const router = useRouter();
   const t = useT();
-  const term = useTerm();
   const [user, setUser] = useState<SessionUser | null>(null);
+  const [patients, setPatients] = useState<RosterPatient[]>([]);
   const [mounted, setMounted] = useState(false);
-
-  const [profile, setProfile] = useState<PatientProfile | null>(null);
-  const [perms, setPerms] = useState<CaregiverPermissions | null>(null);
-  const [allergies, setAllergies] = useState<string[]>([]);
-  const [diseases, setDiseases] = useState<string[]>([]);
-  const [western, setWestern] = useState<string[]>([]);
-  const [eastern, setEastern] = useState<string[]>([]);
 
   useEffect(() => {
     const session = getSession();
-    if (!session) {
-      router.replace("/login");
+    if (!session) { router.replace("/login"); return; }
+    // Only caretakers belong here; everyone else has their own home.
+    if (session.role !== "caretaker" && session.role !== "caregiver") {
+      router.replace(session.role === "practitioner" ? "/doctor" : "/dashboard");
       return;
     }
-    // Only caregivers belong here; everyone else has their own dashboard.
-    if (session.role !== "caregiver" || !session.linkedPatientId) {
-      router.replace("/dashboard");
-      return;
-    }
-
-    const patientId = session.linkedPatientId;
-    // Resolve this caregiver's permissions from the patient's caregiver list.
-    const me = getCaregivers(patientId).find((c) => c.email === session.email);
-    setPerms(me?.permissions ?? null);
-
-    setProfile(getProfile(patientId));
-    setAllergies(getItems(patientId, "allergies"));
-    setDiseases(getItems(patientId, "diseases"));
-    setWestern(getItems(patientId, "western"));
-    setEastern(getItems(patientId, "eastern"));
     setUser(session);
+    setPatients(getCaretakerPatients(session.email));
     setMounted(true);
   }, [router]);
 
-  if (!mounted || !user || !profile) {
+  if (!mounted || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <span className="text-sm text-ink-400 animate-pulse">{t("common.loading")}</span>
@@ -62,137 +47,68 @@ export default function CaregiverPage() {
     );
   }
 
-  const can = (k: keyof CaregiverPermissions) => perms?.[k] ?? false;
-
   return (
     <>
       <DashboardNav user={user} profileHref={null} />
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-6">
-        {/* Context banner */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          <GlassCard strong className="p-6 sm:p-7">
-            <p className="text-xs font-medium uppercase tracking-wide text-ink-400">
-              {t("cgv.viewingAs")}
-            </p>
-            <h1 className="font-display text-3xl font-bold text-ink-900 tracking-tight mt-1">
-              {profile.fullName}
-            </h1>
-            <p className="mt-1 text-sm text-ink-500">
-              <span className="font-mono text-brand-800">{profile.patientId}</span>
-              {profile.dateOfBirth && <> · DOB {profile.dateOfBirth}</>}
-              {profile.bloodGroup && <> · {profile.bloodGroup}</>}
-            </p>
-            <p className="mt-3 text-xs text-ink-400">
-              {t("cgv.readonlyNote", { name: profile.fullName.split(" ")[0] })}
-            </p>
-          </GlassCard>
+          <h1 className="font-display text-3xl font-bold text-ink-900 tracking-tight">
+            {t("care.title")}
+          </h1>
+          <p className="mt-1 text-sm text-ink-500">
+            {t("care.subtitle")} · {t("care.count", { n: patients.length })}
+          </p>
         </motion.div>
 
-        {/* Profile & contact */}
-        {can("profile") && (
-          <ReadSection title={t("cgv.section.profile")}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              <ReadField label={t("field.gender")} value={term(profile.gender)} />
-              <ReadField label={t("field.phone")} value={profile.phone} />
-              <ReadField label={t("field.email")} value={profile.email} />
-              <ReadField label={t("field.address")} value={profile.address} className="sm:col-span-2" />
-              <ReadField label={t("cgv.emergency")}
-                value={`${profile.emergencyContactName} (${term(profile.emergencyContactRelation)}) · ${profile.emergencyContactPhone}`} />
-            </div>
-          </ReadSection>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {patients.map((p, i) => (
+            <motion.button
+              key={p.userId}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.99 }}
+              onClick={() => router.push(`/caregiver/${p.userId}`)}
+              className="text-left"
+            >
+              <GlassCard className="p-5 flex items-center gap-4 hover:bg-white/70 transition-colors">
+                <span
+                  className="flex items-center justify-center w-12 h-12 rounded-full text-white text-sm font-bold shadow-soft shrink-0"
+                  style={{ backgroundColor: p.avatarHex }}
+                >
+                  {p.initials}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-ink-800 truncate">{p.name}</p>
+                  <p className="text-xs text-ink-400 font-mono">{p.patientId}</p>
+                  <div className="mt-1.5 flex flex-wrap gap-2 text-[11px] text-ink-500">
+                    <span>{t("dash.age")} {p.age}</span>
+                    <span className="text-ink-300">·</span>
+                    <span>{p.conditionCount} {t("stat.conditions")}</span>
+                    <span className="text-ink-300">·</span>
+                    <span>{p.medicineCount} {t("stat.total")}</span>
+                  </div>
+                </div>
+                <span className="text-ink-300 shrink-0"><ChevronIcon /></span>
+              </GlassCard>
+            </motion.button>
+          ))}
 
-        {/* Medication schedule */}
-        {can("medications") && (
-          <ReadSection title={t("cgv.section.meds")}>
-            <ChipList label={t("cgv.western")} items={western} />
-            <ChipList label={t("cgv.tcm")} items={eastern} />
-          </ReadSection>
-        )}
-
-        {/* Prescriptions */}
-        {can("prescriptions") && (
-          <ReadSection title={t("cgv.section.rx")}>
-            <p className="text-sm text-ink-400 italic">{t("cgv.rx.empty")}</p>
-          </ReadSection>
-        )}
-
-        {/* Medical history */}
-        {can("history") && (
-          <ReadSection title={t("cgv.section.history")}>
-            <ChipList label={t("cgv.allergies")} items={allergies} />
-            <ChipList label={t("cgv.conditions")} items={diseases} />
-          </ReadSection>
-        )}
-
-        {!can("profile") && !can("medications") && !can("prescriptions") && !can("history") && (
-          <GlassCard className="p-6">
-            <p className="text-sm text-ink-500">{t("cgv.noPerms")}</p>
-          </GlassCard>
-        )}
+          {patients.length === 0 && (
+            <p className="text-sm text-ink-400 italic">{t("care.empty")}</p>
+          )}
+        </div>
 
         <p className="text-center text-[11px] text-ink-400 leading-relaxed max-w-md mx-auto pb-4">
           {t("cgv.disclaimer")}
         </p>
       </main>
     </>
-  );
-}
-
-/* ── read-only subcomponents ──────────────────────────────────────── */
-function ReadSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <GlassCard className="p-6 sm:p-7 space-y-4">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-brand-900 shrink-0" />
-          <h2 className="text-base font-semibold text-ink-800">{title}</h2>
-        </div>
-        {children}
-      </GlassCard>
-    </motion.div>
-  );
-}
-
-function ReadField({ label, value, className = "" }: { label: string; value: string; className?: string }) {
-  return (
-    <div className={className}>
-      <p className="text-[11px] font-medium uppercase tracking-wide text-ink-400 mb-0.5">{label}</p>
-      <p className="text-sm font-medium text-ink-800 break-words">
-        {value && value.trim() && value !== "—" ? value : <span className="text-ink-300">—</span>}
-      </p>
-    </div>
-  );
-}
-
-function ChipList({ label, items }: { label: string; items: string[] }) {
-  const t = useT();
-  const term = useTerm();
-  return (
-    <div>
-      <p className="text-[11px] font-medium uppercase tracking-wide text-ink-400 mb-1.5">{label}</p>
-      {items.length === 0 ? (
-        <p className="text-xs text-ink-400 italic">{t("common.none")}</p>
-      ) : (
-        <div className="flex flex-wrap gap-2">
-          {items.map((item) => (
-            <span key={item}
-              className="inline-flex items-center gap-1.5 bg-white/70 border border-white/80 text-ink-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-900" />
-              {term(item)}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
   );
 }

@@ -7,7 +7,7 @@ import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { useT } from "@/lib/i18n";
 import {
   getCaregivers,
-  addCaregiver,
+  linkCaregiver,
   removeCaregiver,
   updateCaregiverPermissions,
   DEFAULT_PERMISSIONS,
@@ -41,35 +41,34 @@ export function CaregiverSection({
   const [pendingRemove, setPendingRemove] = useState<Caregiver | null>(null);
 
   // Form state
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [relationship, setRelationship] = useState("");
   const [perms, setPerms] = useState<CaregiverPermissions>({ ...DEFAULT_PERMISSIONS });
-
-  // The credential to reveal once after creating a caregiver.
-  const [newCredential, setNewCredential] = useState<Caregiver | null>(null);
+  const [linkError, setLinkError] = useState<"not_found" | "already_linked" | null>(null);
 
   useEffect(() => {
     setCaregivers(getCaregivers(patientUserId));
   }, [patientUserId]);
 
   function resetForm() {
-    setName("");
     setEmail("");
     setRelationship("");
     setPerms({ ...DEFAULT_PERMISSIONS });
+    setLinkError(null);
   }
 
   function submitAdd() {
-    if (!name.trim() || !email.trim()) return;
-    const created = addCaregiver(patientUserId, patientName, {
-      name,
+    if (!email.trim()) return;
+    const result = linkCaregiver(patientUserId, patientName, {
       email,
       relationship,
       permissions: perms,
     });
+    if (!result.ok) {
+      setLinkError(result.error);
+      return;
+    }
     setCaregivers(getCaregivers(patientUserId));
-    setNewCredential(created);
     setAdding(false);
     resetForm();
   }
@@ -123,14 +122,20 @@ export function CaregiverSection({
               className="overflow-hidden"
             >
               <div className="mb-4 rounded-2xl border border-white/70 bg-white/50 p-4">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <input value={name} onChange={(e) => setName(e.target.value)}
-                    placeholder={t("cg.form.name")} className="glass-input px-3 py-2 text-sm" />
-                  <input value={email} onChange={(e) => setEmail(e.target.value)}
+                <p className="mb-3 text-xs text-ink-500">{t("cg.linkHint")}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <input value={email} type="email"
+                    onChange={(e) => { setEmail(e.target.value); setLinkError(null); }}
                     placeholder={t("cg.form.email")} className="glass-input px-3 py-2 text-sm" />
                   <input value={relationship} onChange={(e) => setRelationship(e.target.value)}
                     placeholder={t("cg.form.relationship")} className="glass-input px-3 py-2 text-sm" />
                 </div>
+
+                {linkError && (
+                  <p className="mt-2 text-xs font-medium text-severity-major">
+                    {linkError === "not_found" ? t("cg.notFound") : t("cg.alreadyLinked")}
+                  </p>
+                )}
 
                 {/* Permissions */}
                 <p className="mt-3 mb-2 text-[11px] font-medium uppercase tracking-wide text-ink-400">
@@ -160,7 +165,7 @@ export function CaregiverSection({
                   </button>
                   <button
                     onClick={submitAdd}
-                    disabled={!name.trim() || !email.trim()}
+                    disabled={!email.trim()}
                     className="rounded-2xl bg-brand-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-brand-600 disabled:bg-ink-300 disabled:cursor-not-allowed"
                   >
                     {t("cg.inviteLink")}
@@ -219,23 +224,6 @@ export function CaregiverSection({
           </div>
         )}
       </GlassCard>
-
-      {/* One-time credential reveal */}
-      <ConfirmDialog
-        open={newCredential !== null}
-        tone="info"
-        hideCancel
-        title={t("cg.invited.title")}
-        itemLabel={newCredential ? `${newCredential.name} · ${newCredential.email}` : ""}
-        context={
-          newCredential
-            ? t("cg.invited.context", { pw: newCredential.password })
-            : ""
-        }
-        confirmLabel={t("common.done")}
-        onCancel={() => setNewCredential(null)}
-        onConfirm={() => setNewCredential(null)}
-      />
 
       {/* Remove confirmation */}
       <ConfirmDialog

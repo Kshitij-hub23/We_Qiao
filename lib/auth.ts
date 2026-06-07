@@ -6,7 +6,7 @@
  */
 
 import { DEMO_USERS } from "./demo-users";
-import { findCaregiverAccount } from "./caregivers";
+import { findAccount } from "./accounts";
 
 const SESSION_KEY = "qiao:session";
 
@@ -32,17 +32,9 @@ export interface SessionUser {
  * logo and the post-login redirect never drift apart.
  */
 export function landingFor(user: Pick<SessionUser, "role">): string {
-  if (user.role === "caregiver") return "/caregiver";
+  if (user.role === "caretaker" || user.role === "caregiver") return "/caregiver";
   if (user.role === "practitioner") return "/doctor";
   return "/dashboard";
-}
-
-/** First-letter initials from a full name (max two). */
-function initialsOf(name: string): string {
-  const parts = name.trim().split(/\s+/).filter(Boolean);
-  if (parts.length === 0) return "?";
-  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
 function persist(session: SessionUser): SessionUser {
@@ -53,9 +45,9 @@ function persist(session: SessionUser): SessionUser {
 }
 
 /**
- * Attempt a login against (1) the seeded demo users, then (2) caregiver
- * accounts created from within a patient's profile. Returns the session on
- * success, null on failure, and persists the session to localStorage.
+ * Attempt a login against (1) the seeded demo users, then (2) self-registered
+ * accounts (lib/accounts.ts). Returns the session on success, null on failure,
+ * and persists the session to localStorage.
  */
 export function login(email: string, password: string): SessionUser | null {
   // 1. Seeded demo users.
@@ -76,18 +68,17 @@ export function login(email: string, password: string): SessionUser | null {
     });
   }
 
-  // 2. Patient-created caregiver accounts.
-  const caregiver = findCaregiverAccount(email, password);
-  if (caregiver) {
+  // 2. Self-registered accounts (patient / practitioner / caretaker).
+  const account = findAccount(email, password);
+  if (account) {
     return persist({
-      id: caregiver.id,
-      email: caregiver.email,
-      name: caregiver.name,
-      role: "caregiver",
-      initials: initialsOf(caregiver.name),
-      avatarHex: "#8a5530",
-      linkedPatientId: caregiver.patientUserId,
-      linkedPatientName: caregiver.patientName,
+      id: account.id,
+      email: account.email,
+      name: account.name,
+      age: account.age,
+      role: account.role,
+      initials: account.initials,
+      avatarHex: account.avatarHex,
     });
   }
 

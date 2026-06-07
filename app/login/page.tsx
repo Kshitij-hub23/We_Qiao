@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { GlassCard } from "@/components/GlassCard";
 import { Button } from "@/components/Button";
 import { login, getSession, landingFor } from "@/lib/auth";
@@ -168,6 +169,14 @@ export default function LoginPage() {
               {loading ? t("login.submitting") : t("login.submit")}
             </Button>
           </form>
+
+          {/* Register link */}
+          <p className="mt-5 text-center text-sm text-ink-500">
+            {t("login.noAccount")}{" "}
+            <Link href="/register" className="font-semibold text-brand-600 hover:text-brand-700">
+              {t("login.createAccount")}
+            </Link>
+          </p>
         </GlassCard>
 
         {/* Demo credentials */}

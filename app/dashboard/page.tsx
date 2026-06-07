@@ -68,7 +68,7 @@ export default function DashboardPage() {
       router.replace("/login");
       return;
     }
-    if (session.role === "caregiver") {
+    if (session.role === "caregiver" || session.role === "caretaker") {
       router.replace("/caregiver");
       return;
     }

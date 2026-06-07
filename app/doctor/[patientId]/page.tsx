@@ -50,7 +50,11 @@ export default function DoctorPatientPage() {
     const session = getSession();
     if (!session) { router.replace("/login"); return; }
     if (session.role !== "practitioner") {
-      router.replace(session.role === "caregiver" ? "/caregiver" : "/dashboard");
+      router.replace(
+        session.role === "caregiver" || session.role === "caretaker"
+          ? "/caregiver"
+          : "/dashboard",
+      );
       return;
     }
     if (!isPatientOfDoctor(session.id, patientId)) {

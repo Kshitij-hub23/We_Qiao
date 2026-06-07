@@ -9,6 +9,7 @@
 
 import { getProfile } from "./profile";
 import { getItems, addItem } from "./user-records";
+import { getCaretakerPatientIds } from "./caregivers";
 
 /** Which patient user-ids each doctor manages. Demo: Dr. Liu (u3) sees everyone. */
 const ROSTER: Record<string, string[]> = {
@@ -94,12 +95,8 @@ export function isPatientOfDoctor(doctorId: string, patientUserId: string): bool
   return (ROSTER[doctorId] ?? []).includes(patientUserId);
 }
 
-/**
- * The doctor's patient list, seeded and summarized for the roster UI.
- * Reads each patient's profile + record counts from localStorage.
- */
-export function getDoctorPatients(doctorId: string): RosterPatient[] {
-  const ids = ROSTER[doctorId] ?? [];
+/** Summarize a list of patient user-ids into roster cards. */
+function summarizePatients(ids: string[]): RosterPatient[] {
   return ids.map((userId, i) => {
     ensurePatientSeeded(userId);
     const p = getProfile(userId);
@@ -114,4 +111,25 @@ export function getDoctorPatients(doctorId: string): RosterPatient[] {
       medicineCount: getItems(userId, "western").length + getItems(userId, "eastern").length,
     };
   });
+}
+
+/**
+ * The doctor's patient list, seeded and summarized for the roster UI.
+ * Reads each patient's profile + record counts from localStorage.
+ */
+export function getDoctorPatients(doctorId: string): RosterPatient[] {
+  return summarizePatients(ROSTER[doctorId] ?? []);
+}
+
+/** Is this patient linked to this caretaker? (authorizes the detail page) */
+export function isPatientOfCaretaker(email: string, patientUserId: string): boolean {
+  return getCaretakerPatientIds(email).includes(patientUserId);
+}
+
+/**
+ * The caretaker's patient list, summarized for the roster UI. Driven by the
+ * patient→caretaker links (lib/caregivers.ts), keyed by the caretaker's email.
+ */
+export function getCaretakerPatients(email: string): RosterPatient[] {
+  return summarizePatients(getCaretakerPatientIds(email));
 }
