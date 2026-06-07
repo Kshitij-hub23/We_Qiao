@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { logout } from "@/lib/auth";
+import { logout, landingFor } from "@/lib/auth";
 import type { SessionUser, Role } from "@/lib/auth";
 import { useT } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
@@ -71,8 +71,8 @@ export function DashboardNav({
       className="sticky top-0 z-40 w-full glass border-b border-white/50"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+        {/* Logo — returns to the user's home/landing page */}
+        <Link href={landingFor(user)} className="flex items-center gap-2 shrink-0">
           <span className="font-display text-xl font-bold text-ink-900 tracking-tight leading-none">
             Qiáo <span className="text-brand-500">·</span> 橋
           </span>

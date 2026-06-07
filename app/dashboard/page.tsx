@@ -118,7 +118,7 @@ export default function DashboardPage() {
         JSON.stringify({ western, eastern }),
       );
     }
-    router.push("/");
+    router.push("/check");
   }
 
   // Render a minimal loading screen server-side / before hydration.
@@ -255,7 +255,7 @@ export default function DashboardPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.18, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link href="/" className="block group">
+          <Link href="/check" className="block group">
             <div className="glass rounded-3xl p-5 flex items-center justify-between gap-4
                             hover:bg-white/65 transition-colors duration-200 cursor-pointer">
               <div>

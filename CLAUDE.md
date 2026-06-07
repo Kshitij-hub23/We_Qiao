@@ -51,10 +51,40 @@ UI. **Auth and storage are demo-grade and client-side (`localStorage`)** — Sup
 are still *planned*, not implemented. The two fuzzy steps run on **Gemini** (`gemini-2.5-flash`); the
 KIT `OPENAI_API_KEY` is unused. PDF passport export and the audit log are not built yet.
 
-## Dataset contract (do NOT create the clinical data)
-A **separate agent** produces the interaction dataset; this engine only *consumes* it. **The real
-dataset has landed** — it lives in `hdi-api/Medicine_data/` (46 entities, 51 sourced interactions) and
-is loaded by `hdi-api/seed.py`. The two JSON files follow this schema (do not hand-edit the clinical data):
+## Running locally (gotchas that bite — read before starting services)
+- **Start order:** engine (8000) → intake (8001) → frontend (3000). `.env` (repo root, gitignored)
+  holds `GEMINI_API_KEY`; `OPENAI_API_KEY` is legacy/unused. `.env.local` holds `ENGINE_URL` /
+  `INTAKE_URL` for the Next.js proxy routes.
+- **Run the Python services with `--ws none` and WITHOUT `--reload`.** `--ws none` avoids a
+  `websockets.client` ImportError in google-genai. `--reload` causes a flapping restart loop because
+  the engine writes `hdi.db` into the watched directory (WatchFiles sees it and restarts).
+- **`standardizer/requirements.txt` pins `websockets>=13.0,<15.1`** — websockets 16.0 removed the
+  legacy `websockets.client` module that google-genai imports. Do not loosen this pin.
+- **Dependencies the engine needs:** `rapidfuzz` (fuzzy match) and `opencc-python-reimplemented`
+  (Chinese simplified⇄traditional). Both must be installed or the engine crashes on startup.
+- **`share.bat`** (gitignored, root) is a one-click launcher: starts all 3 services + a Cloudflare
+  quick tunnel (`cloudflared tunnel --url http://localhost:3000 --protocol http2`), polls the log for
+  the random `*.trycloudflare.com` URL, prints it, and copies it to the clipboard. The URL changes
+  every launch (free quick tunnels).
+
+## Chinese name resolution (how it works — keep it intact)
+The resolver (`hdi-api/resolver.py`) uses **OpenCC** in `normalize_variants()` to expand each input
+into simplified⇄traditional + tone-stripped pinyin variants; `seed.py` mirrors this at index-build
+time. So storing ONE Chinese form on an entity matches both simplified and traditional input. **Every
+WM-drug and TCM-herb the frontend seeds/displays must have a resolvable `chinese`/`common_names`
+entry** — the `lib/i18n.tsx` `GLOSSARY` Chinese display term must resolve in the engine, or Chinese
+intake fails with "recognized but not in our database". All 24 interaction-relevant + seeded drugs now
+carry Chinese names; a discrepancy audit confirmed 0 unresolved seeded names (EN + ZH all exact 1.0).
+Watch for classical-vs-common char mismatches OpenCC does NOT bridge (e.g. 黃耆 vs 黃芪, 银杏叶 vs 銀杏) —
+add the displayed form as a `common_names` alias.
+
+## Dataset contract (editing the clinical data IS allowed)
+The interaction dataset lives in `hdi-api/Medicine_data/` (~756 entities, 51 sourced interactions) and
+is loaded by `hdi-api/seed.py`. **You may add to and edit these JSON files directly** — e.g. adding a
+missing drug, a synonym/alias, or a Chinese name. After any change, re-run `python hdi-api/seed.py`
+to rebuild the SQLite DB and restart the engine. Keep edits accurate and sourced where you assert a
+clinical claim (mechanism/severity); pure name additions (aliases, `chinese`, `common_names`) need no
+source. The two JSON files follow this schema:
 - `entities.json`: `{ entity_id, preferred_name, type ("WM-drug"|"TCM-herb"|"TCM-formula"),
   drug_class, rxnorm_id, latin, pinyin, chinese, common_names[], active_constituents[] }`
 - `interactions.json`: `{ id, agent_a_id, agent_b_id, interaction_class ("TCM-WM"|"WM-WM"|"TCM-TCM"),

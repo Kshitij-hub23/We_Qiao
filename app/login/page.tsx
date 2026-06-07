@@ -5,17 +5,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GlassCard } from "@/components/GlassCard";
 import { Button } from "@/components/Button";
-import { login, getSession, type SessionUser } from "@/lib/auth";
+import { login, getSession, landingFor } from "@/lib/auth";
 import { DEMO_USERS } from "@/lib/demo-users";
 import { useT } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
-
-/** Where each role lands after sign-in. */
-function landingFor(user: SessionUser): string {
-  if (user.role === "caregiver") return "/caregiver";
-  if (user.role === "practitioner") return "/doctor";
-  return "/dashboard";
-}
 
 /* ── Inline SVG icons (no external dep) ─────────────────────────── */
 function EyeIcon() {
