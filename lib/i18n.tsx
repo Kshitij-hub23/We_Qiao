@@ -79,7 +79,7 @@ const EN: Strings = {
   "card.tcm.empty": "No TCM medicines recorded yet.",
   "dash.addRx.title": "Add a new prescription",
   "dash.addRx.subtitle":
-    "Upload or paste a prescription. OCR extraction coming soon. Run a full conflict check with your updated medicine list.",
+    "Upload or paste a prescription. Run a full conflict check with your updated medicine list.",
   "dash.export.title": "Export details",
   "dash.export.subtitle":
     "Download a formatted PDF passport with personal details, conditions, and all current Western & Chinese medicines.",
