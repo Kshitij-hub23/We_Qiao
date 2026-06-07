@@ -42,6 +42,10 @@ neither practitioner saw.
 > (Brussels, Belgium), on **6 June 2026**. Full verbatim consultation:
 > [`ADVISOR_CONSULTATION.md`](./ADVISOR_CONSULTATION.md).
 
+> **Data provenance:** all 51 interactions are 100% sourced from authentic references — **129 unique**
+> PubMed/DOI/FDA-label/database citations, each independently re-fetched by an adversarial auditor; drug
+> identities verified against **RxNorm**. Full list: [`hdi-api/Medicine_data/SOURCES.md`](./hdi-api/Medicine_data/SOURCES.md).
+
 ---
 
 ## Status

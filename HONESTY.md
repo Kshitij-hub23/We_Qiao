@@ -62,6 +62,23 @@ All Qiáo application code (`app/`, `components/`, `lib/`, `hdi-api/`, `standard
 
 ---
 
+## 4a. Data provenance — clinical data is 100% sourced
+
+The clinical data behind every conflict flag is **fully sourced from authentic, authoritative references** —
+not model-generated and not invented:
+
+- **All 51 interactions** (mechanism, severity, clinical effect) cite **129 unique sources** —
+  PubMed (PMID), DOI papers, and regulatory/database records (FDA DailyMed labels, NCBI Bookshelf,
+  PMC, NCCIH, MSK About Herbs, DDInter). Full list: [`hdi-api/Medicine_data/SOURCES.md`](./hdi-api/Medicine_data/SOURCES.md).
+- **Independently audited:** each source was fetched and read during curation, then **re-fetched by a
+  second adversarial auditor** to confirm it resolves to the stated paper and supports the claim. A
+  retracted paper, two wrong-pair links, and a direction error were caught and corrected.
+- **Drug identities verified** against **RxNorm/RxNav (NIH NLM)** — every `rxnorm_id` in `entities.json` confirmed.
+- *Scope note:* herb/drug **name aliases** (Chinese/pinyin/Latin variants) are vocabulary for matching,
+  not clinical claims, so they are not individually cited — but every **interaction verdict** is.
+
+---
+
 ## 5a. Clinical domain validation
 
 We consulted a practicing TCM practitioner, **Dr. Zhou** (Brussels, Belgium), on **6 June 2026** to
