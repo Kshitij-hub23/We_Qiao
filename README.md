@@ -178,7 +178,7 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   prescription/label image (English, Chinese, or mixed) to verbatim text using **Gemini 2.5 Flash**
   (`google-genai`), the first step of the hero flow (image → OCR → standardize → check-conflicts).
   Accepts a file path or raw bytes, infers MIME type, transcribes only (no translation/normalization).
-  Key read server-side from `GEMINI_API_KEY` (falls back to `GOOGLE_API_KEY` / `OPENAI_API_KEY`).
+  Key read server-side from `GEMINI_API_KEY` (falls back to `GOOGLE_API_KEY`).
   Verified live against a bilingual test image. Later: exponential-backoff retry on transient (429/5xx)
   Gemini errors.
 - **Wire the intake pipeline into the app:** new `standardizer/server.py` (FastAPI) exposes the OCR +

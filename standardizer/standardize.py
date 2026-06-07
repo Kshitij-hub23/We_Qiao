@@ -68,8 +68,7 @@ try:
 except ImportError:
     pass
 
-# Google Gemini model id + the env vars checked (in order) for the key. Only
-# Google key names are accepted here — never the KIT `OPENAI_API_KEY`.
+# Google Gemini model id + the env vars checked (in order) for the key.
 MODEL = "gemini-2.5-flash"
 _API_KEY_VARS = ("GEMINI_API_KEY", "GOOGLE_API_KEY")
 

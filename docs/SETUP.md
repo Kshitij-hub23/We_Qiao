@@ -88,8 +88,8 @@ ENGINE_URL=http://127.0.0.1:8000   # conflict engine
 INTAKE_URL=http://127.0.0.1:8001   # intake service (OCR + standardize)
 ```
 
-**Note:** the engine (`hdi-api/`) needs **no** key. There is no `OPENAI_API_KEY` requirement — the
-standardizer was switched from the KIT OpenAI gateway to Gemini, so that key is unused. Never commit secrets.
+**Note:** the engine (`hdi-api/`) needs **no** key — only the intake service uses `GEMINI_API_KEY`.
+Never commit secrets.
 
 ---
 

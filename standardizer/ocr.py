@@ -43,9 +43,7 @@ except ImportError:
 
 MODEL = "gemini-2.5-flash"
 
-# Env vars checked, in order, for the Gemini key. Only Google key names are
-# accepted — `OPENAI_API_KEY` holds the KIT key (a different provider) and must
-# never be sent to Gemini.
+# Env vars checked, in order, for the Gemini key.
 _API_KEY_VARS = ("GEMINI_API_KEY", "GOOGLE_API_KEY")
 
 # Transient API failures worth retrying: rate limiting (429) and server hiccups

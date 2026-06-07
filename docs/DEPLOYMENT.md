@@ -332,8 +332,7 @@ There are **two** Python services to deploy separately: the engine (`hdi-api/`) 
 | engine | — | — | No keys. Run `python seed.py` once to load `Medicine_data/`. |
 | intake | `GEMINI_API_KEY` | **Yes** | Google Gemini key for OCR + standardize. Falls back to `GOOGLE_API_KEY`. Get one at https://aistudio.google.com/apikey. |
 
-> Note: the standardizer was switched from the KIT OpenAI gateway to Gemini, so **`OPENAI_API_KEY` is
-> no longer used**. Point the frontend's `INTAKE_URL` at the deployed intake service.
+> Note: point the frontend's `INTAKE_URL` at the deployed intake service.
 
 ---
 

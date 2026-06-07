@@ -49,6 +49,15 @@ The app is now **three local processes**, not the single cloud app the Stack sec
     `landingFor(getSession())` instead. The intake / conflict-checker tool lives at **`/check`**
     (`app/check/page.tsx`). Post-login landing + the Qiáo logo both use the shared `landingFor()` in
     `lib/auth.ts` (patient → `/dashboard`, caregiver → `/caregiver`, practitioner → `/doctor`).
+  - **Marketing landing page:** a separate pitch page at **`/landing`** (`app/landing/`), distinct
+    from the app itself. The login screen links to it ("About Qiáo · the pitch"); the landing's "See
+    Live Demo" CTA returns to `/login` (bidirectional). Its sections + UI are **namespaced under
+    `components/landing/`** so they never collide with the app's own `GlassCard` / `SeverityBadge`
+    (which are different implementations). It reuses the shared design system; `tailwind.config.ts`
+    gained two **additive** tokens *for the landing only* — a `serif` font family and an `lsev` (muted
+    warm) severity scale — leaving the app's own `severity` / `display` tokens untouched. Uses
+    `lucide-react` for icons. When editing landing copy, keep it **free of em/en dashes** (a
+    deliberate style choice — use commas/colons).
   - **OCR review:** when a prescription scan finishes, `components/OcrReviewDialog.tsx` pops up the
     extracted text for the user to confirm / edit / retry before it enters the intake box.
   - **Severity colours** are traffic-light coded in `tailwind.config.ts` (`severity.*` tokens):
@@ -57,14 +66,14 @@ The app is now **three local processes**, not the single cloud app the Stack sec
 What's actually built: a sign-in flow + **patient portal** (dashboard, profile with a system Patient
 ID, caregivers with permission-scoped access, read-only caregiver view) and a **bilingual EN / 繁體中文**
 UI. **Auth and storage are demo-grade and client-side (`localStorage`)** — Supabase / a real server DB
-are still *planned*, not implemented. The two fuzzy steps run on **Gemini** (`gemini-2.5-flash`); the
-KIT `OPENAI_API_KEY` is unused. PDF passport export and the audit log are not built yet.
+are still *planned*, not implemented. The two fuzzy steps run on **Gemini** (`gemini-2.5-flash`).
+PDF passport export and the audit log are not built yet.
 
 ## Running locally (gotchas that bite — read before starting services)
 - **One command:** `npm run dev:all` (root) boots all three — engine (8000), intake (8001),
   frontend (3000) — via `concurrently`, colour-coded, Ctrl-C stops all. Individual pieces:
   `npm run dev:engine` / `dev:intake` / `dev:web`. `.env` (repo root, gitignored) holds
-  `GEMINI_API_KEY` (`OPENAI_API_KEY` is legacy/unused); `.env.local` holds `ENGINE_URL` / `INTAKE_URL`.
+  `GEMINI_API_KEY`; `.env.local` holds `ENGINE_URL` / `INTAKE_URL`.
 - **The Python services run from a project-local `.venv`** (gitignored). The `dev:engine` / `dev:intake`
   scripts call `.venv\Scripts\python` **explicitly** — never bare `python` — so they can't drift to
   another interpreter on PATH (the recurring `ModuleNotFoundError` root cause: this machine had four
@@ -81,12 +90,20 @@ KIT `OPENAI_API_KEY` is unused. PDF passport export and the audit log are not bu
 - **Dependencies the engine needs:** `rapidfuzz` (fuzzy match) and `opencc-python-reimplemented`
   (Chinese simplified⇄traditional). Both must be installed or the engine crashes on startup.
 - **`start.bat`** (local, root) opens the 3 services in separate windows (no tunnel) — laptop dev.
-- **`share.bat`** (local, root) is the public launcher: starts all 3 services (via `.venv`) + a
-  Cloudflare quick tunnel (`cloudflared tunnel --url http://localhost:3000 --protocol http2`), polls
-  the log for the random `*.trycloudflare.com` URL, prints it, and copies it to the clipboard. The URL
-  changes every launch (free quick tunnels). Both `.bat`s use `.venv` and omit `--reload`. NOTE: the
-  `cloudflared.exe` path has a space (`C:\Program Files (x86)\...`) — it must stay quoted inside the
-  `cmd /k` call or Windows runs `C:\Program` and the tunnel never starts.
+- **`share.bat`** (local, root) is the public launcher: it **builds the frontend for production first**
+  (`npm run build`, with a fail-safe that aborts on a build error), then starts all 3 services
+  (frontend via **`npm run start`**, the Python pair via `.venv`) + a Cloudflare quick tunnel
+  (`cloudflared tunnel --url http://localhost:3000 --protocol http2`), polls the log for the random
+  `*.trycloudflare.com` URL, prints it, and copies it to the clipboard. **Serve PRODUCTION over the
+  tunnel, never `npm run dev`** — dev recompiles on the fly and hands the browser volatile chunk hashes
+  that 404 after a recompile, crashing the page with `ChunkLoadError`. (`start.bat`, the laptop-dev
+  launcher, correctly stays on `npm run dev` for hot reload — that fragility only matters over a
+  tunnel.) Because `share.bat` serves a static build, code edits won't appear until you re-run it. The
+  URL changes every launch (free quick tunnels). Both `.bat`s use `.venv` and omit `--reload`. NOTE:
+  the `cloudflared.exe` path has a space (`C:\Program Files (x86)\...`) — it must stay quoted inside
+  the `cmd /k` call or Windows runs `C:\Program` and the tunnel never starts.
+- **`next.config.mjs`** sets `allowedDevOrigins: ["*.trycloudflare.com"]` so tunnel access to
+  `/_next/*` assets isn't blocked (a future Next.js will reject cross-origin dev requests without it).
 
 ## Chinese name resolution (how it works — keep it intact)
 The resolver (`hdi-api/resolver.py`) uses **OpenCC** in `normalize_variants()` to expand each input

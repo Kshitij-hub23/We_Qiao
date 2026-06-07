@@ -325,7 +325,6 @@ GEMINI_API_KEY=<your-google-gemini-api-key>
 ```python
 # If GEMINI_API_KEY not set, tries:
 1. GOOGLE_API_KEY
-2. OPENAI_API_KEY (if it's a valid Google format)
 ```
 
 ### Model
