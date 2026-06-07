@@ -275,4 +275,10 @@ server-side (`ENGINE_URL` for conflicts, `INTAKE_URL` for OCR + standardize).
   `lib/caregivers.ts`, with `not_found` / `already_linked` errors); a caretaker can now be linked to many
   patients via a reverse index, surfaced through `getCaretakerPatients()` in `lib/patients.ts`. Role
   string consolidated on `caretaker` (routes recognize the legacy `caregiver` too). New i18n keys
-  (`register.*`, `care.*`, updated `cg.*`) in EN + 繁體中文. Typecheck clean.
+  (`register.*`, `care.*`, updated `cg.*`) in EN + 繁體中文. Typecheck clean. Also seeded one demo link
+  (James Wong → Eleanor Chen) so the caretaker roster isn't empty on first load.
+- **Mobile nav fix:** the `DashboardNav` right-side cluster (language toggle + role badge + avatar +
+  Sign out) overflowed off-screen on narrow phones. Sign out is now an **icon-only** button on mobile
+  (labelled text returns at `sm:`+), gaps/padding are tighter, the logo shrinks slightly on mobile, and
+  the toggle/avatar/logout are `shrink-0` so the bar can't overflow. Verified at 360 px in EN + 繁體中文,
+  including the caretaker roster, the read-only patient detail, and a live conflict check.

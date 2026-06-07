@@ -24,6 +24,17 @@ function ChevronIcon() {
   );
 }
 
+function LogOutIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  );
+}
+
 export function DashboardNav({
   user,
   /** When false, the profile pill is not a link (e.g. caregivers have no own profile page). */
@@ -70,28 +81,28 @@ export function DashboardNav({
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className="sticky top-0 z-40 w-full glass border-b border-white/50"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div className="max-w-5xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
         {/* Logo — returns to the user's home/landing page */}
         <Link href={landingFor(user)} className="flex items-center gap-2 shrink-0">
-          <span className="font-display text-xl font-bold text-ink-900 tracking-tight leading-none">
+          <span className="font-display text-lg sm:text-xl font-bold text-ink-900 tracking-tight leading-none">
             Qiáo <span className="text-brand-500">·</span> 橋
           </span>
         </Link>
 
         {/* Right side — language, pretty profile button + sign out */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
           <LanguageToggle />
 
           {/* Role badge (mobile-only, since the pill shows the role on desktop) */}
           <span
-            className={`sm:hidden inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${ROLE_COLOURS[user.role]}`}
+            className={`sm:hidden inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold whitespace-nowrap ${ROLE_COLOURS[user.role]}`}
           >
             {roleLabel}
           </span>
 
           {/* Profile pill — the clickable profile button */}
           {profileHref ? (
-            <motion.div whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
+            <motion.div whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }} className="shrink-0">
               <Link
                 href={profileHref}
                 className="group flex items-center gap-2.5 rounded-full border border-white/70 bg-white/60
@@ -102,17 +113,20 @@ export function DashboardNav({
               </Link>
             </motion.div>
           ) : (
-            <div className="flex items-center gap-2.5 rounded-full border border-white/70 bg-white/60 pl-1.5 pr-2 sm:pr-3 py-1.5 shadow-soft">
+            <div className="flex items-center gap-2.5 rounded-full border border-white/70 bg-white/60 pl-1.5 pr-2 sm:pr-3 py-1.5 shadow-soft shrink-0">
               {profileInner}
             </div>
           )}
 
-          {/* Sign out */}
+          {/* Sign out — icon-only on mobile, labelled on desktop */}
           <button
             onClick={handleLogout}
-            className="text-xs text-ink-400 hover:text-ink-700 transition-colors px-2.5 py-2 rounded-xl hover:bg-white/60"
+            aria-label={t("common.signOut")}
+            title={t("common.signOut")}
+            className="shrink-0 flex items-center justify-center text-ink-400 hover:text-ink-700 transition-colors rounded-xl hover:bg-white/60 p-2 sm:px-2.5"
           >
-            {t("common.signOut")}
+            <span className="sm:hidden"><LogOutIcon /></span>
+            <span className="hidden sm:inline text-xs">{t("common.signOut")}</span>
           </button>
         </div>
       </div>
