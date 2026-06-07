@@ -1,11 +1,10 @@
 /**
- * Patient-details PDF export — dependency-free.
+ * Patient-details PDF export — one-click direct download.
  *
- * Builds a self-contained, nicely formatted HTML document and opens it in a
- * hidden print window, then triggers the browser's print dialog so the user can
- * "Save as PDF". Keeping this out of the React tree (raw HTML + window.print)
- * avoids pulling in a heavyweight PDF library while still giving full control
- * over the layout/typography.
+ * Renders a nicely formatted, self-contained HTML passport off-screen, rasterizes
+ * it with html2canvas, and writes a real multi-page A4 PDF with jsPDF that the
+ * browser downloads directly (no print dialog). Rasterizing via the browser means
+ * Chinese (繁體中文) text renders with the system CJK font automatically.
  */
 
 import type { PatientProfile } from "./profile";
@@ -36,6 +35,7 @@ const STR = {
     patientId: "Patient ID",
     registered: "Registered",
     personal: "Personal details",
+    name: "Name",
     dob: "Date of birth",
     gender: "Gender",
     blood: "Blood group",
@@ -61,6 +61,7 @@ const STR = {
     patientId: "病人編號",
     registered: "註冊日期",
     personal: "個人資料",
+    name: "姓名",
     dob: "出生日期",
     gender: "性別",
     blood: "血型",
@@ -99,141 +100,74 @@ function pills(items: string[], lang: Lang, none: string): string {
     .join("")}</div>`;
 }
 
-function buildHtml(data: ExportData): string {
+/** CSS for the passport (class-scoped; no `body`/`@page` rules). */
+const PASSPORT_CSS = `
+  .passport * { box-sizing: border-box; margin: 0; padding: 0; }
+  .passport {
+    width: 794px;
+    padding: 48px 44px;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK",
+      "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1917;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .passport .header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 16px; padding-bottom: 16px; border-bottom: 3px solid #0f766e;
+  }
+  .passport .brand {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #0f766e; font-weight: 700;
+  }
+  .passport .patient-name {
+    font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
+    margin: 4px 0 2px; color: #0c0a09;
+  }
+  .passport .doc-title { font-size: 13px; color: #57534e; }
+  .passport .id-block { text-align: right; font-size: 11px; color: #57534e; white-space: nowrap; }
+  .passport .id-block .pid {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 13px; font-weight: 700; color: #0c0a09;
+  }
+  .passport .id-block .role {
+    display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 999px;
+    background: #ccfbf1; color: #0f766e; font-weight: 700; font-size: 10px;
+  }
+  .passport .section { margin-top: 24px; }
+  .passport .section-title {
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: #0f766e; padding-bottom: 6px; margin-bottom: 12px; border-bottom: 1px solid #e7e5e4;
+  }
+  .passport .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; }
+  .passport .row { display: flex; gap: 10px; padding: 3px 0; }
+  .passport .label { width: 120px; flex-shrink: 0; color: #78716c; font-weight: 600; }
+  .passport .value { color: #1c1917; }
+  .passport .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .passport .pill {
+    display: inline-block; padding: 5px 12px; border-radius: 999px;
+    background: #f5f5f4; border: 1px solid #e7e5e4; font-weight: 600; color: #292524;
+  }
+  .passport .meds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .passport .meds-col h3 { font-size: 12px; font-weight: 700; margin-bottom: 8px; color: #1c1917; }
+  .passport .meds-col.western h3 { color: #1d4ed8; }
+  .passport .meds-col.eastern h3 { color: #b45309; }
+  .passport .empty { color: #a8a29e; font-style: italic; }
+  .passport .footer {
+    margin-top: 28px; padding-top: 12px; border-top: 1px solid #e7e5e4;
+    font-size: 10px; color: #a8a29e; line-height: 1.5;
+  }
+  .passport .footer .gen { color: #78716c; margin-bottom: 4px; }
+`;
+
+/** Inner markup for the passport (without the surrounding document chrome). */
+function buildBody(data: ExportData, generatedAt: string): string {
   const { profile: p, role, diseases, western, eastern, lang } = data;
   const s = STR[lang];
   const term = (v: string) => localizeTerm(v, lang);
 
-  const generatedAt = new Date().toLocaleString(
-    lang === "zh" ? "zh-HK" : "en-GB",
-  );
-
-  return `<!doctype html>
-<html lang="${lang === "zh" ? "zh-Hant" : "en"}">
-<head>
-<meta charset="utf-8" />
-<title>${esc(s.title)} — ${esc(p.fullName)}</title>
-<style>
-  @page { size: A4; margin: 18mm 16mm; }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK",
-      "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
-    color: #1c1917;
-    font-size: 12px;
-    line-height: 1.5;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* ── Header / patient identity ─────────────────────────── */
-  .header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    padding-bottom: 16px;
-    border-bottom: 3px solid #0f766e;
-  }
-  .brand {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #0f766e;
-    font-weight: 700;
-  }
-  .patient-name {
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin: 4px 0 2px;
-    color: #0c0a09;
-  }
-  .doc-title { font-size: 13px; color: #57534e; }
-  .id-block {
-    text-align: right;
-    font-size: 11px;
-    color: #57534e;
-    white-space: nowrap;
-  }
-  .id-block .pid {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-    font-size: 13px;
-    font-weight: 700;
-    color: #0c0a09;
-  }
-  .id-block .role {
-    display: inline-block;
-    margin-top: 4px;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: #ccfbf1;
-    color: #0f766e;
-    font-weight: 700;
-    font-size: 10px;
-  }
-
-  /* ── Sections ──────────────────────────────────────────── */
-  .section { margin-top: 22px; page-break-inside: avoid; }
-  .section-title {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #0f766e;
-    padding-bottom: 6px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid #e7e5e4;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px 32px;
-  }
-  .row { display: flex; gap: 10px; padding: 3px 0; }
-  .label { width: 120px; flex-shrink: 0; color: #78716c; font-weight: 600; }
-  .value { color: #1c1917; }
-
-  /* ── Pills (meds / conditions) ─────────────────────────── */
-  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pill {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 999px;
-    background: #f5f5f4;
-    border: 1px solid #e7e5e4;
-    font-weight: 600;
-    color: #292524;
-  }
-  .meds-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .meds-col h3 {
-    font-size: 12px;
-    font-weight: 700;
-    margin: 0 0 8px;
-    color: #1c1917;
-  }
-  .meds-col.western h3 { color: #1d4ed8; }
-  .meds-col.eastern h3 { color: #b45309; }
-  .empty { color: #a8a29e; font-style: italic; margin: 0; }
-
-  /* ── Footer ────────────────────────────────────────────── */
-  .footer {
-    margin-top: 28px;
-    padding-top: 12px;
-    border-top: 1px solid #e7e5e4;
-    font-size: 10px;
-    color: #a8a29e;
-    line-height: 1.5;
-  }
-  .footer .gen { color: #78716c; margin-bottom: 4px; }
-</style>
-</head>
-<body>
+  return `
   <div class="header">
     <div>
       <div class="brand">${esc(s.subtitle)}</div>
@@ -263,7 +197,7 @@ function buildHtml(data: ExportData): string {
   <div class="section">
     <div class="section-title">${esc(s.emergency)}</div>
     <div class="grid">
-      ${row(s.personal === STR.en.personal ? "Name" : "姓名", term(p.emergencyContactName))}
+      ${row(s.name, term(p.emergencyContactName))}
       ${row(s.phone, p.emergencyContactPhone)}
       ${row(s.relationship, term(p.emergencyContactRelation))}
     </div>
@@ -299,30 +233,67 @@ function buildHtml(data: ExportData): string {
   <div class="footer">
     <div class="gen">${esc(s.generated)}: ${esc(generatedAt)}</div>
     ${esc(s.disclaimer)}
-  </div>
-</body>
-</html>`;
+  </div>`;
 }
 
 /**
- * Open a print window with the formatted patient passport and trigger print
- * (→ Save as PDF). Falls back to a same-tab document if a popup is blocked.
+ * Render the passport off-screen, rasterize it, and download a real A4 PDF in
+ * one click. Splits across multiple pages if the content is taller than one page.
  */
-export function exportPatientPdf(data: ExportData): void {
-  const html = buildHtml(data);
-  const win = window.open("", "_blank", "width=900,height=1000");
-  if (!win) {
-    // Popup blocked — fall back to a Blob URL the user can open/print.
-    const blob = new Blob([html], { type: "text/html" });
-    window.open(URL.createObjectURL(blob), "_blank");
-    return;
+export async function exportPatientPdf(data: ExportData): Promise<void> {
+  // Load the heavy libs lazily so they're only pulled in when an export happens.
+  const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+    import("html2canvas"),
+    import("jspdf"),
+  ]);
+
+  const generatedAt = new Date().toLocaleString(
+    data.lang === "zh" ? "zh-HK" : "en-GB",
+  );
+
+  // Off-screen host: rendered (so fonts/layout resolve) but out of view.
+  const host = document.createElement("div");
+  host.style.cssText =
+    "position:fixed;left:-10000px;top:0;width:794px;background:#ffffff;z-index:-1;";
+  host.innerHTML = `<style>${PASSPORT_CSS}</style><div class="passport">${buildBody(
+    data,
+    generatedAt,
+  )}</div>`;
+  document.body.appendChild(host);
+
+  try {
+    const node = host.querySelector(".passport") as HTMLElement;
+    const canvas = await html2canvas(node, {
+      scale: 2, // crisp on retina / when zoomed
+      backgroundColor: "#ffffff",
+      useCORS: true,
+    });
+
+    const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+    const pageW = pdf.internal.pageSize.getWidth();
+    const pageH = pdf.internal.pageSize.getHeight();
+    const imgW = pageW;
+    const imgH = (canvas.height * imgW) / canvas.width;
+
+    const img = canvas.toDataURL("image/png");
+
+    if (imgH <= pageH) {
+      pdf.addImage(img, "PNG", 0, 0, imgW, imgH);
+    } else {
+      // Taller than one page — slice across pages by shifting the image up.
+      let remaining = imgH;
+      let position = 0;
+      while (remaining > 0) {
+        pdf.addImage(img, "PNG", 0, position, imgW, imgH);
+        remaining -= pageH;
+        position -= pageH;
+        if (remaining > 0) pdf.addPage();
+      }
+    }
+
+    const safeName = data.profile.fullName.replace(/[^\w一-鿿 -]/g, "").trim();
+    pdf.save(`Qiao-${safeName || "patient"}-${data.profile.patientId}.pdf`);
+  } finally {
+    document.body.removeChild(host);
   }
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-  // Give the browser a tick to lay out (and load fonts) before printing.
-  win.onload = () => {
-    win.focus();
-    win.print();
-  };
 }

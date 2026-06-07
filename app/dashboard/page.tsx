@@ -135,17 +135,25 @@ export default function DashboardPage() {
     router.push("/check");
   }
 
-  // Build the patient passport and open the print → Save-as-PDF dialog.
-  function handleExport() {
-    if (!user) return;
-    exportPatientPdf({
-      profile: getProfile(user.id, { email: user.email, name: user.name }),
-      role: t(`role.${user.role}`),
-      diseases,
-      western,
-      eastern,
-      lang,
-    });
+  // Build the patient passport and download it as a PDF in one click.
+  const [exporting, setExporting] = useState(false);
+  async function handleExport() {
+    if (!user || exporting) return;
+    setExporting(true);
+    try {
+      await exportPatientPdf({
+        profile: getProfile(user.id, { email: user.email, name: user.name }),
+        role: t(`role.${user.role}`),
+        diseases,
+        western,
+        eastern,
+        lang,
+      });
+    } catch (err) {
+      console.error("PDF export failed", err);
+    } finally {
+      setExporting(false);
+    }
   }
 
   // Render a minimal loading screen server-side / before hydration.
@@ -311,12 +319,14 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={handleExport}
+            disabled={exporting}
             className="w-full glass rounded-3xl p-5 flex items-center justify-between gap-4
-                       hover:bg-white/65 transition-colors duration-200 cursor-pointer text-left group"
+                       hover:bg-white/65 transition-colors duration-200 cursor-pointer text-left group
+                       disabled:cursor-wait disabled:opacity-70"
           >
             <div>
               <p className="text-sm font-semibold text-ink-800">
-                {t("dash.export.title")}
+                {exporting ? t("dash.export.exporting") : t("dash.export.title")}
               </p>
               <p className="text-xs text-ink-500 mt-0.5">
                 {t("dash.export.subtitle")}

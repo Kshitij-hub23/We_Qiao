@@ -83,6 +83,7 @@ const EN: Strings = {
   "dash.export.title": "Export details",
   "dash.export.subtitle":
     "Download a formatted PDF passport with personal details, conditions, and all current Western & Chinese medicines.",
+  "dash.export.exporting": "Preparing PDF…",
   "disclaimer.recon":
     "Qiáo surfaces known, sourced interactions and hands the decision to a human. It is a reconciliation tool — not a diagnosis, and not medical advice.",
 
@@ -382,6 +383,7 @@ const ZH: Strings = {
   "dash.export.title": "匯出資料",
   "dash.export.subtitle":
     "下載格式化的 PDF 健康護照，包含個人資料、病症，以及所有目前的西藥與中藥。",
+  "dash.export.exporting": "正在準備 PDF…",
   "disclaimer.recon":
     "Qiáo 列出已知並具來源的相互作用，並將決定權交予人類。它是藥物核對工具 — 並非診斷，亦非醫療建議。",
 
