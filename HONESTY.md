@@ -62,6 +62,16 @@ All Qiáo application code (`app/`, `components/`, `lib/`, `hdi-api/`, `standard
 
 ---
 
+## 5a. Clinical domain validation
+
+We consulted a practicing TCM practitioner, **Dr. Zhou** (Brussels, Belgium), on **6 June 2026** to
+validate the project's premise. He confirmed that TCM ↔ Western-medicine combinations carry real,
+assessable interaction risk (e.g. danshen/angelica/safflower + anticoagulants → bleeding) and described
+the four-dimension clinical assessment framework. The **full verbatim consultation** is recorded in
+[`ADVISOR_CONSULTATION.md`](./ADVISOR_CONSULTATION.md).
+
+---
+
 ## 6. Known limitations & next steps
 
 - **Demo-grade auth + `localStorage` persistence** — no real backend DB; Supabase migration is the top priority.

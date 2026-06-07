@@ -38,6 +38,10 @@ All patient data in the demo is **synthetic**. Hero demo case: an elderly patien
 (WM)** also taking a **danshen / dong quai (TCM)** formula → high-severity bleeding-risk flag that
 neither practitioner saw.
 
+> **Clinical validation:** the premise was validated with a practicing TCM practitioner, **Dr. Zhou**
+> (Brussels, Belgium), on **6 June 2026**. Full verbatim consultation:
+> [`ADVISOR_CONSULTATION.md`](./ADVISOR_CONSULTATION.md).
+
 ---
 
 ## Status
