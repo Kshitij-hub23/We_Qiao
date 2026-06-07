@@ -55,7 +55,7 @@ const EN: Strings = {
   "login.demoAccounts": "Demo accounts",
   "login.demoPassword": "Password for all accounts:",
   "login.demoHint": "Click a name to auto-fill.",
-  "login.disclaimer": "Qiáo uses synthetic demo data only. Not a diagnostic tool.",
+  "login.disclaimer": "Qiáo surfaces research-based interaction data — it is not a diagnostic tool. Always verify results with a clinician.",
 
   // dashboard
   "dash.checkInteractions": "Check interactions",
@@ -85,7 +85,7 @@ const EN: Strings = {
     "Download a formatted PDF passport with personal details, conditions, and all current Western & Chinese medicines.",
   "dash.export.exporting": "Preparing PDF…",
   "disclaimer.recon":
-    "Qiáo surfaces known, sourced interactions and hands the decision to a human. It is a reconciliation tool — not a diagnosis, and not medical advice.",
+    "Qiáo surfaces research-based interaction data — it is not a diagnostic tool. Always verify results with a qualified clinician.",
 
   // med list card
   "medlist.add": "Add",
@@ -365,7 +365,7 @@ const ZH: Strings = {
   "login.demoAccounts": "示範帳戶",
   "login.demoPassword": "所有帳戶的密碼：",
   "login.demoHint": "點擊名稱自動填入。",
-  "login.disclaimer": "Qiáo 僅使用合成示範資料，並非診斷工具。",
+  "login.disclaimer": "Qiáo 提供基於研究的相互作用資料 — 並非診斷工具。請務必向醫生核實結果。",
 
   // dashboard
   "dash.checkInteractions": "檢查相互作用",
@@ -395,7 +395,7 @@ const ZH: Strings = {
     "下載格式化的 PDF 健康護照，包含個人資料、病症，以及所有目前的西藥與中藥。",
   "dash.export.exporting": "正在準備 PDF…",
   "disclaimer.recon":
-    "Qiáo 列出已知並具來源的相互作用，並將決定權交予人類。它是藥物核對工具 — 並非診斷，亦非醫療建議。",
+    "Qiáo 提供基於研究的相互作用資料 — 並非診斷工具。請務必向合資格的醫生核實結果。",
 
   // med list card
   "medlist.add": "新增",
